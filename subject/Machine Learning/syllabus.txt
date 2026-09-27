@@ -1,0 +1,58 @@
+COURSE CONTENT
+Unit
+No.
+Topic Hours
+1 Introduction to Machine Learning
+Introduction to Machine Learning: Definition of Machine Learning,
+Definition of learning. Classification of Machine Learning: Supervised
+learning, unsupervised learning, Reinforcement learning, Semi-supervised
+learning. Categorizing based on required Output: Classification, Regression,
+and Clustering. Difference in ML and Traditional Programming, Definition
+of Data, Information and Knowledge. Split data in Machine Learning:
+Training Data, Validation Data and Testing Data. Machine Learning:
+Applications.
+07 Hrs
+2 Machine Learning - Performance Metrics
+Performance Metrics for Classification Problems- Confusion Matrix,
+Classification Accuracy, Classification Report- Precision, Recall or
+Sensitivity, Support, F1 Score, AUC (Area Under ROC curve). Performance
+Metrics for Regression Problems- Mean Absolute Error (MAE), Mean
+Square Error (MSE), R Squared (R2).
+07 Hrs
+3 Linear and Logistic Regression
+Introduction to linear regression: Introduction to Linear Regression, Optimal
+Coefficients, Cost function, Coefficient of Determination, Analysis of Linear
+Regression using dummy Data, Linear Regression Intuition. Multivariable
+regression and gradient descent: Generic Gradient Descent, Learning Rate,
+Complexity Analysis of Normal Equation Linear Regression, how to find
+More Complex Boundaries, Variations of Gradient Descent. Logistic
+regression: Handling Classification Problems, Logistic Regression, Cost
+Function, Finding Optimal Values, Solving Derivatives, Multiclass Logistic
+Regression, Finding Complex Boundaries and Regularization, Using Logistic
+Regression from Sklearn.
+07 Hrs
+Department of Computer Science and Design 49
+Dr. Babasaheb Ambedkar Technological University
+4 Decision Trees and Random Forests
+Decision trees: Decision Trees, Decision Trees for Interview call, Building
+Decision Trees, Getting to Best Decision Tree, Deciding Feature to Split on,
+Continuous Valued Features Code using Sklearn decision tree, information
+gain, Gain Ratio, Gini Index, Decision Trees & Overfitting, Pruning.
+Random forests: Introduction to Random Forests, Data Bagging and Feature
+Selection, Extra Trees, Regression using decision Trees and Random Forest,
+Random Forest in Sklearn.
+07 Hrs
+5 Naive Bayes, KNN and SVM
+Naive Bayes: Bayes Theorem, Independence Assumption in Naive Bayes,
+Probability estimation for Discrete Values Features, how to handle zero
+probabilities, Implementation of Naive Bayes, Finding the probability for
+continuous valued features, Text Classification using Naive Bayes.
+K-Nearest Neighbours: Introduction to KNN, Feature scaling before KNN,
+KNN in Sklearn, Cross Validation, Finding Optimal K, Implement KNN,
+Curse of Dimensionality, Handling Categorical Data, Pros & Cons of KNN.
+Support Vector Machine: Intuition behind SVM, SVM Cost Function,
+Decision Boundary & the C parameter, using SVM from Sklearn, Finding
+Non-Linear Decision Boundary, Choosing Landmark Points, Similarity
+Functions, how to move to new dimensions, Multi-class Classification, Using
+Sklearn SVM on Iris, Choosing Parameters using Grid Search, Using
+Support Vectors to Regression.

@@ -1,0 +1,60 @@
+COURSE CONTENT
+Unit
+No.
+Topic Hours
+1 Introduction to Database Management Systems and ER Model
+Introduction, Purpose of Database Systems, Database-System Applications,
+View of Data, Database Languages, Database System Structure, Data
+Models.
+Database Design and ER Model: Entity, Attributes, Relationships,
+Constraints, Keys, Design Process, Entity- Relationship Model, ER Diagram,
+Design Issues, Extended E-R Features, converting ER and EER diagram into
+tables.
+07 Hrs
+2 SQL and PL/SQL
+SQL: Characteristics and Advantages, SQL Data Types and Literals, DDL,
+DML, DCL, TCL, SQL Operators.
+Tables: Creating, Modifying, Deleting, Updating.
+SQL DML Queries: SELECT Query and clauses, Index and Sequence in
+SQL. Views: Creating, Dropping, Updating using Indexes, Set Operations,
+Predicates and Joins, Set membership, Tuple Variables, Set comparison,
+Ordering of Tuples, Aggregate Functions, SQL Functions, Nested Queries.
+PL/SQL: Concept of Stored Procedures and Functions, Cursors, Triggers,
+Assertions, Roles and Privileges.
+07 Hrs
+Department of Computer Science and Design 57
+Dr. Babasaheb Ambedkar Technological University
+3 Relational Database Design and Database Transaction Management
+Relational Model: Basic concepts, Attributes and Domains, CODD's Rules.
+Relational Integrity: Domain, Referential Integrities, Enterprise Constraints.
+Database Design: Features of Good Relational Designs, Normalization,
+Atomic Domains and First Normal Form, Decomposition using Functional
+Dependencies, Algorithms for Decomposition, 2NF, 3NF, BCNF.
+Introduction to Database Transaction, Transaction states, ACID properties,
+Concept of Schedule, Serial Schedule.
+Serializability: Conflict and View, Cascaded Aborts, Recoverable and
+Non-recoverable Schedules.
+Concurrency Control: Lock-based, Time-stamp based Deadlock handling.
+Recovery methods: Shadow Paging and Log-Based Recovery, Checkpoints.
+Log-Based Recovery: Deferred Database Modifications and Immediate
+Database Modifications.
+07 Hrs
+4 NoSQL Databases
+Introduction to Distributed Database System, Advantages, Disadvantages,
+CAP Theorem.
+Types of Data: Structured, Unstructured Data and Semi-Structured Data.
+NoSQL Database: Introduction, Need, Features. Types of NoSQL
+Databases: Key-value store, document store, graph, wide column stores,
+BASE Properties, Data Consistency model, ACID Vs BASE, Comparative
+study of RDBMS and NoSQL.
+MongoDB (with syntax and usage): CRUD Operations, Indexing,
+Aggregation, MapReduce, Replication, Sharding.
+07 Hrs
+5 Advances in Databases
+Emerging Databases: Active and Deductive Databases, Main Memory
+Databases, Semantic Databases.
+Complex Data Types: Semi-Structured Data, Features of Semi-Structured
+Data Models. Nested Data Types: JSON, XML.
+Object Orientation: Object-Relational Database System, Table Inheritance,
+Object- Relational Mapping.
+Spatial Data: Geographic Data, Geometric Data.

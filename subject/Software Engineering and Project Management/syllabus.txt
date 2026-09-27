@@ -1,0 +1,67 @@
+COURSE CONTENT
+Unit
+No.
+Topic Hours
+1 Introduction to Software Engineering, Software Process Models
+Software Engineering Fundamentals: Nature of Software, Software
+Engineering Principles, The Software Process, Software Myths. Process
+Models: A Generic Process Model, Prescriptive Process Models: The
+Waterfall, Incremental Process (RAD), Evolutionary Process, Unified
+Process, Concurrent.
+Advanced Process Models & Tools: Agile software development: Agile
+methods, Plan driven and agile development, Extreme programming
+Practices, Testing in XP, Pair programming. Introduction to agile tools: JIRA,
+Kanban, Case Studies: An information system (mental health-care system),
+wilderness weather system.
+07 Hrs
+2 Software Requirements Engineering & Analysis
+Requirements Engineering: User and system requirements, Functional and
+non-functional requirements, Types & Metrics, A spiral view of the
+requirements engineering process.
+Requirements Specification (SRS): The software requirements
+Specification document, the structure of SRS, Ways of writing a SRS,
+structured & tabular SRS for an insulin pump case study.
+Requirements elicitation & Analysis: Process, Requirements validation,
+Requirements management.
+07 Hrs
+3 Design Engineering
+Design Process & quality, Design Concepts, The design Model,
+Pattern-based Software Design.
+Architectural Design: Design Decisions, Views, Patterns, Application
+Architectures.
+Component level Design: component, Designing class-based components,
+conducting component-level design.
+User Interface Design: The golden rules, Interface Design steps & Analysis,
+Design Evaluation
+UML Design: Introduction to UML, Different types of UML digarms.
+Introduction to Software Testing and Types of testing.
+07 Hrs
+Department of Computer Science and Design 54
+Dr. Babasaheb Ambedkar Technological University
+4 Project Management: Process, Metrics, Estimations & Risks
+Project Management Concepts: The Management Spectrum, People,
+Product, Process, Project, The W5HH Principle, Metrics in the Process and
+Project Domains, Software Measurement: size & function-oriented metrics
+(FP & LOC), Metrics for Project and Software Quality.
+Project Estimation: Observations on Estimation, Project Planning Process,
+Software Scope and feasibility, Resources: Human Resources, Reusable
+software, Environmental Resources. Software Project Estimation,
+Decomposition Techniques, Empirical Estimation Models: Structure,
+COCOMO II, Estimation of Object-oriented Projects, Specialized
+Estimation.
+Project Scheduling: Basic Concepts, Defining a Task Set for the Software
+Project, Defining Task Network, Scheduling with time-line charts, Schedule
+tracking Tools: - Microsoft Project, Daily Activity Reporting & Tracking
+(DART).
+07 Hrs
+5 Project Management: Risk Management, Configuration Management,
+Maintenance & Reengineering
+Project Risk Management: Risk Analysis & Management: Reactive versus
+Proactive Risk Strategies, Software Risks, Risk Identification, Risk
+Projection, Risk Refinement, Risk Mitigation, Risks Monitoring and
+Management, The RMMM plan for case study project.
+Software Configuration Management: The SCM repository, SCM process,
+Configuration management for WebApps.
+Maintenance & Reengineering: Software Maintenance, Software
+Supportability, Reengineering, Business Process Reengineering, Software
+Reengineering, Reverse Engineering, Restructuring, Forward Engineering.

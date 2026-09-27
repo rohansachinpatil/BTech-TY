@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="Unit 1, Topic 4: Data abstraction aur physical, conceptual, view levels.">
+  <title>View of Data — Database System Design</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha note par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Database System Design contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">UNIT 01 / TOPIC 04</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">DATABASE SYSTEM DESIGN</a> &nbsp; / &nbsp; UNIT 01</p>
+      <h1 class="page-title">View of Data</h1>
+      <p class="page-intro">Database andar se complex ho sakta hai; database system user ko uske kaam ke mutabik ek simple view dikhata hai.</p>
+      <div class="note-meta">
+        <span>Topic 04</span>
+        <span>Unit 01 / Database systems</span>
+        <time datetime="2026-09-27">Prepared 27 Sep 2026</time>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column">
+        <section aria-labelledby="opening-heading">
+          <p class="section-kicker">START HERE / ONE DATABASE, DIFFERENT NEEDS</p>
+          <h2 id="opening-heading">Har user ko sab kuch dikhana zaroori nahi</h2>
+          <p class="dropcap">College database ke andar Student, Faculty, Course, Department, Attendance, Marks, Fees, Examination aur Library jaise records ho sakte hain. Database ka actual storage aur implementation user ke liye complex hota hai. Student ko shayad apna naam, roll number, courses, attendance aur marks hi chahiye—not storage ke internal details.</p>
+          <p>Isliye database system data ko alag <strong>levels of abstraction</strong> par present karta hai. Har level ek alag sawaal ka jawab deta hai: data kaise store hai, database mein kya hai, aur is user ko kya dikhana hai?</p>
+        </section>
+
+        <section aria-labelledby="abstraction-heading">
+          <p class="section-kicker">THE CORE IDEA</p>
+          <h2 id="abstraction-heading">Data abstraction kya hai?</h2>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p><strong>Data abstraction</strong> complex database details ko hide karke user ko sirf required information dikhane ka process hai.</p>
+          </div>
+          <p>ATM use karte waqt screen par Balance, Withdraw, Deposit aur Transfer jaise options dikhte hain. User ko bank ke internal server, DBMS, database ya transaction processing ki details nahi dikhni padti. System un details ko background mein handle karta hai.</p>
+        </section>
+
+        <section aria-labelledby="physical-heading">
+          <p class="section-kicker">01 / LOWEST LEVEL</p>
+          <h2 id="physical-heading">Physical Level</h2>
+          <p>Physical level abstraction ka <strong>lowest level</strong> hai. Ye batata hai ki data computer storage mein <strong>kaise physically stored</strong> hai.</p>
+          <ul class="plain-list">
+            <li>Files aur disk blocks</li>
+            <li>Storage pages aur structures</li>
+            <li>Indexes</li>
+            <li>Memory locations</li>
+          </ul>
+          <p>Student table ke physical level par concern ye hoga ki uska data disk blocks, storage pages ya index structures mein kaise rakha gaya hai. Normal user ko in details ki zarurat nahi hoti.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Physical level describes <strong>how data is physically stored</strong> in the database.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="conceptual-heading">
+          <p class="section-kicker">02 / MIDDLE LEVEL</p>
+          <h2 id="conceptual-heading">Conceptual Level</h2>
+          <p>Conceptual level batata hai database mein <strong>kaunsa data</strong> hai aur us data ke beech <strong>relationships</strong> kya hain. Ye poore database ki overall logical structure describe karta hai.</p>
+          <pre class="code-sample"><code>STUDENT                 COURSE
+Roll_No                 Course_ID
+Name                    Course_Name
+Branch                  Credits
+Age
+
+STUDENT ───── enrolls in ───── COURSE</code></pre>
+          <p>Is level par Student aur Course ke data aur unka relation samajh aata hai; physical storage details hide rehti hain.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Conceptual level describes the <strong>overall logical structure</strong> of the database.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="view-heading">
+          <p class="section-kicker">03 / HIGHEST LEVEL</p>
+          <h2 id="view-heading">View Level</h2>
+          <p>View level abstraction ka <strong>highest level</strong> hai. Ye define karta hai ki particular user ko database ka <strong>kaunsa portion</strong> dikhana hai.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Same college database / role ke mutabik alag view</caption>
+              <thead>
+                <tr><th scope="col">User</th><th scope="col">Uska view</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Student</td><td>Name, Roll No., Courses, Attendance, Marks</td></tr>
+                <tr><td>Faculty</td><td>Student Name, Roll No., Attendance, Marks</td></tr>
+                <tr><td>Accountant</td><td>Student Name, Roll No., Fees, Payment Status</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Database same hai, lekin user aur uske kaam ke hisaab se dikhne wali information alag ho sakti hai.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>View level describes the <strong>portion of the database visible to an individual user</strong>.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="architecture-heading">
+          <p class="section-kicker">PUT THE LEVELS TOGETHER</p>
+          <h2 id="architecture-heading">Three-level architecture</h2>
+          <p>Users apne views dekhte hain. Ye views conceptual level ke overall logical database par based hote hain, jo physical level ke storage details se supported hota hai.</p>
+          <p>Order yaad rakho: <strong>View → Conceptual → Physical → Storage</strong>.</p>
+        </section>
+
+        <section aria-labelledby="why-heading">
+          <p class="section-kicker">WHY ABSTRACTION HELPS</p>
+          <h2 id="why-heading">Ye levels useful kyun hain?</h2>
+          <p>Abstraction se user ko internal complexity samajhne ki zarurat nahi padti. Google Drive mein file kholte waqt user ko ye nahi sochna padta ki file SSD ke kis block mein stored hai—user ko file ka apna view milta hai; system storage details handle karta hai.</p>
+        </section>
+
+        <section aria-labelledby="analogy-heading">
+          <p class="section-kicker">ANALOGY / REMEMBER THE IDEA</p>
+          <h2 id="analogy-heading">Restaurant example</h2>
+          <p>Customer menu aur food dekhta hai; kitchen aur storage ke internal process usse hidden rehte hain. Ye example abstraction ka broad idea samjhata hai—kuch details user ko dikhana aur baaki hide karna.</p>
+          <div class="definition">
+            <span class="meta-label">CLARITY NOTE / ANALOGY LIMIT</span>
+            <p>Restaurant ke customer, manager aur kitchen ko database ke teen levels ke exact equivalents mat samjho. <strong>Conceptual level</strong> manager ka personal view nahi; ye poore database ki logical structure hai.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="exam-heading">
+          <p class="section-kicker">EXAM RECAP / COMPARE THE LEVELS</p>
+          <h2 id="exam-heading">Ek nazar mein</h2>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Three levels of data abstraction</caption>
+              <thead>
+                <tr><th scope="col">Level</th><th scope="col">Main question</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Physical</td><td>Data kaise stored hai?</td><td>Disk blocks, indexes</td></tr>
+                <tr><td>Conceptual</td><td>Database mein kya data aur relations hain?</td><td>Tables, relationships</td></tr>
+                <tr><td>View</td><td>User ko kya dikhana hai?</td><td>Student / Faculty view</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre class="code-sample"><code>P → C → V
+Physical → Conceptual → View
+How      → What        → What user sees</code></pre>
+          <div class="definition">
+            <span class="meta-label">DATA ABSTRACTION / EXAM DEFINITION</span>
+            <p>Data abstraction is the process of hiding complex database details and showing only the necessary information to users.</p>
+          </div>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Pehle in teen questions ke answers do:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne options bhejo; unhe check karne ke baad agle syllabus topic par chalenge.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Data disk blocks mein kaise stored hai, ye kaunsa level describe karta hai?
+              <ol type="A"><li>View Level</li><li>Conceptual Level</li><li>Physical Level</li><li>User Level</li></ol>
+            </li>
+            <li>Student ko sirf marks aur attendance dikhana kis level ka example hai?
+              <ol type="A"><li>Physical Level</li><li>View Level</li><li>Storage Level</li><li>Hardware Level</li></ol>
+            </li>
+            <li>Tables aur unke relationships ka overall logical structure kaunsa level describe karta hai?
+              <ol type="A"><li>Physical Level</li><li>Conceptual Level</li><li>View Level</li><li>Hardware Level</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next syllabus topic: Database Languages — answers ke baad.</p>
+        </section>
+      </article>
+
+      <aside class="figure-rail" aria-label="View of Data ke diagrams">
+        <figure class="figure-card" data-mobile-after="architecture-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 390" role="img" aria-labelledby="fig-levels-title fig-levels-desc">
+              <title id="fig-levels-title">Physical, conceptual aur view levels ka stack</title>
+              <desc id="fig-levels-desc">Student, faculty aur admin apne view level se conceptual structure aur physical storage tak jaate hain.</desc>
+              <defs>
+                <pattern id="dots-levels" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+                <marker id="arrow-levels" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                </marker>
+              </defs>
+              <rect width="520" height="390" fill="url(#dots-levels)"></rect>
+              <text x="31" y="21" class="diagram-muted">USERS</text>
+              <rect x="30" y="30" width="135" height="38" class="diagram-stroke"></rect>
+              <rect x="192" y="30" width="135" height="38" class="diagram-stroke"></rect>
+              <rect x="354" y="30" width="135" height="38" class="diagram-stroke"></rect>
+              <text x="69" y="54" class="diagram-text">STUDENT</text>
+              <text x="223" y="54" class="diagram-text">FACULTY</text>
+              <text x="395" y="54" class="diagram-text">ADMIN</text>
+              <rect x="20" y="87" width="480" height="81" class="diagram-stroke" stroke-dasharray="3 5"></rect>
+              <text x="33" y="105" class="diagram-muted">VIEW LEVEL</text>
+              <rect x="39" y="116" width="128" height="38" class="diagram-stroke"></rect>
+              <rect x="196" y="116" width="128" height="38" class="diagram-stroke"></rect>
+              <rect x="353" y="116" width="128" height="38" class="diagram-stroke"></rect>
+              <text x="62" y="140" class="diagram-text">STUDENT VIEW</text>
+              <text x="219" y="140" class="diagram-text">FACULTY VIEW</text>
+              <text x="380" y="140" class="diagram-text">ADMIN VIEW</text>
+              <path d="M97 69v42m162-42v42m162-42v42m-324 45v28h163v16m162-44v28H260" class="diagram-stroke"></path>
+              <rect x="112" y="198" width="296" height="57" class="diagram-stroke"></rect>
+              <text x="188" y="221" class="diagram-text">CONCEPTUAL LEVEL</text>
+              <text x="183" y="241" class="diagram-muted">LOGICAL DATABASE STRUCTURE</text>
+              <path d="M260 255v27" class="diagram-stroke" marker-end="url(#arrow-levels)"></path>
+              <rect x="112" y="290" width="296" height="53" class="diagram-stroke"></rect>
+              <text x="194" y="313" class="diagram-text">PHYSICAL LEVEL</text>
+              <text x="194" y="332" class="diagram-muted">STORAGE DETAILS</text>
+              <path d="M260 343v17" class="diagram-stroke" marker-end="url(#arrow-levels)"></path>
+              <text x="225" y="381" class="diagram-text">STORAGE</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.010</span><span>Users ke views se logical structure, phir storage.</span></figcaption>
+        </figure>
+
+        <figure class="figure-card" data-mobile-after="view-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 280" role="img" aria-labelledby="fig-views-title fig-views-desc">
+              <title id="fig-views-title">Same college data se teen role-based views</title>
+              <desc id="fig-views-desc">Ek college database student, faculty aur accountant ko alag fields dikhata hai.</desc>
+              <defs>
+                <pattern id="dots-views" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+              </defs>
+              <rect width="520" height="280" fill="url(#dots-views)"></rect>
+              <ellipse cx="78" cy="99" rx="49" ry="17" class="diagram-stroke"></ellipse>
+              <path d="M29 99v75c0 10 22 18 49 18s49-8 49-18V99m-98 30c0 10 22 18 49 18s49-8 49-18" class="diagram-stroke"></path>
+              <text x="41" y="235" class="diagram-text">SAME DB</text>
+              <path d="M128 128h52m0-74v149m0-149h29m-29 74h29m-29 75h29" class="diagram-stroke"></path>
+              <rect x="210" y="27" width="285" height="57" class="diagram-stroke"></rect>
+              <rect x="210" y="99" width="285" height="57" class="diagram-stroke"></rect>
+              <rect x="210" y="171" width="285" height="57" class="diagram-stroke"></rect>
+              <text x="225" y="49" class="diagram-muted">STUDENT VIEW</text>
+              <text x="225" y="70" class="diagram-text">Name · Roll · Courses · Marks</text>
+              <text x="225" y="121" class="diagram-muted">FACULTY VIEW</text>
+              <text x="225" y="142" class="diagram-text">Student · Attendance · Marks</text>
+              <text x="225" y="193" class="diagram-muted">ACCOUNTANT VIEW</text>
+              <text x="225" y="214" class="diagram-text">Student · Fees · Payment status</text>
+              <text x="210" y="258" class="diagram-muted">VISIBLE FIELDS CHANGE BY USER</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.011</span><span>Ek database, role ke mutabik alag visible data.</span></figcaption>
+        </figure>
+
+        <figure class="figure-card" data-mobile-after="abstraction-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 310" role="img" aria-labelledby="fig-atm-title fig-atm-desc">
+              <title id="fig-atm-title">ATM par simple view, background mein complex process</title>
+              <desc id="fig-atm-desc">User ATM options dekhta hai; bank server, DBMS, database aur transaction processing account data tak pahunchte hain.</desc>
+              <defs>
+                <pattern id="dots-atm" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+                <marker id="arrow-atm" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                </marker>
+              </defs>
+              <rect width="520" height="310" fill="url(#dots-atm)"></rect>
+              <rect x="20" y="69" width="160" height="172" class="diagram-stroke"></rect>
+              <text x="48" y="95" class="diagram-muted">ATM SCREEN</text>
+              <text x="44" y="126" class="diagram-text">BALANCE</text>
+              <text x="44" y="153" class="diagram-text">WITHDRAW</text>
+              <text x="44" y="180" class="diagram-text">DEPOSIT</text>
+              <text x="44" y="207" class="diagram-text">TRANSFER</text>
+              <text x="44" y="226" class="diagram-muted">USER VIEW</text>
+              <path d="M181 155h41" class="diagram-stroke" marker-end="url(#arrow-atm)"></path>
+              <rect x="236" y="26" width="257" height="43" class="diagram-stroke"></rect>
+              <rect x="236" y="85" width="257" height="43" class="diagram-stroke"></rect>
+              <rect x="236" y="144" width="257" height="43" class="diagram-stroke"></rect>
+              <rect x="236" y="203" width="257" height="43" class="diagram-stroke"></rect>
+              <rect x="236" y="262" width="257" height="34" class="diagram-stroke"></rect>
+              <path d="M365 70v13m0 44v13m0 44v13m0 44v13" class="diagram-stroke" marker-end="url(#arrow-atm)"></path>
+              <text x="319" y="53" class="diagram-text">BANK SERVER</text>
+              <text x="339" y="112" class="diagram-text">DBMS</text>
+              <text x="334" y="171" class="diagram-text">DATABASE</text>
+              <text x="293" y="230" class="diagram-text">TRANSACTION PROCESSING</text>
+              <text x="312" y="285" class="diagram-text">ACCOUNT DATA</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.012</span><span>User simple options dekhta hai; internal layers hidden rehti hain.</span></figcaption>
+        </figure>
+
+        <p class="rail-note"><strong>Memory hook:</strong> Physical = kaise stored; Conceptual = database mein kya hai; View = is user ko kya dikhana hai.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>UNIT 01 / TOPIC 04</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+</body>
+</html>

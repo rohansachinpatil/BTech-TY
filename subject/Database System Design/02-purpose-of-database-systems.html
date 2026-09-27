@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="Unit 1, Topic 2: Database systems ke purpose—storage, retrieval, modification, security, consistency aur recovery.">
+  <title>Purpose of Database Systems — Database System Design</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha note par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Database System Design contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">UNIT 01 / TOPIC 02</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">DATABASE SYSTEM DESIGN</a> &nbsp; / &nbsp; UNIT 01</p>
+      <h1 class="page-title">Purpose of Database Systems</h1>
+      <p class="page-intro">Database system sirf data rakhne ki jagah nahi—ye data ko efficiently aur reliably store, retrieve, modify aur protect karne ka tareeka hai.</p>
+      <div class="note-meta">
+        <span>Topic 02</span>
+        <span>Unit 01 / Database systems</span>
+        <time datetime="2026-09-27">Prepared 27 Sep 2026</time>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column">
+        <section aria-labelledby="opening-heading">
+          <p class="section-kicker">START HERE / FROM FILES TO A SYSTEM</p>
+          <h2 id="opening-heading">Hume database system ki zarurat kyun hai?</h2>
+          <p class="dropcap">Socho ek college student, faculty, attendance, fees aur marks ke liye alag-alag files rakhta hai. Har file apne kaam ke liye useful hai, lekin Rohan ka naam, roll number ya phone number kai files mein repeat ho sakta hai. Organization badi hone par aise scattered records ko dhoondhna, update karna aur sahi rakhna mushkil hota hai.</p>
+          <p>Database system ka main purpose hai data ko <strong>efficiently aur reliably manage</strong> karna. Pehle note mein <a href="01-introduction-to-dbms.html">DBMS ki definition aur introductory need</a> padhi thi; yahan focus un specific purposes par hai jo exam mein list aur explain karne hote hain.</p>
+          <h3>Traditional file system ki problem</h3>
+          <pre class="code-sample"><code>Student.txt      Rohan | CSE | 101 | 9876543210
+Fees.txt         Rohan | 101 | ₹80,000
+Attendance.txt   Rohan | 101 | 85%
+Marks.txt        Rohan | 101 | 85</code></pre>
+          <p>Ek hi vyakti ki details kai jagah faili hui hain. Aage ke points dikhate hain ki database system is data ko kaise useful, controlled aur dependable banata hai.</p>
+        </section>
+
+        <section aria-labelledby="storage-heading">
+          <p class="section-kicker">01 / KEEP LARGE DATA ORGANIZED</p>
+          <h2 id="storage-heading">Data storage</h2>
+          <p>Database system large amount of data ko systematically store karne mein madad karta hai. College example mein ek saath students, courses aur attendance ke bahut saare records manage karne hote hain.</p>
+          <pre class="code-sample"><code>College database
+  ├── 10,000 students
+  ├── 50,000 courses
+  └── 1,00,000 attendance records</code></pre>
+          <p>Records organized hon, toh baaki kaam—jaise kisi ek student ka record dhoondhna ya update karna—zyada seedha ho jata hai.</p>
+        </section>
+
+        <section aria-labelledby="retrieval-heading">
+          <p class="section-kicker">02 / FIND THE REQUIRED RECORD</p>
+          <h2 id="retrieval-heading">Easy data retrieval</h2>
+          <p>User ko aksar poora database nahi, sirf ek particular answer chahiye. Jaise: <q>Rohan ke marks dikhao.</q> Database system request ke mutabik relevant record retrieve karta hai.</p>
+          <pre class="code-sample"><code>User request: “Rohan ke marks dikhao.”
+        ↓
+Database system searches records
+        ↓
+Required result: Marks = 85</code></pre>
+        </section>
+
+        <section aria-labelledby="modification-heading">
+          <p class="section-kicker">03 / CHANGE THE RECORDS</p>
+          <h2 id="modification-heading">Data modification</h2>
+          <p>Stored data ko zarurat par <strong>insert, update ya delete</strong> kiya ja sakta hai. Agar Rohan ka phone number badal jaye, toh nayi value record mein update ki ja sakti hai.</p>
+          <pre class="code-sample"><code>Old phone  →  9876543210
+New phone  →  8765432109</code></pre>
+          <p>Yahan main idea data ko badalne ki capability hai; abhi kisi particular database command ya syntax ki baat nahi ho rahi.</p>
+        </section>
+
+        <section aria-labelledby="redundancy-heading">
+          <p class="section-kicker">04 / AVOID NEEDLESS COPIES</p>
+          <h2 id="redundancy-heading">Reduce data redundancy</h2>
+          <p><strong>Redundancy</strong> ka matlab same data ka unnecessary repetition hai. Agar student ki common details attendance, fees, marks aur library files mein baar-baar likhi hon, toh extra copies maintain karni padti hain. Database system redundancy ko reduce karne mein madad karta hai.</p>
+          <p>Redundancy ka basic example <a href="01-introduction-to-dbms.html#need-heading">Introduction to DBMS note</a> mein bhi dekha tha; yahan ise database systems ke purpose ke roop mein yaad rakho.</p>
+        </section>
+
+        <section aria-labelledby="consistency-heading">
+          <p class="section-kicker">05 / KEEP RELATED VALUES IN AGREEMENT</p>
+          <h2 id="consistency-heading">Maintain data consistency</h2>
+          <p><strong>Consistency</strong> ka matlab hai data alag jagah par logically same rahe. Agar phone number ek file mein <code>9999999999</code> ho aur doosri mein purana <code>8888888888</code>, toh records inconsistent hain.</p>
+          <p>Centralized aur controlled data management conflicting copies ko kam karke consistency maintain karne mein help karta hai.</p>
+        </section>
+
+        <section aria-labelledby="security-heading">
+          <p class="section-kicker">06 / GIVE THE RIGHT ACCESS</p>
+          <h2 id="security-heading">Data security</h2>
+          <p>Har user ko poore database ka access dena safe nahi hota. Database system <strong>authorization</strong> aur <strong>access control</strong> ke zariye define karne mein madad karta hai ki kaun-sa user kya dekh ya change kar sakta hai.</p>
+          <ul class="plain-list">
+            <li><strong>Student:</strong> apne marks dekh sakta hai.</li>
+            <li><strong>Faculty:</strong> students ke marks dekh ya update kar sakti hai.</li>
+            <li><strong>Admin:</strong> poore system ko manage kar sakta hai.</li>
+          </ul>
+          <div class="definition">
+            <span class="meta-label">CLARITY NOTE / PREREQUISITE</span>
+            <p><strong>Authorization</strong> batata hai user ko kis action ki permission hai; <strong>access control</strong> un permissions ke mutabik access ko limit karta hai.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="integrity-heading">
+          <p class="section-kicker">07 / KEEP VALUES VALID</p>
+          <h2 id="integrity-heading">Data integrity</h2>
+          <p>Data <strong>valid aur accurate</strong> hona chahiye. Database constraints invalid values ko rokne mein help karte hain.</p>
+          <pre class="code-sample"><code>Age = 20     valid
+Age = 25     valid
+Age = -10    invalid</code></pre>
+        </section>
+
+        <section aria-labelledby="concurrent-heading">
+          <p class="section-kicker">08 / MORE THAN ONE USER</p>
+          <h2 id="concurrent-heading">Concurrent access</h2>
+          <p><strong>Concurrent access</strong> ka matlab multiple users ka same database ko simultaneously access kar pana hai. Student, faculty, admin aur accountant apne kaam ke liye system use kar sakte hain.</p>
+          <p>DBMS simultaneous operations ko coordinate karta hai, taaki ek hi waqt par kiye gaye changes database ko inconsistent na bana dein. Is idea ko baad mein <strong>Transaction Management and Concurrency Control</strong> ke andar detail mein padhenge.</p>
+        </section>
+
+        <section aria-labelledby="recovery-heading">
+          <p class="section-kicker">09 / PREPARE FOR FAILURE</p>
+          <h2 id="recovery-heading">Backup and recovery</h2>
+          <p>System crash ya hardware failure ke baad important data restore kar pana zaroori hai. Database system backup aur recovery mechanisms ke zariye lost data ko recover karne mein madad karta hai.</p>
+          <pre class="code-sample"><code>Database → Backup → System failure
+                         ↓
+                  Recovery → Data restored</code></pre>
+        </section>
+
+        <section aria-labelledby="college-example-heading">
+          <p class="section-kicker">PUT THE PURPOSES TOGETHER</p>
+          <h2 id="college-example-heading">College ka end-to-end example</h2>
+          <p>10,000 students wale college mein scattered files duplicate records, conflicting values, difficult searching aur security problems la sakti hain. DBMS users aur organized college data ke beech controlled access deta hai, aur storage, retrieval, modification, consistency, integrity aur recovery ke kaam support karta hai.</p>
+        </section>
+
+        <section aria-labelledby="exam-heading">
+          <p class="section-kicker">EXAM RECAP / STATE THE PURPOSES</p>
+          <h2 id="exam-heading">Answer mein ye points likho</h2>
+          <ol class="plain-list">
+            <li>Efficient data storage</li>
+            <li>Easy data retrieval</li>
+            <li>Data insertion, modification and deletion</li>
+            <li>Reduction of data redundancy</li>
+            <li>Maintenance of data consistency</li>
+            <li>Data security</li>
+            <li>Data integrity</li>
+            <li>Concurrent access</li>
+            <li>Backup and recovery</li>
+          </ol>
+
+          <div class="definition">
+            <span class="meta-label">ONE-LINE RECALL</span>
+            <p>Database system ka purpose data ko <strong>store, retrieve, modify, protect aur maintain</strong> karna hai—efficiently aur reliably.</p>
+          </div>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Pehle in teen questions ke answers do:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne options bhejo; unhe check karne ke baad agle syllabus topic par chalenge.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Same data ka unnecessary repetition kya kehlata hai?
+              <ol type="A"><li>Data Integrity</li><li>Data Redundancy</li><li>Data Security</li><li>Data Recovery</li></ol>
+            </li>
+            <li>Multiple users ko simultaneously database access karne dena kaunsi capability hai?
+              <ol type="A"><li>Concurrent access</li><li>Data deletion</li><li>Data redundancy</li><li>Data modeling</li></ol>
+            </li>
+            <li>System crash ke baad lost data restore karne ke liye kaunsa purpose important hai?
+              <ol type="A"><li>Data security</li><li>Data recovery</li><li>Data redundancy</li><li>Data modeling</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next syllabus item: Database-System Applications — answers ke baad.</p>
+        </section>
+      </article>
+
+      <aside class="figure-rail" aria-label="Database systems ke purpose diagrams">
+        <figure class="figure-card" data-mobile-after="opening-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 270" role="img" aria-labelledby="fig-files-title fig-files-desc">
+              <title id="fig-files-title">Scattered files ke muqable mein controlled database system</title>
+              <desc id="fig-files-desc">Alag student, fees aur attendance files mein Rohan ka identifier repeat hota hai; database system ise controlled, organized access mein laata hai.</desc>
+              <defs>
+                <pattern id="dots-files" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+                <marker id="arrow-files" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                </marker>
+              </defs>
+              <rect width="520" height="270" fill="url(#dots-files)"></rect>
+              <text x="25" y="29" class="diagram-muted">SCATTERED FILES</text>
+              <rect x="22" y="43" width="206" height="52" class="diagram-stroke"></rect>
+              <rect x="22" y="108" width="206" height="52" class="diagram-stroke"></rect>
+              <rect x="22" y="173" width="206" height="52" class="diagram-stroke"></rect>
+              <text x="34" y="64" class="diagram-muted">STUDENT.TXT</text>
+              <text x="34" y="83" class="diagram-text">Rohan · 101 · 9876...</text>
+              <text x="34" y="129" class="diagram-muted">FEES.TXT</text>
+              <text x="34" y="148" class="diagram-text">Rohan · 101 · fees</text>
+              <text x="34" y="194" class="diagram-muted">ATTENDANCE.TXT</text>
+              <text x="34" y="213" class="diagram-text">Rohan · 101 · 85%</text>
+              <path d="M239 134h70" class="diagram-stroke" marker-end="url(#arrow-files)"></path>
+              <text x="244" y="117" class="diagram-muted">ORGANIZE</text>
+              <path d="m330 89 50-27 50 27-50 28z" class="diagram-stroke"></path>
+              <path d="M330 89v64l50 27v-63m50-28v64l-50 27" class="diagram-stroke"></path>
+              <text x="354" y="132" class="diagram-text">DBMS</text>
+              <path d="M430 122h13" class="diagram-stroke" marker-end="url(#arrow-files)"></path>
+              <ellipse cx="477" cy="91" rx="31" ry="12" class="diagram-stroke"></ellipse>
+              <path d="M446 91v54c0 8 14 14 31 14s31-6 31-14V91m-62 25c0 8 14 14 31 14s31-6 31-14" class="diagram-stroke"></path>
+              <text x="446" y="188" class="diagram-text">DATABASE</text>
+              <text x="339" y="218" class="diagram-muted">CONTROLLED ACCESS</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Alag files common student details repeat kar sakti hain.</span></figcaption>
+        </figure>
+
+        <figure class="figure-card" data-mobile-after="college-example-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 230" role="img" aria-labelledby="fig-lifecycle-title fig-lifecycle-desc">
+              <title id="fig-lifecycle-title">Database system ke main purposes</title>
+              <desc id="fig-lifecycle-desc">System data ko store, retrieve, modify, protect aur maintain karta hai.</desc>
+              <defs>
+                <pattern id="dots-lifecycle" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+              </defs>
+              <rect width="520" height="230" fill="url(#dots-lifecycle)"></rect>
+              <rect x="26" y="50" width="91" height="60" class="diagram-stroke"></rect>
+              <rect x="126" y="50" width="91" height="60" class="diagram-stroke"></rect>
+              <rect x="226" y="50" width="91" height="60" class="diagram-stroke"></rect>
+              <rect x="326" y="50" width="91" height="60" class="diagram-stroke"></rect>
+              <rect x="426" y="50" width="68" height="60" class="diagram-stroke"></rect>
+              <path d="M118 75l6 5-6 5m93-10 6 5-6 5m93-10 6 5-6 5m93-10 6 5-6 5" class="diagram-stroke"></path>
+              <text x="45" y="85" class="diagram-text">STORE</text>
+              <text x="135" y="85" class="diagram-text">RETRIEVE</text>
+              <text x="242" y="85" class="diagram-text">MODIFY</text>
+              <text x="345" y="85" class="diagram-text">PROTECT</text>
+              <text x="432" y="85" class="diagram-text">MAINTAIN</text>
+              <text x="99" y="193" class="diagram-muted">EFFICIENT + RELIABLE DATA MANAGEMENT</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Store se maintain tak—ek connected purpose.</span></figcaption>
+        </figure>
+
+        <figure class="figure-card" data-mobile-after="security-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-access-title fig-access-desc">
+              <title id="fig-access-title">User roles ke mutabik data access</title>
+              <desc id="fig-access-desc">Student, faculty aur admin alag permissions ke saath DBMS aur college database access karte hain.</desc>
+              <defs>
+                <pattern id="dots-access" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+              </defs>
+              <rect width="520" height="250" fill="url(#dots-access)"></rect>
+              <text x="25" y="66" class="diagram-text">STUDENT</text>
+              <text x="25" y="111" class="diagram-text">FACULTY</text>
+              <text x="25" y="156" class="diagram-text">ADMIN</text>
+              <path d="M106 61h89m-89 45h89m-89 45h89m0-90v90m0-45h35" class="diagram-stroke"></path>
+              <path d="m239 84 40-23 40 23-40 23z" class="diagram-stroke"></path>
+              <path d="M239 84v51l40 23v-51m40-23v51l-40 23" class="diagram-stroke"></path>
+              <text x="254" y="182" class="diagram-text">DBMS</text>
+              <path d="M320 112h55" class="diagram-stroke"></path>
+              <ellipse cx="426" cy="91" rx="38" ry="14" class="diagram-stroke"></ellipse>
+              <path d="M388 91v51c0 8 17 15 38 15s38-7 38-15V91m-76 24c0 8 17 15 38 15s38-7 38-15" class="diagram-stroke"></path>
+              <text x="390" y="181" class="diagram-text">DATABASE</text>
+              <text x="24" y="207" class="diagram-muted">OWN MARKS</text>
+              <text x="116" y="207" class="diagram-muted">UPDATE MARKS</text>
+              <text x="236" y="207" class="diagram-muted">MANAGE SYSTEM</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Har role ko zarurat jitni permission di jaati hai.</span></figcaption>
+        </figure>
+
+        <p class="rail-note"><strong>Memory hook:</strong> Storage, retrieval aur modification data ka kaam; security, integrity, concurrency aur recovery us data ko dependable rakhne ka kaam.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>UNIT 01 / TOPIC 02</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+</body>
+</html>

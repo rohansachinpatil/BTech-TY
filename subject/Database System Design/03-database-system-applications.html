@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="Unit 1, Topic 3: Banking, airlines, colleges, e-commerce, manufacturing, HR, telecom, healthcare aur government mein database applications.">
+  <title>Database-System Applications — Database System Design</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha note par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Database System Design contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">UNIT 01 / TOPIC 03</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">DATABASE SYSTEM DESIGN</a> &nbsp; / &nbsp; UNIT 01</p>
+      <h1 class="page-title">Database-System Applications</h1>
+      <p class="page-intro">Bank se hospital, airline se government tak—alag fields apne real-world records ko manage karne ke liye database systems use karte hain.</p>
+      <div class="note-meta">
+        <span>Topic 03</span>
+        <span>Unit 01 / Database systems</span>
+        <time datetime="2026-09-27">Prepared 27 Sep 2026</time>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column">
+        <section aria-labelledby="opening-heading">
+          <p class="section-kicker">START HERE / DATA IN THE REAL WORLD</p>
+          <h2 id="opening-heading">Database systems kahan use hote hain?</h2>
+          <p class="dropcap">Database-system application kisi aise real-world field ya service ko kehte hain jahan data ko store, retrieve aur update karne ki zarurat hoti hai. Har field ka data alag hai—bank transactions, airline bookings ya hospital records—but in sab ko organized tareeke se manage karna padta hai.</p>
+          <p>Pichhle topic mein humne database system ke purposes dekhe the. Yahan un purposes ko different industries ke examples ke through pehchanenge.</p>
+        </section>
+
+        <section aria-labelledby="banking-heading">
+          <p class="section-kicker">01 / MONEY AND ACCOUNTS</p>
+          <h2 id="banking-heading">Banking and Finance</h2>
+          <p>Banks bahut saara customer aur financial data manage karte hain. Database mein customer, account, balance, transactions aur loans ke records ho sakte hain.</p>
+          <p>Jab ATM se ₹5,000 withdraw kiye jaate hain, system account balance check karta hai, balance update karta hai aur transaction record karta hai.</p>
+        </section>
+
+        <section aria-labelledby="airline-heading">
+          <p class="section-kicker">02 / FLIGHTS AND SEATS</p>
+          <h2 id="airline-heading">Airline Reservation Systems</h2>
+          <p>Airline reservation database passenger details, flight details, seat availability, reservations, ticket information aur payment details manage karta hai.</p>
+          <p>Flight <code>AI-101</code> mein seat <code>24A</code> pehle available ho sakti hai. Passenger use book kare, toh database update hota hai aur seat status <strong>Booked</strong> ho jata hai.</p>
+        </section>
+
+        <section aria-labelledby="university-heading">
+          <p class="section-kicker">03 / LEARNING AND RECORDS</p>
+          <h2 id="university-heading">Universities and Colleges</h2>
+          <p>College database student aur faculty records, courses, attendance, examinations, marks, fees aur library records manage kar sakta hai.</p>
+          <pre class="code-sample"><code>Student
+  ├── Personal details
+  ├── Courses
+  ├── Attendance
+  ├── Marks
+  └── Fees</code></pre>
+        </section>
+
+        <section aria-labelledby="ecommerce-heading">
+          <p class="section-kicker">04 / SHOPPING AND ORDERS</p>
+          <h2 id="ecommerce-heading">Sales and E-Commerce</h2>
+          <p>Amazon aur Flipkart jaise systems mein databases customers, products, orders, payments, delivery aur reviews ka data manage karte hain.</p>
+          <p>Customer product search karta hai, order place karta hai, payment hoti hai aur order delivery ke liye process hota hai. In steps se related records database mein manage hote hain.</p>
+        </section>
+
+        <section aria-labelledby="manufacturing-heading">
+          <p class="section-kicker">05 / MAKING AND STOCKING GOODS</p>
+          <h2 id="manufacturing-heading">Manufacturing</h2>
+          <p>Manufacturing companies products, raw materials, suppliers, production records, employees aur inventory se juda data store kar sakti hain.</p>
+          <pre class="code-sample"><code>Raw material → Production → Finished product → Inventory</code></pre>
+        </section>
+
+        <section aria-labelledby="hr-heading">
+          <p class="section-kicker">06 / EMPLOYEE RECORDS</p>
+          <h2 id="hr-heading">Human Resources</h2>
+          <p>Company ka HR system employee information maintain karta hai, jisse employee-related records manage aur retrieve kiye ja sakte hain.</p>
+          <pre class="code-sample"><code>Employee
+  ├── Employee ID and name
+  ├── Department and salary
+  ├── Attendance
+  └── Leave records</code></pre>
+        </section>
+
+        <section aria-labelledby="telecom-heading">
+          <p class="section-kicker">07 / CALLS AND CONNECTIVITY</p>
+          <h2 id="telecom-heading">Telecommunications</h2>
+          <p>Telecom companies customers, mobile numbers, call records, data usage, recharge aur billing information manage karti hain.</p>
+          <p>Customer ke mobile number se calls, SMS aur internet usage ke records judte hain; usage information billing mein kaam aati hai.</p>
+        </section>
+
+        <section aria-labelledby="healthcare-heading">
+          <p class="section-kicker">08 / PATIENT CARE</p>
+          <h2 id="healthcare-heading">Healthcare and Hospitals</h2>
+          <p>Hospital database patient ki personal details, medical history, doctor, tests, medicines aur bills se jude records manage karta hai. Doctor patient ka previous record retrieve kar sakta hai.</p>
+        </section>
+
+        <section aria-labelledby="government-heading">
+          <p class="section-kicker">09 / PUBLIC SERVICES</p>
+          <h2 id="government-heading">Government</h2>
+          <p>Government organizations citizen records, tax records, passport information, vehicle registration, electoral records aur government schemes se related data manage kar sakti hain.</p>
+        </section>
+
+        <section aria-labelledby="why-heading">
+          <p class="section-kicker">THE COMMON THREAD</p>
+          <h2 id="why-heading">In applications ko DBMS kyun chahiye?</h2>
+          <p>In fields mein data aam taur par <strong>large, complex, frequently changing aur shared</strong> hota hai. Isliye sirf simple files rakhna kaafi nahi hota: data store, retrieve, update aur secure karna padta hai. DBMS in needs ko organized way mein support karta hai.</p>
+        </section>
+
+        <section aria-labelledby="exam-heading">
+          <p class="section-kicker">EXAM RECAP / NINE APPLICATION AREAS</p>
+          <h2 id="exam-heading">Answer mein ye fields explain karo</h2>
+          <ol class="plain-list">
+            <li><strong>Banking and Finance:</strong> accounts, transactions aur loans.</li>
+            <li><strong>Airline Reservation:</strong> flights, passengers, seats aur bookings.</li>
+            <li><strong>Universities:</strong> students, courses, marks aur attendance.</li>
+            <li><strong>Sales and E-Commerce:</strong> customers, products aur orders.</li>
+            <li><strong>Manufacturing:</strong> production, inventory aur suppliers.</li>
+            <li><strong>Human Resources:</strong> employee, salary aur attendance records.</li>
+            <li><strong>Telecommunications:</strong> customers, calls, data usage aur billing.</li>
+            <li><strong>Healthcare:</strong> patients, medical records aur billing.</li>
+            <li><strong>Government:</strong> citizen, tax aur administrative records.</li>
+          </ol>
+          <div class="definition">
+            <span class="meta-label">ONE-LINE RECALL</span>
+            <p>Jahan data <strong>large + complex + frequently changing + shared</strong> ho, wahan database system us data ko manage karne mein useful hota hai.</p>
+          </div>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Pehle in teen questions ke answers do:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne options bhejo; unhe check karke agle syllabus topic par chalenge.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Airline reservation system mein database ka use kisliye ho sakta hai?
+              <ol type="A"><li>Current seat availability status</li><li>Passenger booking record details</li><li>Flight ticket information details</li><li>All listed reservation data</li></ol>
+            </li>
+            <li>Hospital database mein kaun-se records store ho sakte hain?
+              <ol type="A"><li>Patient medical history records</li><li>Medical test report records</li><li>Patient billing information records</li><li>All three categories above</li></ol>
+            </li>
+            <li>E-commerce database mein customer ke saath kaunsi information commonly maintain hoti hai?
+              <ol type="A"><li>Products and orders</li><li>Computer hardware records</li><li>Operating system files</li><li>No customer information</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next syllabus topic: View of Data — answers ke baad.</p>
+        </section>
+      </article>
+
+      <aside class="figure-rail" aria-label="Database applications ke diagrams">
+        <figure class="figure-card" data-mobile-after="banking-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 320" role="img" aria-labelledby="fig-atm-title fig-atm-desc">
+              <title id="fig-atm-title">ATM withdrawal ke dauran database system ka flow</title>
+              <desc id="fig-atm-desc">ATM request database system tak jaati hai; balance check, update aur transaction record hota hai.</desc>
+              <defs>
+                <pattern id="dots-atm" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+                <marker id="arrow-atm" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                </marker>
+              </defs>
+              <rect width="520" height="320" fill="url(#dots-atm)"></rect>
+              <rect x="132" y="22" width="256" height="39" class="diagram-stroke"></rect>
+              <rect x="132" y="83" width="256" height="39" class="diagram-stroke"></rect>
+              <rect x="132" y="144" width="256" height="39" class="diagram-stroke"></rect>
+              <rect x="132" y="205" width="256" height="39" class="diagram-stroke"></rect>
+              <rect x="132" y="266" width="256" height="39" class="diagram-stroke"></rect>
+              <path d="M260 62v17m0 44v17m0 44v17m0 44v17" class="diagram-stroke" marker-end="url(#arrow-atm)"></path>
+              <text x="235" y="47" class="diagram-text">ATM REQUEST</text>
+              <text x="221" y="108" class="diagram-text">DATABASE SYSTEM</text>
+              <text x="218" y="169" class="diagram-text">CHECK BALANCE</text>
+              <text x="219" y="230" class="diagram-text">UPDATE BALANCE</text>
+              <text x="205" y="291" class="diagram-text">RECORD TRANSACTION</text>
+              <text x="6" y="108" class="diagram-muted">WITHDRAW ₹5,000</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.007</span><span>Withdrawal record ke saath balance bhi update hota hai.</span></figcaption>
+        </figure>
+
+        <figure class="figure-card" data-mobile-after="airline-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 320" role="img" aria-labelledby="fig-seat-title fig-seat-desc">
+              <title id="fig-seat-title">Airline seat availability se booking tak</title>
+              <desc id="fig-seat-desc">Flight AI-101 mein seat 24A available hai; booking ke baad database status ko Booked karta hai.</desc>
+              <defs>
+                <pattern id="dots-seat" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+                <marker id="arrow-seat" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                </marker>
+              </defs>
+              <rect width="520" height="320" fill="url(#dots-seat)"></rect>
+              <rect x="110" y="24" width="300" height="44" class="diagram-stroke"></rect>
+              <rect x="110" y="88" width="300" height="44" class="diagram-stroke"></rect>
+              <rect x="110" y="152" width="300" height="44" class="diagram-stroke"></rect>
+              <rect x="110" y="216" width="300" height="44" class="diagram-stroke"></rect>
+              <rect x="110" y="280" width="300" height="28" class="diagram-stroke"></rect>
+              <path d="M260 69v15m0 49v15m0 49v15m0 49v15" class="diagram-stroke" marker-end="url(#arrow-seat)"></path>
+              <text x="215" y="52" class="diagram-text">FLIGHT AI-101</text>
+              <text x="198" y="116" class="diagram-text">CHECK AVAILABLE SEATS</text>
+              <text x="200" y="180" class="diagram-text">SEAT 24A · AVAILABLE</text>
+              <text x="213" y="244" class="diagram-text">PASSENGER BOOKS 24A</text>
+              <text x="203" y="300" class="diagram-text">DATABASE: BOOKED</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.008</span><span>Booking hote hi seat availability update hoti hai.</span></figcaption>
+        </figure>
+
+        <figure class="figure-card" data-mobile-after="why-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 290" role="img" aria-labelledby="fig-needs-title fig-needs-desc">
+              <title id="fig-needs-title">Applications ki shared data needs DBMS tak aati hain</title>
+              <desc id="fig-needs-desc">Large, complex, frequently changing aur shared data ko database system manage karta hai.</desc>
+              <defs>
+                <pattern id="dots-needs" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+              </defs>
+              <rect width="520" height="290" fill="url(#dots-needs)"></rect>
+              <rect x="25" y="35" width="175" height="48" class="diagram-stroke"></rect>
+              <rect x="25" y="98" width="175" height="48" class="diagram-stroke"></rect>
+              <rect x="25" y="161" width="175" height="48" class="diagram-stroke"></rect>
+              <rect x="25" y="224" width="175" height="48" class="diagram-stroke"></rect>
+              <text x="78" y="65" class="diagram-text">LARGE</text>
+              <text x="74" y="128" class="diagram-text">COMPLEX</text>
+              <text x="29" y="191" class="diagram-text">FREQUENTLY CHANGING</text>
+              <text x="82" y="254" class="diagram-text">SHARED</text>
+              <path d="M201 59h61m-61 63h61m-61 63h61m-61 63h61m0-189v189" class="diagram-stroke"></path>
+              <path d="M262 153h28" class="diagram-stroke"></path>
+              <path d="m300 116 43-24 43 24-43 24z" class="diagram-stroke"></path>
+              <path d="M300 116v61l43 24v-61m43-24v61l-43 24" class="diagram-stroke"></path>
+              <text x="316" y="160" class="diagram-text">DBMS</text>
+              <text x="414" y="131" class="diagram-muted">MANAGE</text>
+              <path d="M388 153h90" class="diagram-stroke"></path>
+              <path d="m468 147 10 6-10 6" class="diagram-stroke"></path>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.009</span><span>In common needs ke liye DBMS useful hota hai.</span></figcaption>
+        </figure>
+
+        <p class="rail-note"><strong>Memory hook:</strong> Field badal sakta hai; database ka role data ko us field ke kaam ke liye organized aur available rakhna hai.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>UNIT 01 / TOPIC 03</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+</body>
+</html>

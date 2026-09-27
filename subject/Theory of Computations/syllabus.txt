@@ -1,0 +1,69 @@
+COURSE CONTENT
+Unit
+No.
+Topic Hours
+1 Formal Language Theory and Finite Automata
+Basic Mathematical Objects: Sets, Logic, Functions, Relations Introduction
+to Formal language, Alphabets and languages, Finite representation of
+language, Finite Automata (FA): An Informal Picture of FA, Finite State
+Machine (FSM), Language accepted by FA, Definition of Regular Language,
+Deterministic and Nondeterministic FA (DFA and NFA), epsilon- NFA, FA
+with output: Moore and Mealy machines -Definition, models,
+inter-conversion. Application of FA: Text Search.
+07 Hrs
+2 Regular Expressions (RE) and Languages
+Operators of RE, Building RE, Precedence of operators, Algebraic laws for
+RE, Conversions: NFA to DFA, RE to DFA, DFA to RE, State/loop
+elimination, Arden’s theorem, Properties of Regular Languages: Pumping
+Lemma for Regular languages, Closure and Decision properties,
+Applications of RE: Regular Expressions in UNIX, Lexical analysis, Finding
+patterns in text.
+07 Hrs
+3 Context Free Grammars (CFG) and Languages
+Introduction, Regular Grammar, Context Free Grammar Definition,
+Derivations, Language of a grammar, sentential forms, Parse trees- inference,
+derivations, parse trees, Ambiguity in grammar and Languages- ambiguous
+Grammar, Simplification of CFG, Normal Forms- Chomsky normal form,
+Greibach normal form, Closure properties of CFL, Decision properties of
+CFL's, Chomsky Hierarchy, Application of CFG: Parsers, The YACC
+Parser-Generator, Markup languages, XML and Document Type Definitions.
+07 Hrs
+4 Pushdown Automata (PDA) & Linear Bounded Automata (LBA)
+Definition of the PDA, Languages of a PDA, Equivalence of Acceptance by
+Final State & Empty stack, Equivalence of PDA's and CFG's, Deterministic
+PDA, PDA and Context Free Language, Definition of Linear Bounded
+Automata, Language of LBA, LBA and Context Sensitive Language.
+07 Hrs
+Department of Computer Science and Design 52
+Dr. Babasaheb Ambedkar Technological University
+5 Turing Machines (TM)
+Problems that computers cannot solve, Turing Machine: Notation for the
+TM, Instantaneous description for TM, Transition diagrams for TM, The
+Language of Turing Machine, TM and Halting, Programming techniques for
+TM's, Extensions to the basic TM, Turing Machines and Computers,
+Church-Turing Thesis, Universal Turing Machines.
+07 Hrs
+Reference Books:
+1. John Martin, “Introduction to Languages of The Theory of Computation”,
+2nd Edition, Mc Graw Hill Education, ISBN-13: 978-1-25-900558-9,
+ISBN-10: 1-25-900558-5
+2. Sanjeev Arora and Boaz Barak, “Computational Complexity: A Modern
+Approach”, Cambridge University Pre ss, ISBN:0521424267
+9780521424264
+3. Daniel Cohen, “Introduction to Computer Theory”, Wiley & Sons, ISBN
+97881265133454.
+4. J. Carroll & D Long, “Theory of Finite Automata”, Prentice Hall, ISBN
+0-13-9137084
+5. Kavi Mahesh, “Theory of Computation: A Problem-Solving Approach”,
+Wiley India, ISBN10 8126533110
+6. Michael Sipser, “Introduction to the Theory of Computation”, Cengage
+Learning, ISBN-13: 9781133187813
+7. Vivek Kulkarni, “Theory of Computation”, Oxford University Press, ISBN
+0-19808458
+Text Books:
+1. John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman, “Introduction to
+Automata Theory Languages and Computation”, Addison-Wesley, ISBN
+0-201-44124-1.
+2. H.L. Lewis, Christos H. Papadimitriou, “Elements of the Theory of
+Computation”, Prentice Hall, ISBN-10: 0132624788; ISBN-13:
+978-0132624787

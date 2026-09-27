@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="Unit 1, Topic 1: Data, database, DBMS, real-life examples aur DBMS ki need.">
+  <title>Introduction to DBMS — Database System Design</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha note par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Database System Design contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">UNIT 01 / TOPIC 01</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">DATABASE SYSTEM DESIGN</a> &nbsp; / &nbsp; UNIT 01</p>
+      <h1 class="page-title">Introduction to DBMS</h1>
+      <p class="page-intro">Database, DBMS aur inki zarurat ka pehla overview—college ke student records se samjho.</p>
+      <div class="note-meta">
+        <span>Topic 01</span>
+        <span>Unit 01 / Introduction</span>
+        <time datetime="2026-09-27">Prepared 27 Sep 2026</time>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column">
+        <section aria-labelledby="opening-question">
+          <p class="section-kicker">START HERE / A REAL PROBLEM</p>
+          <h2 id="opening-question">Database ki zarurat hi kyun padti hai?</h2>
+          <p class="dropcap">Socho ek college mein 10,000 students hain. Har student ka name, roll number, branch, phone number, attendance, marks, fees aur courses ka record rakhna hai. Agar ye saari files alag-alag jagah par bikhri hon, toh data dhoondhna, update karna aur sahi rakhna mushkil ho jayega.</p>
+          <p>Isliye pehle teen terms ko alag samjho: <strong>data</strong> raw facts hain, <strong>database</strong> related data ka organized collection hai, aur <strong>DBMS</strong> us collection ko manage karne wala software hai.</p>
+        </section>
+
+        <section aria-labelledby="data-heading">
+          <p class="section-kicker">01 / RAW FACTS TO MEANING</p>
+          <h2 id="data-heading">Data aur information</h2>
+          <p><strong>Data</strong> raw facts ya figures hote hain, jo apne aap mein poora meaning nahi dete. Jaise <code>Rohan</code>, <code>21</code>, <code>CSE</code>, <code>85</code> alag values hain.</p>
+          <p>Jab un values ko labels aur context ke saath arrange kiya jata hai, toh woh samajhne layak <strong>information</strong> ban jaati hain.</p>
+          <pre class="code-sample"><code>Raw data  →  Processing  →  Information
+Rohan          + labels       Student: Rohan
+21                            Age: 21
+CSE                           Branch: CSE
+85                            Marks: 85</code></pre>
+          <p>Yaani data source material hai; processing use meaningful form mein badalti hai.</p>
+        </section>
+
+        <section aria-labelledby="database-heading">
+          <p class="section-kicker">02 / ORGANIZED RELATED DATA</p>
+          <h2 id="database-heading">Database kya hota hai?</h2>
+          <p><strong>Database</strong> related data ka organized collection hota hai, jise aasani se store, access, manage aur update kiya ja sake.</p>
+
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Example / College student records</caption>
+              <thead>
+                <tr><th scope="col">Roll No.</th><th scope="col">Name</th><th scope="col">Branch</th><th scope="col">Marks</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>101</td><td>Rohan</td><td>CSE</td><td>85</td></tr>
+                <tr><td>102</td><td>Amit</td><td>IT</td><td>78</td></tr>
+                <tr><td>103</td><td>Neha</td><td>CSE</td><td>91</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A database is an <strong>organized collection of related data</strong> that can be easily accessed, managed, and updated.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="dbms-heading">
+          <p class="section-kicker">03 / SOFTWARE THAT MANAGES THE DATA</p>
+          <h2 id="dbms-heading">DBMS kya hota hai?</h2>
+          <p><strong>DBMS</strong> ka full form <strong>Database Management System</strong> hai. Ye software database ko create, store, manage, retrieve aur modify karne mein madad karta hai.</p>
+          <p>Simple model: user apni request DBMS ko deta hai; DBMS database ke saath kaam karke relevant result wapas deta hai. Isliye DBMS ko user aur database ke beech ka <strong>bridge ya interface</strong> keh sakte hain.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>DBMS is software that allows users to create, store, retrieve, update, and manage data in a database.</p>
+          </div>
+          <h3>“Mere marks dikhao” request ka flow</h3>
+          <p>Student request karta hai, DBMS record dhoondhta hai, aur database se mila result—jaise <code>Marks = 85</code>—user tak pahunchata hai.</p>
+        </section>
+
+        <section aria-labelledby="examples-heading">
+          <p class="section-kicker">04 / EVERYDAY SYSTEMS</p>
+          <h2 id="examples-heading">DBMS ke real-life examples</h2>
+          <p>Hum roz aise systems use karte hain jahan related records ko store aur manage karna hota hai:</p>
+          <ul class="plain-list">
+            <li><strong>Banking:</strong> customers, accounts, balances, transactions aur loans.</li>
+            <li><strong>College:</strong> students, faculty, courses, attendance, marks aur fees.</li>
+            <li><strong>E-commerce:</strong> customers, products, orders, payments aur reviews.</li>
+            <li><strong>Railway / airline reservation:</strong> passengers, trains ya flights, seats, bookings aur payments.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="need-heading">
+          <p class="section-kicker">05 / WHY USE A DBMS?</p>
+          <h2 id="need-heading">DBMS ki zarurat kyun hoti hai?</h2>
+          <p>Alag-alag files mein data rakhne par kuch common problems aati hain. DBMS in problems ko manage karne ke tools deta hai:</p>
+          <ol class="issue-list">
+            <li>
+              <div><h3>Data redundancy</h3><p>Ek hi student record kai files mein repeat ho sakta hai. Is unnecessary duplication ko <strong>data redundancy</strong> kehte hain; isse extra storage lagta hai.</p></div>
+            </li>
+            <li>
+              <div><h3>Data inconsistency</h3><p>Agar ek copy update ho aur doosri purani rahe, toh values disagree karti hain. Jaise ek file mein phone <code>9876543210</code> aur doosri mein <code>9999999999</code>. Ye <strong>data inconsistency</strong> hai. DBMS centralized management ke through is problem ko reduce kar sakta hai.</p></div>
+            </li>
+            <li>
+              <div><h3>Data security</h3><p>Har user ko har record ka access nahi chahiye. Student apne marks dekh sakta hai, faculty marks update kar sakti hai, aur admin ko wider access mil sakta hai. DBMS access control support karta hai.</p></div>
+            </li>
+            <li>
+              <div><h3>Data sharing</h3><p>Faculty, students, admin aur accountant zarurat ke mutabik same database access kar sakte hain. DBMS shared access ko organize karta hai.</p></div>
+            </li>
+            <li>
+              <div><h3>Data integrity</h3><p>Data correct aur valid rehna chahiye. Jaise student ki age <code>-25</code> valid value nahi hai. DBMS ke constraints invalid data ko rokne mein madad karte hain.</p></div>
+            </li>
+            <li>
+              <div><h3>Backup and recovery</h3><p>System crash ya data loss ke baad records wapas laane ke liye DBMS backup aur recovery mechanisms provide karta hai.</p></div>
+            </li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="difference-heading">
+          <p class="section-kicker">06 / DON'T CONFUSE THE TERMS</p>
+          <h2 id="difference-heading">Database aur DBMS mein farq</h2>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Stored content vs management software</caption>
+              <thead>
+                <tr><th scope="col">Database</th><th scope="col">DBMS</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Related data ka collection.</td><td>Database ko manage karne wala software.</td></tr>
+                <tr><td>Actual records ko store karta hai.</td><td>Records ko store, manage, access aur update karne deta hai.</td></tr>
+                <tr><td>Example: student records.</td><td>Examples: MySQL, PostgreSQL, Oracle Database.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="analogy"><strong>Yaad rakhne ki analogy:</strong> Database = books; DBMS = library management system. Books content hain; library system unhe find, add, remove, update aur organize karne mein help karta hai.</p>
+        </section>
+
+        <section aria-labelledby="software-heading">
+          <p class="section-kicker">07 / SOFTWARE EXAMPLES</p>
+          <h2 id="software-heading">Common DBMS software</h2>
+          <ul class="software-list">
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>Oracle Database</li>
+            <li>Microsoft SQL Server</li>
+            <li>SQLite</li>
+          </ul>
+          <p>MongoDB bhi database management system hai, lekin specifically <strong>NoSQL / document database</strong> category mein aata hai. Iska detail syllabus ke Unit 4 mein hai.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading">Ek nazar mein</h2>
+          <dl class="recap-list">
+            <dt>Data</dt><dd>Context ke bina raw facts aur figures.</dd>
+            <dt>Information</dt><dd>Process karke meaningful form mein rakha gaya data.</dd>
+            <dt>Database</dt><dd>Related data ka organized collection.</dd>
+            <dt>DBMS</dt><dd>Database create, store, retrieve, update aur manage karne wala software.</dd>
+            <dt>Key benefits</dt><dd>Redundancy kam karna; consistency, security, sharing, integrity aur recovery ko support karna.</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Pehle in teen questions ke answers do:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne options bhejo; phir answer check karke next syllabus topic par chalenge.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>DBMS ka primary purpose kya hai?
+              <ol type="A"><li>Computer system ko boot karna</li><li>Database records ko manage karna</li><li>Internet service ko provide karna</li><li>Operating system ko replace karna</li></ol>
+            </li>
+            <li>Same student data multiple files mein unnecessarily repeat ho raha hai. Ise kya kehte hain?
+              <ol type="A"><li>Data Integrity</li><li>Data Security</li><li>Data Redundancy</li><li>Data Recovery</li></ol>
+            </li>
+            <li>Inmein se DBMS ka example kaunsa hai?
+              <ol type="A"><li>MySQL</li><li>HTML</li><li>Python</li><li>CSS</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next syllabus item: Purpose of Database Systems — answers ke baad.</p>
+        </section>
+      </article>
+
+      <aside class="figure-rail" aria-label="Topic ke diagrams">
+        <figure class="figure-card" data-mobile-after="data-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-data-title fig-data-desc">
+              <title id="fig-data-title">Raw data se information tak</title>
+              <desc id="fig-data-desc">Raw values processing se guzarkar labeled student information banti hain.</desc>
+              <defs>
+                <pattern id="dots-data" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+                <marker id="arrow-data" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                </marker>
+              </defs>
+              <rect width="520" height="250" fill="url(#dots-data)"></rect>
+              <rect x="26" y="72" width="132" height="105" class="diagram-stroke"></rect>
+              <text x="42" y="98" class="diagram-muted">RAW DATA</text>
+              <text x="42" y="124" class="diagram-text">Rohan · 21</text>
+              <text x="42" y="147" class="diagram-text">CSE · 85</text>
+              <path d="M169 124h64" class="diagram-stroke" marker-end="url(#arrow-data)"></path>
+              <text x="183" y="109" class="diagram-muted">PROCESS</text>
+              <rect x="255" y="72" width="239" height="105" class="diagram-stroke"></rect>
+              <text x="273" y="98" class="diagram-muted">MEANINGFUL INFORMATION</text>
+              <text x="273" y="124" class="diagram-text">Name: Rohan</text>
+              <text x="273" y="147" class="diagram-text">Age: 21 · Branch: CSE</text>
+              <text x="273" y="166" class="diagram-text">Marks: 85</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Data ko context dene par information milti hai.</span></figcaption>
+        </figure>
+
+        <figure class="figure-card" data-mobile-after="dbms-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-bridge-title fig-bridge-desc">
+              <title id="fig-bridge-title">User, DBMS aur database ka isometric flow</title>
+              <desc id="fig-bridge-desc">User request DBMS tak jaati hai; DBMS database se result lautaata hai.</desc>
+              <defs>
+                <pattern id="dots-bridge" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+                <marker id="arrow-bridge" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                </marker>
+              </defs>
+              <rect width="520" height="250" fill="url(#dots-bridge)"></rect>
+              <circle cx="64" cy="94" r="15" class="diagram-stroke"></circle>
+              <path d="M37 151c3-22 15-34 27-34s24 12 27 34m-54 0h54" class="diagram-stroke"></path>
+              <text x="40" y="179" class="diagram-text">USER</text>
+              <path d="M102 125h87" class="diagram-stroke" marker-end="url(#arrow-bridge)"></path>
+              <path d="m216 84 48-26 48 26-48 27z" class="diagram-stroke"></path>
+              <path d="M216 84v53l48 27v-53m48-27v53l-48 27" class="diagram-stroke"></path>
+              <text x="238" y="187" class="diagram-text">DBMS</text>
+              <path d="M322 125h66" class="diagram-stroke" marker-end="url(#arrow-bridge)"></path>
+              <ellipse cx="444" cy="91" rx="40" ry="14" class="diagram-stroke"></ellipse>
+              <path d="M404 91v53c0 8 18 15 40 15s40-7 40-15V91m-80 25c0 8 18 15 40 15s40-7 40-15" class="diagram-stroke"></path>
+              <text x="411" y="187" class="diagram-text">DATABASE</text>
+              <text x="167" y="112" class="diagram-muted">REQUEST</text>
+              <text x="339" y="112" class="diagram-muted">QUERY</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>DBMS user aur stored data ke beech bridge hai.</span></figcaption>
+        </figure>
+
+        <figure class="figure-card" data-mobile-after="need-heading">
+          <div class="figure-canvas">
+            <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-share-title fig-share-desc">
+              <title id="fig-share-title">Kai users ek DBMS ke zariye database share karte hain</title>
+              <desc id="fig-share-desc">Faculty, student, admin aur accountant ki requests ek DBMS ke through database tak pahunchti hain.</desc>
+              <defs>
+                <pattern id="dots-share" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                </pattern>
+              </defs>
+              <rect width="520" height="250" fill="url(#dots-share)"></rect>
+              <text x="35" y="61" class="diagram-text">FACULTY</text>
+              <text x="35" y="103" class="diagram-text">STUDENT</text>
+              <text x="35" y="145" class="diagram-text">ADMIN</text>
+              <text x="35" y="187" class="diagram-text">ACCOUNTANT</text>
+              <path d="M124 55h68m-68 42h68m-68 42h68m-68 42h68m0-131v131" class="diagram-stroke"></path>
+              <path d="M192 120h48" class="diagram-stroke"></path>
+              <path d="m251 89 38-21 38 21-38 22z" class="diagram-stroke"></path>
+              <path d="M251 89v45l38 22v-45m38-22v45l-38 22" class="diagram-stroke"></path>
+              <text x="267" y="177" class="diagram-text">DBMS</text>
+              <path d="M338 111h47" class="diagram-stroke"></path>
+              <ellipse cx="433" cy="91" rx="35" ry="13" class="diagram-stroke"></ellipse>
+              <path d="M398 91v48c0 8 16 14 35 14s35-6 35-14V91m-70 23c0 8 16 14 35 14s35-6 35-14" class="diagram-stroke"></path>
+              <text x="397" y="177" class="diagram-text">DATABASE</text>
+            </svg>
+          </div>
+          <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Alag roles zarurat ke mutabik shared data access karte hain.</span></figcaption>
+        </figure>
+
+        <p class="rail-note"><strong>Memory hook:</strong> Database data rakhta hai; DBMS us data tak pahunchne aur use manage karne ka system deta hai.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>UNIT 01 / TOPIC 01</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+</body>
+</html>
