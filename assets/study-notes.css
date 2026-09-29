@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Silkscreen:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
   color-scheme: light;
@@ -10,8 +10,9 @@
   --blue: #174fa8;
   --selected: #ded8c4;
   --font-pixel: "Silkscreen", "Courier New", monospace;
+  --font-heading: "Space Grotesk", "Arial", sans-serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
-  --font-reading: "Source Serif 4", Georgia, serif;
+  --font-reading: "DM Sans", "Arial", sans-serif;
   --page-width: 1160px;
   --reading-width: 70ch;
 }
@@ -267,6 +268,7 @@ button {
 .toc-heading,
 .progress-heading {
   margin: 0;
+  font-family: var(--font-heading);
   font-size: clamp(1.5rem, 2.7vw, 2.1rem);
   font-weight: 500;
   line-height: 1.2;
@@ -305,6 +307,7 @@ button {
 }
 
 .entry-title {
+  font-family: var(--font-heading);
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   line-height: 1.35;
 }
@@ -409,6 +412,7 @@ button {
 }
 
 .syllabus-unit-title {
+  font-family: var(--font-heading);
   font-size: 1.18rem;
   line-height: 1.35;
 }
@@ -508,6 +512,7 @@ button {
 
 .progress-next h3 {
   margin: 0.3rem 0 0.5rem;
+  font-family: var(--font-heading);
   font-size: 1.45rem;
   font-weight: 500;
 }
@@ -545,6 +550,7 @@ button {
 
 .prose-column h2 {
   margin: 0 0 0.8rem;
+  font-family: var(--font-heading);
   font-size: clamp(1.65rem, 2.5vw, 2rem);
   font-weight: 500;
   line-height: 1.2;
@@ -552,6 +558,7 @@ button {
 
 .prose-column h3 {
   margin: 1.6rem 0 0.35rem;
+  font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 1.3;
