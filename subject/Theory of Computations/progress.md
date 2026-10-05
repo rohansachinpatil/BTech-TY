@@ -9,7 +9,7 @@
 - Learner-provided mid-sem QB: 10 MCQs + 9 theory questions (FA, DFA/NFA, Moore/Mealy, RE, regular vs CFL, CFG, lexical analysis).
 
 ## Generated note files
-- `qb-mid-sem.html` — Mid-sem QB ke 10 MCQ answers with short reason aur 9 theory questions ke exam-ready Hinglish answers; 3 outline diagrams; exam recap.
+- `qb-mid-sem.html` — Mid-sem QB ke 10 MCQ answers with short reason aur 9 theory questions ke detailed lengthy answers (Hinglish + English, header switch button with saved preference); 3 outline diagrams; exam recap.
 - `index.html` — Subject table of contents, alag QB section/tab, learning-progress view aur syllabus tab (syllabus.txt ke 5 units).
 
 ## Confirmed complete topics

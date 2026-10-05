@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3f0e6">
-  <meta name="description" content="Theory of Computations mid-sem QB: 10 MCQ answers aur 9 theory answers, simple Hinglish mein.">
+  <meta name="description" content="Theory of Computations mid-sem QB: 10 MCQ answers aur 9 detailed theory answers, Hinglish aur English mein.">
   <title>Mid-sem QB with answers — Theory of Computations</title>
   <link rel="stylesheet" href="../../assets/study-notes.css">
   <script src="../../assets/study-notes.js" defer></script>
@@ -29,6 +29,7 @@
         <a class="tab" href="index.html#qb">QB</a>
         <a class="tab" href="index.html#progress">Progress</a>
       </nav>
+      <button class="print-action" id="lang-toggle" type="button">English</button>
       <button class="print-action" type="button" data-print>Print</button>
     </div>
   </header>
@@ -37,7 +38,8 @@
     <header class="note-heading">
       <p class="eyebrow"><a href="index.html">THEORY OF COMPUTATIONS</a> &nbsp; / &nbsp; MID-SEM QB</p>
       <h1 class="page-title">Mid-sem QB with answers</h1>
-      <p class="page-intro">10 MCQs ke answers short reason ke saath, aur 9 theory questions ke exam-ready Hinglish answers. Pehle khud recall karo, phir answer match karo.</p>
+      <p class="page-intro" data-lang="hi">10 MCQs ke answers short reason ke saath, aur 9 theory questions ke detailed Hinglish answers. Upar button se English mein switch karo. Pehle khud recall karo, phir answer match karo.</p>
+      <p class="page-intro" data-lang="en" hidden>Answers to 10 MCQs with short reasons, and detailed answers to 9 theory questions. Use the button above to switch back to Hinglish. Recall first, then match the answers.</p>
       <div class="note-meta">
         <span>QB set</span>
         <span>Unit 01–02 + Unit 03 start</span>
@@ -48,7 +50,7 @@
     <div class="glyph-rule" aria-hidden="true"></div>
 
     <div class="note-layout">
-      <article class="prose-column">
+      <article class="prose-column" data-lang="hi">
         <section aria-labelledby="how-to-use">
           <p class="section-kicker">START HERE / KAISE USE KARO</p>
           <h2 id="how-to-use">Is QB ko 3 rounds mein karo</h2>
@@ -77,7 +79,7 @@
               <div><h3>FA ke 5-tuple mein kaun nahi — answer: d) Output Alphabet</h3><p>FA ka 5-tuple <code>Q, Σ, δ, q0, F</code> hota hai. Output alphabet FA ka part nahi hai; wo Moore aur Mealy machines mein hota hai.</p></div>
             </li>
             <li>
-              <div><h3>Length at most 2, Σ = {0,1} — answer: a) 7</h3><p>Length 0 ke <strong>1</strong> string (ε), length 1 ke <strong>2</strong> strings, length 2 ke <strong>4</strong> strings. Total <code>1 + 2 + 4 = 7</code>. QB mein “(Σr)*” likha hai; iska meaning Σ* samjho.</p></div>
+              <div><h3>Length at most 2, Σ = {0, 1} — answer: a) 7</h3><p>Length 0 ke <strong>1</strong> string (ε), length 1 ke <strong>2</strong> strings, length 2 ke <strong>4</strong> strings. Total <code>1 + 2 + 4 = 7</code>. QB mein “(Σr)*” likha hai; iska meaning Σ* samjho.</p></div>
             </li>
             <li>
               <div><h3>Myhill-Nerode — answer: d) Nerode</h3><p>Sahi theorem <strong>Myhill-Nerode theorem</strong> hai: language regular hai iff Nerode equivalence classes finite hain. Isliye “Nerode” answer likho.</p></div>
@@ -86,7 +88,7 @@
               <div><h3>Simple primitive language se generation — answer: b) It takes no auxiliary memory</h3><p>Regular language ko finite-state device recognize karta hai aur use extra stack ya tape memory nahi chahiye. Option a) mein “infinite states” likha hai, jo galat hai; sahi word <strong>finite states</strong> hai.</p></div>
             </li>
             <li>
-              <div><h3>{0,01} ko kaun represent nahi karta — answer: d) {0} ^ {01}</h3><p>Options a), b), c) sabhi same set {0,01} likhne ke alag tareeke hain. Option d) wali notation is language ko represent nahi karti.</p></div>
+              <div><h3>{0, 01} ko kaun represent nahi karta — answer: d) {0} ^ {01}</h3><p>Options a), b), c) sabhi same set {0, 01} likhne ke alag tareeke hain. Option d) wali notation is language ko represent nahi karti.</p></div>
             </li>
             <li>
               <div><h3>Concatenation operation — answer: b) Dot</h3><p>Concatenation ko <strong>dot</strong> operation kehte hain. Jaise <code>A.B</code> ka matlab A ke baad B jodna hai.</p></div>
@@ -100,7 +102,8 @@
         <section aria-labelledby="cfl-regular-heading">
           <p class="section-kicker">02 / THEORY Q1</p>
           <h2 id="cfl-regular-heading">Context-free language vs regular language</h2>
-          <p>Regular language simple pattern wali language hai, jise bina yaad rakhe check kiya ja sakta hai. Context-free language usse powerful hai, kyunki usme nesting ya counting jaisi structure handle hoti hai.</p>
+          <p><strong>Regular language</strong> simple pattern wali language hai, jise bina kuch yaad rakhe check kiya ja sakta hai — machine ko sirf ye pata hota hai ki wo abhi kaunse state mein hai. <strong>Context-free language (CFL)</strong> usse powerful hai, kyunki usme nesting ya counting jaisi structure hoti hai, jiske liye machine ko purani cheezein yaad rakhni padti hain.</p>
+          <p>Yaad rakhne ka simple rule: agar pattern ko check karne ke liye counting ya matching chahiye (jaise khule brackets band karna), toh wo regular nahi ho sakti — uske liye stack wali memory chahiye, aur wahi CFL ka area hai.</p>
           <div class="data-table-wrap">
             <table class="data-table">
               <caption class="table-caption">Exam table / power ka farq</caption>
@@ -109,9 +112,11 @@
               </thead>
               <tbody>
                 <tr><td>Machine</td><td>Finite Automata, bina extra memory</td><td>Pushdown Automata, stack memory ke saath</td></tr>
-                <tr><td>Grammar</td><td>Regular grammar</td><td>Context-free grammar</td></tr>
-                <tr><td>Example</td><td>Strings ending with <code>01</code></td><td><code>a<sup>n</sup>b<sup>n</sup></code>, jaise <code>aabb</code></td></tr>
                 <tr><td>Memory logic</td><td>Sirf current state yaad rehta hai</td><td>Stack par open symbols yaad rehte hain</td></tr>
+                <tr><td>Grammar</td><td>Regular grammar; rule shape <code>A → aB</code> ya <code>A → a</code></td><td>Context-free grammar; rule shape <code>A → α</code> (α kuch bhi)</td></tr>
+                <tr><td>Example</td><td>Strings ending with <code>01</code></td><td><code>a<sup>n</sup>b<sup>n</sup></code>, jaise <code>aabb</code></td></tr>
+                <tr><td>Non-example</td><td><code>a<sup>n</sup>b<sup>n</sup></code> regular nahi hai</td><td>Har regular language bhi CFL hai</td></tr>
+                <tr><td>Typical test</td><td>DFA banao ya RE likho</td><td>CFG likho ya PDA se samjhao</td></tr>
               </tbody>
             </table>
           </div>
@@ -120,34 +125,44 @@
             <span class="meta-label">EXAM DEFINITION</span>
             <p>Every regular language is also context-free, but every context-free language is not regular.</p>
           </div>
+          <p>Exam mein ek line zaroor likho: <code>a<sup>n</sup>b<sup>n</sup></code> regular nahi hai kyunki a's ki ginti yaad rakhne ke liye unbounded memory chahiye, aur FA ke paas sirf finite states hain.</p>
         </section>
 
         <section aria-labelledby="cfg-heading">
           <p class="section-kicker">03 / THEORY Q2</p>
           <h2 id="cfg-heading">Context-free grammar ka concept</h2>
-          <p><strong>CFG</strong> 4 parts se banti hai: variables, terminals, productions aur start symbol. Ise <code>G = (V, T, P, S)</code> likhte hain.</p>
+          <p><strong>CFG</strong> language generate karne ke rules ka set hai. Ise 4 parts se define karte hain: <code>G = (V, T, P, S)</code>. Har part ka role alag hai, isliye pehle chaaron ko ek example ke saath samjho.</p>
           <ul class="plain-list">
-            <li><strong>V:</strong> non-terminals, jaise <code>S</code>, jo aage expand hote hain.</li>
-            <li><strong>T:</strong> terminals, final symbols jaise <code>a</code>, <code>b</code>.</li>
-            <li><strong>P:</strong> rules, jaise <code>S → aSb | ε</code>.</li>
-            <li><strong>S:</strong> start symbol, derivation yahin se shuru hoti hai.</li>
+            <li><strong>V (variables / non-terminals):</strong> aise symbols jo aage expand hote hain, jaise <code>S</code>.</li>
+            <li><strong>T (terminals):</strong> final symbols jo string mein dikhte hain, jaise <code>a</code>, <code>b</code>.</li>
+            <li><strong>P (productions):</strong> replacement rules, jaise <code>S → aSb | ε</code>. Har rule ke left side par exactly ek variable hota hai — isi ko “context-free” kehte hain.</li>
+            <li><strong>S (start symbol):</strong> derivation yahin se shuru hoti hai.</li>
           </ul>
+          <h3>Derivation ka worked example</h3>
           <pre class="code-sample"><code>S ⇒ aSb ⇒ aaSbb ⇒ aabb
 Rule: S → aSb | ε
 Language: a<sup>n</sup>b<sup>n</sup></code></pre>
-          <p>Jab derivation mein sirf grammar symbols hon, use <strong>sentential form</strong> kehte hain. Jab sirf terminals bachen, wo final string hoti hai. Isi process ko tree mein dikhaya jaye toh use <strong>parse tree</strong> kehte hain. Grammar ki sabhi final strings ka set <strong>language of grammar, L(G)</strong> hai.</p>
+          <p>Har step mein ek variable apne rule se replace hota hai. Agar har baar leftmost variable expand karo toh use <strong>leftmost derivation</strong> kehte hain; rightmost expand karo toh <strong>rightmost derivation</strong>. Dono se same string banti hai.</p>
+          <p>Jab derivation mein sirf grammar symbols hon (terminals + variables mix), use <strong>sentential form</strong> kehte hain — jaise upar <code>aaSbb</code> ek sentential form hai. Jab sirf terminals bachen, wo final string hoti hai. Isi process ko tree mein dikhaya jaye toh use <strong>parse tree</strong> kehte hain: root <code>S</code>, leaves final string, aur har internal node apne production ko follow karta hai.</p>
+          <p>Grammar ki sabhi final strings ka set <strong>language of grammar, L(G)</strong> hai. Agar ek string ke do alag parse trees ban jayein, toh grammar <strong>ambiguous</strong> kehlati hai — ye Unit 3 ka important exam point hai.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A context-free grammar is a 4-tuple G = (V, T, P, S) where every production has a single variable on its left-hand side.</p>
+          </div>
         </section>
 
         <section aria-labelledby="re-operators-heading">
           <p class="section-kicker">04 / THEORY Q3</p>
           <h2 id="re-operators-heading">Regular expression ke operators</h2>
-          <p>Regular expression pattern likhne ka short tareeka hai. Teen basic operators yaad rakho:</p>
+          <p>Regular expression pattern likhne ka short tareeka hai. Teen basic operators yaad rakho, phir do helpful shortcuts:</p>
           <ul class="plain-list">
             <li><strong>Union (+ ya |):</strong> choice. <code>0 + 1</code> ka matlab “0 ya 1”.</li>
-            <li><strong>Concatenation (dot):</strong> sequence. <code>0.1</code> ka matlab “pehle 0, phir 1”, yani <code>01</code>.</li>
+            <li><strong>Concatenation (dot):</strong> sequence. <code>0.1</code> ka matlab “pehle 0, phir 1”, yani <code>01</code>. Dot aksar chhupa lete hain, <code>01</code> likh dete hain.</li>
             <li><strong>Kleene star (*):</strong> zero ya more repeat. <code>0*</code> ka matlab ε, 0, 00, 000, …</li>
+            <li><strong>Plus (+ as superscript, R+):</strong> one-or-more repeat, jaise <code>a+</code> ka matlab a, aa, aaa, … (lekin ε nahi).</li>
+            <li><strong>Optional (?):</strong> zero-or-one, jaise <code>a?</code> ka matlab ε ya a.</li>
           </ul>
-          <p>Helpful operators: <strong>+</strong> ka matlab one-or-more repeat, jaise <code>a+</code>; <strong>?</strong> ka matlab optional, jaise <code>a?</code>. Precedence order: <strong>star &gt; concatenation &gt; union</strong>. Isliye <code>0 + 01</code> ka matlab <code>0 + (0.1)</code> hai.</p>
+          <p>Precedence order fix hai: <strong>star &gt; concatenation &gt; union</strong>. Isliye <code>0 + 01</code> ka matlab <code>0 + (0.1)</code> hai, aur <code>ab*</code> ka matlab <code>a(b*)</code> hai, <code>(ab)*</code> nahi.</p>
           <div class="data-table-wrap">
             <table class="data-table">
               <caption class="table-caption">Important algebraic laws</caption>
@@ -158,28 +173,41 @@ Language: a<sup>n</sup>b<sup>n</sup></code></pre>
                 <tr><td>Union commutative/idempotent</td><td><code>A + B = B + A</code>, <code>A + A = A</code></td></tr>
                 <tr><td>Concatenation associative</td><td><code>(AB)C = A(BC)</code></td></tr>
                 <tr><td>Distributive</td><td><code>A(B + C) = AB + AC</code></td></tr>
-                <tr><td>Identity/annihilator</td><td><code>A.ε = A</code>, <code>A.Φ = Φ</code></td></tr>
-                <tr><td>Star property</td><td><code>A* = ε + AA*</code></td></tr>
+                <tr><td>Identity/annihilator</td><td><code>A + Φ = A</code>, <code>A.ε = A</code>, <code>A.Φ = Φ</code></td></tr>
+                <tr><td>Star properties</td><td><code>A* = ε + AA*</code>, <code>(A*)* = A*</code></td></tr>
               </tbody>
             </table>
           </div>
+          <h3>RE banane ke 2 ready examples</h3>
+          <ul class="plain-list">
+            <li><strong>“01” par end:</strong> pehle kuch bhi, phir 01 — <code>(0 + 1)*01</code>.</li>
+            <li><strong>“00” contain kare:</strong> beech mein 00, aage-peeche kuch bhi — <code>(0 + 1)*00(0 + 1)*</code>.</li>
+          </ul>
+          <p>Exam tip: RE likhne ke baad 2 accept aur 1 reject string test karke dikhao — examiner ko lagta hai concept clear hai.</p>
         </section>
 
         <section aria-labelledby="fa-application-heading">
           <p class="section-kicker">05 / THEORY Q4</p>
           <h2 id="fa-application-heading">Finite Automata ke applications</h2>
+          <p>FA sirf theory nahi hai — jahan bhi input ko step-by-step scan karke decision lena ho, wahan FA logic kaam aata hai. Har application ke saath mechanism ek line mein samjho:</p>
           <ol class="issue-list">
             <li>
-              <div><h3>Text search aur pattern matching</h3><p>Editor ya command-line search keyword ka automaton banakar text ko ek pass mein scan karta hai. Ye syllabus mein di hui direct application hai.</p></div>
+              <div><h3>Text search aur pattern matching</h3><p>Editor ya <code>grep</code> jaisi tools keyword ka automaton banakar text ko ek pass mein scan karti hain. Ye syllabus mein di hui direct application hai — pattern milte hi match report hota hai.</p></div>
             </li>
             <li>
-              <div><h3>Lexical analysis</h3><p>Compiler keywords, identifiers aur numbers ko RE se DFA banakar tokenize karta hai.</p></div>
+              <div><h3>Lexical analysis</h3><p>Compiler keywords, identifiers aur numbers ke RE patterns se DFA banakar source code ko tokens mein todta hai. Har token type ek accept state hota hai.</p></div>
             </li>
             <li>
-              <div><h3>Protocol aur control systems</h3><p>Traffic light, vending machine, elevator ya network protocol ke states FA se model hote hain.</p></div>
+              <div><h3>Protocol aur control systems</h3><p>Traffic light, vending machine, elevator ya network protocol ke modes states hote hain aur events transitions. FA se check hota hai ki galat sequence kabhi execute na ho.</p></div>
             </li>
             <li>
-              <div><h3>Hardware aur validation</h3><p>Digital circuits aur input validation, jaise email ya OTP pattern check, FA logic use karte hain.</p></div>
+              <div><h3>Hardware design</h3><p>Sequential circuits (counters, sequence detectors) seedha FA se design hote hain — har flip-flop combination ek state hai.</p></div>
+            </li>
+            <li>
+              <div><h3>Input validation</h3><p>Email, phone number ya OTP jaise formats ke patterns FA se validate hote hain — galat character aate hi machine reject state mein jaati hai.</p></div>
+            </li>
+            <li>
+              <div><h3>Game logic aur AI states</h3><p>Game characters ke modes (idle, attack, escape) ek state machine hote hain; conditions transitions trigger karti hain.</p></div>
             </li>
           </ol>
         </section>
@@ -187,6 +215,7 @@ Language: a<sup>n</sup>b<sup>n</sup></code></pre>
         <section aria-labelledby="dfa-nfa-heading">
           <p class="section-kicker">06 / THEORY Q5</p>
           <h2 id="dfa-nfa-heading">DFA aur NFA mein farq</h2>
+          <p>Dono same power ke hain (dono regular languages recognize karte hain), farq sirf rules mein hai. <strong>DFA</strong> mein har situation mein exactly ek rasta hota hai; <strong>NFA</strong> mein choices aur shortcut (epsilon) moves allowed hain.</p>
           <div class="data-table-wrap">
             <table class="data-table">
               <caption class="table-caption">Exam table / determinism ka farq</caption>
@@ -194,45 +223,74 @@ Language: a<sup>n</sup>b<sup>n</sup></code></pre>
                 <tr><th scope="col">Point</th><th scope="col">DFA</th><th scope="col">NFA</th></tr>
               </thead>
               <tbody>
-                <tr><td>Transition</td><td>Har state + input par exactly ek next state</td><td>Zero, one ya multiple next states ho sakte hain</td></tr>
+                <tr><td>Transition function</td><td><code>δ: Q × Σ → Q</code> — ek input, ek state</td><td><code>δ: Q × (Σ ∪ {ε}) → 2<sup>Q</sup></code> — states ka set</td></tr>
                 <tr><td>Epsilon move</td><td>Allowed nahi</td><td>epsilon-NFA mein bina input ke move allowed</td></tr>
-                <tr><td>Design</td><td>Likhna thoda lamba, run karna easy</td><td>Compact design, run mein choices track karni padti hain</td></tr>
-                <tr><td>Power</td><td>Regular languages</td><td>Regular languages; har NFA ka DFA possible hai</td></tr>
+                <tr><td>Dead situation</td><td>Har input par transition compulsory (trap state use hota hai)</td><td>Transition missing ho sakta hai — wo path simply die karta hai</td></tr>
+                <tr><td>Design vs run</td><td>Likhna thoda lamba, run karna easy</td><td>Compact design, run mein choices track karni padti hain</td></tr>
+                <tr><td>Conversion</td><td>—</td><td>Subset construction se har NFA ka DFA ban sakta hai</td></tr>
+                <tr><td>Power</td><td>Regular languages</td><td>Regular languages — power equal hai</td></tr>
               </tbody>
             </table>
           </div>
-          <p><strong>DFA</strong> ka transition function <code>δ: Q × Σ → Q</code> hota hai. <strong>NFA</strong> mein <code>δ: Q × (Σ ∪ {ε}) → 2<sup>Q</sup></code> hota hai, yani set of states milta hai. Exam mein ek line zaroor likho: NFA design ke liye convenient hai, DFA execution ke liye.</p>
+          <p><strong>Subset construction</strong> ka idea ek line mein: NFA ke states ke har possible subset ko DFA ka ek state bana do, start subset = epsilon-closure of start state. Exam mein ye line likhne se conversion wala part strong lagta hai.</p>
+          <p>Exam mein ek line zaroor likho: NFA design ke liye convenient hai, DFA execution ke liye.</p>
         </section>
 
         <section aria-labelledby="mealy-moore-conversion-heading">
           <p class="section-kicker">07 / THEORY Q6</p>
           <h2 id="mealy-moore-conversion-heading">Mealy Machine ko Moore Machine mein convert karna</h2>
-          <p>QB mein “Melay” likha hai; standard spelling <strong>Mealy Machine</strong> hai. Rule simple hai: Mealy mein output transition par hota hai, Moore mein output state par hota hai. Isliye output ko transition se uthakar next state par chipka do.</p>
+          <p>QB mein “Melay” likha hai; standard spelling <strong>Mealy Machine</strong> hai. Rule simple hai: Mealy mein output transition (edge) par hota hai, Moore mein output state (node) par hota hai. Isliye output ko transition se uthakar next state par chipka do — aur jahan conflict ho, wahan state split karo.</p>
           <h3>Conversion steps</h3>
           <ul class="plain-list">
             <li><strong>Step 1:</strong> Har Mealy transition <code>present-state —input/output→ next-state</code> ko dekho.</li>
-            <li><strong>Step 2:</strong> Next state ke liye output wali nayi Moore state banao, jaise <code>q1/1</code>.</li>
-            <li><strong>Step 3:</strong> Agar ek hi state mein alag outputs ke saath entry ho rahi hai, toh us state ko split karo.</li>
+            <li><strong>Step 2:</strong> Next state ke liye output wali nayi Moore state banao, jaise <code>q1/1</code> ka matlab state q1 jiska output 1.</li>
+            <li><strong>Step 3:</strong> Agar ek hi state mein alag outputs ke saath entry ho rahi hai, toh us state ko split karo — ek copy har output ke liye.</li>
             <li><strong>Step 4:</strong> Start state ke liye alag Moore start state banao; baaki transitions same input par copy karo.</li>
           </ul>
-          <pre class="code-sample"><code>Mealy example:
-q0 --0/0--&gt; q0
-q0 --1/1--&gt; q1
-q1 --0/0--&gt; q0
-q1 --1/1--&gt; q1
-
-Moore idea:
-q0-start --0--&gt; [q0/0]
-q0-start --1--&gt; [q1/1]
-[q0/0] --0--&gt; [q0/0]
-[q0/0] --1--&gt; [q1/1]</code></pre>
+          <h3>Worked example — tables ke saath</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Given Mealy machine</caption>
+              <thead>
+                <tr><th scope="col">Present state</th><th scope="col">On 0</th><th scope="col">On 1</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>q0</td><td>q0 / 0</td><td>q1 / 1</td></tr>
+                <tr><td>q1</td><td>q0 / 0</td><td>q1 / 1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Converted Moore machine</caption>
+              <thead>
+                <tr><th scope="col">Present state</th><th scope="col">Output</th><th scope="col">On 0</th><th scope="col">On 1</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>→ q0-start</td><td>—</td><td>q0/0</td><td>q1/1</td></tr>
+                <tr><td>q0/0</td><td>0</td><td>q0/0</td><td>q1/1</td></tr>
+                <tr><td>* q1/1</td><td>1</td><td>q0/0</td><td>q1/1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre class="code-sample"><code>Verify with input 0110:
+Mealy outputs:  0 1 1 0  (har edge par)
+Moore outputs: - 0 1 1 0  (state par; pehla dash start ka)</code></pre>
+          <p>Dono same output sequence dete hain — Moore ka output bas ek step delayed dikhta hai, kyunki wo state par chipka hai. Reverse conversion (Moore → Mealy) easy hai: state ka output uski saari incoming edges par copy kar do, split ki zarurat nahi.</p>
           <p>Exam mein table aur chhota state diagram dono banao. Ek line likho: Moore machine mein usually states badh jaati hain, kyunki output alag hone par state split hoti hai.</p>
         </section>
 
         <section aria-labelledby="construct-dfa-heading">
           <p class="section-kicker">08 / THEORY Q7</p>
           <h2 id="construct-dfa-heading">DFA construct karo — suitable example</h2>
-          <p>Example lo: <strong>Σ = {0, 1} par wo strings jo “01” par end hoti hain.</strong> Socho tumne abhi tak suffix ka kitna part match kiya hai.</p>
+          <p>DFA banane ka systematic method 4 steps mein samjho, phir example par apply karo:</p>
+          <ul class="plain-list">
+            <li><strong>Step 1 — Kya yaad rakhna hai:</strong> decide karo machine ko input ka kaunsa past yaad rakhna hai.</li>
+            <li><strong>Step 2 — States fix karo:</strong> har yaad rakhne layak situation ek state.</li>
+            <li><strong>Step 3 — Transitions likho:</strong> har state + har input symbol par next state; koi combination chhoote nahi.</li>
+            <li><strong>Step 4 — Start/accept mark karo:</strong> start par →, accept par double circle (*) lagao.</li>
+          </ul>
+          <p>Example lo: <strong>Σ = {0, 1} par wo strings jo “01” par end hoti hain.</strong> Yaad rakhna hai: abhi tak suffix “01” ka kitna part match hua?</p>
           <ul class="plain-list">
             <li><strong>q0:</strong> start; abhi “01” ka koi useful suffix match nahi.</li>
             <li><strong>q1:</strong> last symbol 0 dekha, “0” match hua.</li>
@@ -251,7 +309,12 @@ q0-start --1--&gt; [q1/1]
               </tbody>
             </table>
           </div>
-          <p>Test karo: <code>101</code> reject hogi, <code>1001</code> accept hogi. 5-tuple likho: <code>Q = {q0, q1, q2}</code>, <code>Σ = {0, 1}</code>, <code>δ</code> upar table jaisa, start <code>q0</code>, final <code>{q2}</code>.</p>
+          <pre class="code-sample"><code>Trace 101 (reject): q0 -1→ q0 -0→ q1 -1→ q2? Nahi —
+q0 -1→ q0, q0 -0→ q1, q1 -1→ q2... check: 101 ends with 01?
+“101” ka suffix “01” hai, to
+... sahi trace: q0-1→q0, q0-0→q1, q1-1→q2 = ACCEPT.
+Trace 10 (reject): q0-1→q0, q0-0→q1 = REJECT (q1 accept nahi).</code></pre>
+          <p>5-tuple likho: <code>Q = {q0, q1, q2}</code>, <code>Σ = {0, 1}</code>, <code>δ</code> upar table jaisa, start <code>q0</code>, final <code>{q2}</code>.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-dfa-title fig-dfa-desc">
@@ -297,6 +360,7 @@ q0-start --1--&gt; [q1/1]
         <section aria-labelledby="mealy-moore-compare-heading">
           <p class="section-kicker">09 / THEORY Q8</p>
           <h2 id="mealy-moore-compare-heading">Mealy Machine vs Moore Machine</h2>
+          <p>Dono FA with output hain — input lete hain aur output dete hain. Farq sirf itna hai ki output kahan chipka hai: Mealy mein edge par, Moore mein node (state) par. Is ek farq se timing aur states dono badal jaate hain.</p>
           <div class="data-table-wrap">
             <table class="data-table">
               <caption class="table-caption">Exam table / output ka farq</caption>
@@ -306,11 +370,16 @@ q0-start --1--&gt; [q1/1]
               <tbody>
                 <tr><td>Output depends on</td><td>Present state + current input</td><td>Only present state</td></tr>
                 <tr><td>Output timing</td><td>Input aate hi output badal sakta hai</td><td>Output state change ke baad milta hai</td></tr>
-                <tr><td>Number of states</td><td>Usually kam states</td><td>Usually zyada states</td></tr>
+                <tr><td>Number of states</td><td>Usually kam states</td><td>Usually zyada states (split ki wajah se)</td></tr>
                 <tr><td>Notation</td><td>Transition par <code>input/output</code></td><td>State par <code>state/output</code></td></tr>
+                <tr><td>Output length</td><td>n inputs par n outputs</td><td>n inputs par n+1 outputs (start state ka bhi)</td></tr>
+                <tr><td>Conversion</td><td>Moore → Mealy easy hai</td><td>Mealy → Moore mein split lagta hai</td></tr>
               </tbody>
             </table>
           </div>
+          <pre class="code-sample"><code>Input:  0 1 1 0   (upar Q6 wali machines par)
+Mealy:  0 1 1 0
+Moore:  - 0 1 1 0   (- = start state ka koi output nahi)</code></pre>
           <p class="analogy"><strong>Yaad rakhne ki analogy:</strong> Mealy = bolte hi jawab; Moore = room badalne ke baad board par answer.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
@@ -357,7 +426,20 @@ q0-start --1--&gt; [q1/1]
         <section aria-labelledby="lexical-heading">
           <p class="section-kicker">10 / THEORY Q9</p>
           <h2 id="lexical-heading">Lexical Analysis detail mein</h2>
-          <p><strong>Lexical analysis</strong> compiler ka pehla phase hai. Iska kaam source code ko characters se <strong>tokens</strong> mein todna hai. Token ka matlab meaningful unit, jaise keyword, identifier, number, operator ya separator.</p>
+          <p><strong>Lexical analysis</strong> compiler ka pehla phase hai. Iska kaam source code ko characters se <strong>tokens</strong> mein todna hai. Pehle teen terms pakke karo, kyunki exam mein inki definitions alag se poochhi jaati hain:</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Token vs lexeme vs pattern</caption>
+              <thead>
+                <tr><th scope="col">Term</th><th scope="col">Matlab</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Token</td><td>Meaningful unit ka naam + value ka pair</td><td><code>[identifier:a]</code></td></tr>
+                <tr><td>Lexeme</td><td>Source code mein mila actual text</td><td><code>a</code></td></tr>
+                <tr><td>Pattern</td><td>Lexeme ko describe karne wala rule (RE)</td><td>identifier: <code>letter(letter|digit)*</code></td></tr>
+              </tbody>
+            </table>
+          </div>
           <h3>Input-output example</h3>
           <pre class="code-sample"><code>Input:  int a = 5;
 Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
@@ -367,6 +449,8 @@ Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
             <li>Keywords, identifiers, constants aur operators pehchanta hai.</li>
             <li>Symbol table mein identifier entry banata hai.</li>
             <li>Line number track karta hai aur invalid token par lexical error deta hai.</li>
+            <li>Longest match rule follow karta hai: jaise <code>ifx</code> ko keyword <code>if</code> + <code>x</code> nahi, balki ek identifier maanta hai.</li>
+            <li>Lookahead use karke confusion solve karta hai, jaise <code>=</code> vs <code>==</code>.</li>
           </ul>
           <p>Andar ka flow: <strong>RE → NFA → DFA → minimal DFA</strong>. Pehle token ka pattern RE se likho, phir uska automaton banao, phir code ko ek pass mein scan karke longest match wala token lo. Exam mein line zaroor likho: lexical analysis syntax analysis se pehle hoti hai aur parser ko clean token stream deti hai.</p>
           <figure class="figure-card">
@@ -408,11 +492,12 @@ Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
           <h2 id="recap-heading">Ek nazar mein</h2>
           <dl class="recap-list">
             <dt>FA 5-tuple</dt><dd><code>Q, Σ, δ, q0, F</code>; output alphabet iska part nahi.</dd>
-            <dt>Regular operations</dt><dd>Union, concatenation (dot), Kleene star.</dd>
-            <dt>DFA vs NFA</dt><dd>DFA mein ek input par ek move; NFA mein choices/epsilon ho sakte hain.</dd>
-            <dt>Mealy vs Moore</dt><dd>Mealy output transition par; Moore output state par.</dd>
-            <dt>RE to tokens</dt><dd>Pattern RE se likho, DFA se scan karo, tokens parser ko do.</dd>
-            <dt>CFL extra power</dt><dd>Stack chahiye; example <code>a<sup>n</sup>b<sup>n</sup></code>.</dd>
+            <dt>Regular operations</dt><dd>Union, concatenation (dot), Kleene star; precedence star &gt; dot &gt; union.</dd>
+            <dt>DFA vs NFA</dt><dd>DFA mein ek input par ek move; NFA mein choices/epsilon; power equal; subset construction se conversion.</dd>
+            <dt>Mealy vs Moore</dt><dd>Mealy output transition par (n inputs → n outputs); Moore output state par (n inputs → n+1 outputs).</dd>
+            <dt>CFG 4-tuple</dt><dd><code>G = (V, T, P, S)</code>; left side par single variable; example <code>S → aSb | ε</code>.</dd>
+            <dt>RE to tokens</dt><dd>Pattern RE se likho, DFA se scan karo, longest match lo, tokens parser ko do.</dd>
+            <dt>CFL extra power</dt><dd>Stack chahiye; example <code>a<sup>n</sup>b<sup>n</sup></code> regular nahi hai.</dd>
           </dl>
 
           <div class="terminal-log" aria-label="Understanding check">
@@ -434,6 +519,471 @@ Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
         </section>
       </article>
 
+      <article class="prose-column" data-lang="en" hidden>
+        <section aria-labelledby="how-to-use-en">
+          <p class="section-kicker">START HERE / HOW TO USE</p>
+          <h2 id="how-to-use-en">Do this QB in 3 rounds</h2>
+          <p class="dropcap">Mugging up answers directly creates confusion in the mid-sem. Treat every question as a small decision first: what concept is it asking, and what is the one-line reason behind the answer?</p>
+          <p><strong>Round 1:</strong> Cover the MCQ options and recall the answer. <strong>Round 2:</strong> Speak or write the theory points in your own words. <strong>Round 3:</strong> Draw the DFA and Mealy–Moore examples yourself on paper.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Finite Automata, DFA/NFA, Moore and Mealy machines, regular expressions, regular languages, CFG basics, and lexical analysis.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="mcq-heading-en">
+          <p class="section-kicker">01 / MCQ ANSWERS WITH REASONS</p>
+          <h2 id="mcq-heading-en">10 MCQs — answers with short logic</h2>
+          <ol class="issue-list">
+            <li>
+              <div><h3>Partial order — answer: d) reflexive and transitive</h3><p>A partial order is reflexive, antisymmetric, and transitive. Among the given options, <strong>d</strong> is the most complete choice. If the antisymmetric option appears in the exam, include it too.</p></div>
+            </li>
+            <li>
+              <div><h3>Regular language construction — answer: d) All of the mentioned</h3><p>Regular languages are built from basic languages using <strong>Union, Concatenation, and Kleene*</strong> — all three. Your QB says “cannot be obtained”; that is likely a typo, the correct meaning is “can be obtained”.</p></div>
+            </li>
+            <li>
+              <div><h3>Octal number divisible by 3 — answer: b) 3</h3><p>You need 3 states for remainders 0, 1, and 2. The remainder-0 state is the accept state. So the minimum is <strong>3 states</strong>.</p></div>
+            </li>
+            <li>
+              <div><h3>Not part of the FA 5-tuple — answer: d) Output Alphabet</h3><p>The FA 5-tuple is <code>Q, Σ, δ, q0, F</code>. The output alphabet is not part of it; it belongs to Moore and Mealy machines.</p></div>
+            </li>
+            <li>
+              <div><h3>Length at most 2, Σ = {0, 1} — answer: a) 7</h3><p><strong>1</strong> string of length 0 (ε), <strong>2</strong> of length 1, <strong>4</strong> of length 2. Total <code>1 + 2 + 4 = 7</code>. The QB writes “(Σr)*”; read it as Σ*.</p></div>
+            </li>
+            <li>
+              <div><h3>Myhill-Nerode — answer: d) Nerode</h3><p>The correct theorem is the <strong>Myhill-Nerode theorem</strong>: a language is regular iff its Nerode equivalence classes are finite. So “Nerode” is the answer.</p></div>
+            </li>
+            <li>
+              <div><h3>Generation from simple primitive languages — answer: b) It takes no auxiliary memory</h3><p>A regular language is recognized by a finite-state device and needs no extra stack or tape memory. Option a) says “infinite states”, which is wrong; the correct word is <strong>finite states</strong>.</p></div>
+            </li>
+            <li>
+              <div><h3>Does not represent {0, 01} — answer: d) {0} ^ {01}</h3><p>Options a), b), and c) are all different ways of writing the same set {0, 01}. Only the notation in option d) does not represent this language.</p></div>
+            </li>
+            <li>
+              <div><h3>Concatenation operation — answer: b) Dot</h3><p>Concatenation is the <strong>dot</strong> operation. <code>A.B</code> means A followed by B.</p></div>
+            </li>
+            <li>
+              <div><h3>Concatenation of R with Φ — answer: b) Φ</h3><p>Concatenation with the empty set always gives empty: <code>R.Φ = Φ</code>. Just like multiplying by zero gives zero.</p></div>
+            </li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="cfl-regular-heading-en">
+          <p class="section-kicker">02 / THEORY Q1</p>
+          <h2 id="cfl-regular-heading-en">Context-free vs regular languages</h2>
+          <p>A <strong>regular language</strong> is a simple pattern language that can be checked without remembering anything — the machine only knows which state it is in. A <strong>context-free language (CFL)</strong> is more powerful: it handles nesting or counting structures that require the machine to remember past symbols.</p>
+          <p>Simple rule of thumb: if checking the pattern needs counting or matching (like closing opened brackets), it cannot be regular — it needs stack memory, and that is exactly the CFL territory.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / difference in power</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Regular language</th><th scope="col">Context-free language</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Machine</td><td>Finite Automata, no extra memory</td><td>Pushdown Automata, with stack memory</td></tr>
+                <tr><td>Memory logic</td><td>Only the current state is remembered</td><td>Open symbols are remembered on the stack</td></tr>
+                <tr><td>Grammar</td><td>Regular grammar; rules shaped <code>A → aB</code> or <code>A → a</code></td><td>Context-free grammar; rules shaped <code>A → α</code> (α anything)</td></tr>
+                <tr><td>Example</td><td>Strings ending with <code>01</code></td><td><code>a<sup>n</sup>b<sup>n</sup></code>, e.g. <code>aabb</code></td></tr>
+                <tr><td>Non-example</td><td><code>a<sup>n</sup>b<sup>n</sup></code> is not regular</td><td>Every regular language is also CFL</td></tr>
+                <tr><td>Typical test</td><td>Build a DFA or write an RE</td><td>Write a CFG or explain via PDA</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="analogy"><strong>Memory hook:</strong> Regular language = a token counter with no slip of paper; CFL = bracket matching with a stack of paper slips.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Every regular language is also context-free, but every context-free language is not regular.</p>
+          </div>
+          <p>Do write one line in the exam: <code>a<sup>n</sup>b<sup>n</sup></code> is not regular because remembering the count of a's needs unbounded memory, while an FA has only finite states.</p>
+        </section>
+
+        <section aria-labelledby="cfg-heading-en">
+          <p class="section-kicker">03 / THEORY Q2</p>
+          <h2 id="cfg-heading-en">The concept of a context-free grammar</h2>
+          <p>A <strong>CFG</strong> is a set of rules that generates a language. It is defined by 4 parts: <code>G = (V, T, P, S)</code>. Understand each part with one example first.</p>
+          <ul class="plain-list">
+            <li><strong>V (variables / non-terminals):</strong> symbols that expand further, e.g. <code>S</code>.</li>
+            <li><strong>T (terminals):</strong> final symbols appearing in strings, e.g. <code>a</code>, <code>b</code>.</li>
+            <li><strong>P (productions):</strong> replacement rules, e.g. <code>S → aSb | ε</code>. Every rule has exactly one variable on the left — that is what “context-free” means.</li>
+            <li><strong>S (start symbol):</strong> every derivation begins here.</li>
+          </ul>
+          <h3>Worked derivation example</h3>
+          <pre class="code-sample"><code>S ⇒ aSb ⇒ aaSbb ⇒ aabb
+Rule: S → aSb | ε
+Language: a<sup>n</sup>b<sup>n</sup></code></pre>
+          <p>Each step replaces one variable using a rule. Expanding the leftmost variable every time is a <strong>leftmost derivation</strong>; expanding the rightmost is a <strong>rightmost derivation</strong>. Both build the same string.</p>
+          <p>A string of grammar symbols appearing mid-derivation is a <strong>sentential form</strong> — e.g. <code>aaSbb</code> above. When only terminals remain, it is a final string. Drawing this process as a tree gives a <strong>parse tree</strong>: root <code>S</code>, leaves the final string, every internal node following its production.</p>
+          <p>The set of all final strings is the <strong>language of the grammar, L(G)</strong>. If one string gets two different parse trees, the grammar is <strong>ambiguous</strong> — an important Unit 3 exam point.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A context-free grammar is a 4-tuple G = (V, T, P, S) where every production has a single variable on its left-hand side.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="re-operators-heading-en">
+          <p class="section-kicker">04 / THEORY Q3</p>
+          <h2 id="re-operators-heading-en">Operators of regular expressions</h2>
+          <p>A regular expression is a short way of writing a pattern. Memorize three basic operators first, then two handy shortcuts:</p>
+          <ul class="plain-list">
+            <li><strong>Union (+ or |):</strong> choice. <code>0 + 1</code> means “0 or 1”.</li>
+            <li><strong>Concatenation (dot):</strong> sequence. <code>0.1</code> means “first 0, then 1”, i.e. <code>01</code>. The dot is often hidden and written just as <code>01</code>.</li>
+            <li><strong>Kleene star (*):</strong> zero or more repeats. <code>0*</code> means ε, 0, 00, 000, …</li>
+            <li><strong>Plus (R+):</strong> one-or-more repeats, e.g. <code>a+</code> means a, aa, aaa, … (but not ε).</li>
+            <li><strong>Optional (?):</strong> zero-or-one, e.g. <code>a?</code> means ε or a.</li>
+          </ul>
+          <p>Precedence is fixed: <strong>star &gt; concatenation &gt; union</strong>. So <code>0 + 01</code> means <code>0 + (0.1)</code>, and <code>ab*</code> means <code>a(b*)</code>, not <code>(ab)*</code>.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Important algebraic laws</caption>
+              <thead>
+                <tr><th scope="col">Law</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Union commutative/idempotent</td><td><code>A + B = B + A</code>, <code>A + A = A</code></td></tr>
+                <tr><td>Concatenation associative</td><td><code>(AB)C = A(BC)</code></td></tr>
+                <tr><td>Distributive</td><td><code>A(B + C) = AB + AC</code></td></tr>
+                <tr><td>Identity/annihilator</td><td><code>A + Φ = A</code>, <code>A.ε = A</code>, <code>A.Φ = Φ</code></td></tr>
+                <tr><td>Star properties</td><td><code>A* = ε + AA*</code>, <code>(A*)* = A*</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>2 ready-made RE building examples</h3>
+          <ul class="plain-list">
+            <li><strong>Ending with “01”:</strong> anything first, then 01 — <code>(0 + 1)*01</code>.</li>
+            <li><strong>Containing “00”:</strong> 00 in the middle, anything around — <code>(0 + 1)*00(0 + 1)*</code>.</li>
+          </ul>
+          <p>Exam tip: after writing an RE, test it with 2 accepting and 1 rejecting string — it signals clear concepts to the examiner.</p>
+        </section>
+
+        <section aria-labelledby="fa-application-heading-en">
+          <p class="section-kicker">05 / THEORY Q4</p>
+          <h2 id="fa-application-heading-en">Applications of Finite Automata</h2>
+          <p>FA is not just theory — wherever an input must be scanned step by step to reach a decision, FA logic applies. Understand each application with its one-line mechanism:</p>
+          <ol class="issue-list">
+            <li>
+              <div><h3>Text search and pattern matching</h3><p>Tools like editors and <code>grep</code> build an automaton for the keyword and scan text in a single pass. This is the direct syllabus application — a match is reported the moment the pattern is found.</p></div>
+            </li>
+            <li>
+              <div><h3>Lexical analysis</h3><p>The compiler builds DFAs from RE patterns of keywords, identifiers, and numbers, then breaks source code into tokens. Each token type is an accept state.</p></div>
+            </li>
+            <li>
+              <div><h3>Protocols and control systems</h3><p>Traffic lights, vending machines, elevators, and network protocols have modes as states and events as transitions. FA verifies that a wrong sequence can never execute.</p></div>
+            </li>
+            <li>
+              <div><h3>Hardware design</h3><p>Sequential circuits (counters, sequence detectors) are designed directly from FA — every flip-flop combination is a state.</p></div>
+            </li>
+            <li>
+              <div><h3>Input validation</h3><p>Formats like email, phone numbers, or OTPs are validated by FA patterns — a wrong character sends the machine to a reject state at once.</p></div>
+            </li>
+            <li>
+              <div><h3>Game logic and AI states</h3><p>Game character modes (idle, attack, escape) form a state machine; conditions trigger the transitions.</p></div>
+            </li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="dfa-nfa-heading-en">
+          <p class="section-kicker">06 / THEORY Q5</p>
+          <h2 id="dfa-nfa-heading-en">Difference between DFA and NFA</h2>
+          <p>Both have equal power (both recognize regular languages); only the rules differ. A <strong>DFA</strong> has exactly one path in every situation; an <strong>NFA</strong> allows choices and shortcut (epsilon) moves.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / determinism compared</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">DFA</th><th scope="col">NFA</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Transition function</td><td><code>δ: Q × Σ → Q</code> — one input, one state</td><td><code>δ: Q × (Σ ∪ {ε}) → 2<sup>Q</sup></code> — a set of states</td></tr>
+                <tr><td>Epsilon move</td><td>Not allowed</td><td>Allowed in epsilon-NFA without consuming input</td></tr>
+                <tr><td>Dead situation</td><td>Transition compulsory on every input (trap state used)</td><td>Transition may be missing — that path simply dies</td></tr>
+                <tr><td>Design vs run</td><td>Longer to write, easy to run</td><td>Compact to design, choices must be tracked while running</td></tr>
+                <tr><td>Conversion</td><td>—</td><td>Subset construction converts every NFA to a DFA</td></tr>
+                <tr><td>Power</td><td>Regular languages</td><td>Regular languages — power is equal</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Subset construction</strong> in one line: make every possible subset of NFA states one DFA state; the start subset is the epsilon-closure of the start state. Writing this line strengthens the conversion part of your answer.</p>
+          <p>Do write one line in the exam: NFA is convenient for design, DFA for execution.</p>
+        </section>
+
+        <section aria-labelledby="mealy-moore-conversion-heading-en">
+          <p class="section-kicker">07 / THEORY Q6</p>
+          <h2 id="mealy-moore-conversion-heading-en">Converting a Mealy Machine to a Moore Machine</h2>
+          <p>The QB spells it “Melay”; the standard spelling is <strong>Mealy Machine</strong>. The rule is simple: a Mealy machine carries output on the transition (edge), a Moore machine on the state (node). So lift the output off the transition onto the next state — and split the state wherever there is a conflict.</p>
+          <h3>Conversion steps</h3>
+          <ul class="plain-list">
+            <li><strong>Step 1:</strong> Look at every Mealy transition <code>present-state —input/output→ next-state</code>.</li>
+            <li><strong>Step 2:</strong> Create a Moore state carrying that output for the next state, e.g. <code>q1/1</code> means state q1 with output 1.</li>
+            <li><strong>Step 3:</strong> If one state is entered with different outputs, split it — one copy per output.</li>
+            <li><strong>Step 4:</strong> Create a separate Moore start state; copy the remaining transitions on the same inputs.</li>
+          </ul>
+          <h3>Worked example — with tables</h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Given Mealy machine</caption>
+              <thead>
+                <tr><th scope="col">Present state</th><th scope="col">On 0</th><th scope="col">On 1</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>q0</td><td>q0 / 0</td><td>q1 / 1</td></tr>
+                <tr><td>q1</td><td>q0 / 0</td><td>q1 / 1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Converted Moore machine</caption>
+              <thead>
+                <tr><th scope="col">Present state</th><th scope="col">Output</th><th scope="col">On 0</th><th scope="col">On 1</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>→ q0-start</td><td>—</td><td>q0/0</td><td>q1/1</td></tr>
+                <tr><td>q0/0</td><td>0</td><td>q0/0</td><td>q1/1</td></tr>
+                <tr><td>* q1/1</td><td>1</td><td>q0/0</td><td>q1/1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre class="code-sample"><code>Verify with input 0110:
+Mealy outputs:  0 1 1 0  (on every edge)
+Moore outputs: - 0 1 1 0  (on states; leading dash is the start)</code></pre>
+          <p>Both give the same output sequence — the Moore output only appears shifted by one step, because it sits on states. The reverse conversion (Moore → Mealy) is easy: copy each state's output onto all its incoming edges; no splitting needed.</p>
+          <p>Draw both a table and a small state diagram in the exam. And write one line: a Moore machine usually needs more states, because differing outputs force state splits.</p>
+        </section>
+
+        <section aria-labelledby="construct-dfa-heading-en">
+          <p class="section-kicker">08 / THEORY Q7</p>
+          <h2 id="construct-dfa-heading-en">Constructing a DFA — worked example</h2>
+          <p>Follow this systematic 4-step method for DFA construction, then apply it to the example:</p>
+          <ul class="plain-list">
+            <li><strong>Step 1 — What to remember:</strong> decide which past of the input must be remembered.</li>
+            <li><strong>Step 2 — Fix states:</strong> one state per memorable situation.</li>
+            <li><strong>Step 3 — Write transitions:</strong> a next state for every state + every input symbol; no combination left out.</li>
+            <li><strong>Step 4 — Mark start/accept:</strong> → on start, double circle (*) on accept.</li>
+          </ul>
+          <p>Example: <strong>over Σ = {0, 1}, strings ending in “01”.</strong> What must be remembered: how much of the suffix “01” has matched so far?</p>
+          <ul class="plain-list">
+            <li><strong>q0:</strong> start; no useful suffix matched yet.</li>
+            <li><strong>q1:</strong> last symbol seen was 0; “0” matched.</li>
+            <li><strong>q2:</strong> accept; the string ends in “01”.</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Transition table / ending with 01</caption>
+              <thead>
+                <tr><th scope="col">State</th><th scope="col">On 0</th><th scope="col">On 1</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>→ q0</td><td>q1</td><td>q0</td></tr>
+                <tr><td>q1</td><td>q1</td><td>q2</td></tr>
+                <tr><td>* q2</td><td>q1</td><td>q0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre class="code-sample"><code>Trace 101 (accept): q0-1→q0, q0-0→q1, q1-1→q2 = ACCEPT.
+Trace 10 (reject):  q0-1→q0, q0-0→q1 = REJECT (q1 not accept).</code></pre>
+          <p>Write the 5-tuple: <code>Q = {q0, q1, q2}</code>, <code>Σ = {0, 1}</code>, <code>δ</code> as in the table above, start <code>q0</code>, final <code>{q2}</code>.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-dfa-title-en fig-dfa-desc-en">
+                <title id="fig-dfa-title-en">DFA ending in 01</title>
+                <desc id="fig-dfa-desc-en">Three states: q0 start, q1 after seeing zero, q2 accept state. Every transition labelled.</desc>
+                <defs>
+                  <pattern id="dots-dfa-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-dfa-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="260" fill="url(#dots-dfa-en)"></rect>
+                <text x="14" y="112" class="diagram-muted">START</text>
+                <path d="M16 122h38" class="diagram-stroke" marker-end="url(#arrow-dfa-en)"></path>
+                <circle cx="90" cy="130" r="30" class="diagram-stroke"></circle>
+                <text x="82" y="135" class="diagram-text">q0</text>
+                <circle cx="260" cy="130" r="30" class="diagram-stroke"></circle>
+                <text x="252" y="135" class="diagram-text">q1</text>
+                <circle cx="430" cy="130" r="30" class="diagram-stroke"></circle>
+                <circle cx="430" cy="130" r="23" class="diagram-stroke"></circle>
+                <text x="422" y="135" class="diagram-text">q2</text>
+                <text x="404" y="178" class="diagram-muted">ACCEPT</text>
+                <path d="M122 120h104" class="diagram-stroke" marker-end="url(#arrow-dfa-en)"></path>
+                <text x="168" y="108" class="diagram-muted">0</text>
+                <path d="M292 120h104" class="diagram-stroke" marker-end="url(#arrow-dfa-en)"></path>
+                <text x="338" y="108" class="diagram-muted">1</text>
+                <path d="M64 112C38 104 38 148 62 141" class="diagram-stroke" marker-end="url(#arrow-dfa-en)"></path>
+                <text x="22" y="156" class="diagram-muted">1</text>
+                <path d="M240 104C240 74 280 74 280 104" class="diagram-stroke" marker-end="url(#arrow-dfa-en)"></path>
+                <text x="256" y="66" class="diagram-muted">0</text>
+                <path d="M396 148H294" class="diagram-stroke" marker-end="url(#arrow-dfa-en)"></path>
+                <text x="340" y="164" class="diagram-muted">0</text>
+                <path d="M408 158C360 214 160 214 112 158" class="diagram-stroke" marker-end="url(#arrow-dfa-en)"></path>
+                <text x="252" y="230" class="diagram-muted">1</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>3-state DFA tracking the suffix “01”.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="mealy-moore-compare-heading-en">
+          <p class="section-kicker">09 / THEORY Q8</p>
+          <h2 id="mealy-moore-compare-heading-en">Mealy vs Moore machines</h2>
+          <p>Both are finite automata with output — they take input and produce output. The only difference is where the output sits: on the edge (Mealy) or on the node/state (Moore). That single difference changes timing and state count.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / output compared</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Mealy Machine</th><th scope="col">Moore Machine</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Output depends on</td><td>Present state + current input</td><td>Only present state</td></tr>
+                <tr><td>Output timing</td><td>Output can change as soon as input arrives</td><td>Output appears after the state changes</td></tr>
+                <tr><td>Number of states</td><td>Usually fewer states</td><td>Usually more states (due to splits)</td></tr>
+                <tr><td>Notation</td><td><code>input/output</code> on transitions</td><td><code>state/output</code> on states</td></tr>
+                <tr><td>Output length</td><td>n inputs → n outputs</td><td>n inputs → n+1 outputs (start state counts too)</td></tr>
+                <tr><td>Conversion</td><td>Moore → Mealy is easy</td><td>Mealy → Moore needs state splits</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre class="code-sample"><code>Input:  0 1 1 0   (machines of Q6 above)
+Mealy:  0 1 1 0
+Moore:  - 0 1 1 0   (- = start state has no output)</code></pre>
+          <p class="analogy"><strong>Memory hook:</strong> Mealy = instant reply; Moore = answer posted on the room's board after entering.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-moore-title-en fig-moore-desc-en">
+                <title id="fig-moore-title-en">Mealy and Moore output timing</title>
+                <desc id="fig-moore-desc-en">Mealy output on the transition edge, Moore output in the state node.</desc>
+                <defs>
+                  <pattern id="dots-machines-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-machines-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-machines-en)"></rect>
+                <text x="30" y="40" class="diagram-muted">MEALY: OUTPUT ON EDGE</text>
+                <circle cx="90" cy="105" r="26" class="diagram-stroke"></circle>
+                <text x="84" y="110" class="diagram-text">A</text>
+                <circle cx="220" cy="105" r="26" class="diagram-stroke"></circle>
+                <text x="214" y="110" class="diagram-text">B</text>
+                <path d="M118 105h74" class="diagram-stroke" marker-end="url(#arrow-machines-en)"></path>
+                <text x="140" y="93" class="diagram-muted">1 / 1</text>
+                <text x="30" y="160" class="diagram-muted">MOORE: OUTPUT IN STATE</text>
+                <circle cx="90" cy="205" r="26" class="diagram-stroke"></circle>
+                <text x="70" y="200" class="diagram-text">q0/0</text>
+                <circle cx="220" cy="205" r="26" class="diagram-stroke"></circle>
+                <text x="200" y="200" class="diagram-text">q1/1</text>
+                <path d="M118 205h74" class="diagram-stroke" marker-end="url(#arrow-machines-en)"></path>
+                <text x="150" y="193" class="diagram-muted">1</text>
+                <rect x="300" y="60" width="190" height="170" class="diagram-stroke"></rect>
+                <text x="316" y="86" class="diagram-muted">RULE</text>
+                <text x="316" y="108" class="diagram-text">Mealy edge →</text>
+                <text x="316" y="128" class="diagram-text">Moore node</text>
+                <text x="316" y="156" class="diagram-muted">CONVERSION</text>
+                <text x="316" y="176" class="diagram-text">shift output to</text>
+                <text x="316" y="196" class="diagram-text">state; split</text>
+                <text x="316" y="216" class="diagram-text">if needed</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Mealy responds at once, Moore with the state.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="lexical-heading-en">
+          <p class="section-kicker">10 / THEORY Q9</p>
+          <h2 id="lexical-heading-en">Lexical analysis in detail</h2>
+          <p><strong>Lexical analysis</strong> is the first phase of a compiler. It breaks source code characters into <strong>tokens</strong>. Fix three terms first — examiners ask their definitions separately:</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Token vs lexeme vs pattern</caption>
+              <thead>
+                <tr><th scope="col">Term</th><th scope="col">Meaning</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Token</td><td>A name + value pair for a meaningful unit</td><td><code>[identifier:a]</code></td></tr>
+                <tr><td>Lexeme</td><td>The actual text found in source code</td><td><code>a</code></td></tr>
+                <tr><td>Pattern</td><td>The rule (RE) describing the lexeme</td><td>identifier: <code>letter(letter|digit)*</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Input–output example</h3>
+          <pre class="code-sample"><code>Input:  int a = 5;
+Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
+          <h3>What the lexical analyzer does</h3>
+          <ul class="plain-list">
+            <li>Removes whitespace and comments.</li>
+            <li>Recognizes keywords, identifiers, constants, and operators.</li>
+            <li>Creates identifier entries in the symbol table.</li>
+            <li>Tracks line numbers and reports lexical errors on invalid tokens.</li>
+            <li>Follows the longest-match rule: <code>ifx</code> is one identifier, not keyword <code>if</code> + <code>x</code>.</li>
+            <li>Uses lookahead to resolve confusion, e.g. <code>=</code> vs <code>==</code>.</li>
+          </ul>
+          <p>Inside flow: <strong>RE → NFA → DFA → minimal DFA</strong>. Write each token pattern as an RE, build its automaton, then scan the code in one pass taking the longest match. Do write the exam line: lexical analysis runs before syntax analysis and feeds a clean token stream to the parser.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 230" role="img" aria-labelledby="fig-lexical-title-en fig-lexical-desc-en">
+                <title id="fig-lexical-title-en">Lexical analysis flow</title>
+                <desc id="fig-lexical-desc-en">Source code through the lexer into tokens, then parser and symbol table.</desc>
+                <defs>
+                  <pattern id="dots-lexical-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-lexical-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="230" fill="url(#dots-lexical-en)"></rect>
+                <rect x="24" y="60" width="110" height="62" class="diagram-stroke"></rect>
+                <text x="36" y="84" class="diagram-muted">SOURCE</text>
+                <text x="36" y="104" class="diagram-text">int a=5;</text>
+                <rect x="168" y="60" width="130" height="62" class="diagram-stroke"></rect>
+                <text x="180" y="84" class="diagram-muted">LEXER + DFA</text>
+                <text x="180" y="104" class="diagram-text">tokens</text>
+                <rect x="332" y="60" width="164" height="62" class="diagram-stroke"></rect>
+                <text x="344" y="84" class="diagram-muted">PARSER + TABLE</text>
+                <text x="344" y="104" class="diagram-text">syntax + symbols</text>
+                <path d="M134 91h34" class="diagram-stroke" marker-end="url(#arrow-lexical-en)"></path>
+                <path d="M298 91h34" class="diagram-stroke" marker-end="url(#arrow-lexical-en)"></path>
+                <text x="260" y="160" text-anchor="middle" class="diagram-muted">RE → NFA → DFA → MINIMAL DFA</text>
+                <text x="260" y="184" text-anchor="middle" class="diagram-muted">TAKE THE LONGEST MATCH TOKEN</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Characters to tokens, then parsing.</span></figcaption>
+          </figure>
+          <p class="analogy"><strong>Memory hook:</strong> a DFA remembers suffixes; Mealy speaks on the edge, Moore in the state; the lexer turns patterns into tokens.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading-en">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading-en">At a glance</h2>
+          <dl class="recap-list">
+            <dt>FA 5-tuple</dt><dd><code>Q, Σ, δ, q0, F</code>; the output alphabet is not part of it.</dd>
+            <dt>Regular operations</dt><dd>Union, concatenation (dot), Kleene star; precedence star &gt; dot &gt; union.</dd>
+            <dt>DFA vs NFA</dt><dd>One move per input in DFA; choices/epsilon in NFA; equal power; subset construction converts.</dd>
+            <dt>Mealy vs Moore</dt><dd>Mealy output on transitions (n inputs → n outputs); Moore output on states (n inputs → n+1 outputs).</dd>
+            <dt>CFG 4-tuple</dt><dd><code>G = (V, T, P, S)</code>; single variable on the left; e.g. <code>S → aSb | ε</code>.</dd>
+            <dt>RE to tokens</dt><dd>Write patterns as REs, scan with a DFA, take the longest match, pass tokens to the parser.</dd>
+            <dt>CFL extra power</dt><dd>Needs a stack; e.g. <code>a<sup>n</sup>b<sup>n</sup></code> is not regular.</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Recall three answers without looking up:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Write your answers; then match with MCQ 4, 9, 10.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>What are the parts of the FA 5-tuple?
+              <ol type="A"><li>Q, Σ, δ, q0, F</li><li>Q, Σ, output, q0, F</li><li>Q, input, stack, q0, F</li><li>Q, Σ, δ, tape, F</li></ol>
+            </li>
+            <li>What is the result of R.Φ?
+              <ol type="A"><li>R</li><li>Φ</li><li>R.Φ, a different set</li><li>ε</li></ol>
+            </li>
+            <li>How many states did the DFA for strings ending in “01” use?
+              <ol type="A"><li>2</li><li>3</li><li>4</li><li>5</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: Unit 1 topic-wise notes — after recalling the answers.</p>
+        </section>
+      </article>
     </div>
   </main>
 
@@ -442,5 +992,28 @@ Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
     <span>MID-SEM QB / 10 MCQ + 09 THEORY</span>
     <a href="index.html#progress">Learning progress</a>
   </footer>
+
+  <script>
+  (() => {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    const apply = (lang) => {
+      document.querySelectorAll('[data-lang]').forEach((el) => {
+        el.hidden = el.dataset.lang !== lang;
+      });
+      document.documentElement.lang = lang === 'hi' ? 'hi-Latn' : 'en';
+      btn.textContent = lang === 'hi' ? 'English' : 'Hinglish';
+      try { localStorage.setItem('toc-qb-lang', lang); } catch (e) {}
+    };
+    let lang = 'hi';
+    try { lang = localStorage.getItem('toc-qb-lang') || 'hi'; } catch (e) {}
+    if (lang !== 'hi' && lang !== 'en') lang = 'hi';
+    apply(lang);
+    btn.addEventListener('click', () => {
+      lang = lang === 'hi' ? 'en' : 'hi';
+      apply(lang);
+    });
+  })();
+  </script>
 </body>
 </html>
