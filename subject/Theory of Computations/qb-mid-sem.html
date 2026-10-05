@@ -77,7 +77,7 @@
               <div><h3>FA ke 5-tuple mein kaun nahi — answer: d) Output Alphabet</h3><p>FA ka 5-tuple <code>Q, Σ, δ, q0, F</code> hota hai. Output alphabet FA ka part nahi hai; wo Moore aur Mealy machines mein hota hai.</p></div>
             </li>
             <li>
-              <div><h3>Length at most 2, Σ = {0,1} — answer: a) 7</h3><p>Length 0 ke <strong>1</strong> string (ε), length 1 ke <strong>2</strong> strings, length 2 ke <strong>4</strong> strings. Total <code>1 + 2 + 4 = 7</code>. QB mein “(∑r)*” likha hai; iska meaning Σ* samjho.</p></div>
+              <div><h3>Length at most 2, Σ = {0,1} — answer: a) 7</h3><p>Length 0 ke <strong>1</strong> string (ε), length 1 ke <strong>2</strong> strings, length 2 ke <strong>4</strong> strings. Total <code>1 + 2 + 4 = 7</code>. QB mein “(Σr)*” likha hai; iska meaning Σ* samjho.</p></div>
             </li>
             <li>
               <div><h3>Myhill-Nerode — answer: d) Nerode</h3><p>Sahi theorem <strong>Myhill-Nerode theorem</strong> hai: language regular hai iff Nerode equivalence classes finite hain. Isliye “Nerode” answer likho.</p></div>
@@ -110,7 +110,7 @@
               <tbody>
                 <tr><td>Machine</td><td>Finite Automata, bina extra memory</td><td>Pushdown Automata, stack memory ke saath</td></tr>
                 <tr><td>Grammar</td><td>Regular grammar</td><td>Context-free grammar</td></tr>
-                <tr><td>Example</td><td>Strings ending with <code>01</code></td><td><code>a^n b^n</code>, jaise <code>aabb</code></td></tr>
+                <tr><td>Example</td><td>Strings ending with <code>01</code></td><td><code>a<sup>n</sup>b<sup>n</sup></code>, jaise <code>aabb</code></td></tr>
                 <tr><td>Memory logic</td><td>Sirf current state yaad rehta hai</td><td>Stack par open symbols yaad rehte hain</td></tr>
               </tbody>
             </table>
@@ -134,7 +134,7 @@
           </ul>
           <pre class="code-sample"><code>S ⇒ aSb ⇒ aaSbb ⇒ aabb
 Rule: S → aSb | ε
-Language: a^n b^n</code></pre>
+Language: a<sup>n</sup>b<sup>n</sup></code></pre>
           <p>Jab derivation mein sirf grammar symbols hon, use <strong>sentential form</strong> kehte hain. Jab sirf terminals bachen, wo final string hoti hai. Isi process ko tree mein dikhaya jaye toh use <strong>parse tree</strong> kehte hain. Grammar ki sabhi final strings ka set <strong>language of grammar, L(G)</strong> hai.</p>
         </section>
 
@@ -201,7 +201,7 @@ Language: a^n b^n</code></pre>
               </tbody>
             </table>
           </div>
-          <p><strong>DFA</strong> ka transition function <code>δ: Q × Σ → Q</code> hota hai. <strong>NFA</strong> mein <code>δ: Q × (Σ ∪ {ε}) → 2^Q</code> hota hai, yani set of states milta hai. Exam mein ek line zaroor likho: NFA design ke liye convenient hai, DFA execution ke liye.</p>
+          <p><strong>DFA</strong> ka transition function <code>δ: Q × Σ → Q</code> hota hai. <strong>NFA</strong> mein <code>δ: Q × (Σ ∪ {ε}) → 2<sup>Q</sup></code> hota hai, yani set of states milta hai. Exam mein ek line zaroor likho: NFA design ke liye convenient hai, DFA execution ke liye.</p>
         </section>
 
         <section aria-labelledby="mealy-moore-conversion-heading">
@@ -210,7 +210,7 @@ Language: a^n b^n</code></pre>
           <p>QB mein “Melay” likha hai; standard spelling <strong>Mealy Machine</strong> hai. Rule simple hai: Mealy mein output transition par hota hai, Moore mein output state par hota hai. Isliye output ko transition se uthakar next state par chipka do.</p>
           <h3>Conversion steps</h3>
           <ul class="plain-list">
-            <li><strong>Step 1:</strong> Har Mealy transition <code>present-state --input/output--&gt; next-state</code> ko dekho.</li>
+            <li><strong>Step 1:</strong> Har Mealy transition <code>present-state —input/output→ next-state</code> ko dekho.</li>
             <li><strong>Step 2:</strong> Next state ke liye output wali nayi Moore state banao, jaise <code>q1/1</code>.</li>
             <li><strong>Step 3:</strong> Agar ek hi state mein alag outputs ke saath entry ho rahi hai, toh us state ko split karo.</li>
             <li><strong>Step 4:</strong> Start state ke liye alag Moore start state banao; baaki transitions same input par copy karo.</li>
@@ -232,7 +232,7 @@ q0-start --1--&gt; [q1/1]
         <section aria-labelledby="construct-dfa-heading">
           <p class="section-kicker">08 / THEORY Q7</p>
           <h2 id="construct-dfa-heading">DFA construct karo — suitable example</h2>
-          <p>Example lo: <strong>Σ = {0,1} par wo strings jo “01” par end hoti hain.</strong> Socho tumne abhi tak suffix ka kitna part match kiya hai.</p>
+          <p>Example lo: <strong>Σ = {0, 1} par wo strings jo “01” par end hoti hain.</strong> Socho tumne abhi tak suffix ka kitna part match kiya hai.</p>
           <ul class="plain-list">
             <li><strong>q0:</strong> start; abhi “01” ka koi useful suffix match nahi.</li>
             <li><strong>q1:</strong> last symbol 0 dekha, “0” match hua.</li>
@@ -251,7 +251,7 @@ q0-start --1--&gt; [q1/1]
               </tbody>
             </table>
           </div>
-          <p>Test karo: <code>101</code> reject hogi, <code>1001</code> accept hogi. 5-tuple likho: <code>Q = {q0,q1,q2}</code>, <code>Σ = {0,1}</code>, <code>δ</code> upar table jaisa, start <code>q0</code>, final <code>{q2}</code>.</p>
+          <p>Test karo: <code>101</code> reject hogi, <code>1001</code> accept hogi. 5-tuple likho: <code>Q = {q0, q1, q2}</code>, <code>Σ = {0, 1}</code>, <code>δ</code> upar table jaisa, start <code>q0</code>, final <code>{q2}</code>.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-dfa-title fig-dfa-desc">
@@ -412,7 +412,7 @@ Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
             <dt>DFA vs NFA</dt><dd>DFA mein ek input par ek move; NFA mein choices/epsilon ho sakte hain.</dd>
             <dt>Mealy vs Moore</dt><dd>Mealy output transition par; Moore output state par.</dd>
             <dt>RE to tokens</dt><dd>Pattern RE se likho, DFA se scan karo, tokens parser ko do.</dd>
-            <dt>CFL extra power</dt><dd>Stack chahiye; example <code>a^n b^n</code>.</dd>
+            <dt>CFL extra power</dt><dd>Stack chahiye; example <code>a<sup>n</sup>b<sup>n</sup></code>.</dd>
           </dl>
 
           <div class="terminal-log" aria-label="Understanding check">

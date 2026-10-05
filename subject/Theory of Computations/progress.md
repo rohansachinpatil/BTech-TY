@@ -21,6 +21,7 @@
 
 ## Diagram placement fix
 - QB page par teenon diagrams (FIG.001 DFA, FIG.002 Mealy/Moore, FIG.003 lexical flow) ab apne relevant sections ke andar inline hain; purana right-rail bunching hataya gaya. QB page single-column layout use karta hai.
+- Equations fix: `a^n b^n` ab proper superscript (aⁿbⁿ), `2^Q` ab 2^Q superscript, `(∑r)*` ka galat sigma correct (Σ), Mealy transition arrow standard, sets mein spacing.
 
 ## Unresolved questions
 - QB understanding confirmation pending hai.
