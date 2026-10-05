@@ -8,6 +8,11 @@
   <title>Mid-sem QB with answers — Theory of Computations</title>
   <link rel="stylesheet" href="../../assets/study-notes.css">
   <script src="../../assets/study-notes.js" defer></script>
+  <style>
+    .note-layout { grid-template-columns: minmax(0, 1fr); }
+    .prose-column { max-width: 76ch; }
+    .prose-column .figure-card { margin: 1.6rem 0 0.6rem; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Seedha QB par jao</a>
@@ -247,6 +252,46 @@ q0-start --1--&gt; [q1/1]
             </table>
           </div>
           <p>Test karo: <code>101</code> reject hogi, <code>1001</code> accept hogi. 5-tuple likho: <code>Q = {q0,q1,q2}</code>, <code>Σ = {0,1}</code>, <code>δ</code> upar table jaisa, start <code>q0</code>, final <code>{q2}</code>.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-dfa-title fig-dfa-desc">
+                <title id="fig-dfa-title">01 par end hone wala DFA</title>
+                <desc id="fig-dfa-desc">Teen states: q0 start, q1 ne zero dekha, q2 accept state. Har transition label ke saath.</desc>
+                <defs>
+                  <pattern id="dots-dfa" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-dfa" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="260" fill="url(#dots-dfa)"></rect>
+                <text x="14" y="112" class="diagram-muted">START</text>
+                <path d="M16 122h38" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
+                <circle cx="90" cy="130" r="30" class="diagram-stroke"></circle>
+                <text x="82" y="135" class="diagram-text">q0</text>
+                <circle cx="260" cy="130" r="30" class="diagram-stroke"></circle>
+                <text x="252" y="135" class="diagram-text">q1</text>
+                <circle cx="430" cy="130" r="30" class="diagram-stroke"></circle>
+                <circle cx="430" cy="130" r="23" class="diagram-stroke"></circle>
+                <text x="422" y="135" class="diagram-text">q2</text>
+                <text x="404" y="178" class="diagram-muted">ACCEPT</text>
+                <path d="M122 120h104" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
+                <text x="168" y="108" class="diagram-muted">0</text>
+                <path d="M292 120h104" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
+                <text x="338" y="108" class="diagram-muted">1</text>
+                <path d="M64 112C38 104 38 148 62 141" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
+                <text x="22" y="156" class="diagram-muted">1</text>
+                <path d="M240 104C240 74 280 74 280 104" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
+                <text x="256" y="66" class="diagram-muted">0</text>
+                <path d="M396 148H294" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
+                <text x="340" y="164" class="diagram-muted">0</text>
+                <path d="M408 158C360 214 160 214 112 158" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
+                <text x="252" y="230" class="diagram-muted">1</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Suffix “01” track karne wala 3-state DFA.</span></figcaption>
+          </figure>
         </section>
 
         <section aria-labelledby="mealy-moore-compare-heading">
@@ -267,6 +312,46 @@ q0-start --1--&gt; [q1/1]
             </table>
           </div>
           <p class="analogy"><strong>Yaad rakhne ki analogy:</strong> Mealy = bolte hi jawab; Moore = room badalne ke baad board par answer.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-moore-title fig-moore-desc">
+                <title id="fig-moore-title">Mealy aur Moore output timing</title>
+                <desc id="fig-moore-desc">Mealy mein output transition edge par, Moore mein output state node par.</desc>
+                <defs>
+                  <pattern id="dots-machines" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-machines" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-machines)"></rect>
+                <text x="30" y="40" class="diagram-muted">MEALY: OUTPUT ON EDGE</text>
+                <circle cx="90" cy="105" r="26" class="diagram-stroke"></circle>
+                <text x="84" y="110" class="diagram-text">A</text>
+                <circle cx="220" cy="105" r="26" class="diagram-stroke"></circle>
+                <text x="214" y="110" class="diagram-text">B</text>
+                <path d="M118 105h74" class="diagram-stroke" marker-end="url(#arrow-machines)"></path>
+                <text x="140" y="93" class="diagram-muted">1 / 1</text>
+                <text x="30" y="160" class="diagram-muted">MOORE: OUTPUT IN STATE</text>
+                <circle cx="90" cy="205" r="26" class="diagram-stroke"></circle>
+                <text x="70" y="200" class="diagram-text">q0/0</text>
+                <circle cx="220" cy="205" r="26" class="diagram-stroke"></circle>
+                <text x="200" y="200" class="diagram-text">q1/1</text>
+                <path d="M118 205h74" class="diagram-stroke" marker-end="url(#arrow-machines)"></path>
+                <text x="150" y="193" class="diagram-muted">1</text>
+                <rect x="300" y="60" width="190" height="170" class="diagram-stroke"></rect>
+                <text x="316" y="86" class="diagram-muted">RULE</text>
+                <text x="316" y="108" class="diagram-text">Mealy edge →</text>
+                <text x="316" y="128" class="diagram-text">Moore node</text>
+                <text x="316" y="156" class="diagram-muted">CONVERSION</text>
+                <text x="316" y="176" class="diagram-text">output ko state</text>
+                <text x="316" y="196" class="diagram-text">par shift karo;</text>
+                <text x="316" y="216" class="diagram-text">zaroorat par split</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Mealy turant output, Moore state ke saath output.</span></figcaption>
+          </figure>
         </section>
 
         <section aria-labelledby="lexical-heading">
@@ -284,6 +369,38 @@ Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
             <li>Line number track karta hai aur invalid token par lexical error deta hai.</li>
           </ul>
           <p>Andar ka flow: <strong>RE → NFA → DFA → minimal DFA</strong>. Pehle token ka pattern RE se likho, phir uska automaton banao, phir code ko ek pass mein scan karke longest match wala token lo. Exam mein line zaroor likho: lexical analysis syntax analysis se pehle hoti hai aur parser ko clean token stream deti hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 230" role="img" aria-labelledby="fig-lexical-title fig-lexical-desc">
+                <title id="fig-lexical-title">Lexical analysis ka flow</title>
+                <desc id="fig-lexical-desc">Source code lexer se tokens mein, phir parser aur symbol table tak.</desc>
+                <defs>
+                  <pattern id="dots-lexical" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-lexical" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="230" fill="url(#dots-lexical)"></rect>
+                <rect x="24" y="60" width="110" height="62" class="diagram-stroke"></rect>
+                <text x="36" y="84" class="diagram-muted">SOURCE</text>
+                <text x="36" y="104" class="diagram-text">int a=5;</text>
+                <rect x="168" y="60" width="130" height="62" class="diagram-stroke"></rect>
+                <text x="180" y="84" class="diagram-muted">LEXER + DFA</text>
+                <text x="180" y="104" class="diagram-text">tokens</text>
+                <rect x="332" y="60" width="164" height="62" class="diagram-stroke"></rect>
+                <text x="344" y="84" class="diagram-muted">PARSER + TABLE</text>
+                <text x="344" y="104" class="diagram-text">syntax + symbols</text>
+                <path d="M134 91h34" class="diagram-stroke" marker-end="url(#arrow-lexical)"></path>
+                <path d="M298 91h34" class="diagram-stroke" marker-end="url(#arrow-lexical)"></path>
+                <text x="260" y="160" text-anchor="middle" class="diagram-muted">RE → NFA → DFA → MINIMAL DFA</text>
+                <text x="260" y="184" text-anchor="middle" class="diagram-muted">LONGEST MATCH WALA TOKEN LO</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Characters se tokens, phir parsing.</span></figcaption>
+          </figure>
+          <p class="analogy"><strong>Memory hook:</strong> DFA suffix yaad rakhta hai; Mealy edge par bolta hai, Moore state par; lexer pattern ko token mein badalta hai.</p>
         </section>
 
         <section aria-labelledby="recap-heading">
@@ -317,107 +434,6 @@ Tokens: [keyword:int] [identifier:a] [=] [number:5] [;]</code></pre>
         </section>
       </article>
 
-      <aside class="figure-rail" aria-label="QB ke diagrams">
-        <figure class="figure-card" data-mobile-after="construct-dfa-heading">
-          <div class="figure-canvas">
-            <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-dfa-title fig-dfa-desc">
-              <title id="fig-dfa-title">01 par end hone wala DFA</title>
-              <desc id="fig-dfa-desc">Teen states: q0 start, q1 ne zero dekha, q2 accept state.</desc>
-              <defs>
-                <pattern id="dots-dfa" width="16" height="16" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
-                </pattern>
-                <marker id="arrow-dfa" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
-                </marker>
-              </defs>
-              <rect width="520" height="250" fill="url(#dots-dfa)"></rect>
-              <path d="M20 125h34" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
-              <circle cx="110" cy="125" r="34" class="diagram-stroke"></circle>
-              <text x="102" y="130" class="diagram-text">q0</text>
-              <circle cx="270" cy="125" r="34" class="diagram-stroke"></circle>
-              <text x="262" y="130" class="diagram-text">q1</text>
-              <circle cx="430" cy="125" r="34" class="diagram-stroke"></circle>
-              <circle cx="430" cy="125" r="27" class="diagram-stroke"></circle>
-              <text x="422" y="130" class="diagram-text">q2</text>
-              <path d="M144 115h92" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
-              <path d="M304 115h92" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
-              <path d="M110 91c0-34 320-34 320 0" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
-              <path d="M430 159c0 34-320 34-320 0" class="diagram-stroke" marker-end="url(#arrow-dfa)"></path>
-              <text x="172" y="103" class="diagram-muted">0</text>
-              <text x="332" y="103" class="diagram-muted">1</text>
-              <text x="258" y="72" class="diagram-muted">1: q2→q0, 0: q2→q1</text>
-              <text x="248" y="205" class="diagram-muted">1: q1→q2, 0: q0/q1 loop</text>
-            </svg>
-          </div>
-          <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Suffix “01” track karne wala 3-state DFA.</span></figcaption>
-        </figure>
-
-        <figure class="figure-card" data-mobile-after="mealy-moore-compare-heading">
-          <div class="figure-canvas">
-            <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-moore-title fig-moore-desc">
-              <title id="fig-moore-title">Mealy aur Moore output timing</title>
-              <desc id="fig-moore-desc">Mealy output transition par, Moore output state par.</desc>
-              <defs>
-                <pattern id="dots-machines" width="16" height="16" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
-                </pattern>
-                <marker id="arrow-machines" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
-                </marker>
-              </defs>
-              <rect width="520" height="250" fill="url(#dots-machines)"></rect>
-              <rect x="30" y="55" width="210" height="75" class="diagram-stroke"></rect>
-              <text x="46" y="80" class="diagram-muted">MEALY</text>
-              <text x="46" y="103" class="diagram-text">state + input → out</text>
-              <text x="46" y="122" class="diagram-text">edge: 1/1</text>
-              <rect x="280" y="55" width="210" height="75" class="diagram-stroke"></rect>
-              <text x="296" y="80" class="diagram-muted">MOORE</text>
-              <text x="296" y="103" class="diagram-text">state → out</text>
-              <text x="296" y="122" class="diagram-text">node: q1/1</text>
-              <path d="M30 175h460" class="diagram-stroke"></path>
-              <path d="M70 175v-25m120 25v-40m120 25v-25m120 25v-40" class="diagram-stroke" marker-end="url(#arrow-machines)"></path>
-              <text x="46" y="198" class="diagram-text">INPUT</text>
-              <text x="246" y="198" class="diagram-text">MEALY FAST</text>
-              <text x="396" y="198" class="diagram-text">MOORE AFTER STATE</text>
-            </svg>
-          </div>
-          <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Mealy turant output, Moore state ke saath output.</span></figcaption>
-        </figure>
-
-        <figure class="figure-card" data-mobile-after="lexical-heading">
-          <div class="figure-canvas">
-            <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-lexical-title fig-lexical-desc">
-              <title id="fig-lexical-title">Lexical analysis ka flow</title>
-              <desc id="fig-lexical-desc">Source code se tokens aur symbol table tak ka flow.</desc>
-              <defs>
-                <pattern id="dots-lexical" width="16" height="16" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
-                </pattern>
-                <marker id="arrow-lexical" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                  <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
-                </marker>
-              </defs>
-              <rect width="520" height="250" fill="url(#dots-lexical)"></rect>
-              <rect x="24" y="95" width="110" height="60" class="diagram-stroke"></rect>
-              <text x="36" y="119" class="diagram-muted">SOURCE</text>
-              <text x="36" y="138" class="diagram-text">int a=5;</text>
-              <rect x="168" y="95" width="130" height="60" class="diagram-stroke"></rect>
-              <text x="180" y="119" class="diagram-muted">LEXER + DFA</text>
-              <text x="180" y="138" class="diagram-text">tokens</text>
-              <rect x="332" y="95" width="164" height="60" class="diagram-stroke"></rect>
-              <text x="344" y="119" class="diagram-muted">PARSER + TABLE</text>
-              <text x="344" y="138" class="diagram-text">syntax + symbols</text>
-              <path d="M134 125h34" class="diagram-stroke" marker-end="url(#arrow-lexical)"></path>
-              <path d="M298 125h34" class="diagram-stroke" marker-end="url(#arrow-lexical)"></path>
-              <text x="180" y="180" class="diagram-muted">RE → NFA → DFA → MINIMAL DFA</text>
-            </svg>
-          </div>
-          <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Characters se tokens, phir parsing.</span></figcaption>
-        </figure>
-
-        <p class="rail-note"><strong>Memory hook:</strong> DFA suffix yaad rakhta hai; Mealy edge par bolta hai, Moore state par; lexer pattern ko token mein badalta hai.</p>
-      </aside>
     </div>
   </main>
 

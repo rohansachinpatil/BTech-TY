@@ -19,6 +19,9 @@
 - Current: Mid-sem QB ready; learner ke answers recall aur theory practice pending.
 - Next: Unit 1 — Formal Language Theory and Finite Automata, topic-wise notes; QB understanding confirm hone ke baad aage badhna hai.
 
+## Diagram placement fix
+- QB page par teenon diagrams (FIG.001 DFA, FIG.002 Mealy/Moore, FIG.003 lexical flow) ab apne relevant sections ke andar inline hain; purana right-rail bunching hataya gaya. QB page single-column layout use karta hai.
+
 ## Unresolved questions
 - QB understanding confirmation pending hai.
 - QB Q2 mein “cannot be obtained” wording likely typo hai; note mein “can be obtained” meaning flag kiya gaya hai.
