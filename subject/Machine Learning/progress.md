@@ -10,7 +10,7 @@
 - Learner-provided mid-sem QB (docx, Unit I–III): Assignment-1 (14 items: intro, types, scenarios), Assignment-2 (6 items: metrics + 2 numericals), Assignment-3 (7 items: regression + 2 numericals).
 
 ## Generated note files
-- `qb-mid-sem.html` — 27 questions ke detailed lengthy answers (Hinglish + English, header switch button with saved preference); 3 solved numericals with steps (confusion matrix 85/90.9/83.3/86.9, regression line ŷ=1.5+0.95x, MAE=RMSE=10); 4 outline diagrams; exam recap.
+- `qb-mid-sem.html` — 26 per-question Q&A blocks (har block mein Question box + separate detailed Answer; docx scenarios 7–10 = Q6A–Q6D, docx 11–14 = Q7–Q10) in Hinglish + English with header switch button (saved preference); 3 solved numericals with steps (confusion matrix 85/90.9/83.3/86.9, regression line ŷ=1.5+0.95x, MAE=RMSE=10); 4 outline diagrams inline in their sections; exam recap.
 - `index.html` — Subject table of contents, alag QB section/tab, learning-progress view aur syllabus tab (syllabus.txt ke 5 units).
 
 ## Confirmed complete topics
