@@ -71,6 +71,10 @@
           </div>
           <p class="section-kicker">ANSWER</p>
           <p><strong>Machine Learning</strong> ka matlab hai aisa program banana jo data se khud seekhe — use har situation ka rule pehle se likhkar nahi dena padta. Arthur Samuel ki classic definition: “field of study that gives computers the ability to learn without being explicitly programmed.” Simple words mein: data input karo, model patterns dhoondhta hai, aur naye data par prediction karta hai.</p>
+          <div class="definition">
+            <span class="meta-label">FORMAL DEFINITION (TOM MITCHELL)</span>
+            <p>Task T, Performance measure P, Experience E — E ke saath T par P improve ho toh program learn kar raha hai. Example: T = spam pehchanna, P = accuracy, E = labeled emails.</p>
+          </div>
           <p><strong>Learning</strong> ka matlab yahan performance improve hona hai: jaise-jaise model zyada examples dekhta hai, uski predictions behtar hoti jaati hain. Example: spam filter ko hazaron labeled emails dikhao; wo khud seekh leta hai ki kaunse words spam ki nishaani hain. Training ke baad model naye, unseen emails par kaam karta hai — isi ko <strong>generalization</strong> kehte hain.</p>
           <div class="data-table-wrap">
             <table class="data-table">
@@ -88,11 +92,45 @@
             </table>
           </div>
           <p>Exam mein ek line zaroor likho: traditional programming mein output data aur rules se nikalta hai; ML mein rules (model) data aur sample outputs se nikalte hain.</p>
-          <div class="definition">
-            <span class="meta-label">FORMAL DEFINITION (TOM MITCHELL)</span>
-            <p>Task T, Performance measure P, Experience E — E ke saath T par P improve ho toh program learn kar raha hai. Example: T = spam pehchanna, P = accuracy, E = labeled emails.</p>
-          </div>
+          <p><strong>5-mark answer plan:</strong> (1) Samuel + Mitchell definition, (2) flow diagram, (3) 4–5 row table, (4) example pair, (5) closing line. Is order mein likho — definition se start, example par end.</p>
           <p>Do terms aur pakke karo: <strong>generalization</strong> (unseen data par chalna — ML ka asli fayda) aur <strong>overfitting</strong> (training rat lena, naya data fail — ML ka sabse bada risk). ML tab best hai jab patterns complex hon aur data bahut ho; simple fixed rules wali jagah traditional programming hi jeet-ti hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-flow-title fig-flow-desc">
+                <title id="fig-flow-title">Traditional programming vs ML flow</title>
+                <desc id="fig-flow-desc">Traditional mein data plus rules se output; ML mein data plus examples se model.</desc>
+                <defs>
+                  <pattern id="dots-flow" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-flow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-flow)"></rect>
+                <text x="20" y="46" class="diagram-muted">TRADITIONAL PROGRAMMING</text>
+                <rect x="20" y="62" width="90" height="46" class="diagram-stroke"></rect>
+                <text x="32" y="89" class="diagram-text">DATA</text>
+                <text x="120" y="93" class="diagram-muted">+</text>
+                <rect x="142" y="62" width="100" height="46" class="diagram-stroke"></rect>
+                <text x="154" y="89" class="diagram-text">RULES</text>
+                <path d="M247 85h38" class="diagram-stroke" marker-end="url(#arrow-flow)"></path>
+                <rect x="295" y="62" width="130" height="46" class="diagram-stroke"></rect>
+                <text x="307" y="89" class="diagram-text">OUTPUT</text>
+                <text x="20" y="140" class="diagram-muted">MACHINE LEARNING</text>
+                <rect x="20" y="156" width="90" height="46" class="diagram-stroke"></rect>
+                <text x="32" y="183" class="diagram-text">DATA</text>
+                <rect x="140" y="156" width="150" height="46" class="diagram-stroke"></rect>
+                <text x="152" y="176" class="diagram-muted">OUTPUT</text>
+                <text x="152" y="194" class="diagram-text">examples</text>
+                <path d="M295 179h35" class="diagram-stroke" marker-end="url(#arrow-flow)"></path>
+                <rect x="340" y="156" width="135" height="46" class="diagram-stroke"></rect>
+                <text x="352" y="176" class="diagram-muted">MODEL</text>
+                <text x="352" y="194" class="diagram-text">rules</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Rules likho vs rules seekho — poora farq ek diagram mein.</span></figcaption>
+          </figure>
         </section>
 
         <section aria-labelledby="a1q2">
@@ -121,6 +159,7 @@
             </table>
           </div>
           <p>Exam tip: example ke saath input aur label (ya unka absence) explicitly likho — “input X, label Y” wali line hi supervision prove karti hai.</p>
+          <p><strong>Exam-ready plan:</strong> pehle dono ki ek-line definition, phir 4–5 row table, phir input/label wala example, end mein design-vs-execution line.</p>
           <p>Formal setup ek line mein: supervised mein dataset <code>D = {(x, y)}</code> hota hai (x = input, y = sahi answer); unsupervised mein sirf <code>D = {x}</code>. Scenario pehchanne ke keywords yaad rakho: “labeled / predict / classify” dikhe toh supervised; “group / discover / without labels” dikhe toh unsupervised; “reward / penalty / trial” dikhe toh reinforcement. Aur ek practical farq: supervised mein train-test split karke accuracy measure hoti hai; unsupervised mein koi “sahi answer” nahi hota, isliye groups ki quality domain knowledge se judge hoti hai.</p>
         </section>
 
@@ -149,6 +188,7 @@
             </table>
           </div>
           <p>Chain ka logic samjho: data sawal ka jawab nahi deta, information jawab deti hai, knowledge agla kadam batati hai. Exam mein teeno stages isi order mein example ke saath likho — aadha answer table se hi complete ho jayega.</p>
+          <p><strong>Exam-ready plan:</strong> teen stages order mein + school example + summary table; order aur example dono marks dilate hain.</p>
           <p class="analogy"><strong>Yaad rakhne ki analogy:</strong> Data = kaccha maal; Information = bani hui dish; Knowledge = recipe ka tajurba jisse agli baar behtar dish bane aur process improve ho.</p>
         </section>
 
@@ -167,6 +207,7 @@
             <li><strong>Goal prediction hai:</strong> training ke baad model unseen emails ka label predict karta hai; performance accuracy/precision/recall se measure hoti hai.</li>
           </ul>
           <p>Training process ek line mein: emails → features (words, links, sender) → classifier train on labeled data → naya email aane par spam/not-spam predict. Exam tip: “labels available hain, isliye supervised; classes fixed hain, isliye classification” — ye do lines justification complete karti hain.</p>
+          <p><strong>Exam-ready plan:</strong> type declare karo, 3 justification points, 5-step pipeline, 2 concluding lines. Justification ke bina type ka naam aadhe marks hi dega.</p>
           <p>Poora spam pipeline 5 steps mein samjho: <strong>collect</strong> (hazaron labeled emails) → <strong>features</strong> (word frequencies, links count, sender reputation — raw text ko numbers mein badlo) → <strong>train</strong> (classifier spam-words aur genuine-words ka pattern seekhe) → <strong>evaluate</strong> (precision/recall par check — genuine mail spam mein gaya toh precision giri) → <strong>deploy</strong> (naye mail par real-time predict). Ye unsupervised nahi hai kyunki labels maujood hain; RL nahi hai kyunki reward loop nahi, direct sahi answers hain.</p>
         </section>
 
@@ -189,6 +230,7 @@
           </div>
           <p>Q3 aur Q5 ka farq samjho: Q3 mein school example ke through 3-stage process dikhana hai; Q5 mein teenon terms ki alag definitions with examples. Dono answers mein same example use kar sakte ho, par Q5 mein definitions bold karke likho.</p>
           <p>Transformation chain ek aur example se pakki karo (report card): raw marks <code>45, 78, 92</code> (data) → “Rohan: Maths 45 (fail), Science 78, English 92; class average 70” (information) → “Maths mein daily 1 hour algebra practice + weekly test” (knowledge). Har stage pichhli stage par value add karta hai: store → samjho → action lo.</p>
+          <p><strong>Exam-ready plan:</strong> bold definitions + har ek ka example + transformation chain; yahan process nahi, definitions maangi gayi hain.</p>
         </section>
 
         <section aria-labelledby="a1q6a">
@@ -202,6 +244,36 @@
           <p><strong>Type: Reinforcement learning.</strong> Justification: robot ko “sahi step kaunsa hai” ye label-wise nahi bataya jata. Wo actions try karta hai (aage jhuko, pair uthao), girne par penalty aur aage badhne par reward milta hai, aur dheere-dheere aisi policy seekh leta hai jo total reward maximum kare.</p>
           <p>RL loop 4 words mein: <strong>state → action → reward → better policy</strong>. Supervised nahi hai kyunki sahi answers ka dataset nahi hai; unsupervised nahi hai kyunki goal grouping nahi, behter actions seekhna hai. Exam mein “reward/penalty feedback” keyword zaroor likho — ye RL ki pehchaan hai.</p>
           <p>RL ke 5 elements robot example par map karo: <strong>agent</strong> (robot), <strong>environment</strong> (floor), <strong>state</strong> (body position), <strong>action</strong> (pair uthana/jhukna), <strong>reward</strong> (aage badhne par +, girne par −). Robot ka goal total future reward maximum karna hai, isliye wo explore bhi karta hai (naye moves try) aur exploit bhi (jo kaam kiya use repeat). Ye exploration-exploitation balance RL ki khaas baat hai — supervised mein aisa kuch nahi hota.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 230" role="img" aria-labelledby="fig-rl-title fig-rl-desc">
+                <title id="fig-rl-title">Reinforcement learning loop</title>
+                <desc id="fig-rl-desc">Agent action bhejta hai, environment reward aur agli state wapas deta hai.</desc>
+                <defs>
+                  <pattern id="dots-rl" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-rl" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="230" fill="url(#dots-rl)"></rect>
+                <rect x="30" y="85" width="150" height="60" class="diagram-stroke"></rect>
+                <text x="42" y="109" class="diagram-muted">AGENT</text>
+                <text x="42" y="129" class="diagram-text">robot/policy</text>
+                <rect x="340" y="85" width="150" height="60" class="diagram-stroke"></rect>
+                <text x="352" y="109" class="diagram-muted">ENVIRONMENT</text>
+                <text x="352" y="129" class="diagram-text">floor</text>
+                <path d="M180 100h150" class="diagram-stroke" marker-end="url(#arrow-rl)"></path>
+                <text x="255" y="90" text-anchor="middle" class="diagram-muted">action</text>
+                <path d="M330 130H190" class="diagram-stroke" marker-end="url(#arrow-rl)"></path>
+                <text x="260" y="152" text-anchor="middle" class="diagram-muted">reward + agli state</text>
+                <text x="260" y="190" text-anchor="middle" class="diagram-muted">GOAL: TOTAL REWARD MAXIMUM</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Agent–environment loop: RL ki pehchaan.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> type + 5 elements mapping + RL loop diagram + why-not-others line.</p>
         </section>
 
         <section aria-labelledby="a1q6b">
@@ -215,6 +287,7 @@
           <p><strong>Type: Unsupervised learning — clustering.</strong> Justification: “without prior labels” hi sabse bada clue hai — koi batata nahi ki kaunsa customer kaunse group ka hai. Model purchase history mein similarity dhoondhta hai (similar khareedne wale ek group mein) aur groups discover karta hai.</p>
           <p>Working ek line mein: features (kitna kharcha, kitni baar aaye) → similarity/distance measure → clusters. Business baad mein in groups ko naam deta hai (“budget buyers”, “premium buyers”) aur har group ke liye alag offers banata hai. Reward/penalty ka koi loop nahi, isliye RL nahi; prediction ka label nahi, isliye supervised nahi.</p>
           <p>Clustering kaise groups banata hai, ye bhi ek line mein samjho (K-means jaisa idea): pehle kuch centers guess karo, har customer ko nearest center se jodo, phir centers ko group ke beech mein shift karo — repeat jab tak groups stable na hon. Groups ki quality distance se judge hoti hai: andar se tight, aapas mein door — isliye feature scaling (Step 1 jaisa) zaroori hai, warna “kharcha” wala feature “visit count” ko dabaa dega.</p>
+          <p><strong>Exam-ready plan:</strong> type + similarity-to-clusters working + business naming + why-not-others line.</p>
         </section>
 
         <section aria-labelledby="a1q6c">
@@ -228,6 +301,7 @@
           <p><strong>Type: Supervised learning.</strong> Justification: past students ka data unke known grades (labels) ke saath available hai. Model past performance (input) se grade (output) tak ka mapping seekhta hai, phir naye student ka grade predict karta hai.</p>
           <p>Aage ek line add karo to answer strong lagega: agar exact marks predict karne hain toh ye <strong>regression</strong> hai (continuous output); agar sirf pass/fail ya grade-band batana hai toh <strong>classification</strong> hai (categorical output). Dono hi supervised ke andar aate hain.</p>
           <p>Supervised setup is example par map karo: <strong>features (X)</strong> = attendance, past test marks, assignment scores; <strong>label (y)</strong> = final grade/marks. Model training mein mapping <code>X → y</code> seekhta hai, aur evaluation unseen students par hoti hai (train-test split) — taaki rattafication pakda jaye. Yehi pipeline har supervised problem mein repeat hoti hai, sirf X aur y badalte hain.</p>
+          <p><strong>Exam-ready plan:</strong> type + X/y mapping + regression-vs-classification split line.</p>
         </section>
 
         <section aria-labelledby="a1q6d">
@@ -241,6 +315,7 @@
           <p><strong>Type: Reinforcement learning (self-play).</strong> Justification: yahan koi human “is position mein ye chaal chalo” labels nahi deta. AI khud ke against games khelta hai; jeet reward hai, haar penalty. Outcomes se wo seekhta hai ki kaunsi moves jeet ki taraf le jaati hain — yani policy improve hoti hai.</p>
           <p>Supervised isliye nahi kyunki labeled dataset of correct moves nahi hai; unsupervised isliye nahi kyunki goal patterns discover karna nahi, best game khelna hai. Self-play RL ka famous real example hai (AlphaGo-style systems).</p>
           <p>Self-play ka funda samjho: AI apne purane version se khelta hai, isliye opponent hamesha barabar ka milta hai — jeetne ke liye use roz behtar chaalein dhoondhni padti hain. Har game ka outcome (win = +1, loss = −1) reward signal hai; millions of games ke baad policy itni strong ho jaati hai ki human champions haar jaate hain. Yahi RL ki taqat hai: bina human knowledge ke, sirf reward se mastery.</p>
+          <p><strong>Exam-ready plan:</strong> type + self-play funda + reward explanation + why-not-others line.</p>
         </section>
 
         <section aria-labelledby="a1q7">
@@ -269,6 +344,7 @@
           </div>
           <p>Confusion wali line: logistic regression naam ke bawajood classification hai. Exam mein ek example pair zaroor likho — “marks predict karna regression, pass/fail batana classification.”</p>
           <p>Geometry se farq aur clear hota hai: classification mein model classes ke beech <strong>decision boundary</strong> banata hai (line/curve jo spam ko genuine se alag kare); regression mein data ke beech se <strong>best-fit line/curve</strong> guzarta hai (jo trend follow kare). Boundary galat side = misclassification; line se doori = residual error. Isliye metrics bhi alag hain: boundary ke liye accuracy/precision/recall, line ke liye MAE/MSE/RMSE.</p>
+          <p><strong>Exam-ready plan:</strong> dono ki definition + 5-row table + example pair + boundary-vs-line line.</p>
         </section>
 
         <section aria-labelledby="a1q8">
@@ -288,6 +364,7 @@
           </ul>
           <p>Iske saath output-based categories bhi likho: <strong>classification</strong> (categories), <strong>regression</strong> (numbers), <strong>clustering</strong> (groups). Classification/regression supervised mein, clustering unsupervised mein aata hai.</p>
           <p>Har type ke 2 applications yaad rakho (exam mein example maanga jaata hai): supervised — spam filter, disease diagnosis; unsupervised — customer segments, gene grouping; RL — self-driving (lane keep + speed), warehouse robots; semi-supervised — speech recognition (thodi transcribed audio + bahut untranscribed), photo tagging. Semi-supervised ka assumption ek line mein: paas-paaskhe points mostly same class ke hote hain (smoothness), isliye thode labels door tak kaam aate hain.</p>
+          <p><strong>Exam-ready plan:</strong> 4 types with data/goal/example + output categories + FIG.003 diagram.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-types-title fig-types-desc">
@@ -322,7 +399,7 @@
                 <text x="260" y="216" text-anchor="middle" class="diagram-muted">OUTPUT: CLASSIFICATION · REGRESSION · CLUSTERING</text>
               </svg>
             </div>
-            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Supervision ke 4 types; output ki 3 categories.</span></figcaption>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Supervision ke 4 types; output ki 3 categories.</span></figcaption>
           </figure>
         </section>
 
@@ -343,6 +420,43 @@
           </ul>
           <p>(Vikalp ke taur par SVM bhi likh sakte ho: classes ke beech maximum-margin boundary dhoondhta hai; application: text classification, image recognition.) Exam mein har algorithm ke saath ek application compulsory likho.</p>
           <p>Har algorithm ka “kaise” thoda aur gehra samjho: linear regression <strong>least squares</strong> se line fit karta hai; logistic regression linear sum ko <strong>sigmoid</strong> se probability banata hai (0.5 threshold); decision tree har node par best split (<strong>information gain/Gini</strong>) chunakar leaf tak pahunchata hai; KNN mein <strong>K ki value</strong> tradeoff hai — chhota K noise pakadta hai, bada K boundaries smooth kar deta hai (cross-validation se optimal K chuno). Ye one-liners answer ko topper-level banate hain.</p>
+          <p><strong>Exam-ready plan:</strong> har algorithm: kaise + application; FIG.004 tree diagram; SVM vikalp sath rakho.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 270" role="img" aria-labelledby="fig-tree-title fig-tree-desc">
+                <title id="fig-tree-title">Decision tree ka structure</title>
+                <desc id="fig-tree-desc">Root test, branches Yes/No, leaves par final decision.</desc>
+                <defs>
+                  <pattern id="dots-tree" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-tree" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="270" fill="url(#dots-tree)"></rect>
+                <rect x="195" y="16" width="130" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="42" text-anchor="middle" class="diagram-text">income&gt;50K?</text>
+                <path d="M215 58L140 108" class="diagram-stroke" marker-end="url(#arrow-tree)"></path>
+                <text x="162" y="90" class="diagram-muted">Yes</text>
+                <path d="M305 58L380 108" class="diagram-stroke" marker-end="url(#arrow-tree)"></path>
+                <text x="344" y="90" class="diagram-muted">No</text>
+                <rect x="60" y="108" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="140" y="134" text-anchor="middle" class="diagram-text">credit good?</text>
+                <rect x="340" y="108" width="120" height="42" class="diagram-stroke"></rect>
+                <text x="400" y="134" text-anchor="middle" class="diagram-text">REVIEW</text>
+                <path d="M110 150L70 198" class="diagram-stroke" marker-end="url(#arrow-tree)"></path>
+                <text x="52" y="182" class="diagram-muted">Yes</text>
+                <path d="M170 150L210 198" class="diagram-stroke" marker-end="url(#arrow-tree)"></path>
+                <text x="196" y="182" class="diagram-muted">No</text>
+                <rect x="20" y="198" width="110" height="40" class="diagram-stroke"></rect>
+                <text x="75" y="222" text-anchor="middle" class="diagram-text">APPROVE</text>
+                <rect x="160" y="198" width="110" height="40" class="diagram-stroke"></rect>
+                <text x="215" y="222" text-anchor="middle" class="diagram-text">REJECT</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Root test, Yes/No branches, leaf par decision.</span></figcaption>
+          </figure>
         </section>
 
         <section aria-labelledby="a1q10">
@@ -362,6 +476,7 @@
           </ul>
           <p>Ek line mein antar: supervised mein error = prediction vs label se milta hai; unsupervised mein quality = groups ki meaningfulness se judge hoti hai.</p>
           <p>End-to-end example se working pakki karo (mall customers): data = age + annual income + spending score → scale karo → K-means se 5 clusters → interpret karo (ek cluster “young high-spenders”, ek “budget families”) → mall har cluster ko alag discount strategy deta hai. Association side ka example: billing data se rule “bread → butter (support 5%, confidence 70%)” — support batata hai kitni baar saath bike, confidence batata hai kitni baar rule sahi nikla. Dono hi bina labels ke nikle — yahi unsupervised ki pehchaan hai.</p>
+          <p><strong>Exam-ready plan:</strong> 4 steps headings + mall end-to-end example + supervised-se-antar line.</p>
         </section>
 
         <section aria-labelledby="a2q1">
@@ -381,6 +496,7 @@
           </ul>
           <p><strong>Importance ek line mein:</strong> accuracy overall picture, precision false alarms ke against, recall miss ke against, F1 dono ka balance — model select karte waqt problem ki cost ke hisaab se metric chuno.</p>
           <p>Imbalance wala classic example hamesha yaad rakho: 95 healthy + 5 diseased mein “sab healthy” bolo toh accuracy 95% — lagta hai model great hai, par recall = 0/5 = 0! Isliye imbalanced data par accuracy dekhna mana hai; wahan precision/recall/F1 dekho. Range bhi likh lo: chaaron metrics 0–1 (ya 0–100%) mein hote hain, 1 = perfect. Aur support ka matlab: har class mein kitne samples the — bina support ke precision/recall numbers ka bharosa nahi hota (5 samples par 100% precision ka koi matlab nahi).</p>
+          <p><strong>Exam-ready plan:</strong> 4 formulas + imbalance example + kab-kaunsa-metric mapping.</p>
         </section>
 
         <section aria-labelledby="a2q2">
@@ -400,6 +516,34 @@
           </ul>
           <p>Matrix padhkar model ka behaviour samajh aata hai: agar <strong>FN zyada</strong> hain toh model conservative hai — positive bolne se darta hai, threshold kam karo ya positive class ko weight do. Agar <strong>FP zyada</strong> hain toh model over-eager hai — threshold badhao. Isi reading se decide hota hai ki threshold tune karna hai, data badhana hai ya model retrain karna hai. Bina matrix ke sirf accuracy dekhkar ye direction kabhi nahi milegi.</p>
           <p>Hypothesis-testing se jodkar yaad rakho: H0 = “patient healthy” mano toh FP ka matlab innocent ko guilty kehna (Type I), FN ka matlab guilty ko chhod dena (Type II). Court mein Type I se bachne ke liye “beyond reasonable doubt” chahiye (high precision mindset); medical screening mein Type II se bachne ke liye har shak par test (high recall mindset). Dono errors ka cost alag hai — isliye problem dekhkar metric chuno, aur ROC/AUC curve se poore threshold range ka behaviour ek nazar mein dekho.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 230" role="img" aria-labelledby="fig-thr-title fig-thr-desc">
+                <title id="fig-thr-title">Threshold tradeoff</title>
+                <desc id="fig-thr-desc">Threshold kam par recall badhta hai, zyada par precision badhta hai.</desc>
+                <defs>
+                  <pattern id="dots-thr" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-thr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="230" fill="url(#dots-thr)"></rect>
+                <text x="70" y="60" class="diagram-muted">LOW THRESHOLD</text>
+                <text x="330" y="60" class="diagram-muted">HIGH THRESHOLD</text>
+                <path d="M60 110h400" class="diagram-stroke" marker-end="url(#arrow-thr)"></path>
+                <path d="M260 96L272 120L248 120Z" class="diagram-stroke"></path>
+                <text x="70" y="150" class="diagram-text">recall badhega</text>
+                <text x="70" y="170" class="diagram-muted">false alarm badhega</text>
+                <text x="350" y="150" class="diagram-text">precision badhega</text>
+                <text x="350" y="170" class="diagram-muted">miss badhega</text>
+                <text x="260" y="205" text-anchor="middle" class="diagram-muted">THRESHOLD →</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Threshold ghatao toh recall, badhao toh precision.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> 4 cells + Type I/II + threshold direction + ROC line.</p>
         </section>
 
         <section aria-labelledby="a2q3">
@@ -447,8 +591,9 @@ F1-Score  = 2·P·R/(P+R) = 2(0.909)(0.833)/(0.909+0.833) ≈ 0.869 = 86.9%</cod
                 <text x="390" y="202" text-anchor="middle" class="diagram-muted">sahi chhoda</text>
               </svg>
             </div>
-            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>TP/FP/FN/TN aur unka simple matlab.</span></figcaption>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>TP/FP/FN/TN aur unka simple matlab.</span></figcaption>
           <p>Calculation verify karne ki aadat dalo: rows jodo (50+5=55 predicted positive; 10+35=45 predicted negative), columns jodo (50+10=60 actual positive; 5+35=40 actual negative), total 100 match hona chahiye. Precision-recall tradeoff bhi samjho: threshold kam karoge toh recall badhega (kam miss) par precision girega (zyada false alarms) — isliye dono ko ek saath dekhne ke liye F1 banaya gaya hai.</p>
+          <p><strong>Exam-ready plan:</strong> cells pehchano + 4 formulas + percent + interpretation line (recall priority).</p>
           </figure>
         </section>
 
@@ -481,6 +626,7 @@ F1-Score  = 2·P·R/(P+R) = 2(0.909)(0.833)/(0.909+0.833) ≈ 0.869 = 86.9%</cod
               </tbody>
             </table>
           </div>
+          <p>Outlier demo se farq feel karo: errors [1, 1, 1, 10] hon toh MAE = 13/4 = 3.25, par MSE = (1+1+1+100)/4 = 25.75 aur RMSE ≈ 5.07 — ek bada error RMSE ko MAE se lagbhag double khinch le gaya. Isliye: typical performance report karni ho toh MAE, badi galtiyon se darna ho toh RMSE. R² ke parts samjho: SSres = model ki bachi hui galti (jitni kam, utna achha), SStot = data ka total spread; model jitna spread explain kare, R² utna 1 ke kareeb.</p>
         </section>
 
         <section aria-labelledby="a2q5">
@@ -501,6 +647,7 @@ F1-Score  = 2·P·R/(P+R) = 2(0.909)(0.833)/(0.909+0.833) ≈ 0.869 = 86.9%</cod
           </ul>
           <p>Exam mein 5 steps headings banakar likho; har heading ke neeche one-line “why” — design + justification dono cover honge.</p>
           <p>Metrics ko padhne ka guide bhi likh do (experiment ka conclusion kaise likhein): MAE chhota + RMSE uske kareeb = errors uniform aur model stable; RMSE MAE se bahut bada = kuch outliers ya badi misses hain, un cases ko alag analyse karo; R² 0.9 ke paas = variance mostly explained, 0.5 se neeche = features ya model badlo. Aur reliability ke liye single split ki jagah <strong>k-fold cross-validation</strong> use karo — data ke K tukde, har tukda ek baar test, metrics ka average lo — taaki lucky/unlucky split ka dhokha na ho.</p>
+          <p><strong>Exam-ready plan:</strong> 5 steps headings + har step ka why + metrics-reading guide.</p>
         </section>
 
         <section aria-labelledby="a2q6">
@@ -518,6 +665,7 @@ MSE  = (10² + 10² + 10²) / 3 = 300/3 = 100
 RMSE = √100 = 10</code></pre>
           <p>Yahan teenon errors barabar (10) hain, isliye MAE aur RMSE dono 10 aaye. General rule yaad rakho: <strong>RMSE hamesha MAE se bada ya barabar hota hai (RMSE ≥ MAE)</strong> — barabar tabhi jab saare errors equal hon, warna RMSE bada hota hai kyunki squaring badi galtiyon ko amplify karta hai.</p>
           <p>Scale par bhi comment karo (interpretation strong hoti hai): values ~100–200 ke range mein 10 ka average error ≈ 6–7% relative error hai — matlab model decent hai. Agar yahi error 10–20 range wale data par hota toh bahut kharab maana jaata. Isliye MAE/RMSE ko hamesha data ke scale ke context mein padho, aur alag scales compare karne hon toh R² use karo.</p>
+          <p><strong>Exam-ready plan:</strong> error table + MAE/MSE/RMSE + RMSE≥MAE rule + scale comment.</p>
         </section>
 
         <section aria-labelledby="a3q1">
@@ -535,7 +683,7 @@ RMSE = √100 = 10</code></pre>
           </ul>
           <p>Example se pakka karo: model <code>ŷ = 30 + 5x</code> (X = hours, Y = marks) mein har extra hour ~5 marks badhata hai (slope = rate), aur zero hours par base 30 marks (intercept = starting point). Exam mein slope = “rate of change”, intercept = “baseline” — ye do words zaroor likho.</p>
           <p>Prediction demo bhi likho: x = 10 hours par <code>ŷ = 30 + 50 = 80 marks</code> — model ka use yahi hai. Par caution bhi likho: ye sirf training range ke andar bharosa layak hai (extrapolation risky — 100 hours par 530 marks absurd hai), aur slope correlation dikhata hai, causation prove nahi karta (padhai ke saath marks badhe, par wajah sirf hours hon zaroori nahi).</p>
-          <p>Prediction demo bhi likho: x = 10 hours par <code>ŷ = 30 + 50 = 80 marks</code> — model ka use yahi hai. Par caution bhi likho: ye sirf training range ke andar bharosa layak hai (extrapolation risky — 100 hours par 530 marks absurd hai), aur slope correlation dikhata hai, causation prove nahi karta (padhai ke saath marks badhe, par wajah sirf hours hon zaroori nahi).</p>
+          <p><strong>Exam-ready plan:</strong> equation + slope/intercept roles + example + prediction demo + caution.</p>
         </section>
 
         <section aria-labelledby="a3q2">
@@ -583,8 +731,9 @@ Equation: ŷ = 1.5 + 0.95x</code></pre>
                 <text x="120" y="238" class="diagram-muted">DATA POINTS + BEST FIT</text>
               </svg>
             </div>
-            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Line squared errors ka total minimum karti hai.</span></figcaption>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.007</span><span>Line squared errors ka total minimum karti hai.</span></figcaption>
           <p>Residuals ki table banao toh answer aur solid lagega (prediction = 1.5 + 0.95x): x=2 → 3.4 (actual 3, residual −0.4); x=4 → 5.3 (actual 7, +1.7); x=6 → 7.2 (actual 5, −2.2); x=8 → 9.1 (actual 10, +0.9). Residuals plus-minus mein bute hain aur koi bada outlier nahi — line sahi fit hai. SSE = 0.16 + 2.89 + 4.84 + 0.81 = 8.7; koi bhi aur line isse bada SSE degi — yahi least squares ka daava hai.</p>
+          <p><strong>Exam-ready plan:</strong> formulas + systematic table + b/a + residual verification.</p>
           </figure>
         </section>
 
@@ -605,6 +754,35 @@ Equation: ŷ = 1.5 + 0.95x</code></pre>
           </ul>
           <p>Cost function <code>J = (1/2n)Σ(ŷ−y)²</code> isi SSE ka scaled form hai — <strong>gradient descent</strong> isi J ko step-by-step minimize karta hai (bade data par direct formula ki jagah). Aur ek property yaad rakho: best-fit line hamesha point <code>(x̄, ȳ)</code> se guzarti hai — Q2 mein (5, 6.25) check karke dekho: 1.5 + 0.95×5 = 6.25. Exam mein ye verification line likhna impressive lagta hai.</p>
           <p>Gradient descent ka update rule ek line mein: <code>θ := θ − α·∇J</code> — θ parameters hain, α <strong>learning rate</strong> (kadam kitna bada), ∇J slope ki direction. α bahut bada → overshoot/diverge; bahut chhota → training bahut slow. Normal equation (direct formula) chhote data par exact aur fast hai, par bada data par costly — isliye wahan gradient descent. Dono ka target ek hi hai: minimum SSE/J.</p>
+          <p><strong>Exam-ready plan:</strong> 4 steps (error→SSE→derivative→solve) + J + α rule + mean-point check.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-gd-title fig-gd-desc">
+                <title id="fig-gd-title">Gradient descent cost curve par</title>
+                <desc id="fig-gd-desc">Ball slope se neeche minimum J ki taraf kadam leta hai.</desc>
+                <defs>
+                  <pattern id="dots-gd" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-gd" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="260" fill="url(#dots-gd)"></rect>
+                <path d="M70 210V40" class="diagram-stroke" marker-end="url(#arrow-gd)"></path>
+                <text x="52" y="60" class="diagram-muted">J</text>
+                <path d="M70 210h390" class="diagram-stroke" marker-end="url(#arrow-gd)"></path>
+                <text x="452" y="228" class="diagram-muted">θ</text>
+                <path d="M90 90C160 90 180 185 260 190C340 195 360 90 450 90" class="diagram-stroke"></path>
+                <circle cx="260" cy="190" r="6" class="diagram-stroke"></circle>
+                <text x="260" y="216" text-anchor="middle" class="diagram-muted">min J</text>
+                <circle cx="150" cy="128" r="10" class="diagram-stroke"></circle>
+                <path d="M158 136L205 165" class="diagram-stroke" marker-end="url(#arrow-gd)"></path>
+                <text x="208" y="182" class="diagram-muted">α steps</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.008</span><span>Slope ke saath neeche: minimum J tak.</span></figcaption>
+          </figure>
         </section>
 
         <section aria-labelledby="a3q4">
@@ -624,6 +802,7 @@ Equation: ŷ = 1.5 + 0.95x</code></pre>
           </ul>
           <p><strong>Fix (exam mein ek line):</strong> correlated features mein se ek hatao (correlation matrix/VIF se detect karke), ya <strong>regularization (Ridge/Lasso)</strong> use karo jo coefficients ko stable rakhta hai.</p>
           <p>Detection aur fix thoda aur detail mein: <strong>correlation matrix</strong> mein feature-pairs ke 0.8–0.9+ values dhoondho; <strong>VIF (Variance Inflation Factor)</strong> 5–10 se upar ho toh problem pakki. Fix ke 3 raste: (1) ek correlated feature drop karo (domain sense se jo kam useful ho), (2) dono ko combine karke ek feature banao (jaise ratio), (3) <strong>Ridge</strong> (coefficients shrink karta hai) ya <strong>Lasso</strong> (kuch coefficients ko zero karke feature select bhi karta hai) lagao. Exam mein “drop ya regularize” likhna kaafi hai, par VIF ka naam aaye toh detection wala part strong lagta hai.</p>
+          <p><strong>Exam-ready plan:</strong> example pair + 3 effects + detection (VIF) + 3 fixes.</p>
         </section>
 
         <section aria-labelledby="a3q5">
@@ -646,6 +825,7 @@ Predicted: 110   190   160
 |error|:    10    10    10
 error²:    100   100   100</code></pre>
           <p>Table se MAE = 30/3 = 10 aur MSE = 300/3 = 100 seedha padha jaata hai. A2-Q6 mein bhi same table banao — dono answers ek jaise strong lagenge.</p>
+          <p><strong>Exam-ready plan:</strong> error table + steps (A2-Q6 jaisa) + rule.</p>
         </section>
 
         <section aria-labelledby="a3q6">
@@ -685,8 +865,9 @@ error²:    100   100   100</code></pre>
                 <text x="330" y="200" class="diagram-muted">CLASS 0 ↓ · CLASS 1 ↑</text>
               </svg>
             </div>
-            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>S-curve probability deta hai; 0.5 se class decide.</span></figcaption>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.009</span><span>S-curve probability deta hai; 0.5 se class decide.</span></figcaption>
           <p>Sigmoid ki ready-reckoner values yaad rakho (numerical/interpretation mein kaam aati hain): z = 0 → 0.5; z = 2 → ≈0.88; z = −2 → ≈0.12; z = 6 → ≈0.998. Symmetry property: <code>σ(−z) = 1 − σ(z)</code> — isliye negative side positive ka mirror hai. Aur log-odds connection: <code>z = log(p/(1−p))</code> — sigmoid aur log-odds ek-doosre ke inverse hain, isliye logistic weights ko “log-odds par asar” kehte hain.</p>
+          <p><strong>Exam-ready plan:</strong> formula + 3 properties + values table + significance + log-odds.</p>
           </figure>
         </section>
 
@@ -716,6 +897,7 @@ error²:    100   100   100</code></pre>
           </div>
           <p>Exam trap se bacho: “regression” naam dekhkar ise regression mein mat daalna — ye <strong>classification</strong> algorithm hai. Ek line zaroor likho: linear regression “kitna” batata hai, logistic regression “kaunsi class” batata hai.</p>
           <p>Loss functions ka farq bhi samjho (2-mark ka sawal ban sakta hai): linear mein <strong>MSE</strong> convex hai — gradient descent seedha global minimum pahunchta hai. Logistic mein sigmoid lagne ke baad MSE non-convex ho jaata hai (local minima ka khatra), isliye <strong>log-loss / cross-entropy</strong> use hota hai jo convex hai: sahi class ki probability 1 ke kareeb ho toh loss ~0, galat confident prediction par loss bahut bada. Decision boundary dono mein linear hoti hai (logistic mein probability = 0.5 wali line), par output ka matlab alag hai — value vs class.</p>
+          <p><strong>Exam-ready plan:</strong> definition + 5-row table + trap line + loss difference.</p>
         </section>
 
         <section aria-labelledby="recap-heading">
@@ -771,6 +953,10 @@ error²:    100   100   100</code></pre>
           </div>
           <p class="section-kicker">ANSWER</p>
           <p><strong>Machine Learning</strong> means building programs that learn from data themselves — the rules for every situation are not written in advance. Arthur Samuel's classic definition: “field of study that gives computers the ability to learn without being explicitly programmed.” Simply: feed data in, the model finds patterns, and predicts on new data.</p>
+          <div class="definition">
+            <span class="meta-label">FORMAL DEFINITION (TOM MITCHELL)</span>
+            <p>Task T, Performance measure P, Experience E — a program learns if its performance P on task T improves with experience E. Example: T = spotting spam, P = accuracy, E = labeled emails.</p>
+          </div>
           <p><strong>Learning</strong> here means improving performance: as the model sees more examples, its predictions keep getting better. Example: show a spam filter thousands of labeled emails; it learns on its own which words signal spam. After training, the model works on new, unseen emails — this is called <strong>generalization</strong>.</p>
           <div class="data-table-wrap">
             <table class="data-table">
@@ -788,11 +974,45 @@ error²:    100   100   100</code></pre>
             </table>
           </div>
           <p>Do write one line in the exam: in traditional programming the output comes from data and rules; in ML the rules (model) come from data and sample outputs.</p>
-          <div class="definition">
-            <span class="meta-label">FORMAL DEFINITION (TOM MITCHELL)</span>
-            <p>Task T, Performance measure P, Experience E — a program learns if its performance P on task T improves with experience E. Example: T = spotting spam, P = accuracy, E = labeled emails.</p>
-          </div>
+          <p><strong>5-mark answer plan:</strong> (1) Samuel + Mitchell definitions, (2) flow diagram, (3) 4–5 row table, (4) example pair, (5) closing line. Write in this order — start with definition, end with example.</p>
           <p>Fix two more terms: <strong>generalization</strong> (working on unseen data — ML's real benefit) and <strong>overfitting</strong> (memorizing training, failing on new data — ML's biggest risk). ML wins where patterns are complex and data is abundant; where simple fixed rules work, traditional programming still wins.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-flow-title-en fig-flow-desc-en">
+                <title id="fig-flow-title-en">Traditional programming vs ML flow</title>
+                <desc id="fig-flow-desc-en">Traditional: data plus rules give output; ML: data plus examples give a model.</desc>
+                <defs>
+                  <pattern id="dots-flow-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-flow-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-flow-en)"></rect>
+                <text x="20" y="46" class="diagram-muted">TRADITIONAL PROGRAMMING</text>
+                <rect x="20" y="62" width="90" height="46" class="diagram-stroke"></rect>
+                <text x="32" y="89" class="diagram-text">DATA</text>
+                <text x="120" y="93" class="diagram-muted">+</text>
+                <rect x="142" y="62" width="100" height="46" class="diagram-stroke"></rect>
+                <text x="154" y="89" class="diagram-text">RULES</text>
+                <path d="M247 85h38" class="diagram-stroke" marker-end="url(#arrow-flow-en)"></path>
+                <rect x="295" y="62" width="130" height="46" class="diagram-stroke"></rect>
+                <text x="307" y="89" class="diagram-text">OUTPUT</text>
+                <text x="20" y="140" class="diagram-muted">MACHINE LEARNING</text>
+                <rect x="20" y="156" width="90" height="46" class="diagram-stroke"></rect>
+                <text x="32" y="183" class="diagram-text">DATA</text>
+                <rect x="140" y="156" width="150" height="46" class="diagram-stroke"></rect>
+                <text x="152" y="176" class="diagram-muted">OUTPUT</text>
+                <text x="152" y="194" class="diagram-text">examples</text>
+                <path d="M295 179h35" class="diagram-stroke" marker-end="url(#arrow-flow-en)"></path>
+                <rect x="340" y="156" width="135" height="46" class="diagram-stroke"></rect>
+                <text x="352" y="176" class="diagram-muted">MODEL</text>
+                <text x="352" y="194" class="diagram-text">rules</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Writing rules vs learning rules — the whole difference in one diagram.</span></figcaption>
+          </figure>
         </section>
 
         <section aria-labelledby="a1q2-en">
@@ -822,6 +1042,7 @@ error²:    100   100   100</code></pre>
           </div>
           <p>Exam tip: with the example, explicitly state the input and the label (or their absence) — the “input X, label Y” line is what proves supervision.</p>
           <p>The formal setup in one line: supervised learning has a dataset <code>D = {(x, y)}</code> (x = input, y = correct answer); unsupervised has only <code>D = {x}</code>. Memorize the spotting keywords: “labeled / predict / classify” means supervised; “group / discover / without labels” means unsupervised; “reward / penalty / trial” means reinforcement. One more practical difference: supervised accuracy is measured on a train-test split; unsupervised has no “correct answer”, so group quality is judged by domain knowledge.</p>
+          <p><strong>Exam-ready plan:</strong> one-line definitions of both first, then a 4–5 row table, then examples with explicit input/label, ending with the “design vs execution” line.</p>
         </section>
 
         <section aria-labelledby="a1q3-en">
@@ -849,6 +1070,7 @@ error²:    100   100   100</code></pre>
             </table>
           </div>
           <p>Understand the chain's logic: data doesn't answer the question, information answers it, knowledge tells the next step. Write all three stages in order with the example in the exam — the table alone completes half the answer.</p>
+          <p><strong>Exam-ready plan:</strong> three stages in order + school example + summary table; order and example both earn marks.</p>
           <p class="analogy"><strong>Memory hook:</strong> Data = raw material; Information = the cooked dish; Knowledge = the recipe experience that makes the next dish better and improves the process.</p>
         </section>
 
@@ -868,6 +1090,7 @@ error²:    100   100   100</code></pre>
           </ul>
           <p>The training process in one line: emails → features (words, links, sender) → classifier trained on labeled data → spam/not-spam predicted for new mail. Exam tip: the two lines “labels exist, hence supervised; classes are fixed, hence classification” complete the justification.</p>
           <p>Understand the full spam pipeline in 5 steps: <strong>collect</strong> (thousands of labeled emails) → <strong>features</strong> (word frequencies, link counts, sender reputation — raw text turned into numbers) → <strong>train</strong> (classifier learns spam-word vs genuine-word patterns) → <strong>evaluate</strong> (check on precision/recall — genuine mail in spam drops precision) → <strong>deploy</strong> (real-time prediction on new mail). It is not unsupervised because labels exist; not RL because there is no reward loop, only direct correct answers.</p>
+          <p><strong>Exam-ready plan:</strong> declare the type, 3 justification points, 5-step pipeline, 2 concluding lines. The type name without justification earns only half marks.</p>
         </section>
 
         <section aria-labelledby="a1q5-en">
@@ -889,6 +1112,7 @@ error²:    100   100   100</code></pre>
           </div>
           <p>Note the Q3 vs Q5 difference: Q3 asks for the 3-stage process through the school example; Q5 asks for separate definitions with examples. You may reuse the same example, but in Q5 bold the definitions.</p>
           <p>Fix the transformation chain with one more example (report card): raw marks <code>45, 78, 92</code> (data) → “Rohan: Maths 45 (fail), Science 78, English 92; class average 70” (information) → “daily 1-hour algebra practice + weekly tests for Maths” (knowledge). Every stage adds value over the previous one: store → understand → act.</p>
+          <p><strong>Exam-ready plan:</strong> bold definitions + an example with each + transformation chain; definitions are asked here, not the process.</p>
         </section>
 
         <section aria-labelledby="a1q6a-en">
@@ -902,6 +1126,36 @@ error²:    100   100   100</code></pre>
           <p><strong>Type: Reinforcement learning.</strong> Justification: nobody tells the robot label-wise “which step is correct”. It tries actions (lean forward, lift leg), gets penalized for falling and rewarded for moving ahead, and slowly learns a policy that maximizes total reward.</p>
           <p>The RL loop in 4 words: <strong>state → action → reward → better policy</strong>. Not supervised, because there is no dataset of correct answers; not unsupervised, because the goal is not grouping but learning better actions. In the exam, definitely write the keyword “reward/penalty feedback” — it is the signature of RL.</p>
           <p>Map RL's 5 elements onto the robot example: <strong>agent</strong> (robot), <strong>environment</strong> (floor), <strong>state</strong> (body position), <strong>action</strong> (lift leg/lean), <strong>reward</strong> (+ for moving ahead, − for falling). The robot's goal is maximizing total future reward, so it both explores (tries new moves) and exploits (repeats what worked). This exploration–exploitation balance is RL's special trait — nothing like it exists in supervised learning.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 230" role="img" aria-labelledby="fig-rl-title-en fig-rl-desc-en">
+                <title id="fig-rl-title-en">Reinforcement learning loop</title>
+                <desc id="fig-rl-desc-en">Agent sends action, environment returns reward and next state.</desc>
+                <defs>
+                  <pattern id="dots-rl-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-rl-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="230" fill="url(#dots-rl-en)"></rect>
+                <rect x="30" y="85" width="150" height="60" class="diagram-stroke"></rect>
+                <text x="42" y="109" class="diagram-muted">AGENT</text>
+                <text x="42" y="129" class="diagram-text">robot/policy</text>
+                <rect x="340" y="85" width="150" height="60" class="diagram-stroke"></rect>
+                <text x="352" y="109" class="diagram-muted">ENVIRONMENT</text>
+                <text x="352" y="129" class="diagram-text">floor</text>
+                <path d="M180 100h150" class="diagram-stroke" marker-end="url(#arrow-rl-en)"></path>
+                <text x="255" y="90" text-anchor="middle" class="diagram-muted">action</text>
+                <path d="M330 130H190" class="diagram-stroke" marker-end="url(#arrow-rl-en)"></path>
+                <text x="260" y="152" text-anchor="middle" class="diagram-muted">reward + next state</text>
+                <text x="260" y="190" text-anchor="middle" class="diagram-muted">GOAL: MAXIMUM TOTAL REWARD</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Agent–environment loop: RL's signature.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> type + 5-element mapping + RL loop diagram + why-not-others line.</p>
         </section>
 
         <section aria-labelledby="a1q6b-en">
@@ -915,6 +1169,7 @@ error²:    100   100   100</code></pre>
           <p><strong>Type: Unsupervised learning — clustering.</strong> Justification: “without prior labels” is the biggest clue — nobody says which customer belongs to which group. The model finds similarity in purchase history (similar buyers fall in one group) and discovers the groups.</p>
           <p>Working in one line: features (how much spent, how often they visit) → similarity/distance measure → clusters. The business later names the groups (“budget buyers”, “premium buyers”) and designs offers per group. No reward/penalty loop, so not RL; no predicted label, so not supervised.</p>
           <p>Understand in one line how clustering forms groups (K-means style idea): guess some centers, attach every customer to the nearest center, shift centers to the middle of their groups — repeat until groups stabilize. Group quality is judged by distance: tight inside, far apart from each other — which is why scaling features (as in Step 1) is essential, otherwise the “spending” feature would drown out “visit count”.</p>
+          <p><strong>Exam-ready plan:</strong> type + similarity-to-clusters working + business naming + why-not-others line.</p>
         </section>
 
         <section aria-labelledby="a1q6c-en">
@@ -928,6 +1183,7 @@ error²:    100   100   100</code></pre>
           <p><strong>Type: Supervised learning.</strong> Justification: past students' data comes with known grades (labels). The model learns the mapping from past performance (input) to grade (output), then predicts grades of new students.</p>
           <p>Add one line to strengthen the answer: predicting exact marks is <strong>regression</strong> (continuous output); predicting only pass/fail or a grade band is <strong>classification</strong> (categorical output). Both sit inside supervised learning.</p>
           <p>Map the supervised setup onto this example: <strong>features (X)</strong> = attendance, past test marks, assignment scores; <strong>label (y)</strong> = final grade/marks. The model learns the mapping <code>X → y</code> in training, and evaluation happens on unseen students (train-test split) — so that memorization gets caught. This same pipeline repeats in every supervised problem; only X and y change.</p>
+          <p><strong>Exam-ready plan:</strong> type + X/y mapping + regression-vs-classification split line.</p>
         </section>
 
         <section aria-labelledby="a1q6d-en">
@@ -941,6 +1197,7 @@ error²:    100   100   100</code></pre>
           <p><strong>Type: Reinforcement learning (self-play).</strong> Justification: no human gives labels like “play this move in this position”. The AI plays games against itself; wins are rewards, losses penalties. From outcomes it learns which moves lead toward winning — i.e. its policy improves.</p>
           <p>Not supervised, because there is no labeled dataset of correct moves; not unsupervised, because the goal is not discovering patterns but playing the game best. Self-play is a famous real RL example (AlphaGo-style systems).</p>
           <p>Understand the self-play idea: the AI plays against its own older version, so the opponent is always equally strong — to win it must discover better moves every day. Each game's outcome (win = +1, loss = −1) is the reward signal; after millions of games the policy grows so strong that human champions lose. That is RL's power: mastery from reward alone, with no human knowledge fed in.</p>
+          <p><strong>Exam-ready plan:</strong> type + self-play idea + reward explanation + why-not-others line.</p>
         </section>
 
         <section aria-labelledby="a1q7-en">
@@ -969,6 +1226,7 @@ error²:    100   100   100</code></pre>
           </div>
           <p>Confusion-point line: logistic regression is classification despite its name. In the exam, definitely write one example pair — “predicting marks is regression, telling pass/fail is classification.”</p>
           <p>The difference gets even clearer through geometry: in classification the model builds a <strong>decision boundary</strong> between classes (a line/curve separating spam from genuine); in regression a <strong>best-fit line/curve</strong> runs through the data (following the trend). Wrong side of the boundary = misclassification; distance from the line = residual error. Hence different metrics too: accuracy/precision/recall for boundaries, MAE/MSE/RMSE for lines.</p>
+          <p><strong>Exam-ready plan:</strong> definitions of both + 5-row table + example pair + boundary-vs-line line.</p>
         </section>
 
         <section aria-labelledby="a1q8-en">
@@ -988,6 +1246,7 @@ error²:    100   100   100</code></pre>
           </ul>
           <p>Also write the output-based categories: <strong>classification</strong> (categories), <strong>regression</strong> (numbers), <strong>clustering</strong> (groups). Classification/regression sit in supervised learning, clustering in unsupervised.</p>
           <p>Memorize 2 applications per type (exams ask for examples): supervised — spam filter, disease diagnosis; unsupervised — customer segments, gene grouping; RL — self-driving (lane keep + speed), warehouse robots; semi-supervised — speech recognition (little transcribed + lots of untranscribed audio), photo tagging. Semi-supervised's one-line assumption: nearby points mostly share the class (smoothness), so a few labels reach far.</p>
+          <p><strong>Exam-ready plan:</strong> 4 types with data/goal/example + output categories + FIG.003 diagram.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-types-title-en fig-types-desc-en">
@@ -1022,7 +1281,7 @@ error²:    100   100   100</code></pre>
                 <text x="260" y="216" text-anchor="middle" class="diagram-muted">OUTPUT: CLASSIFICATION · REGRESSION · CLUSTERING</text>
               </svg>
             </div>
-            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>4 types by supervision; 3 categories by output.</span></figcaption>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>4 types by supervision; 3 categories by output.</span></figcaption>
           </figure>
         </section>
 
@@ -1043,6 +1302,43 @@ error²:    100   100   100</code></pre>
           </ul>
           <p>(Alternatively you may write SVM: finds the maximum-margin boundary between classes; applications: text classification, image recognition.) In the exam, compulsorily write one application with every algorithm.</p>
           <p>Understand each algorithm's “how” a level deeper: linear regression fits its line by <strong>least squares</strong>; logistic regression turns a linear sum into a probability via <strong>sigmoid</strong> (0.5 threshold); a decision tree picks the best split at every node (<strong>information gain/Gini</strong>) down to the leaf; in KNN the <strong>value of K</strong> is the tradeoff — small K catches noise, large K smooths boundaries (pick optimal K by cross-validation). These one-liners make the answer topper-level.</p>
+          <p><strong>Exam-ready plan:</strong> each algorithm: how + application; FIG.004 tree diagram; keep the SVM alternative ready.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 270" role="img" aria-labelledby="fig-tree-title-en fig-tree-desc-en">
+                <title id="fig-tree-title-en">Decision tree structure</title>
+                <desc id="fig-tree-desc-en">Root test, Yes/No branches, final decision at leaves.</desc>
+                <defs>
+                  <pattern id="dots-tree-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-tree-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="270" fill="url(#dots-tree-en)"></rect>
+                <rect x="195" y="16" width="130" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="42" text-anchor="middle" class="diagram-text">income&gt;50K?</text>
+                <path d="M215 58L140 108" class="diagram-stroke" marker-end="url(#arrow-tree-en)"></path>
+                <text x="162" y="90" class="diagram-muted">Yes</text>
+                <path d="M305 58L380 108" class="diagram-stroke" marker-end="url(#arrow-tree-en)"></path>
+                <text x="344" y="90" class="diagram-muted">No</text>
+                <rect x="60" y="108" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="140" y="134" text-anchor="middle" class="diagram-text">credit good?</text>
+                <rect x="340" y="108" width="120" height="42" class="diagram-stroke"></rect>
+                <text x="400" y="134" text-anchor="middle" class="diagram-text">REVIEW</text>
+                <path d="M110 150L70 198" class="diagram-stroke" marker-end="url(#arrow-tree-en)"></path>
+                <text x="52" y="182" class="diagram-muted">Yes</text>
+                <path d="M170 150L210 198" class="diagram-stroke" marker-end="url(#arrow-tree-en)"></path>
+                <text x="196" y="182" class="diagram-muted">No</text>
+                <rect x="20" y="198" width="110" height="40" class="diagram-stroke"></rect>
+                <text x="75" y="222" text-anchor="middle" class="diagram-text">APPROVE</text>
+                <rect x="160" y="198" width="110" height="40" class="diagram-stroke"></rect>
+                <text x="215" y="222" text-anchor="middle" class="diagram-text">REJECT</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Root test, Yes/No branches, decision at the leaf.</span></figcaption>
+          </figure>
         </section>
 
         <section aria-labelledby="a1q10-en">
@@ -1062,6 +1358,7 @@ error²:    100   100   100</code></pre>
           </ul>
           <p>The one-line contrast: in supervised learning the error comes from prediction vs label; in unsupervised learning quality is judged by the meaningfulness of the groups.</p>
           <p>Fix the working with an end-to-end example (mall customers): data = age + annual income + spending score → scale it → 5 clusters via K-means → interpret (“young high-spenders” vs “budget families”) → the mall gives each cluster a different discount strategy. Association-side example: from billing data the rule “bread → butter (support 5%, confidence 70%)” — support says how often they sell together, confidence says how often the rule holds. Both emerged with zero labels — that is unsupervised's signature.</p>
+          <p><strong>Exam-ready plan:</strong> 4 steps as headings + mall end-to-end example + supervised-contrast line.</p>
         </section>
 
         <section aria-labelledby="a2q1-en">
@@ -1081,6 +1378,7 @@ error²:    100   100   100</code></pre>
           </ul>
           <p><strong>Importance in one line:</strong> accuracy for the overall picture, precision against false alarms, recall against misses, F1 for the balance of both — choose the metric according to the problem's cost.</p>
           <p>Always remember the classic imbalance example: with 95 healthy + 5 diseased, “call everyone healthy” gives 95% accuracy — the model looks great, but recall = 0/5 = 0! So on imbalanced data, looking at accuracy is forbidden; look at precision/recall/F1. Also note the ranges: all four metrics live in 0–1 (or 0–100%), 1 = perfect. And the meaning of support: how many samples each class had — without support, precision/recall numbers can't be trusted (100% precision on 5 samples means nothing).</p>
+          <p><strong>Exam-ready plan:</strong> 4 formulas + imbalance example + which-metric-when mapping.</p>
         </section>
 
         <section aria-labelledby="a2q2-en">
@@ -1100,6 +1398,34 @@ error²:    100   100   100</code></pre>
           </ul>
           <p>Reading the matrix reveals the model's behaviour: many <strong>FNs</strong> mean the model is conservative — afraid of saying positive, so lower the threshold or weight the positive class. Many <strong>FPs</strong> mean the model is over-eager — raise the threshold. This reading decides whether to tune the threshold, add data, or retrain the model. Mere accuracy could never give this direction.</p>
           <p>Connect it to hypothesis testing to remember: take H0 = “patient healthy”; then FP means calling the innocent guilty (Type I), FN means letting the guilty go (Type II). Courts demand “beyond reasonable doubt” to avoid Type I (high-precision mindset); medical screening tests every suspicion to avoid Type II (high-recall mindset). Both errors cost differently — so pick the metric by the problem, and view the whole threshold range at a glance with the ROC/AUC curve.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 230" role="img" aria-labelledby="fig-thr-title-en fig-thr-desc-en">
+                <title id="fig-thr-title-en">Threshold tradeoff</title>
+                <desc id="fig-thr-desc-en">Low threshold raises recall, high threshold raises precision.</desc>
+                <defs>
+                  <pattern id="dots-thr-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-thr-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="230" fill="url(#dots-thr-en)"></rect>
+                <text x="70" y="60" class="diagram-muted">LOW THRESHOLD</text>
+                <text x="330" y="60" class="diagram-muted">HIGH THRESHOLD</text>
+                <path d="M60 110h400" class="diagram-stroke" marker-end="url(#arrow-thr-en)"></path>
+                <path d="M260 96L272 120L248 120Z" class="diagram-stroke"></path>
+                <text x="70" y="150" class="diagram-text">RECALL UP</text>
+                <text x="70" y="170" class="diagram-muted">FALSE ALARMS UP</text>
+                <text x="350" y="150" class="diagram-text">PRECISION UP</text>
+                <text x="350" y="170" class="diagram-muted">MISSES UP</text>
+                <text x="260" y="205" text-anchor="middle" class="diagram-muted">THRESHOLD →</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Lower threshold for recall, higher for precision.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> 4 cells + Type I/II + threshold direction + ROC line.</p>
         </section>
 
         <section aria-labelledby="a2q3-en">
@@ -1147,8 +1473,9 @@ F1-Score  = 2·P·R/(P+R) = 2(0.909)(0.833)/(0.909+0.833) ≈ 0.869 = 86.9%</cod
                 <text x="390" y="202" text-anchor="middle" class="diagram-muted">left out right</text>
               </svg>
             </div>
-            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>TP/FP/FN/TN and their plain meaning.</span></figcaption>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>TP/FP/FN/TN and their plain meaning.</span></figcaption>
           <p>Build the habit of verifying the calculation: add rows (50+5=55 predicted positive; 10+35=45 predicted negative), add columns (50+10=60 actual positive; 5+35=40 actual negative) — the total must be 100. Also understand the precision–recall tradeoff: lowering the threshold raises recall (fewer misses) but drops precision (more false alarms) — F1 exists precisely to watch both together.</p>
+          <p><strong>Exam-ready plan:</strong> identify cells + 4 formulas + percent + interpretation line (recall priority).</p>
           </figure>
         </section>
 
@@ -1182,6 +1509,7 @@ F1-Score  = 2·P·R/(P+R) = 2(0.909)(0.833)/(0.909+0.833) ≈ 0.869 = 86.9%</cod
             </table>
           </div>
           <p>Feel the difference with an outlier demo: errors [1, 1, 1, 10] give MAE = 13/4 = 3.25, but MSE = (1+1+1+100)/4 = 25.75 and RMSE ≈ 5.07 — one big error drags RMSE to nearly double the MAE. Hence: MAE for typical performance, RMSE when big mistakes scare you. Understand R²'s parts: SSres = the model's leftover error (smaller = better), SStot = the data's total spread; the more spread the model explains, the closer R² gets to 1.</p>
+          <p><strong>Exam-ready plan:</strong> 4 formulas + outlier demo + comparison table + which-metric-when.</p>
         </section>
 
         <section aria-labelledby="a2q5-en">
@@ -1202,6 +1530,7 @@ F1-Score  = 2·P·R/(P+R) = 2(0.909)(0.833)/(0.909+0.833) ≈ 0.869 = 86.9%</cod
           </ul>
           <p>In the exam, write the 5 steps as headings; one-line “why” under each covers both design and justification.</p>
           <p>Also write a guide for reading the metrics (how to conclude the experiment): small MAE with RMSE close to it = uniform errors and a stable model; RMSE much bigger than MAE = some outliers or big misses — analyse those cases separately; R² near 0.9 = variance mostly explained, below 0.5 = change features or model. And for reliability, use <strong>k-fold cross-validation</strong> instead of a single split — K pieces of data, each tested once, metrics averaged — so no lucky/unlucky split can fool you.</p>
+          <p><strong>Exam-ready plan:</strong> 5 steps as headings + why under each + metrics-reading guide.</p>
         </section>
 
         <section aria-labelledby="a2q6-en">
@@ -1236,7 +1565,7 @@ RMSE = √100 = 10</code></pre>
           </ul>
           <p>Fix it with an example: in the model <code>ŷ = 30 + 5x</code> (X = hours, Y = marks), each extra hour adds ~5 marks (slope = rate), with a base of 30 marks at zero hours (intercept = starting point). In the exam, definitely write: slope = “rate of change”, intercept = “baseline”.</p>
           <p>Also write a prediction demo: at x = 10 hours, <code>ŷ = 30 + 50 = 80 marks</code> — that is the model's use. But add the caution: it is trustworthy only inside the training range (extrapolation is risky — 530 marks at 100 hours is absurd), and slope shows correlation, not proven causation (marks rose with hours, but hours need not be the only cause).</p>
-          <p>Also write a prediction demo: at x = 10 hours, <code>ŷ = 30 + 50 = 80 marks</code> — that is the model's use. But add the caution: it is trustworthy only inside the training range (extrapolation is risky — 530 marks at 100 hours is absurd), and slope shows correlation, not proven causation (marks rose with hours, but hours need not be the only cause).</p>
+          <p><strong>Exam-ready plan:</strong> equation + slope/intercept roles + example + prediction demo + caution.</p>
         </section>
 
         <section aria-labelledby="a3q2-en">
@@ -1284,8 +1613,9 @@ Equation: ŷ = 1.5 + 0.95x</code></pre>
                 <text x="120" y="238" class="diagram-muted">DATA POINTS + BEST FIT</text>
               </svg>
             </div>
-            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>The line minimizes total squared errors.</span></figcaption>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.007</span><span>The line minimizes total squared errors.</span></figcaption>
           <p>Making a residuals table makes the solution even more solid (prediction = 1.5 + 0.95x): x=2 → 3.4 (actual 3, residual −0.4); x=4 → 5.3 (actual 7, +1.7); x=6 → 7.2 (actual 5, −2.2); x=8 → 9.1 (actual 10, +0.9). Residuals spread plus-minus with no big outlier — the fit is good. SSE = 0.16 + 2.89 + 4.84 + 0.81 = 8.7; any other line would give a bigger SSE — that is the least-squares claim.</p>
+          <p><strong>Exam-ready plan:</strong> formulas + systematic table + b/a + residual verification.</p>
           </figure>
         </section>
 
@@ -1306,6 +1636,35 @@ Equation: ŷ = 1.5 + 0.95x</code></pre>
           </ul>
           <p>The cost function <code>J = (1/2n)Σ(ŷ−y)²</code> is this SSE in scaled form — <strong>gradient descent</strong> minimizes exactly this J step by step (used instead of the direct formula on big data). And remember one property: the best-fit line always passes through <code>(x̄, ȳ)</code> — in Q2, (5, 6.25): check 1.5 + 0.95×5 = 6.25. Writing this verification line looks impressive in the exam.</p>
           <p>The gradient descent update rule in one line: <code>θ := θ − α·∇J</code> — θ are the parameters, α is the <strong>learning rate</strong> (how big each step is), ∇J is the slope direction. Too big an α → overshoot/diverge; too small → painfully slow training. The normal equation (direct formula) is exact and fast on small data but costly on big data — hence gradient descent there. Both target the same thing: minimum SSE/J.</p>
+          <p><strong>Exam-ready plan:</strong> 4 steps (error→SSE→derivative→solve) + J + α rule + mean-point check.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-gd-title-en fig-gd-desc-en">
+                <title id="fig-gd-title-en">Gradient descent on the cost curve</title>
+                <desc id="fig-gd-desc-en">Ball steps down the slope toward minimum J.</desc>
+                <defs>
+                  <pattern id="dots-gd-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-gd-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="260" fill="url(#dots-gd-en)"></rect>
+                <path d="M70 210V40" class="diagram-stroke" marker-end="url(#arrow-gd-en)"></path>
+                <text x="52" y="60" class="diagram-muted">J</text>
+                <path d="M70 210h390" class="diagram-stroke" marker-end="url(#arrow-gd-en)"></path>
+                <text x="452" y="228" class="diagram-muted">θ</text>
+                <path d="M90 90C160 90 180 185 260 190C340 195 360 90 450 90" class="diagram-stroke"></path>
+                <circle cx="260" cy="190" r="6" class="diagram-stroke"></circle>
+                <text x="260" y="216" text-anchor="middle" class="diagram-muted">min J</text>
+                <circle cx="150" cy="128" r="10" class="diagram-stroke"></circle>
+                <path d="M158 136L205 165" class="diagram-stroke" marker-end="url(#arrow-gd-en)"></path>
+                <text x="208" y="182" class="diagram-muted">α steps</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.008</span><span>Down the slope to minimum J.</span></figcaption>
+          </figure>
         </section>
 
         <section aria-labelledby="a3q4-en">
@@ -1325,6 +1684,7 @@ Equation: ŷ = 1.5 + 0.95x</code></pre>
           </ul>
           <p><strong>Fix (one exam line):</strong> drop one of the correlated features (detect via correlation matrix/VIF), or use <strong>regularization (Ridge/Lasso)</strong> which keeps coefficients stable.</p>
           <p>Detection and fixes in a bit more detail: hunt for 0.8–0.9+ values in the <strong>correlation matrix</strong>; <strong>VIF (Variance Inflation Factor)</strong> above 5–10 confirms the problem. Three ways out: (1) drop one correlated feature (whichever makes less domain sense), (2) combine both into one feature (e.g. a ratio), (3) apply <strong>Ridge</strong> (shrinks coefficients) or <strong>Lasso</strong> (zeroes some coefficients, selecting features too). Writing “drop or regularize” suffices in the exam, but naming VIF strengthens the detection part.</p>
+          <p><strong>Exam-ready plan:</strong> example pair + 3 effects + detection (VIF) + 3 fixes.</p>
         </section>
 
         <section aria-labelledby="a3q5-en">
@@ -1347,6 +1707,7 @@ Predicted: 110   190   160
 |error|:    10    10    10
 error²:    100   100   100</code></pre>
           <p>MAE = 30/3 = 10 and MSE = 300/3 = 100 read straight off the table. Make the same table in A2-Q6 — both answers will look equally strong.</p>
+          <p><strong>Exam-ready plan:</strong> error table + steps (like A2-Q6) + rule.</p>
         </section>
 
         <section aria-labelledby="a3q6-en">
@@ -1386,8 +1747,9 @@ error²:    100   100   100</code></pre>
                 <text x="330" y="200" class="diagram-muted">CLASS 0 ↓ · CLASS 1 ↑</text>
               </svg>
             </div>
-            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>The S-curve gives probability; 0.5 decides the class.</span></figcaption>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.009</span><span>The S-curve gives probability; 0.5 decides the class.</span></figcaption>
           <p>Memorize ready-reckoner sigmoid values (handy in numericals/interpretation): z = 0 → 0.5; z = 2 → ≈0.88; z = −2 → ≈0.12; z = 6 → ≈0.998. Symmetry property: <code>σ(−z) = 1 − σ(z)</code> — the negative side mirrors the positive. And the log-odds connection: <code>z = log(p/(1−p))</code> — sigmoid and log-odds are inverses, which is why logistic weights are called “effects on log-odds”.</p>
+          <p><strong>Exam-ready plan:</strong> formula + 3 properties + values table + significance + log-odds.</p>
           </figure>
         </section>
 
@@ -1417,6 +1779,7 @@ error²:    100   100   100</code></pre>
           </div>
           <p>Beware the exam trap: seeing “regression” in the name, don't file it under regression — it is a <strong>classification</strong> algorithm. Write one line: linear regression tells “how much”, logistic regression tells “which class”.</p>
           <p>Also understand the loss-function difference (it can become a 2-mark question): in linear regression <strong>MSE</strong> is convex — gradient descent reaches the global minimum directly. In logistic regression, after sigmoid the MSE turns non-convex (danger of local minima), so <strong>log-loss / cross-entropy</strong> is used instead, which is convex: probability near 1 for the right class → loss ≈ 0, confident wrong prediction → huge loss. The decision boundary is linear in both (the probability = 0.5 line in logistic), but the output means different things — value vs class.</p>
+          <p><strong>Exam-ready plan:</strong> definition + 5-row table + trap line + loss difference.</p>
         </section>
 
         <section aria-labelledby="recap-heading-en">
