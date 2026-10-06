@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="Machine Learning mid-sem QB: Unit I-III ke detailed answers, Hinglish aur English mein.">
+  <title>Mid-sem QB with answers — Machine Learning</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+  <style>
+    .note-layout { grid-template-columns: minmax(0, 1fr); }
+    .prose-column { max-width: 76ch; }
+    .prose-column .figure-card { margin: 1.6rem 0 0.6rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha QB par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Machine Learning contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">UNIT 01–03 / MID-SEM QB</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#qb">QB</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" id="lang-toggle" type="button">English</button>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">MACHINE LEARNING</a> &nbsp; / &nbsp; MID-SEM QB</p>
+      <h1 class="page-title">Mid-sem QB with answers</h1>
+      <p class="page-intro" data-lang="hi">Unit I, II aur III ke 27 questions ke detailed Hinglish answers — definitions, farq tables, solved numericals aur diagrams ke saath. Upar button se English mein switch karo. Pehle khud recall karo, phir answer match karo.</p>
+      <p class="page-intro" data-lang="en" hidden>Detailed answers to 27 questions from Units I, II and III — with definitions, comparison tables, solved numericals and diagrams. Use the button above to switch back to Hinglish. Recall first, then match the answers.</p>
+      <div class="note-meta">
+        <span>QB set</span>
+        <span>Unit 01–03</span>
+        <span>Source: learner QB (docx)</span>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column" data-lang="hi">
+        <section aria-labelledby="how-to-use">
+          <p class="section-kicker">START HERE / KAISE USE KARO</p>
+          <h2 id="how-to-use">Is QB ko 3 rounds mein karo</h2>
+          <p class="dropcap">ML ke answers ratne se mid-sem mein confusion hota hai, kyunki terms ek jaise lagte hain — precision vs recall, classification vs regression, MAE vs RMSE. Har answer ko pehle ek chhota decision samjho: ye concept kya poochh raha hai, formula kya hai, aur ek example kya hai.</p>
+          <p><strong>Round 1:</strong> definitions aur farq tables zubani recall karo. <strong>Round 2:</strong> teenon numericals (confusion matrix, regression line, MAE/RMSE) khud copy par solve karo, phir steps match karo. <strong>Round 3:</strong> har theory answer ke points apne words mein likhne ki practice karo.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Assignment-1 (Unit I: ML intro, types, data–information–knowledge), Assignment-2 (Unit II: classification aur regression metrics + 2 numericals), Assignment-3 (Unit III: linear/logistic regression + 2 numericals).</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="a1-q1-heading">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q1</p>
+          <h2 id="a1-q1-heading">Machine Learning kya hai? Traditional programming se farq</h2>
+          <p><strong>Machine Learning</strong> ka matlab hai aisa program banana jo data se khud seekhe — use har situation ka rule pehle se likhkar nahi dena padta. Arthur Samuel ki classic definition: “field of study that gives computers the ability to learn without being explicitly programmed.” Simple words mein: data input karo, model patterns dhoondhta hai, aur naye data par prediction karta hai.</p>
+          <p><strong>Learning</strong> ka matlab yahan performance improve hona hai: jaise-jaise model zyada examples dekhta hai, uski predictions behtar hoti jaati hain. Example: spam filter ko hazaron labeled emails dikhao; wo khud seekh leta hai ki kaunse words spam ki nishaani hain.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / ML vs traditional programming</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Traditional programming</th><th scope="col">Machine Learning</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Logic kaun likhta hai</td><td>Programmer rules likhta hai</td><td>Model data se rules seekhta hai</td></tr>
+                <tr><td>Input-output</td><td>Data + rules → output</td><td>Data + output (examples) → rules (model)</td></tr>
+                <tr><td>Naye cases par</td><td>Rule update karna padta hai</td><td>Naya data dekhkar generalize karta hai</td></tr>
+                <tr><td>Example</td><td>Calculator, billing rules</td><td>Spam filter, recommendations</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Exam mein ek line zaroor likho: traditional programming mein output data aur rules se nikalta hai; ML mein rules (model) data aur sample outputs se nikalte hain.</p>
+        </section>
+
+        <section aria-labelledby="a1-q2-heading">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q2</p>
+          <h2 id="a1-q2-heading">Supervised vs unsupervised learning</h2>
+          <p><strong>Supervised learning</strong> mein training data labeled hota hai — har input ke saath sahi answer diya hota hai, aur model input se answer tak ka mapping seekhta hai. Example: past marks dekhkar student ka grade predict karna (input = past performance, label = final grade).</p>
+          <p><strong>Unsupervised learning</strong> mein data unlabeled hota hai — koi sahi answer nahi diya hota. Model khud data mein groups ya structure dhoondhta hai. Example: purchase history ke basis par customers ki grouping (clustering) — pehle se koi “ye group A hai” label nahi hota.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / supervision ka farq</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Supervised</th><th scope="col">Unsupervised</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Data</td><td>Labeled (input + sahi answer)</td><td>Unlabeled (sirf input)</td></tr>
+                <tr><td>Goal</td><td>Naye input par answer predict karna</td><td>Groups/patterns discover karna</td></tr>
+                <tr><td>Tasks</td><td>Classification, regression</td><td>Clustering, association</td></tr>
+                <tr><td>Example</td><td>Spam detection, grade prediction</td><td>Customer grouping, topic discovery</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="a1-q3-heading">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q3–Q5</p>
+          <h2 id="a1-q3-heading">Data, information aur knowledge</h2>
+          <p>Teenon ko ek school example se samjho. <strong>Data</strong> raw facts hain — jaise har student ke har subject ke marks ki list. Iska apne aap mein koi decision value nahi hai.</p>
+          <p>Jab data ko process karke context diya jata hai, wo <strong>information</strong> ban jaata hai — jaise “Class 10-B ka maths average 72% hai, jo pichhle term se 5% kam hai.” Ab ye baat samajh mein aati hai aur compare ho sakti hai.</p>
+          <p>Jab information ko experience aur reasoning ke saath jodkar decision liya jata hai, wo <strong>knowledge</strong> hai — jaise “maths average gir raha hai, isliye extra practice tests aur weak topics par revision plan karte hain.” Knowledge action mein badalta hai.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITIONS</span>
+            <p>Data: raw facts and figures. Information: processed, meaningful data. Knowledge: information combined with experience to guide decisions.</p>
+          </div>
+          <p class="analogy"><strong>Yaad rakhne ki analogy:</strong> Data = kaccha maal; Information = bani hui dish; Knowledge = recipe ka tajurba jisse agली baar behtar dish bane.</p>
+        </section>
+
+        <section aria-labelledby="a1-q4-heading">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q4–Q6</p>
+          <h2 id="a1-q4-heading">Scenarios ko ML type mein classify karo</h2>
+          <p>Scenario dekhkar 3 sawaal poochho: (1) kya sahi answers (labels) available hain? (2) kya goal prediction hai ya grouping? (3) kya reward/penalty se seekhna hai? Isse type turant pakda jaata hai.</p>
+          <ul class="plain-list">
+            <li><strong>Spam email detection → Supervised (classification).</strong> Emails pehle se “spam / not spam” labeled hote hain; model naye email ka label predict karta hai. Justification: labeled training data + categorical output.</li>
+            <li><strong>Robot rewards/penalties se chalna seekhe → Reinforcement learning.</strong> Koi sahi answer nahi diya jata; robot actions try karta hai aur reward/penalty se policy improve karta hai.</li>
+            <li><strong>Bina labels customers ki grouping → Unsupervised (clustering).</strong> Pehle se groups pata nahi; purchase history mein similarity se groups bante hain.</li>
+            <li><strong>Past performance se grades predict → Supervised (regression ya classification).</strong> Past data + known grades labels hain; naye student ka grade predict hota hai. Marks predict ho toh regression, pass/fail ho toh classification.</li>
+            <li><strong>Game AI khud se khelkar improve kare → Reinforcement learning (self-play).</strong> Outcomes (jeet/haar) reward ki tarah kaam karte hain; labelled dataset nahi hota.</li>
+          </ul>
+          <p>Exam tip: sirf type ka naam nahi, ek-line justification zaroor likho — “labels available hain, isliye supervised” jaisi line hi marks dilati hai.</p>
+        </section>
+
+        <section aria-labelledby="a1-q5-heading">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q7–Q8</p>
+          <h2 id="a1-q5-heading">Classification vs regression + chaar major types</h2>
+          <p><strong>Classification</strong> mein output categories (classes) hoti hain — jaise spam/not-spam, pass/fail. <strong>Regression</strong> mein output continuous number hota hai — jaise marks, price, temperature. Dono supervised learning ke andar aate hain; farq sirf output ke type ka hai. Clustering teesra output type hai (groups), jo unsupervised mein aata hai.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / chaar major types</caption>
+              <thead>
+                <tr><th scope="col">Type</th><th scope="col">Data</th><th scope="col">Goal</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Supervised</td><td>Labeled</td><td>Prediction</td><td>Spam detection</td></tr>
+                <tr><td>Unsupervised</td><td>Unlabeled</td><td>Groups/patterns</td><td>Customer grouping</td></tr>
+                <tr><td>Reinforcement</td><td>Reward/penalty feedback</td><td>Best actions seekhna</td><td>Game AI, robot walk</td></tr>
+                <tr><td>Semi-supervised</td><td>Thoda labeled + bahut unlabeled</td><td>Kam labels mein prediction</td><td>Web page classification</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Output ke basis par categories:</strong> classification (categories), regression (numbers), clustering (groups). Ye teeno upar wale chaar types se cross-cut karte hain — classification/regression supervised mein, clustering unsupervised mein.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-types-title fig-types-desc">
+                <title id="fig-types-title">ML ke chaar types aur output categories</title>
+                <desc id="fig-types-desc">ML types ka tree: supervision ke basis par chaar types, output ke basis par teen categories.</desc>
+                <defs>
+                  <pattern id="dots-types" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-types" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-types)"></rect>
+                <rect x="195" y="18" width="130" height="40" class="diagram-stroke"></rect>
+                <text x="248" y="43" text-anchor="middle" class="diagram-text">ML TYPES</text>
+                <path d="M225 58v30m70-30v30" class="diagram-stroke"></path>
+                <path d="M60 88h400" class="diagram-stroke"></path>
+                <path d="M60 88v30m133-30v30m134-30v30m133-30v30" class="diagram-stroke" marker-end="url(#arrow-types)"></path>
+                <text x="60" y="140" text-anchor="middle" class="diagram-text">SUPER-</text>
+                <text x="60" y="156" text-anchor="middle" class="diagram-text">VISED</text>
+                <text x="193" y="140" text-anchor="middle" class="diagram-text">UNSUPER-</text>
+                <text x="193" y="156" text-anchor="middle" class="diagram-text">VISED</text>
+                <text x="327" y="140" text-anchor="middle" class="diagram-text">REINFORCE-</text>
+                <text x="327" y="156" text-anchor="middle" class="diagram-text">MENT</text>
+                <text x="460" y="140" text-anchor="middle" class="diagram-text">SEMI-</text>
+                <text x="460" y="156" text-anchor="middle" class="diagram-text">SUPERVISED</text>
+                <text x="60" y="182" text-anchor="middle" class="diagram-muted">labels</text>
+                <text x="193" y="182" text-anchor="middle" class="diagram-muted">no labels</text>
+                <text x="327" y="182" text-anchor="middle" class="diagram-muted">rewards</text>
+                <text x="460" y="182" text-anchor="middle" class="diagram-muted">few labels</text>
+                <text x="260" y="216" text-anchor="middle" class="diagram-muted">OUTPUT: CLASSIFICATION · REGRESSION · CLUSTERING</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Supervision ke 4 types; output ki 3 categories.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="a1-q6-heading">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q9–Q10</p>
+          <h2 id="a1-q6-heading">Supervised algorithms aur unsupervised working</h2>
+          <p><strong>Chaar supervised algorithms aur applications:</strong></p>
+          <ul class="plain-list">
+            <li><strong>Linear Regression:</strong> continuous value predict karta hai (house price, marks). Application: sales forecasting.</li>
+            <li><strong>Logistic Regression:</strong> naam mein regression hai par classification karta hai (pass/fail, disease yes/no). Application: medical diagnosis.</li>
+            <li><strong>Decision Trees:</strong> data ko feature tests se split karke decide karta hai. Application: loan approval, interview screening.</li>
+            <li><strong>KNN / SVM:</strong> KNN neighbours se vote karata hai; SVM best boundary (margin) dhoondhta hai. Application: handwritten digit recognition, text classification.</li>
+          </ul>
+          <p><strong>Unsupervised learning ka working aur major steps:</strong></p>
+          <ul class="plain-list">
+            <li><strong>Step 1 — Data collect aur prepare karo:</strong> unlabeled data saaf karo, features select/scale karo.</li>
+            <li><strong>Step 2 — Similarity measure chuno:</strong> jaise distance (clustering) ya co-occurrence (association).</li>
+            <li><strong>Step 3 — Pattern discover karo:</strong> clustering (K-means jaise groups) ya association rules (market-basket: “bread ke saath butter”).</li>
+            <li><strong>Step 4 — Evaluate aur interpret karo:</strong> groups meaningful hain ya nahi, domain knowledge se check karo.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="a2-q1-heading">
+          <p class="section-kicker">ASSIGNMENT 2 · UNIT II / Q1–Q2</p>
+          <h2 id="a2-q1-heading">Accuracy, Precision, Recall, F1-Score</h2>
+          <p>Classification model ko sirf “kitne sahi” se judge karna misleading ho sakta hai — especially jab classes unbalanced hon (jaise 95 healthy, 5 diseased). Isliye chaar metrics ka role alag hai:</p>
+          <ul class="plain-list">
+            <li><strong>Accuracy = (TP + TN) / total.</strong> Overall sahi predictions ka fraction. Balanced data par useful; imbalanced par dhokha de sakti hai.</li>
+            <li><strong>Precision = TP / (TP + FP).</strong> “Positive bola, usme se kitne really positive?” False alarms kam karne hain toh precision dekho (spam filter — genuine mail spam mein na jaye).</li>
+            <li><strong>Recall (Sensitivity) = TP / (TP + FN).</strong> “Asli positives mein se kitne pakde?” Miss karna costly ho toh recall dekho (disease detection — koi patient chhoote nahi).</li>
+            <li><strong>F1-Score = 2·P·R / (P + R).</strong> Precision aur recall ka harmonic mean — dono ka balance ek number mein. Jab dono important hon, F1 dekho.</li>
+          </ul>
+          <h3>Confusion matrix se error types kaise padhein</h3>
+          <p>Matrix ki 4 cells: <strong>TP</strong> (disease hai, bola hai), <strong>TN</strong> (nahi hai, bola nahi), <strong>FP</strong> (nahi hai phir bola hai — false alarm, Type I error), <strong>FN</strong> (hai par bola nahi — miss, Type II error). Example: agar FN zyada hain toh model conservative hai — positive bolne se darta hai; agar FP zyada hain toh model over-eager hai. Isi reading se pata chalta hai ki threshold badhana hai ya model retrain karna hai.</p>
+        </section>
+
+        <section aria-labelledby="a2-q2-heading">
+          <p class="section-kicker">ASSIGNMENT 2 · UNIT II / Q3 — SOLVED NUMERICAL</p>
+          <h2 id="a2-q2-heading">Disease data: Accuracy, Precision, Recall, F1</h2>
+          <p>Given: TP = 50, FP = 5, FN = 10, TN = 35, total = 100.</p>
+          <pre class="code-sample"><code>Accuracy  = (TP + TN) / total = (50 + 35) / 100 = 0.85 = 85%
+Precision = TP / (TP + FP) = 50 / (50 + 5) = 50/55 ≈ 0.909 = 90.9%
+Recall    = TP / (TP + FN) = 50 / (50 + 10) = 50/60 ≈ 0.833 = 83.3%
+F1-Score  = 2·P·R/(P+R) = 2(0.909)(0.833)/(0.909+0.833) ≈ 0.869 = 86.9%</code></pre>
+          <p>Interpretation ek line mein: precision (90.9%) recall (83.3%) se zyada hai — model positive bolne mein careful hai, lekin 10 real patients miss ho gaye (FN = 10), jo medical case mein serious hai. Isliye yahan recall improve karna priority hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-cm-title fig-cm-desc">
+                <title id="fig-cm-title">Confusion matrix 2x2 grid</title>
+                <desc id="fig-cm-desc">TP 50, FP 5, FN 10, TN 35 ke saath chaaron cells aur unke matlab.</desc>
+                <defs>
+                  <pattern id="dots-cm" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-cm)"></rect>
+                <text x="200" y="40" text-anchor="middle" class="diagram-muted">ACTUAL POSITIVE</text>
+                <text x="380" y="40" text-anchor="middle" class="diagram-muted">ACTUAL NEGATIVE</text>
+                <text x="30" y="120" class="diagram-muted">PRED</text>
+                <text x="30" y="136" class="diagram-muted">POS</text>
+                <text x="30" y="200" class="diagram-muted">PRED</text>
+                <text x="30" y="216" class="diagram-muted">NEG</text>
+                <rect x="110" y="60" width="180" height="80" class="diagram-stroke"></rect>
+                <text x="200" y="92" text-anchor="middle" class="diagram-text">TP = 50</text>
+                <text x="200" y="112" text-anchor="middle" class="diagram-muted">sahi pakda</text>
+                <rect x="300" y="60" width="180" height="80" class="diagram-stroke"></rect>
+                <text x="390" y="92" text-anchor="middle" class="diagram-text">FP = 5</text>
+                <text x="390" y="112" text-anchor="middle" class="diagram-muted">false alarm</text>
+                <rect x="110" y="150" width="180" height="80" class="diagram-stroke"></rect>
+                <text x="200" y="182" text-anchor="middle" class="diagram-text">FN = 10</text>
+                <text x="200" y="202" text-anchor="middle" class="diagram-muted">miss ho gaya</text>
+                <rect x="300" y="150" width="180" height="80" class="diagram-stroke"></rect>
+                <text x="390" y="182" text-anchor="middle" class="diagram-text">TN = 35</text>
+                <text x="390" y="202" text-anchor="middle" class="diagram-muted">sahi chhoda</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>TP/FP/FN/TN aur unka simple matlab.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="a2-q3-heading">
+          <p class="section-kicker">ASSIGNMENT 2 · UNIT II / Q4–Q5</p>
+          <h2 id="a2-q3-heading">MAE, MSE, RMSE, R²</h2>
+          <p>Regression mein prediction number hota hai, isliye error = |actual − predicted| se metrics bante hain:</p>
+          <ul class="plain-list">
+            <li><strong>MAE = (1/n)Σ|y − ŷ|.</strong> Average absolute galti, original units mein. Outliers se kam affect hota hai — robust metric.</li>
+            <li><strong>MSE = (1/n)Σ(y − ŷ)².</strong> Errors square hone se badi galtiyon ko zyada penalty milti hai. Training mein optimize karna easy (differentiable).</li>
+            <li><strong>RMSE = √MSE.</strong> MSE ka square root — wapas original units mein, taaki interpret karna aasaan ho. Badi errors par sensitive.</li>
+            <li><strong>R² = 1 − SSres/SStot.</strong> Model ne output ki kitni variance explain ki (0 se 1; 1 = perfect). Alag units/scales wale models compare karne mein useful.</li>
+          </ul>
+          <h3>Regression experiment design karo (steps + why)</h3>
+          <ul class="plain-list">
+            <li><strong>Step 1 — Data split karo (train/validation/test):</strong> taaki model unseen data par test ho, rattafication (overfitting) pakda jaye.</li>
+            <li><strong>Step 2 — Baseline fix karo:</strong> jaise mean predictor; isse pata chalta hai model baseline se better hai ya nahi.</li>
+            <li><strong>Step 3 — Train par fit, validation par tune karo:</strong> hyperparameters validation MAE/RMSE se chuno, test ko untouched rakho.</li>
+            <li><strong>Step 4 — Teenon metrics report karo:</strong> MAE (typical error size), RMSE (badi galtiyon ka penalty), R² (variance explained) — teeno milkar poori picture dete hain.</li>
+            <li><strong>Step 5 — Residuals check karo:</strong> errors randomly spread hain ya pattern hai; pattern matlab model mein kuch missing hai.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="a2-q4-heading">
+          <p class="section-kicker">ASSIGNMENT 2 · UNIT II / Q6 — SOLVED NUMERICAL</p>
+          <h2 id="a2-q4-heading">Actual vs predicted: MAE aur RMSE</h2>
+          <p>Given: Actual = [100, 200, 150], Predicted = [110, 190, 160].</p>
+          <pre class="code-sample"><code>Errors: |100−110| = 10, |200−190| = 10, |150−160| = 10
+MAE  = (10 + 10 + 10) / 3 = 10
+MSE  = (100 + 100 + 100) / 3 = 100
+RMSE = √100 = 10</code></pre>
+          <p>Yahan teenon errors barabar (10) hain, isliye MAE aur RMSE dono 10 aaye. Yaad rakho: RMSE hamesha MAE se bada ya barabar hota hai (RMSE ≥ MAE) — barabar tabhi jab saare errors equal hon.</p>
+        </section>
+
+        <section aria-labelledby="a3-q1-heading">
+          <p class="section-kicker">ASSIGNMENT 3 · UNIT III / Q1</p>
+          <h2 id="a3-q1-heading">Linear regression + slope aur intercept ka role</h2>
+          <p><strong>Linear regression</strong> input X aur continuous output Y ke beech seedhi line ka rishta dhoondhta hai: <code>ŷ = a + bx</code>. Goal: aisi line jo data points ke sabse kareeb se guzre.</p>
+          <ul class="plain-list">
+            <li><strong>Slope (b):</strong> X mein 1 unit badhotri par Y mein kitna badlav — rishton ki strength aur direction. Positive slope = saath badhte hain; zero ≈ koi linear rishta nahi.</li>
+            <li><strong>Intercept (a):</strong> X = 0 par line Y-axis ko kahan kaat-ti hai — starting level / baseline value.</li>
+          </ul>
+          <p>Example: agar padhai ke hours (X) se marks (Y) ka model <code>ŷ = 30 + 5x</code> hai, toh har extra hour ~5 marks badhata hai (slope), aur zero hours par base 30 marks (intercept).</p>
+        </section>
+
+        <section aria-labelledby="a3-q2-heading">
+          <p class="section-kicker">ASSIGNMENT 3 · UNIT III / Q2–Q3 — SOLVED NUMERICAL</p>
+          <h2 id="a3-q2-heading">Regression equation + line of best fit</h2>
+          <p>Given: X = [2, 4, 6, 8], Y = [3, 7, 5, 10]. Formula: <code>b = Σ(x−x̄)(y−ȳ) / Σ(x−x̄)²</code>, <code>a = ȳ − bx̄</code>.</p>
+          <pre class="code-sample"><code>x-mean = (2+4+6+8)/4 = 5,  y-mean = (3+7+5+10)/4 = 6.25
+x-dev:  −3, −1, +1, +3        → squares: 9+1+1+9 = 20
+y-dev:  −3.25, +0.75, −1.25, +3.75
+products: 9.75 − 0.75 − 1.25 + 11.25 = 19.0
+b = 19/20 = 0.95
+a = 6.25 − 0.95×5 = 6.25 − 4.75 = 1.5
+Equation: ŷ = 1.5 + 0.95x</code></pre>
+          <p><strong>Line of best fit kaise milti hai:</strong> best fit wo line hai jo squared errors ka sum (SSE) minimum kare — ise <strong>least squares</strong> method kehte hain. Errors square isliye karte hain taaki positive-negative cancel na hon aur badi galtiyon ko zyada penalty mile. Upar wale formulas isi minimization se nikalte hain (SSE ka derivative zero karke). Cost function <code>J = (1/2n)Σ(ŷ−y)²</code> isi SSE ka scaled form hai — gradient descent isi ko minimize karta hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-fit-title fig-fit-desc">
+                <title id="fig-fit-title">Best fit line aur residuals</title>
+                <desc id="fig-fit-desc">Chaar data points, unke beech se guzarti regression line, aur ek dashed residual.</desc>
+                <defs>
+                  <pattern id="dots-fit" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-fit" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="260" fill="url(#dots-fit)"></rect>
+                <path d="M60 220V40m0 180h420" class="diagram-stroke"></path>
+                <text x="40" y="130" class="diagram-muted">Y</text>
+                <text x="470" y="238" class="diagram-muted">X</text>
+                <path d="M100 200L440 70" class="diagram-stroke"></path>
+                <text x="400" y="60" class="diagram-muted">ŷ=1.5+0.95x</text>
+                <circle cx="140" cy="190" r="6" class="diagram-stroke"></circle>
+                <circle cx="260" cy="120" r="6" class="diagram-stroke"></circle>
+                <circle cx="340" cy="160" r="6" class="diagram-stroke"></circle>
+                <circle cx="420" cy="90" r="6" class="diagram-stroke"></circle>
+                <path d="M260 120v38" class="diagram-stroke" stroke-dasharray="5 4"></path>
+                <text x="270" y="148" class="diagram-muted">residual</text>
+                <text x="120" y="238" class="diagram-muted">DATA POINTS + BEST FIT</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Line squared errors ka total minimum karti hai.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="a3-q3-heading">
+          <p class="section-kicker">ASSIGNMENT 3 · UNIT III / Q4–Q5</p>
+          <h2 id="a3-q3-heading">Multicollinearity + MAE/RMSE repeat</h2>
+          <p><strong>Multicollinearity</strong> ka matlab: multiple regression ke do ya zyada input features aapas mein strongly correlated hain (jaise “total marks” aur “average marks” dono features hon). Asar:</p>
+          <ul class="plain-list">
+            <li>Coefficients unstable ho jaate hain — thoda data badlo, values bahut hil jaati hain.</li>
+            <li>Kis feature ka asar kitna hai, ye interpret karna mushkil ho jaata hai (standard errors badh jaati hain).</li>
+            <li>Prediction par asar kam pad sakta hai, par explanation aur feature selection bigad jaata hai.</li>
+            <li>Fix: correlated features mein se ek hatao, ya regularization (Ridge/Lasso) use karo.</li>
+          </ul>
+          <p><strong>Q5 numerical (MAE/RMSE):</strong> values bilkul Assignment-2 Q6 wali hain — Actual [100, 200, 150], Predicted [110, 190, 160]. Isliye answer same: <code>MAE = 10</code>, <code>RMSE = 10</code> (steps ke liye Assignment-2 Q6 dekho). Exam mein dono jagah same method likhna hai.</p>
+        </section>
+
+        <section aria-labelledby="a3-q4-heading">
+          <p class="section-kicker">ASSIGNMENT 3 · UNIT III / Q6–Q7</p>
+          <h2 id="a3-q4-heading">Sigmoid + logistic vs linear regression</h2>
+          <p><strong>Sigmoid function:</strong> <code>σ(z) = 1 / (1 + e<sup>−z</sup>)</code>. Ye kisi bhi real number ko 0–1 ke beech dabaa deta hai (squash karta hai) — S-shape curve, beech mein 0.5. <strong>Significance:</strong> logistic regression linear combination <code>z = w·x + b</code> ko isi se probability mein badalta hai; 0.5 threshold se class decide hoti hai (≥ 0.5 → class 1).</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / logistic vs linear</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Linear regression</th><th scope="col">Logistic regression</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Output</td><td>Continuous number (−∞ se +∞)</td><td>Probability 0–1, phir class label</td></tr>
+                <tr><td>Use</td><td>Regression (price, marks)</td><td>Classification (pass/fail, disease)</td></tr>
+                <tr><td>Function</td><td>Seedhi line <code>ŷ = a + bx</code></td><td>Sigmoid on linear part <code>σ(w·x+b)</code></td></tr>
+                <tr><td>Cost/loss</td><td>MSE minimize hota hai</td><td>Log-loss (cross-entropy); MSE yahan non-convex hota</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Exam trap se bacho: naam mein “regression” hai par logistic regression <strong>classification</strong> algorithm hai. Ek line zaroor likho: linear regression “kitna” batata hai, logistic regression “kaunsi class” batata hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-sig-title fig-sig-desc">
+                <title id="fig-sig-title">Sigmoid curve aur 0.5 threshold</title>
+                <desc id="fig-sig-desc">S-shape curve 0 se 1 tak, beech mein 0.5 threshold line.</desc>
+                <defs>
+                  <pattern id="dots-sig" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-sig)"></rect>
+                <path d="M60 200V30m0 170h420" class="diagram-stroke"></path>
+                <text x="40" y="110" class="diagram-muted">1.0</text>
+                <text x="40" y="200" class="diagram-muted">0.0</text>
+                <text x="470" y="218" class="diagram-muted">z</text>
+                <path d="M60 196C160 194 200 150 260 118C320 86 360 44 480 42" class="diagram-stroke"></path>
+                <path d="M60 118h420" class="diagram-stroke" stroke-dasharray="6 5"></path>
+                <text x="400" y="108" class="diagram-muted">0.5 THRESHOLD</text>
+                <text x="90" y="60" class="diagram-text">σ(z)=1/(1+e^−z)</text>
+                <text x="330" y="200" class="diagram-muted">CLASS 0 ↓ · CLASS 1 ↑</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>S-curve probability deta hai; 0.5 se class decide.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="recap-heading">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading">Ek nazar mein</h2>
+          <dl class="recap-list">
+            <dt>ML types</dt><dd>Supervised (labels), unsupervised (no labels), reinforcement (rewards), semi-supervised (few labels).</dd>
+            <dt>Outputs</dt><dd>Classification (categories), regression (numbers), clustering (groups).</dd>
+            <dt>Metrics</dt><dd>Accuracy overall; precision false alarms ke against; recall miss ke against; F1 dono ka balance.</dd>
+            <dt>Errors</dt><dd>FP = false alarm (Type I); FN = miss (Type II).</dd>
+            <dt>Regression metrics</dt><dd>MAE robust average; MSE/RMSE badi galtiyon par sakht; R² variance explained.</dd>
+            <dt>Regression line</dt><dd><code>b = Σ(x−x̄)(y−ȳ)/Σ(x−x̄)²</code>, <code>a = ȳ − bx̄</code>; least squares SSE minimize karta hai.</dd>
+            <dt>Logistic</dt><dd>Sigmoid se probability, 0.5 se class; naam regression, kaam classification.</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Ab bina upar dekhe teen answers recall karo:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne answers likho; phir A2-Q3, A3-Q2 se match karo.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Precision aur recall mein kya farq hai?
+              <ol type="A"><li>Precision = TP/(TP+FP), Recall = TP/(TP+FN)</li><li>Dono same hote hain</li><li>Precision = TN/total</li><li>Recall = FP/(FP+TN)</li></ol>
+            </li>
+            <li>RMSE aur MAE mein kya rishta hai?
+              <ol type="A"><li>RMSE ≥ MAE hamesha</li><li>MAE ≥ RMSE hamesha</li><li>Dono hamesha barabar</li><li>Koi rishta nahi</li></ol>
+            </li>
+            <li>X = [2,4,6,8], Y = [3,7,5,10] par slope kitna aaya?
+              <ol type="A"><li>0.95</li><li>1.5</li><li>6.25</li><li>1.0</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: Unit 4–5 topic-wise notes — answers recall ke baad.</p>
+        </section>
+      </article>
+
+      <article class="prose-column" data-lang="en" hidden>
+        <section aria-labelledby="how-to-use-en">
+          <p class="section-kicker">START HERE / HOW TO USE</p>
+          <h2 id="how-to-use-en">Do this QB in 3 rounds</h2>
+          <p class="dropcap">Mugging up ML answers creates confusion, because the terms look alike — precision vs recall, classification vs regression, MAE vs RMSE. Treat every answer as a small decision first: what is the concept asking, what is the formula, and what is one example?</p>
+          <p><strong>Round 1:</strong> Recall definitions and comparison tables orally. <strong>Round 2:</strong> Solve all three numericals (confusion matrix, regression line, MAE/RMSE) on paper yourself, then match the steps. <strong>Round 3:</strong> Practise writing every theory answer's points in your own words.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Assignment-1 (Unit I: ML intro, types, data–information–knowledge), Assignment-2 (Unit II: classification and regression metrics + 2 numericals), Assignment-3 (Unit III: linear/logistic regression + 2 numericals).</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="a1-q1-heading-en">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q1</p>
+          <h2 id="a1-q1-heading-en">What is Machine Learning? How it differs from traditional programming</h2>
+          <p><strong>Machine Learning</strong> means building programs that learn from data themselves — the rules for every situation are not written in advance. Arthur Samuel's classic definition: “field of study that gives computers the ability to learn without being explicitly programmed.” Simply: feed data in, the model finds patterns, and predicts on new data.</p>
+          <p><strong>Learning</strong> here means improving performance: as the model sees more examples, its predictions keep getting better. Example: show a spam filter thousands of labeled emails; it learns on its own which words signal spam.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / ML vs traditional programming</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Traditional programming</th><th scope="col">Machine Learning</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Who writes logic</td><td>Programmer writes rules</td><td>Model learns rules from data</td></tr>
+                <tr><td>Input–output</td><td>Data + rules → output</td><td>Data + output (examples) → rules (model)</td></tr>
+                <tr><td>On new cases</td><td>Rules must be updated</td><td>Generalizes from new data</td></tr>
+                <tr><td>Example</td><td>Calculator, billing rules</td><td>Spam filter, recommendations</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Do write one line in the exam: in traditional programming the output comes from data and rules; in ML the rules (model) come from data and sample outputs.</p>
+        </section>
+
+        <section aria-labelledby="a1-q2-heading-en">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q2</p>
+          <h2 id="a1-q2-heading-en">Supervised vs unsupervised learning</h2>
+          <p>In <strong>supervised learning</strong> the training data is labeled — every input comes with the correct answer, and the model learns the mapping from input to answer. Example: predicting a student's grade from past marks (input = past performance, label = final grade).</p>
+          <p>In <strong>unsupervised learning</strong> the data is unlabeled — no correct answers are given. The model itself finds groups or structure in the data. Example: grouping customers by purchase history (clustering) — there is no pre-decided “this is group A” label.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / supervision compared</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Supervised</th><th scope="col">Unsupervised</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Data</td><td>Labeled (input + correct answer)</td><td>Unlabeled (input only)</td></tr>
+                <tr><td>Goal</td><td>Predict answers for new inputs</td><td>Discover groups/patterns</td></tr>
+                <tr><td>Tasks</td><td>Classification, regression</td><td>Clustering, association</td></tr>
+                <tr><td>Example</td><td>Spam detection, grade prediction</td><td>Customer grouping, topic discovery</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="a1-q3-heading-en">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q3–Q5</p>
+          <h2 id="a1-q3-heading-en">Data, information, and knowledge</h2>
+          <p>Understand all three through one school example. <strong>Data</strong> are raw facts — e.g. the list of every student's marks in every subject. On its own it has no decision value.</p>
+          <p>When data is processed and given context, it becomes <strong>information</strong> — e.g. “Class 10-B's maths average is 72%, down 5% from last term.” Now it is understandable and comparable.</p>
+          <p>When information is combined with experience and reasoning to take a decision, it is <strong>knowledge</strong> — e.g. “the maths average is falling, so plan extra practice tests and revision of weak topics.” Knowledge turns into action.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITIONS</span>
+            <p>Data: raw facts and figures. Information: processed, meaningful data. Knowledge: information combined with experience to guide decisions.</p>
+          </div>
+          <p class="analogy"><strong>Memory hook:</strong> Data = raw material; Information = the cooked dish; Knowledge = the recipe experience that makes the next dish better.</p>
+        </section>
+
+        <section aria-labelledby="a1-q4-heading-en">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q4–Q6</p>
+          <h2 id="a1-q4-heading-en">Classifying scenarios into ML types</h2>
+          <p>Looking at a scenario, ask 3 questions: (1) are correct answers (labels) available? (2) is the goal prediction or grouping? (3) is learning through reward/penalty? The type is caught at once.</p>
+          <ul class="plain-list">
+            <li><strong>Spam email detection → Supervised (classification).</strong> Emails are pre-labeled “spam / not spam”; the model predicts the label of new mail. Justification: labeled training data + categorical output.</li>
+            <li><strong>Robot learning to walk via rewards/penalties → Reinforcement learning.</strong> No correct answers are given; the robot tries actions and improves its policy from rewards/penalties.</li>
+            <li><strong>Grouping customers without labels → Unsupervised (clustering).</strong> Groups are unknown beforehand; they emerge from similarity in purchase history.</li>
+            <li><strong>Predicting grades from past performance → Supervised (regression or classification).</strong> Past data with known grades acts as labels. Predicting marks is regression; pass/fail is classification.</li>
+            <li><strong>Game AI improving by self-play → Reinforcement learning (self-play).</strong> Outcomes (win/loss) act as rewards; there is no labeled dataset.</li>
+          </ul>
+          <p>Exam tip: don't write only the type name — always add a one-line justification like “labels are available, hence supervised”; that line earns the marks.</p>
+        </section>
+
+        <section aria-labelledby="a1-q5-heading-en">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q7–Q8</p>
+          <h2 id="a1-q5-heading-en">Classification vs regression + four major types</h2>
+          <p>In <strong>classification</strong> the output is categories (classes) — e.g. spam/not-spam, pass/fail. In <strong>regression</strong> the output is a continuous number — e.g. marks, price, temperature. Both fall under supervised learning; only the output type differs. Clustering is the third output type (groups) and belongs to unsupervised learning.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / four major types</caption>
+              <thead>
+                <tr><th scope="col">Type</th><th scope="col">Data</th><th scope="col">Goal</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Supervised</td><td>Labeled</td><td>Prediction</td><td>Spam detection</td></tr>
+                <tr><td>Unsupervised</td><td>Unlabeled</td><td>Groups/patterns</td><td>Customer grouping</td></tr>
+                <tr><td>Reinforcement</td><td>Reward/penalty feedback</td><td>Learn best actions</td><td>Game AI, robot walk</td></tr>
+                <tr><td>Semi-supervised</td><td>Little labeled + much unlabeled</td><td>Predict with few labels</td><td>Web page classification</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Output-based categories:</strong> classification (categories), regression (numbers), clustering (groups). These cut across the four types above — classification/regression sit in supervised learning, clustering in unsupervised.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-types-title-en fig-types-desc-en">
+                <title id="fig-types-title-en">Four ML types and output categories</title>
+                <desc id="fig-types-desc-en">Tree of ML types: four types by supervision, three categories by output.</desc>
+                <defs>
+                  <pattern id="dots-types-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-types-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-types-en)"></rect>
+                <rect x="195" y="18" width="130" height="40" class="diagram-stroke"></rect>
+                <text x="248" y="43" text-anchor="middle" class="diagram-text">ML TYPES</text>
+                <path d="M225 58v30m70-30v30" class="diagram-stroke"></path>
+                <path d="M60 88h400" class="diagram-stroke"></path>
+                <path d="M60 88v30m133-30v30m134-30v30m133-30v30" class="diagram-stroke" marker-end="url(#arrow-types-en)"></path>
+                <text x="60" y="140" text-anchor="middle" class="diagram-text">SUPER-</text>
+                <text x="60" y="156" text-anchor="middle" class="diagram-text">VISED</text>
+                <text x="193" y="140" text-anchor="middle" class="diagram-text">UNSUPER-</text>
+                <text x="193" y="156" text-anchor="middle" class="diagram-text">VISED</text>
+                <text x="327" y="140" text-anchor="middle" class="diagram-text">REINFORCE-</text>
+                <text x="327" y="156" text-anchor="middle" class="diagram-text">MENT</text>
+                <text x="460" y="140" text-anchor="middle" class="diagram-text">SEMI-</text>
+                <text x="460" y="156" text-anchor="middle" class="diagram-text">SUPERVISED</text>
+                <text x="60" y="182" text-anchor="middle" class="diagram-muted">labels</text>
+                <text x="193" y="182" text-anchor="middle" class="diagram-muted">no labels</text>
+                <text x="327" y="182" text-anchor="middle" class="diagram-muted">rewards</text>
+                <text x="460" y="182" text-anchor="middle" class="diagram-muted">few labels</text>
+                <text x="260" y="216" text-anchor="middle" class="diagram-muted">OUTPUT: CLASSIFICATION · REGRESSION · CLUSTERING</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>4 types by supervision; 3 categories by output.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="a1-q6-heading-en">
+          <p class="section-kicker">ASSIGNMENT 1 · UNIT I / Q9–Q10</p>
+          <h2 id="a1-q6-heading-en">Supervised algorithms and unsupervised working</h2>
+          <p><strong>Four supervised algorithms with applications:</strong></p>
+          <ul class="plain-list">
+            <li><strong>Linear Regression:</strong> predicts a continuous value (house price, marks). Application: sales forecasting.</li>
+            <li><strong>Logistic Regression:</strong> despite the name it classifies (pass/fail, disease yes/no). Application: medical diagnosis.</li>
+            <li><strong>Decision Trees:</strong> decides by splitting data on feature tests. Application: loan approval, interview screening.</li>
+            <li><strong>KNN / SVM:</strong> KNN votes via neighbours; SVM finds the best-margin boundary. Application: handwritten digit recognition, text classification.</li>
+          </ul>
+          <p><strong>Working of unsupervised learning, major steps:</strong></p>
+          <ul class="plain-list">
+            <li><strong>Step 1 — Collect and prepare data:</strong> clean unlabeled data, select/scale features.</li>
+            <li><strong>Step 2 — Choose a similarity measure:</strong> e.g. distance (clustering) or co-occurrence (association).</li>
+            <li><strong>Step 3 — Discover patterns:</strong> clustering (K-means style groups) or association rules (market-basket: “butter with bread”).</li>
+            <li><strong>Step 4 — Evaluate and interpret:</strong> check with domain knowledge whether the groups are meaningful.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="a2-q1-heading-en">
+          <p class="section-kicker">ASSIGNMENT 2 · UNIT II / Q1–Q2</p>
+          <h2 id="a2-q1-heading-en">Accuracy, Precision, Recall, F1-Score</h2>
+          <p>Judging a classifier only by “how many correct” can mislead — especially with unbalanced classes (e.g. 95 healthy, 5 diseased). Each of the four metrics has a distinct role:</p>
+          <ul class="plain-list">
+            <li><strong>Accuracy = (TP + TN) / total.</strong> Fraction of overall correct predictions. Useful on balanced data; deceptive on imbalanced data.</li>
+            <li><strong>Precision = TP / (TP + FP).</strong> “Of all predicted positive, how many are really positive?” Watch it when false alarms hurt (spam filter — genuine mail must not land in spam).</li>
+            <li><strong>Recall (Sensitivity) = TP / (TP + FN).</strong> “Of all real positives, how many were caught?” Watch it when missing hurts (disease detection — no patient missed).</li>
+            <li><strong>F1-Score = 2·P·R / (P + R).</strong> Harmonic mean of precision and recall — both balanced in one number. Use it when both matter.</li>
+          </ul>
+          <h3>Reading error types from a confusion matrix</h3>
+          <p>The 4 cells: <strong>TP</strong> (has disease, flagged), <strong>TN</strong> (healthy, not flagged), <strong>FP</strong> (healthy but flagged — false alarm, Type I error), <strong>FN</strong> (diseased but missed — Type II error). Example: many FNs mean the model is conservative — afraid of saying positive; many FPs mean it is over-eager. This reading tells whether to move the threshold or retrain the model.</p>
+        </section>
+
+        <section aria-labelledby="a2-q2-heading-en">
+          <p class="section-kicker">ASSIGNMENT 2 · UNIT II / Q3 — SOLVED NUMERICAL</p>
+          <h2 id="a2-q2-heading-en">Disease data: Accuracy, Precision, Recall, F1</h2>
+          <p>Given: TP = 50, FP = 5, FN = 10, TN = 35, total = 100.</p>
+          <pre class="code-sample"><code>Accuracy  = (TP + TN) / total = (50 + 35) / 100 = 0.85 = 85%
+Precision = TP / (TP + FP) = 50 / (50 + 5) = 50/55 ≈ 0.909 = 90.9%
+Recall    = TP / (TP + FN) = 50 / (50 + 10) = 50/60 ≈ 0.833 = 83.3%
+F1-Score  = 2·P·R/(P+R) = 2(0.909)(0.833)/(0.909+0.833) ≈ 0.869 = 86.9%</code></pre>
+          <p>One-line interpretation: precision (90.9%) exceeds recall (83.3%) — the model is careful about saying positive, but 10 real patients were missed (FN = 10), which is serious in a medical case. So improving recall is the priority here.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-cm-title-en fig-cm-desc-en">
+                <title id="fig-cm-title-en">Confusion matrix 2x2 grid</title>
+                <desc id="fig-cm-desc-en">TP 50, FP 5, FN 10, TN 35 with the meaning of each cell.</desc>
+                <defs>
+                  <pattern id="dots-cm-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-cm-en)"></rect>
+                <text x="200" y="40" text-anchor="middle" class="diagram-muted">ACTUAL POSITIVE</text>
+                <text x="380" y="40" text-anchor="middle" class="diagram-muted">ACTUAL NEGATIVE</text>
+                <text x="30" y="120" class="diagram-muted">PRED</text>
+                <text x="30" y="136" class="diagram-muted">POS</text>
+                <text x="30" y="200" class="diagram-muted">PRED</text>
+                <text x="30" y="216" class="diagram-muted">NEG</text>
+                <rect x="110" y="60" width="180" height="80" class="diagram-stroke"></rect>
+                <text x="200" y="92" text-anchor="middle" class="diagram-text">TP = 50</text>
+                <text x="200" y="112" text-anchor="middle" class="diagram-muted">caught right</text>
+                <rect x="300" y="60" width="180" height="80" class="diagram-stroke"></rect>
+                <text x="390" y="92" text-anchor="middle" class="diagram-text">FP = 5</text>
+                <text x="390" y="112" text-anchor="middle" class="diagram-muted">false alarm</text>
+                <rect x="110" y="150" width="180" height="80" class="diagram-stroke"></rect>
+                <text x="200" y="182" text-anchor="middle" class="diagram-text">FN = 10</text>
+                <text x="200" y="202" text-anchor="middle" class="diagram-muted">missed cases</text>
+                <rect x="300" y="150" width="180" height="80" class="diagram-stroke"></rect>
+                <text x="390" y="182" text-anchor="middle" class="diagram-text">TN = 35</text>
+                <text x="390" y="202" text-anchor="middle" class="diagram-muted">left out right</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>TP/FP/FN/TN and their plain meaning.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="a2-q3-heading-en">
+          <p class="section-kicker">ASSIGNMENT 2 · UNIT II / Q4–Q5</p>
+          <h2 id="a2-q3-heading-en">MAE, MSE, RMSE, R²</h2>
+          <p>In regression the prediction is a number, so metrics are built from error = |actual − predicted|:</p>
+          <ul class="plain-list">
+            <li><strong>MAE = (1/n)Σ|y − ŷ|.</strong> Average absolute error, in original units. Less affected by outliers — a robust metric.</li>
+            <li><strong>MSE = (1/n)Σ(y − ŷ)².</strong> Squaring punishes large errors more. Easy to optimize in training (differentiable).</li>
+            <li><strong>RMSE = √MSE.</strong> Square root of MSE — back in original units for easy interpretation. Sensitive to large errors.</li>
+            <li><strong>R² = 1 − SSres/SStot.</strong> How much output variance the model explains (0 to 1; 1 = perfect). Useful for comparing models across scales.</li>
+          </ul>
+          <h3>Designing a regression evaluation experiment (steps + why)</h3>
+          <ul class="plain-list">
+            <li><strong>Step 1 — Split data (train/validation/test):</strong> so the model is tested on unseen data and overfitting is caught.</li>
+            <li><strong>Step 2 — Fix a baseline:</strong> e.g. a mean predictor; shows whether the model beats the trivial option.</li>
+            <li><strong>Step 3 — Fit on train, tune on validation:</strong> choose hyperparameters by validation MAE/RMSE; keep test untouched.</li>
+            <li><strong>Step 4 — Report all three metrics:</strong> MAE (typical error size), RMSE (big-error penalty), R² (variance explained) — together they give the full picture.</li>
+            <li><strong>Step 5 — Check residuals:</strong> errors randomly spread or patterned; a pattern means something is missing from the model.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="a2-q4-heading-en">
+          <p class="section-kicker">ASSIGNMENT 2 · UNIT II / Q6 — SOLVED NUMERICAL</p>
+          <h2 id="a2-q4-heading-en">Actual vs predicted: MAE and RMSE</h2>
+          <p>Given: Actual = [100, 200, 150], Predicted = [110, 190, 160].</p>
+          <pre class="code-sample"><code>Errors: |100−110| = 10, |200−190| = 10, |150−160| = 10
+MAE  = (10 + 10 + 10) / 3 = 10
+MSE  = (100 + 100 + 100) / 3 = 100
+RMSE = √100 = 10</code></pre>
+          <p>Here all three errors equal 10, so MAE and RMSE both come to 10. Remember: RMSE is always ≥ MAE — equal only when all errors are identical.</p>
+        </section>
+
+        <section aria-labelledby="a3-q1-heading-en">
+          <p class="section-kicker">ASSIGNMENT 3 · UNIT III / Q1</p>
+          <h2 id="a3-q1-heading-en">Linear regression + role of slope and intercept</h2>
+          <p><strong>Linear regression</strong> finds a straight-line relation between input X and continuous output Y: <code>ŷ = a + bx</code>. Goal: the line passing closest to the data points.</p>
+          <ul class="plain-list">
+            <li><strong>Slope (b):</strong> how much Y changes per 1-unit rise in X — the strength and direction. Positive slope = they rise together; near zero ≈ no linear relation.</li>
+            <li><strong>Intercept (a):</strong> where the line cuts the Y-axis at X = 0 — the starting level / baseline value.</li>
+          </ul>
+          <p>Example: if the study-hours (X) to marks (Y) model is <code>ŷ = 30 + 5x</code>, each extra hour adds ~5 marks (slope), with a base of 30 marks at zero hours (intercept).</p>
+        </section>
+
+        <section aria-labelledby="a3-q2-heading-en">
+          <p class="section-kicker">ASSIGNMENT 3 · UNIT III / Q2–Q3 — SOLVED NUMERICAL</p>
+          <h2 id="a3-q2-heading-en">Regression equation + line of best fit</h2>
+          <p>Given: X = [2, 4, 6, 8], Y = [3, 7, 5, 10]. Formulas: <code>b = Σ(x−x̄)(y−ȳ) / Σ(x−x̄)²</code>, <code>a = ȳ − bx̄</code>.</p>
+          <pre class="code-sample"><code>x-mean = (2+4+6+8)/4 = 5,  y-mean = (3+7+5+10)/4 = 6.25
+x-dev:  −3, −1, +1, +3        → squares: 9+1+1+9 = 20
+y-dev:  −3.25, +0.75, −1.25, +3.75
+products: 9.75 − 0.75 − 1.25 + 11.25 = 19.0
+b = 19/20 = 0.95
+a = 6.25 − 0.95×5 = 6.25 − 4.75 = 1.5
+Equation: ŷ = 1.5 + 0.95x</code></pre>
+          <p><strong>How the best-fit line is found:</strong> it is the line minimizing the sum of squared errors (SSE) — the <strong>least squares</strong> method. Errors are squared so positives and negatives don't cancel and big mistakes are penalized more. The formulas above come from this minimization (setting SSE's derivative to zero). The cost function <code>J = (1/2n)Σ(ŷ−y)²</code> is this SSE in scaled form — gradient descent minimizes exactly it.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-fit-title-en fig-fit-desc-en">
+                <title id="fig-fit-title-en">Best-fit line and residuals</title>
+                <desc id="fig-fit-desc-en">Four data points, the regression line through them, and one dashed residual.</desc>
+                <defs>
+                  <pattern id="dots-fit-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-fit-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="260" fill="url(#dots-fit-en)"></rect>
+                <path d="M60 220V40m0 180h420" class="diagram-stroke"></path>
+                <text x="40" y="130" class="diagram-muted">Y</text>
+                <text x="470" y="238" class="diagram-muted">X</text>
+                <path d="M100 200L440 70" class="diagram-stroke"></path>
+                <text x="400" y="60" class="diagram-muted">ŷ=1.5+0.95x</text>
+                <circle cx="140" cy="190" r="6" class="diagram-stroke"></circle>
+                <circle cx="260" cy="120" r="6" class="diagram-stroke"></circle>
+                <circle cx="340" cy="160" r="6" class="diagram-stroke"></circle>
+                <circle cx="420" cy="90" r="6" class="diagram-stroke"></circle>
+                <path d="M260 120v38" class="diagram-stroke" stroke-dasharray="5 4"></path>
+                <text x="270" y="148" class="diagram-muted">residual</text>
+                <text x="120" y="238" class="diagram-muted">DATA POINTS + BEST FIT</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>The line minimizes total squared errors.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="a3-q3-heading-en">
+          <p class="section-kicker">ASSIGNMENT 3 · UNIT III / Q4–Q5</p>
+          <h2 id="a3-q3-heading-en">Multicollinearity + MAE/RMSE repeat</h2>
+          <p><strong>Multicollinearity</strong> means two or more input features of a multiple regression are strongly correlated with each other (e.g. both “total marks” and “average marks” as features). Effects:</p>
+          <ul class="plain-list">
+            <li>Coefficients turn unstable — small data changes swing values wildly.</li>
+            <li>Interpreting each feature's effect gets hard (standard errors inflate).</li>
+            <li>Predictions may barely suffer, but explanation and feature selection break.</li>
+            <li>Fix: drop one of the correlated features, or use regularization (Ridge/Lasso).</li>
+          </ul>
+          <p><strong>Q5 numerical (MAE/RMSE):</strong> the values repeat Assignment-2 Q6 exactly — Actual [100, 200, 150], Predicted [110, 190, 160]. So the answer is the same: <code>MAE = 10</code>, <code>RMSE = 10</code> (see Assignment-2 Q6 for steps). Write the same method at both places in the exam.</p>
+        </section>
+
+        <section aria-labelledby="a3-q4-heading-en">
+          <p class="section-kicker">ASSIGNMENT 3 · UNIT III / Q6–Q7</p>
+          <h2 id="a3-q4-heading-en">Sigmoid + logistic vs linear regression</h2>
+          <p><strong>Sigmoid function:</strong> <code>σ(z) = 1 / (1 + e<sup>−z</sup>)</code>. It squashes any real number into 0–1 (S-shaped curve, 0.5 in the middle). <strong>Significance:</strong> logistic regression converts its linear combination <code>z = w·x + b</code> into a probability through it; the class is decided by the 0.5 threshold (≥ 0.5 → class 1).</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / logistic vs linear</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Linear regression</th><th scope="col">Logistic regression</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Output</td><td>Continuous number (−∞ to +∞)</td><td>Probability 0–1, then class label</td></tr>
+                <tr><td>Use</td><td>Regression (price, marks)</td><td>Classification (pass/fail, disease)</td></tr>
+                <tr><td>Function</td><td>Straight line <code>ŷ = a + bx</code></td><td>Sigmoid on linear part <code>σ(w·x+b)</code></td></tr>
+                <tr><td>Cost/loss</td><td>Minimizes MSE</td><td>Log-loss (cross-entropy); MSE is non-convex here</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Beware the exam trap: despite “regression” in the name, logistic regression is a <strong>classification</strong> algorithm. Write one line: linear regression tells “how much”, logistic regression tells “which class”.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-sig-title-en fig-sig-desc-en">
+                <title id="fig-sig-title-en">Sigmoid curve and 0.5 threshold</title>
+                <desc id="fig-sig-desc-en">S-shaped curve from 0 to 1 with the 0.5 threshold line.</desc>
+                <defs>
+                  <pattern id="dots-sig-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-sig-en)"></rect>
+                <path d="M60 200V30m0 170h420" class="diagram-stroke"></path>
+                <text x="40" y="110" class="diagram-muted">1.0</text>
+                <text x="40" y="200" class="diagram-muted">0.0</text>
+                <text x="470" y="218" class="diagram-muted">z</text>
+                <path d="M60 196C160 194 200 150 260 118C320 86 360 44 480 42" class="diagram-stroke"></path>
+                <path d="M60 118h420" class="diagram-stroke" stroke-dasharray="6 5"></path>
+                <text x="400" y="108" class="diagram-muted">0.5 THRESHOLD</text>
+                <text x="90" y="60" class="diagram-text">σ(z)=1/(1+e^−z)</text>
+                <text x="330" y="200" class="diagram-muted">CLASS 0 ↓ · CLASS 1 ↑</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>The S-curve gives probability; 0.5 decides the class.</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="recap-heading-en">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading-en">At a glance</h2>
+          <dl class="recap-list">
+            <dt>ML types</dt><dd>Supervised (labels), unsupervised (no labels), reinforcement (rewards), semi-supervised (few labels).</dd>
+            <dt>Outputs</dt><dd>Classification (categories), regression (numbers), clustering (groups).</dd>
+            <dt>Metrics</dt><dd>Accuracy overall; precision against false alarms; recall against misses; F1 balances both.</dd>
+            <dt>Errors</dt><dd>FP = false alarm (Type I); FN = miss (Type II).</dd>
+            <dt>Regression metrics</dt><dd>MAE robust average; MSE/RMSE strict on big errors; R² = variance explained.</dd>
+            <dt>Regression line</dt><dd><code>b = Σ(x−x̄)(y−ȳ)/Σ(x−x̄)²</code>, <code>a = ȳ − bx̄</code>; least squares minimizes SSE.</dd>
+            <dt>Logistic</dt><dd>Sigmoid to probability, class at 0.5; named regression, works as classification.</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Recall three answers without looking up:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Write your answers; then match with A2-Q3, A3-Q2.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>What is the difference between precision and recall?
+              <ol type="A"><li>Precision = TP/(TP+FP), Recall = TP/(TP+FN)</li><li>Both are always the same</li><li>Precision = TN/total</li><li>Recall = FP/(FP+TN)</li></ol>
+            </li>
+            <li>What is the relation between RMSE and MAE?
+              <ol type="A"><li>RMSE ≥ MAE always</li><li>MAE ≥ RMSE always</li><li>Both always equal</li><li>No relation</li></ol>
+            </li>
+            <li>For X = [2,4,6,8], Y = [3,7,5,10], what slope came out?
+              <ol type="A"><li>0.95</li><li>1.5</li><li>6.25</li><li>1.0</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: Unit 4–5 topic-wise notes — after recalling the answers.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>MID-SEM QB / UNIT 01–03</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+
+  <script>
+  (() => {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    const apply = (lang) => {
+      document.querySelectorAll('[data-lang]').forEach((el) => {
+        el.hidden = el.dataset.lang !== lang;
+      });
+      document.documentElement.lang = lang === 'hi' ? 'hi-Latn' : 'en';
+      btn.textContent = lang === 'hi' ? 'English' : 'Hinglish';
+      try { localStorage.setItem('ml-qb-lang', lang); } catch (e) {}
+    };
+    let lang = 'hi';
+    try { lang = localStorage.getItem('ml-qb-lang') || 'hi'; } catch (e) {}
+    if (lang !== 'hi' && lang !== 'en') lang = 'hi';
+    apply(lang);
+    btn.addEventListener('click', () => {
+      lang = lang === 'hi' ? 'en' : 'hi';
+      apply(lang);
+    });
+  })();
+  </script>
+</body>
+</html>
