@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="SEPM mid-sem QB: har question ka detailed answer alag, Hinglish aur English mein.">
+  <title>Mid-sem QB with answers — Software Engineering and Project Management</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+  <style>
+    .note-layout { grid-template-columns: minmax(0, 1fr); }
+    .prose-column { max-width: 76ch; }
+    .prose-column .figure-card { margin: 1.6rem 0 0.6rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha QB par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Software Engineering and Project Management contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">UNIT 01–03 / MID-SEM QB</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#qb">QB</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" id="lang-toggle" type="button">English</button>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">SOFTWARE ENGINEERING AND PROJECT MANAGEMENT</a> &nbsp; / &nbsp; MID-SEM QB</p>
+      <h1 class="page-title">Mid-sem QB with answers</h1>
+      <p class="page-intro" data-lang="hi">Har question ka detailed answer alag block mein — pehle Question, phir Answer. 10 theory + 20 MCQ, definitions, farq tables, diagrams aur exam-ready plans ke saath. Upar button se English mein switch karo.</p>
+      <p class="page-intro" data-lang="en" hidden>Every question answered in its own detailed block — Question first, then Answer. 10 theory + 20 MCQs with definitions, comparison tables, diagrams and exam-ready plans. Use the button above to switch back to Hinglish.</p>
+      <div class="note-meta">
+        <span>QB set</span>
+        <span>Unit 01–03</span>
+        <span>Source: learner QB (PDF)</span>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column" data-lang="hi">
+        <section aria-labelledby="how-to-use">
+          <p class="section-kicker">START HERE / KAISE USE KARO</p>
+          <h2 id="how-to-use">Is QB ko 3 rounds mein karo</h2>
+          <p class="dropcap">Har question ka answer alag block mein hai: pehle original Question, phir uska detailed Answer, phir exam-ready plan. Pehle Question padhkar khud socho, phir Answer se match karo — SEPM mein definitions aur farq-tables se marks milte hain, isliye terms exact yaad karo.</p>
+          <p><strong>Round 1:</strong> 10 theory answers ke points zubani recall karo. <strong>Round 2:</strong> 20 MCQs bina dekhe solve karo (pehle khud, phir answer match). <strong>Round 3:</strong> theory answers apne words mein likhne ki practice karo — table + example + diagram zaroor include karo.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Q1–Q4 (Unit 1: software nature, principles, process models, Agile, XP), Q5–Q7 (Unit 2: requirements, SRS, elicitation/validation), Q8–Q10 (Unit 3: design, architecture, UI, UML, testing) + 20 MCQs. Kul 30 Q&A blocks.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="q1">
+          <p class="section-kicker">THEORY · Q1</p>
+          <h2 id="q1">Software ki nature aur SE principles</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the nature of software and the fundamental principles of Software Engineering.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Software ki nature</strong> hardware se bilkul alag hai — isi nature ki wajah se Software Engineering chahiye. Pehle characteristics samjho:</p>
+          <ul class="plain-list">
+            <li><strong>Intangible hai:</strong> chhua nahi ja sakta; sirf code, documents aur behaviour se samajh aata hai. Isliye progress measure karna mushkil hota hai.</li>
+            <li><strong>Manufacture nahi hota, develop hota hai:</strong> hardware factory mein banta hai, software ek baar develop hokar copy hota hai. Cost design mein hai, production mein nahi.</li>
+            <li><strong>Physically wear out nahi hota:</strong> time ke saath ghista nahi, par environment badalne (OS, hardware, needs) se outdated/fail hota hai — is curve ko “bath-tub nahi, obsolescence” samjho.</li>
+            <li><strong>Complexity aur change:</strong> aaj ke systems laakhon lines ke hote hain aur requirements hamesha badalti hain — bina engineering discipline ke unmanageable ho jaate hain.</li>
+          </ul>
+          <p><strong>Fundamental principles (exam mein ye 4–5 pakke likho):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Separation of concerns:</strong> badi problem ko chhote independent parts mein todo (modularity ki buniyaad).</li>
+            <li><strong>Abstraction:</strong> detail chhupakar sirf zaroori view dikhao (jaise function ka naam, andar ka code nahi).</li>
+            <li><strong>Modularity + information hiding:</strong> har module ek kaam kare, apna internal data chhupaye.</li>
+            <li><strong>Incremental + iterative development:</strong> chhote pieces mein banao, feedback lo, sudharo.</li>
+            <li><strong>Documentation aur measurement:</strong> decisions likho, progress measure karo — bina iske control impossible hai.</li>
+          </ul>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Software Engineering is the systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software.</p>
+          </div>
+          <p><strong>Exam-ready plan:</strong> pehle 4 characteristics (intangible, developed-not-manufactured, no physical wear, complexity/change), phir 4–5 principles with one-line meaning, end mein SE definition. Characteristics + principles dono maange gaye hain — ek bhi chhoota toh aadhe marks gaye.</p>
+        </section>
+
+        <section aria-labelledby="q2">
+          <p class="section-kicker">THEORY · Q2</p>
+          <h2 id="q2">Generic + prescriptive process models</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the generic process model and different prescriptive process models.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Generic process model</strong> har software process ka common framework hai — 5 activities: <strong>communication</strong> (requirements samjho), <strong>planning</strong> (schedule/resources), <strong>modeling</strong> (design banao), <strong>construction</strong> (code + test), <strong>deployment</strong> (deliver + feedback). Har prescriptive model inhi 5 ko alag flow mein arrange karta hai.</p>
+          <p><strong>Prescriptive models (har ek: flow + best-for + weakness):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Waterfall:</strong> strictly sequential — ek phase complete, tabhi agli. Best jab requirements fixed aur clear hon (jaise payroll system). Weakness: change costly, working software end mein milta hai.</li>
+            <li><strong>Incremental (RAD):</strong> software tukdon (increments) mein deliver hota hai; har increment working subset hai. RAD mein components + time-boxing se fast delivery. Best jab early partial delivery chahiye.</li>
+            <li><strong>Evolutionary (Prototyping/Spiral):</strong> prototype banao → feedback → refine; ya spiral mein har loop mein risk analysis. Best jab requirements unclear hon.</li>
+            <li><strong>Unified Process (UP):</strong> use-case driven, architecture-centric, iterative — inception, elaboration, construction, transition phases.</li>
+            <li><strong>Concurrent:</strong> activities parallel states mein chalti hain (jaise design ka ek part coding ke saath) — large/client-server systems ke liye.</li>
+          </ul>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-proc-title fig-proc-desc">
+                <title id="fig-proc-title">Waterfall vs incremental flow</title>
+                <desc id="fig-proc-desc">Waterfall seedhi line mein, incremental tukdon mein deliver karta hai.</desc>
+                <defs>
+                  <pattern id="dots-proc" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-proc" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-proc)"></rect>
+                <text x="30" y="40" class="diagram-muted">WATERFALL: EK BAAR, SEEDHA</text>
+                <rect x="30" y="60" width="90" height="40" class="diagram-stroke"></rect>
+                <text x="42" y="84" class="diagram-text">REQ</text>
+                <rect x="140" y="60" width="90" height="40" class="diagram-stroke"></rect>
+                <text x="148" y="84" class="diagram-text">DESIGN</text>
+                <rect x="250" y="60" width="90" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="84" class="diagram-text">CODE</text>
+                <rect x="360" y="60" width="110" height="40" class="diagram-stroke"></rect>
+                <text x="372" y="84" class="diagram-text">TEST+SHIP</text>
+                <path d="M120 80h20m110 0h20m110 0h20" class="diagram-stroke" marker-end="url(#arrow-proc)"></path>
+                <text x="30" y="140" class="diagram-muted">INCREMENTAL: TUKDON MEIN</text>
+                <rect x="30" y="160" width="120" height="40" class="diagram-stroke"></rect>
+                <text x="42" y="184" class="diagram-text">INC-1 LIVE</text>
+                <rect x="180" y="160" width="120" height="40" class="diagram-stroke"></rect>
+                <text x="192" y="184" class="diagram-text">INC-2 LIVE</text>
+                <rect x="330" y="160" width="120" height="40" class="diagram-stroke"></rect>
+                <text x="342" y="184" class="diagram-text">INC-3 LIVE</text>
+                <path d="M150 180h30m150 0h30" class="diagram-stroke" marker-end="url(#arrow-proc)"></path>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Waterfall ek shot, incremental har tukde par delivery.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> pehle generic model ki 5 activities, phir har prescriptive model ek line flow + best-for + weakness, end mein FIG.001 diagram. “Best-for + weakness” wali line hi examiner ko impress karti hai.</p>
+        </section>
+
+        <section aria-labelledby="q3">
+          <p class="section-kicker">THEORY · Q3</p>
+          <h2 id="q3">Agile vs plan-driven development</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Agile Software Development and compare plan-driven development with agile development.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Agile</strong> iterative-incremental approach hai jo manifesto par chalta hai: individuals and interactions (processes se upar), working software (documentation se upar), customer collaboration (contract se upar), responding to change (plan se upar). Kaam chhote time-boxed iterations (sprints) mein hota hai; har sprint working software deta hai aur customer feedback next sprint mein jaata hai.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / plan-driven vs agile</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Plan-driven</th><th scope="col">Agile</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Requirements</td><td>Shuru mein fixed, change costly</td><td>Welcome change, backlog evolve hota hai</td></tr>
+                <tr><td>Delivery</td><td>End mein poora system</td><td>Har sprint mein working increment</td></tr>
+                <tr><td>Customer</td><td>Shuru aur end mein milta hai</td><td>Har sprint mein involved + feedback</td></tr>
+                <tr><td>Documentation</td><td>Heavy, upfront</td><td>Light, jitni zaroorat ho</td></tr>
+                <tr><td>Best for</td><td>Fixed-scope, regulated systems</td><td>Changing needs, product development</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Agile tools ek line mein: <strong>JIRA</strong> (backlog/sprint/issue tracking) aur <strong>Kanban board</strong> (To-Do → Doing → Done columns se flow visualize). Case studies (mental health-care system, wilderness weather system) se ye seekh milti hai ki alag domains mein process tailoring chahiye — ek hi model har jagah fit nahi hota.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-agile-title fig-agile-desc">
+                <title id="fig-agile-title">Agile iteration loop</title>
+                <desc id="fig-agile-desc">Plan, build, review ka har sprint mein repeat hone wala chakkar.</desc>
+                <defs>
+                  <pattern id="dots-agile" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-agile" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-agile)"></rect>
+                <rect x="180" y="30" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="56" text-anchor="middle" class="diagram-text">PLAN (BACKLOG)</text>
+                <rect x="330" y="110" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="410" y="136" text-anchor="middle" class="diagram-text">BUILD + TEST</text>
+                <rect x="180" y="180" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="206" text-anchor="middle" class="diagram-text">REVIEW + FEEDBACK</text>
+                <rect x="30" y="110" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="110" y="136" text-anchor="middle" class="diagram-text">WORKING INCREMENT</text>
+                <path d="M340 72L400 108" class="diagram-stroke" marker-end="url(#arrow-agile)"></path>
+                <path d="M450 152L340 200" class="diagram-stroke" marker-end="url(#arrow-agile)"></path>
+                <path d="M180 201L110 152" class="diagram-stroke" marker-end="url(#arrow-agile)"></path>
+                <path d="M110 110L200 72" class="diagram-stroke" marker-end="url(#arrow-agile)"></path>
+                <text x="260" y="130" text-anchor="middle" class="diagram-muted">SPRINT 1–4 WEEKS</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Har sprint: plan → build → review → next plan.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> Agile definition + manifesto 4 values, phir 5-row comparison table, phir JIRA/Kanban ek line, end mein FIG.002 loop diagram.</p>
+        </section>
+
+        <section aria-labelledby="q4">
+          <p class="section-kicker">THEORY · Q4</p>
+          <h2 id="q4">Extreme Programming (XP)</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Extreme Programming (XP) practices, testing in XP, and pair programming.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>XP</strong> ek lightweight Agile methodology hai jo best practices ko “extreme” level tak le jaati hai — feedback loops chhote, courage zyada. Core practices:</p>
+          <ul class="plain-list">
+            <li><strong>Planning game + small releases:</strong> customer stories likhta hai, team estimate karti hai; chhote frequent releases se feedback fast milta hai.</li>
+            <li><strong>Simple design + refactoring:</strong> aaj ki need ka simplest design; code ko continuously saaf karte raho (behaviour same, structure better).</li>
+            <li><strong>Test-driven development:</strong> pehle automated test likho (jo fail hoga), phir code likho jo use pass kare — testing design ko drive karti hai.</li>
+            <li><strong>Continuous integration:</strong> din mein kai baar code integrate + automated build/test — conflicts jaldi pakde jaate hain.</li>
+            <li><strong>Collective ownership + coding standards:</strong> koi bhi code kahi bhi sudhar sakta hai; common standards se readability bani rehti hai.</li>
+            <li><strong>Sustainable pace + on-site customer:</strong> overtime nahi, customer team ke saath — doubt turant clear.</li>
+          </ul>
+          <p><strong>Testing in XP:</strong> unit tests programmers likhte hain (TDD), acceptance tests customer define karta hai; dono automated aur har integration par chalte hain. Testing phase nahi, continuous activity hai.</p>
+          <p><strong>Pair programming:</strong> do programmers ek machine par — ek <strong>driver</strong> (code likhta hai), ek <strong>navigator</strong> (review + sochta hai); roles rotate hote hain. Fayde: real-time review (defects turant pakde jaate hain), knowledge sharing (bus factor kam), better design. Cost: do log ek kaam par — par defect-fix cost se sasta padta hai.</p>
+          <p><strong>Exam-ready plan:</strong> XP definition + 5–6 practices bullets, testing para (TDD + acceptance + continuous), pair programming (driver/navigator + 2 fayde), end mein ek-line tradeoff.</p>
+        </section>
+
+        <section aria-labelledby="q5">
+          <p class="section-kicker">THEORY · Q5</p>
+          <h2 id="q5">Requirements ke types</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Software Requirements Engineering and differentiate between user, system, functional, and non-functional requirements.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Requirements Engineering (RE)</strong> stakeholder needs ko discover, analyse, document aur maintain karne ka process hai. Galat ya adhuri requirements sabse costly defects deti hain — isliye RE poore process ki neev hai.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / requirements ke 4 types</caption>
+              <thead>
+                <tr><th scope="col">Type</th><th scope="col">Kiske liye / language</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>User requirements</td><td>Customer ke liye, simple natural language</td><td>“System se fees receipt niklni chahiye”</td></tr>
+                <tr><td>System requirements</td><td>Developers ke liye, detailed + precise</td><td>“Receipt mein roll no., date, amount, signature block hoga”</td></tr>
+                <tr><td>Functional</td><td>System <strong>kya karega</strong> (services/features)</td><td>Login, report generation, order placement</td></tr>
+                <tr><td>Non-functional</td><td>System <strong>kaisa hoga</strong> (quality/constraints)</td><td>Performance, security, usability, reliability</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Yaad rakhne ka formula: user vs system = <strong>audience aur detail</strong> ka farq (customer-language vs developer-language); functional vs non-functional = <strong>what vs how-well</strong> ka farq. Non-functional ko measurable likho (“fast” nahi, “2 sec mein response” likho) — yehi exam mein extra mark dilata hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-req-title fig-req-desc">
+                <title id="fig-req-title">Requirements ka split</title>
+                <desc id="fig-req-desc">Requirements reader aur nature ke basis par chaar types mein batti hain.</desc>
+                <defs>
+                  <pattern id="dots-req" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-req" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-req)"></rect>
+                <rect x="185" y="18" width="150" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">REQUIREMENTS</text>
+                <path d="M225 58v28m70-28v28" class="diagram-stroke"></path>
+                <path d="M80 86h360" class="diagram-stroke"></path>
+                <path d="M80 86v30m360 0v30" class="diagram-stroke" marker-end="url(#arrow-req)"></path>
+                <rect x="20" y="116" width="220" height="46" class="diagram-stroke"></rect>
+                <text x="130" y="135" text-anchor="middle" class="diagram-text">BY READER</text>
+                <text x="130" y="153" text-anchor="middle" class="diagram-muted">user · system</text>
+                <rect x="280" y="116" width="220" height="46" class="diagram-stroke"></rect>
+                <text x="390" y="135" text-anchor="middle" class="diagram-text">BY NATURE</text>
+                <text x="390" y="153" text-anchor="middle" class="diagram-muted">functional · non-functional</text>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">WHAT vs HOW-WELL · CUSTOMER vs DEVELOPER</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Reader se user/system, nature se functional/non-functional.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> RE definition, phir 4-row table with examples, phir what-vs-how-well + measurable-NFR line, end mein FIG.003.</p>
+        </section>
+
+        <section aria-labelledby="q6">
+          <p class="section-kicker">THEORY · Q6</p>
+          <h2 id="q6">SRS: structure aur likhne ke tareeke</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Software Requirements Specification (SRS), its structure, and different ways of writing an SRS.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>SRS</strong> requirements ka official written document hai — customer aur team ke beech contract jaisa. Iske bina “system complete hua ya nahi” judge hi nahi ho sakta. Achhi SRS <strong>correct, complete, consistent, verifiable aur modifiable</strong> hoti hai.</p>
+          <p><strong>Structure (IEEE-style, exam mein headings likho):</strong></p>
+          <ul class="plain-list">
+            <li><strong>1. Introduction:</strong> purpose, scope, definitions, references — document kis system ke liye, kyun.</li>
+            <li><strong>2. Overall description:</strong> product perspective, user classes, constraints, assumptions — bada picture.</li>
+            <li><strong>3. Specific requirements:</strong> functional (features), non-functional (performance, security), interfaces (user/hardware/software) — asli detail.</li>
+            <li><strong>Appendix:</strong> models, index, open issues (TBD list).</li>
+          </ul>
+          <p><strong>Likhne ke tareeke:</strong> <strong>natural language</strong> (simple, par ambiguity ka risk), <strong>structured language</strong> (forms/templates + controlled vocabulary — best balance), <strong>tabular/graphical</strong> (tables, use-case diagrams — insulin pump case study mein structured + tabular SRS se har condition exact likhi gayi), <strong>formal/mathematical</strong> (precise, par sabko samajh nahi aata — critical systems mein).</p>
+          <p><strong>Exam-ready plan:</strong> SRS definition + 5 qualities, phir 4-part structure headings, phir 4 writing ways with tradeoff, insulin-pump example line.</p>
+        </section>
+
+        <section aria-labelledby="q7">
+          <p class="section-kicker">THEORY · Q7</p>
+          <h2 id="q7">Elicitation, analysis, validation, management</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain requirements elicitation, analysis, validation, and requirements management.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Requirements apne aap collect nahi hoti — spiral view mein ye activities baar-baar ghoomti hain jab tak requirements stable na hon:</p>
+          <ul class="plain-list">
+            <li><strong>Elicitation (collect):</strong> stakeholders se requirements nikaalna — interviews, questionnaires, workshops, observation, prototypes, document study. Technique stakeholder ke hisaab se chuno (busy manager → questionnaire, confused user → prototype).</li>
+            <li><strong>Analysis (samjho + sort):</strong> collected needs ko classify (functional/non-functional), conflicts solve, priority lagao, feasibility check. Yahan spiral ghumta hai — unclear points wapas elicitation mein jaate hain.</li>
+            <li><strong>Validation (verify):</strong> requirements sahi, complete aur consistent hain ya nahi — reviews, checklists, test-cases likhkar (har requirement testable honi chahiye), prototype demo. Error yahin pakadna sabse sasta hai.</li>
+            <li><strong>Management (sambhalo):</strong> change control — har change request evaluate karo (cost/impact), approve ho toh documents + traceability update karo, versions maintain karo. Bina management ke scope creep project dubota hai.</li>
+          </ul>
+          <p><strong>Exam-ready plan:</strong> spiral-view line se start, phir 4 activities har ek: matlab + 1 technique/example, end mein “validation sabse sasta fix, management scope-creep rokta hai” wali closing line.</p>
+        </section>
+
+        <section aria-labelledby="q8">
+          <p class="section-kicker">THEORY · Q8</p>
+          <h2 id="q8">Design process, concepts, models, patterns</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the software design process, design concepts, design models, and pattern-based software design.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Design process</strong> requirements (“kya banana hai”) ko blueprint (“kaise banana hai”) mein badalta hai. Quality wali design ke liye process + concepts dono chahiye:</p>
+          <ul class="plain-list">
+            <li><strong>Design concepts:</strong> abstraction (detail chhupao), modularity (chhote parts), information hiding (andar ka data private), coupling kam + cohesion zyada (modules independent par internally focused hon), refinement (step-by-step detail badhao).</li>
+            <li><strong>Design model ke 4 views:</strong> data design (structures), architectural design (bada structure), interface design (andar-bahar connection), component design (har piece ka detail) — ye Q9 mein expand honge.</li>
+            <li><strong>Pattern-based design:</strong> repeated problems ke proven solutions reuse karo (jaise login-session ke liye known pattern) — design time bachta hai aur reliability milti hai, kyunki pattern pehle test ho chuka hai.</li>
+          </ul>
+          <p><strong>Exam-ready plan:</strong> design = requirements-to-blueprint line, phir 5 concepts with one-line meaning, phir 4 model views, phir pattern = proven-solution-reuse line.</p>
+        </section>
+
+        <section aria-labelledby="q9">
+          <p class="section-kicker">THEORY · Q9</p>
+          <h2 id="q9">Architectural + component-level design</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain architectural design and component-level design with suitable examples.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Architectural design</strong> system ka overall structure hai — bade blocks (components) + unke connections + decisions (views, patterns, application architectures jaise layered, client-server, MVC). Example: online shop mein presentation layer, business-logic layer, database layer — har layer ki responsibility fixed, layers ke beech defined interfaces.</p>
+          <p><strong>Component-level design</strong> har block ke andar ka detail hai — class-based components: attributes (data), operations (methods), interfaces. Example: <code>Cart</code> class mein attributes items/total, operations addItem()/checkout(), aur payment-gateway interface. Conducting it = har component ka data + behaviour + collaboration likhna.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-levels-title fig-levels-desc">
+                <title id="fig-levels-title">Design ke teen levels</title>
+                <desc id="fig-levels-desc">Architecture sabse upar, phir components, sabse neeche UI detail.</desc>
+                <defs>
+                  <pattern id="dots-levels" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-levels" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-levels)"></rect>
+                <rect x="110" y="30" width="300" height="46" class="diagram-stroke"></rect>
+                <text x="260" y="50" text-anchor="middle" class="diagram-text">ARCHITECTURE (layers)</text>
+                <text x="260" y="68" text-anchor="middle" class="diagram-muted">shop: UI · logic · DB</text>
+                <path d="M260 76v30" class="diagram-stroke" marker-end="url(#arrow-levels)"></path>
+                <rect x="140" y="106" width="240" height="46" class="diagram-stroke"></rect>
+                <text x="260" y="126" text-anchor="middle" class="diagram-text">COMPONENTS (classes)</text>
+                <text x="260" y="144" text-anchor="middle" class="diagram-muted">Cart: items · addItem()</text>
+                <path d="M260 152v30" class="diagram-stroke" marker-end="url(#arrow-levels)"></path>
+                <rect x="170" y="182" width="180" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="208" text-anchor="middle" class="diagram-text">UI DETAIL</text>
+                <text x="425" y="100" class="diagram-muted">detail ↑</text>
+                <text x="425" y="190" class="diagram-muted">scope ↓</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Upar structure, neeche detail — scope ghatta, detail badhta.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> architecture = blocks + connections + layered example, component = class detail + Cart example, FIG.004 levels, end mein “architecture decides shape, components fill it” line.</p>
+        </section>
+
+        <section aria-labelledby="q10">
+          <p class="section-kicker">THEORY · Q10</p>
+          <h2 id="q10">UI design, UML diagrams, testing types</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain User Interface Design, UML diagrams, and different types of software testing.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>UI design (golden rules):</strong> user control mein rahe (undo, clear options), memory load kam karo (sab yaad mat karao, dikhao), consistency rakho (same action, same look). Steps: user analysis (kaun use karega) → prototype → evaluation (real users se test) → refine. Design evaluation = usability testing + feedback loop.</p>
+          <p><strong>UML (Unified Modeling Language):</strong> system ko pictures mein model karne ki standard language. Do families:</p>
+          <ul class="plain-list">
+            <li><strong>Structural (static):</strong> class diagram (classes + relations), use-case diagram (actors + goals), deployment diagram (hardware par software kahan chalega).</li>
+            <li><strong>Behavioral (dynamic):</strong> sequence diagram (time ke saath object interactions — MCQ 19 ka answer), activity/state diagrams (flow aur states).</li>
+          </ul>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-uml-title fig-uml-desc">
+                <title id="fig-uml-title">UML diagram families</title>
+                <desc id="fig-uml-desc">Structural diagrams static structure, behavioral dynamic behaviour dikhate hain.</desc>
+                <defs>
+                  <pattern id="dots-uml" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-uml" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-uml)"></rect>
+                <rect x="200" y="18" width="120" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">UML</text>
+                <path d="M230 58v28m60-28v28" class="diagram-stroke"></path>
+                <path d="M70 86h380" class="diagram-stroke"></path>
+                <path d="M70 86v30m380 0v30" class="diagram-stroke" marker-end="url(#arrow-uml)"></path>
+                <rect x="30" y="116" width="200" height="60" class="diagram-stroke"></rect>
+                <text x="130" y="140" text-anchor="middle" class="diagram-text">STRUCTURAL</text>
+                <text x="130" y="160" text-anchor="middle" class="diagram-muted">class · use-case</text>
+                <rect x="290" y="116" width="200" height="60" class="diagram-stroke"></rect>
+                <text x="390" y="140" text-anchor="middle" class="diagram-text">BEHAVIORAL</text>
+                <text x="390" y="160" text-anchor="middle" class="diagram-muted">sequence · activity</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">STATIC vs DYNAMIC VIEW</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Structure static, behaviour dynamic — sequence time dikhata hai.</span></figcaption>
+          </figure>
+          <p><strong>Testing types (levels + techniques):</strong> <strong>unit testing</strong> (single component in isolation — MCQ 20), <strong>integration testing</strong> (connected modules saath mein), <strong>system testing</strong> (poora system requirements par), <strong>acceptance testing</strong> (customer approval). Techniques: black-box (bina code dekhe input-output) vs white-box (code paths dekhkar).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-test-title fig-test-desc">
+                <title id="fig-test-title">Testing levels bottom-up</title>
+                <desc id="fig-test-desc">Unit sabse neeche chhota scope, acceptance sabse upar poora system.</desc>
+                <defs>
+                  <pattern id="dots-test" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-test" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-test)"></rect>
+                <rect x="190" y="180" width="140" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="205" text-anchor="middle" class="diagram-text">UNIT</text>
+                <rect x="160" y="130" width="200" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="155" text-anchor="middle" class="diagram-text">INTEGRATION</text>
+                <rect x="130" y="80" width="260" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="105" text-anchor="middle" class="diagram-text">SYSTEM</text>
+                <rect x="100" y="30" width="320" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="55" text-anchor="middle" class="diagram-text">ACCEPTANCE</text>
+                <path d="M430 200V70" class="diagram-stroke" marker-end="url(#arrow-test)"></path>
+                <text x="438" y="140" class="diagram-muted">SCOPE ↑</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Neeche unit, upar acceptance — scope badhta jaata hai.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> UI golden rules (3) + steps, UML 2 families with 2 examples each, testing 4 levels bottom-up + black/white-box, FIG.005 + FIG.006.</p>
+        </section>
+
+        <section aria-labelledby="mcq-heading">
+          <p class="section-kicker">MCQ · 20 QUESTIONS</p>
+          <h2 id="mcq-heading">20 MCQs — answer with short reason</h2>
+          <p>Pehle khud option tick karo, phir answer match karo. Har answer ke saath ek-line reason hai — wahi reason theory answers mein kaam aayega.</p>
+          <ol class="issue-list">
+            <li><div><h3>Q1. Software Engineering is primarily concerned with?</h3><p>A) Hardware manufacturing · B) Systematic development and maintenance of software · C) Computer networking only · D) Database administration only<br><strong>Answer: B</strong> — SE ka core systematic development + maintenance hai.</p></div></li>
+            <li><div><h3>Q2. Which is a characteristic of software?</h3><p>A) Manufactured like hardware · B) Does not wear out physically · C) Always fails from physical damage · D) Always inexpensive<br><strong>Answer: B</strong> — software ghista nahi, outdated hota hai (Q1 theory).</p></div></li>
+            <li><div><h3>Q3. Which is a software engineering principle?</h3><p>A) Avoid documentation · B) Separation of concerns · C) Ignore requirements · D) Avoid testing<br><strong>Answer: B</strong> — badi problem ko independent parts mein todo.</p></div></li>
+            <li><div><h3>Q4. Which process model is sequential?</h3><p>A) Agile · B) Waterfall · C) Spiral · D) Concurrent<br><strong>Answer: B</strong> — waterfall strictly phase-by-phase chalta hai.</p></div></li>
+            <li><div><h3>Q5. RAD stands for?</h3><p>A) Rapid Application Development · B) Random Application Design · C) Requirement Analysis Development · D) Rapid Algorithm Design<br><strong>Answer: A</strong> — components + time-boxing se fast delivery.</p></div></li>
+            <li><div><h3>Q6. Which model develops software in increments?</h3><p>A) Incremental · B) Waterfall · C) V-Model · D) Big Bang<br><strong>Answer: A</strong> — har increment working subset hota hai.</p></div></li>
+            <li><div><h3>Q7. Agile mainly emphasizes?</h3><p>A) Documentation only · B) Customer collaboration and responding to change · C) Avoiding feedback · D) Fixed requirements<br><strong>Answer: B</strong> — manifesto: collaboration + change-response.</p></div></li>
+            <li><div><h3>Q8. Which is an Agile methodology?</h3><p>A) Extreme Programming · B) Waterfall · C) Big Bang · D) V-Model<br><strong>Answer: A</strong> — XP lightweight Agile methodology hai.</p></div></li>
+            <li><div><h3>Q9. In XP, pair programming involves?</h3><p>A) Two independent teams · B) Two programmers on the same task · C) Testing without coding · D) One programmer, two projects<br><strong>Answer: B</strong> — driver + navigator, same machine.</p></div></li>
+            <li><div><h3>Q10. JIRA is commonly used for?</h3><p>A) Image processing · B) Project and issue management · C) OS development · D) Hardware design<br><strong>Answer: B</strong> — backlog/sprint/issue tracking tool.</p></div></li>
+            <li><div><h3>Q11. A functional requirement specifies?</h3><p>A) What the system should do · B) Programming language only · C) Development cost only · D) Physical size<br><strong>Answer: A</strong> — functional = system kya karega.</p></div></li>
+            <li><div><h3>Q12. Which is a non-functional requirement?</h3><p>A) User login · B) Report generation · C) System performance · D) Order placement<br><strong>Answer: C</strong> — non-functional = system kaisa hoga (quality).</p></div></li>
+            <li><div><h3>Q13. SRS stands for?</h3><p>A) Software Requirement Specification · B) System Resource Software · C) Software Resource System · D) System Requirement Structure<br><strong>Answer: A</strong> — (standard spelling “Requirements” plural hoti hai; QB option singular mein hai, answer phir bhi A).</p></div></li>
+            <li><div><h3>Q14. Requirements validation ensures requirements are?</h3><p>A) Expensive · B) Correct, complete, and consistent · C) Difficult · D) Written only by programmers<br><strong>Answer: B</strong> — validation = sahi + poori + consistent.</p></div></li>
+            <li><div><h3>Q15. Which activity collects requirements from stakeholders?</h3><p>A) Requirements elicitation · B) Coding · C) Deployment · D) Refactoring<br><strong>Answer: A</strong> — elicitation = collect karna.</p></div></li>
+            <li><div><h3>Q16. Which is a software design concept?</h3><p>A) Modularity · B) Compilation · C) Debugging only · D) Installation<br><strong>Answer: A</strong> — modularity core design concept hai.</p></div></li>
+            <li><div><h3>Q17. Architectural design primarily describes?</h3><p>A) Detailed source code · B) Overall structure of the system · C) User passwords · D) Test data only<br><strong>Answer: B</strong> — architecture = bada structure.</p></div></li>
+            <li><div><h3>Q18. UML stands for?</h3><p>A) Unified Modeling Language · B) Universal Machine Language · C) User Management Language · D) Unified Machine Logic<br><strong>Answer: A</strong> — standard modeling language.</p></div></li>
+            <li><div><h3>Q19. Which UML diagram shows interactions over time?</h3><p>A) Class · B) Sequence · C) Use-case · D) Deployment<br><strong>Answer: B</strong> — sequence diagram time-order mein objects dikhata hai.</p></div></li>
+            <li><div><h3>Q20. Which technique examines individual components?</h3><p>A) System · B) Acceptance · C) Unit · D) Integration<br><strong>Answer: C</strong> — unit = single component isolation mein.</p></div></li>
+          </ol>
+          <p><strong>Exam-ready plan:</strong> 20 mein se 15+ lane ke liye definitions ratne ki jagah farq-tables yaad karo (Q11/12, Q4/6/8, Q16/17) — wahi concepts options mein ghoomte hain.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading">Ek nazar mein</h2>
+          <dl class="recap-list">
+            <dt>SE nature</dt><dd>Intangible, developed-not-manufactured, no physical wear, complex + changing.</dd>
+            <dt>Principles</dt><dd>Separation of concerns, abstraction, modularity + hiding, iterative development.</dd>
+            <dt>Process</dt><dd>Generic 5 activities; Waterfall fixed-scope, Incremental early delivery, Agile change-welcome.</dd>
+            <dt>XP</dt><dd>TDD, pair programming (driver/navigator), continuous integration, on-site customer.</dd>
+            <dt>Requirements</dt><dd>User/system = audience ka farq; functional = what, non-functional = how-well (measurable).</dd>
+            <dt>SRS</dt><dd>Intro, overall description, specific requirements, appendix; qualities: correct/complete/consistent.</dd>
+            <dt>RE cycle</dt><dd>Elicitation → analysis → validation → management (spiral); validation sasta fix.</dd>
+            <dt>Design</dt><dd>Architecture (shape) → components (detail) → UI; coupling kam, cohesion zyada.</dd>
+            <dt>UML/testing</dt><dd>Structural vs behavioral; unit → integration → system → acceptance.</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Ab bina upar dekhe teen answers recall karo:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne answers likho; phir Q-tables se match karo.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Waterfall aur Agile mein 2 farq batao.
+              <ol type="A"><li>Fixed vs welcome-change; end-delivery vs sprint-delivery</li><li>Dono same hain</li><li>Agile mein customer nahi milta</li><li>Waterfall iterative hai</li></ol>
+            </li>
+            <li>Functional vs non-functional ka farq kya hai?
+              <ol type="A"><li>What vs how-well</li><li>Same cheez hain</li><li>Developer vs customer</li><li>Code vs test</li></ol>
+            </li>
+            <li>Sequence diagram kis family ka hai?
+              <ol type="A"><li>Behavioral</li><li>Structural</li><li>Deployment</li><li>Koi nahi</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: Unit 4–5 topic-wise notes — answers recall ke baad.</p>
+        </section>
+      </article>
+
+      <article class="prose-column" data-lang="en" hidden>
+        <section aria-labelledby="how-to-use-en">
+          <p class="section-kicker">START HERE / HOW TO USE</p>
+          <h2 id="how-to-use-en">How this QB is organized</h2>
+          <p class="dropcap">Every question sits in its own block: the original Question first, then its detailed Answer, then an exam-ready plan. Read the Question and think first, then match with the Answer — in SEPM, marks come from definitions and comparison tables, so learn terms exactly.</p>
+          <p><strong>Round 1:</strong> Recall the 10 theory answers' points orally. <strong>Round 2:</strong> Solve the 20 MCQs blind (first yourself, then match). <strong>Round 3:</strong> Practise writing theory answers in your own words — always include a table + example + diagram.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Q1–Q4 (Unit 1: software nature, principles, process models, Agile, XP), Q5–Q7 (Unit 2: requirements, SRS, elicitation/validation), Q8–Q10 (Unit 3: design, architecture, UI, UML, testing) + 20 MCQs. Total 30 Q&A blocks.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="q1-en">
+          <p class="section-kicker">THEORY · Q1</p>
+          <h2 id="q1-en">Nature of software and SE principles</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the nature of software and the fundamental principles of Software Engineering.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>The <strong>nature of software</strong> is totally unlike hardware — and that nature is exactly why Software Engineering is needed. First the characteristics:</p>
+          <ul class="plain-list">
+            <li><strong>Intangible:</strong> cannot be touched; understood only via code, documents, and behaviour. Hence progress is hard to measure.</li>
+            <li><strong>Developed, not manufactured:</strong> hardware is built in factories; software is developed once and then copied. Cost lies in design, not production.</li>
+            <li><strong>Does not wear out physically:</strong> never degrades with time, but fails through obsolescence as environment changes (OS, hardware, needs) — think “obsolescence curve”, not a bath-tub.</li>
+            <li><strong>Complexity and change:</strong> today's systems run into lakhs of lines and requirements always evolve — unmanageable without engineering discipline.</li>
+          </ul>
+          <p><strong>Fundamental principles (write these 4–5 in the exam):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Separation of concerns:</strong> break big problems into small independent parts (basis of modularity).</li>
+            <li><strong>Abstraction:</strong> hide detail, show only the needed view (like a function name, not its code).</li>
+            <li><strong>Modularity + information hiding:</strong> each module does one job and keeps its internal data private.</li>
+            <li><strong>Incremental + iterative development:</strong> build in small pieces, take feedback, improve.</li>
+            <li><strong>Documentation and measurement:</strong> write decisions down, measure progress — control is impossible without this.</li>
+          </ul>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Software Engineering is the systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software.</p>
+          </div>
+          <p><strong>Exam-ready plan:</strong> first 4 characteristics (intangible, developed-not-manufactured, no physical wear, complexity/change), then 4–5 principles with one-line meanings, ending with the SE definition. Both characteristics and principles are asked — missing either costs half the marks.</p>
+        </section>
+
+        <section aria-labelledby="q2-en">
+          <p class="section-kicker">THEORY · Q2</p>
+          <h2 id="q2-en">Generic + prescriptive process models</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the generic process model and different prescriptive process models.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>The <strong>generic process model</strong> is the common framework of every software process — 5 activities: <strong>communication</strong> (understand requirements), <strong>planning</strong> (schedule/resources), <strong>modeling</strong> (build the design), <strong>construction</strong> (code + test), <strong>deployment</strong> (deliver + feedback). Every prescriptive model arranges these 5 in a different flow.</p>
+          <p><strong>Prescriptive models (for each: flow + best-for + weakness):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Waterfall:</strong> strictly sequential — next phase only after the previous completes. Best when requirements are fixed and clear (e.g. payroll system). Weakness: change is costly, working software comes only at the end.</li>
+            <li><strong>Incremental (RAD):</strong> software delivered in pieces (increments); each increment is a working subset. RAD uses components + time-boxing for fast delivery. Best when early partial delivery is wanted.</li>
+            <li><strong>Evolutionary (Prototyping/Spiral):</strong> build prototype → feedback → refine; or spiral with risk analysis in every loop. Best when requirements are unclear.</li>
+            <li><strong>Unified Process (UP):</strong> use-case driven, architecture-centric, iterative — inception, elaboration, construction, transition phases.</li>
+            <li><strong>Concurrent:</strong> activities run in parallel states (e.g. part of design with coding) — for large/client-server systems.</li>
+          </ul>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-proc-title-en fig-proc-desc-en">
+                <title id="fig-proc-title-en">Waterfall vs incremental flow</title>
+                <desc id="fig-proc-desc-en">Waterfall in one straight line, incremental delivering piece by piece.</desc>
+                <defs>
+                  <pattern id="dots-proc-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-proc-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-proc-en)"></rect>
+                <text x="30" y="40" class="diagram-muted">WATERFALL: ONE SHOT, STRAIGHT</text>
+                <rect x="30" y="60" width="90" height="40" class="diagram-stroke"></rect>
+                <text x="42" y="84" class="diagram-text">REQ</text>
+                <rect x="140" y="60" width="90" height="40" class="diagram-stroke"></rect>
+                <text x="148" y="84" class="diagram-text">DESIGN</text>
+                <rect x="250" y="60" width="90" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="84" class="diagram-text">CODE</text>
+                <rect x="360" y="60" width="110" height="40" class="diagram-stroke"></rect>
+                <text x="372" y="84" class="diagram-text">TEST+SHIP</text>
+                <path d="M120 80h20m110 0h20m110 0h20" class="diagram-stroke" marker-end="url(#arrow-proc-en)"></path>
+                <text x="30" y="140" class="diagram-muted">INCREMENTAL: PIECE BY PIECE</text>
+                <rect x="30" y="160" width="120" height="40" class="diagram-stroke"></rect>
+                <text x="42" y="184" class="diagram-text">INC-1 LIVE</text>
+                <rect x="180" y="160" width="120" height="40" class="diagram-stroke"></rect>
+                <text x="192" y="184" class="diagram-text">INC-2 LIVE</text>
+                <rect x="330" y="160" width="120" height="40" class="diagram-stroke"></rect>
+                <text x="342" y="184" class="diagram-text">INC-3 LIVE</text>
+                <path d="M150 180h30m150 0h30" class="diagram-stroke" marker-end="url(#arrow-proc-en)"></path>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Waterfall in one shot, incremental delivering every piece.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> first the generic model's 5 activities, then each prescriptive model in one line of flow + best-for + weakness, ending with the FIG.001 diagram. The “best-for + weakness” line is what impresses the examiner.</p>
+        </section>
+
+        <section aria-labelledby="q3-en">
+          <p class="section-kicker">THEORY · Q3</p>
+          <h2 id="q3-en">Agile vs plan-driven development</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Agile Software Development and compare plan-driven development with agile development.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Agile</strong> is an iterative-incremental approach running on its manifesto: individuals and interactions (over processes), working software (over documentation), customer collaboration (over contracts), responding to change (over plans). Work happens in small time-boxed iterations (sprints); every sprint delivers working software, and customer feedback feeds the next sprint.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / plan-driven vs agile</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Plan-driven</th><th scope="col">Agile</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Requirements</td><td>Fixed upfront, change is costly</td><td>Change welcomed, backlog evolves</td></tr>
+                <tr><td>Delivery</td><td>Full system at the end</td><td>Working increment every sprint</td></tr>
+                <tr><td>Customer</td><td>Met at start and end</td><td>Involved every sprint + feedback</td></tr>
+                <tr><td>Documentation</td><td>Heavy, upfront</td><td>Light, as needed</td></tr>
+                <tr><td>Best for</td><td>Fixed-scope, regulated systems</td><td>Changing needs, product development</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Agile tools in one line: <strong>JIRA</strong> (backlog/sprint/issue tracking) and <strong>Kanban board</strong> (To-Do → Doing → Done columns visualizing flow). The case studies (mental health-care system, wilderness weather system) teach that different domains need process tailoring — one model never fits everywhere.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-agile-title-en fig-agile-desc-en">
+                <title id="fig-agile-title-en">Agile iteration loop</title>
+                <desc id="fig-agile-desc-en">The plan, build, review cycle repeating every sprint.</desc>
+                <defs>
+                  <pattern id="dots-agile-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-agile-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-agile-en)"></rect>
+                <rect x="180" y="30" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="56" text-anchor="middle" class="diagram-text">PLAN (BACKLOG)</text>
+                <rect x="330" y="110" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="410" y="136" text-anchor="middle" class="diagram-text">BUILD + TEST</text>
+                <rect x="180" y="180" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="206" text-anchor="middle" class="diagram-text">REVIEW + FEEDBACK</text>
+                <rect x="30" y="110" width="160" height="42" class="diagram-stroke"></rect>
+                <text x="110" y="136" text-anchor="middle" class="diagram-text">WORKING INCREMENT</text>
+                <path d="M340 72L400 108" class="diagram-stroke" marker-end="url(#arrow-agile-en)"></path>
+                <path d="M450 152L340 200" class="diagram-stroke" marker-end="url(#arrow-agile-en)"></path>
+                <path d="M180 201L110 152" class="diagram-stroke" marker-end="url(#arrow-agile-en)"></path>
+                <path d="M110 110L200 72" class="diagram-stroke" marker-end="url(#arrow-agile-en)"></path>
+                <text x="260" y="130" text-anchor="middle" class="diagram-muted">SPRINT 1–4 WEEKS</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Every sprint: plan → build → review → next plan.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> Agile definition + 4 manifesto values, then the 5-row comparison table, then JIRA/Kanban in one line, ending with the FIG.002 loop diagram.</p>
+        </section>
+
+        <section aria-labelledby="q4-en">
+          <p class="section-kicker">THEORY · Q4</p>
+          <h2 id="q4-en">Extreme Programming (XP)</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Extreme Programming (XP) practices, testing in XP, and pair programming.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>XP</strong> is a lightweight Agile methodology that takes best practices to “extreme” levels — short feedback loops, high courage. Core practices:</p>
+          <ul class="plain-list">
+            <li><strong>Planning game + small releases:</strong> customer writes stories, team estimates; small frequent releases get fast feedback.</li>
+            <li><strong>Simple design + refactoring:</strong> simplest design for today's need; continuously clean code (same behaviour, better structure).</li>
+            <li><strong>Test-driven development:</strong> write the automated test first (it will fail), then write code that passes it — testing drives design.</li>
+            <li><strong>Continuous integration:</strong> integrate code + automated build/test several times a day — conflicts get caught early.</li>
+            <li><strong>Collective ownership + coding standards:</strong> anyone may improve any code; common standards keep readability.</li>
+            <li><strong>Sustainable pace + on-site customer:</strong> no overtime, customer sits with the team — doubts clear instantly.</li>
+          </ul>
+          <p><strong>Testing in XP:</strong> programmers write unit tests (TDD), customers define acceptance tests; both automated and run on every integration. Testing is a continuous activity, not a phase.</p>
+          <p><strong>Pair programming:</strong> two programmers on one machine — a <strong>driver</strong> (writes code) and a <strong>navigator</strong> (reviews + thinks); roles rotate. Benefits: real-time review (defects caught instantly), knowledge sharing (lower bus factor), better design. Cost: two people on one task — but cheaper than defect-fixing cost.</p>
+          <p><strong>Exam-ready plan:</strong> XP definition + 5–6 practice bullets, testing para (TDD + acceptance + continuous), pair programming (driver/navigator + 2 benefits), ending with a one-line tradeoff.</p>
+        </section>
+
+        <section aria-labelledby="q5-en">
+          <p class="section-kicker">THEORY · Q5</p>
+          <h2 id="q5-en">Types of requirements</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Software Requirements Engineering and differentiate between user, system, functional, and non-functional requirements.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Requirements Engineering (RE)</strong> is the process of discovering, analysing, documenting, and maintaining stakeholder needs. Wrong or incomplete requirements cause the costliest defects — which is why RE is the foundation of the whole process.</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / 4 types of requirements</caption>
+              <thead>
+                <tr><th scope="col">Type</th><th scope="col">For whom / language</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>User requirements</td><td>For customers, simple natural language</td><td>“Fee receipts should come out of the system”</td></tr>
+                <tr><td>System requirements</td><td>For developers, detailed + precise</td><td>“Receipt will carry roll no., date, amount, signature block”</td></tr>
+                <tr><td>Functional</td><td><strong>What</strong> the system does (services/features)</td><td>Login, report generation, order placement</td></tr>
+                <tr><td>Non-functional</td><td><strong>How well</strong> the system behaves (quality/constraints)</td><td>Performance, security, usability, reliability</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The memorizing formula: user vs system = difference of <strong>audience and detail</strong> (customer-language vs developer-language); functional vs non-functional = difference of <strong>what vs how-well</strong>. Write non-functionals measurably (not “fast” but “responds in 2 sec”) — that line earns the extra mark.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-req-title-en fig-req-desc-en">
+                <title id="fig-req-title-en">Requirements split</title>
+                <desc id="fig-req-desc-en">Requirements split into four types by reader and by nature.</desc>
+                <defs>
+                  <pattern id="dots-req-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-req-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-req-en)"></rect>
+                <rect x="185" y="18" width="150" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">REQUIREMENTS</text>
+                <path d="M225 58v28m70-28v28" class="diagram-stroke"></path>
+                <path d="M80 86h360" class="diagram-stroke"></path>
+                <path d="M80 86v30m360 0v30" class="diagram-stroke" marker-end="url(#arrow-req-en)"></path>
+                <rect x="20" y="116" width="220" height="46" class="diagram-stroke"></rect>
+                <text x="130" y="135" text-anchor="middle" class="diagram-text">BY READER</text>
+                <text x="130" y="153" text-anchor="middle" class="diagram-muted">user · system</text>
+                <rect x="280" y="116" width="220" height="46" class="diagram-stroke"></rect>
+                <text x="390" y="135" text-anchor="middle" class="diagram-text">BY NATURE</text>
+                <text x="390" y="153" text-anchor="middle" class="diagram-muted">functional · non-functional</text>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">WHAT vs HOW-WELL · CUSTOMER vs DEVELOPER</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>User/system by reader, functional/non-functional by nature.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> RE definition, then the 4-row table with examples, then the what-vs-how-well + measurable-NFR line, ending with FIG.003.</p>
+        </section>
+
+        <section aria-labelledby="q6-en">
+          <p class="section-kicker">THEORY · Q6</p>
+          <h2 id="q6-en">SRS: structure and writing styles</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Software Requirements Specification (SRS), its structure, and different ways of writing an SRS.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>SRS</strong> is the official written document of requirements — like a contract between customer and team. Without it, “is the system complete or not” cannot even be judged. A good SRS is <strong>correct, complete, consistent, verifiable, and modifiable</strong>.</p>
+          <p><strong>Structure (IEEE-style, write these headings in the exam):</strong></p>
+          <ul class="plain-list">
+            <li><strong>1. Introduction:</strong> purpose, scope, definitions, references — which system, and why.</li>
+            <li><strong>2. Overall description:</strong> product perspective, user classes, constraints, assumptions — the big picture.</li>
+            <li><strong>3. Specific requirements:</strong> functional (features), non-functional (performance, security), interfaces (user/hardware/software) — the real detail.</li>
+            <li><strong>Appendix:</strong> models, index, open issues (TBD list).</li>
+          </ul>
+          <p><strong>Ways of writing:</strong> <strong>natural language</strong> (simple, but ambiguity risk), <strong>structured language</strong> (forms/templates + controlled vocabulary — best balance), <strong>tabular/graphical</strong> (tables, use-case diagrams — the insulin-pump case study wrote every condition exactly with structured + tabular SRS), <strong>formal/mathematical</strong> (precise, but not everyone understands it — for critical systems).</p>
+          <p><strong>Exam-ready plan:</strong> SRS definition + 5 qualities, then the 4-part structure headings, then 4 writing styles with tradeoffs, insulin-pump example line.</p>
+        </section>
+
+        <section aria-labelledby="q7-en">
+          <p class="section-kicker">THEORY · Q7</p>
+          <h2 id="q7-en">Elicitation, analysis, validation, management</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain requirements elicitation, analysis, validation, and requirements management.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Requirements never collect themselves — in the spiral view these activities keep looping until requirements stabilize:</p>
+          <ul class="plain-list">
+            <li><strong>Elicitation (collect):</strong> extracting requirements from stakeholders — interviews, questionnaires, workshops, observation, prototypes, document study. Pick the technique by stakeholder (busy manager → questionnaire, confused user → prototype).</li>
+            <li><strong>Analysis (understand + sort):</strong> classify collected needs (functional/non-functional), resolve conflicts, prioritize, feasibility check. The spiral turns here — unclear points go back to elicitation.</li>
+            <li><strong>Validation (verify):</strong> checking requirements are correct, complete, and consistent — reviews, checklists, writing test cases (every requirement must be testable), prototype demo. Catching errors here is the cheapest.</li>
+            <li><strong>Management (maintain):</strong> change control — evaluate every change request (cost/impact), and on approval update documents + traceability, maintain versions. Without management, scope creep sinks the project.</li>
+          </ul>
+          <p><strong>Exam-ready plan:</strong> start with the spiral-view line, then 4 activities each with meaning + 1 technique/example, ending with the closing line “validation is the cheapest fix, management stops scope creep”.</p>
+        </section>
+
+        <section aria-labelledby="q8-en">
+          <p class="section-kicker">THEORY · Q8</p>
+          <h2 id="q8-en">Design process, concepts, models, patterns</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the software design process, design concepts, design models, and pattern-based software design.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>The <strong>design process</strong> converts requirements (“what to build”) into a blueprint (“how to build it”). Quality design needs both process and concepts:</p>
+          <ul class="plain-list">
+            <li><strong>Design concepts:</strong> abstraction (hide detail), modularity (small parts), information hiding (internal data private), low coupling + high cohesion (modules independent yet internally focused), refinement (add detail step by step).</li>
+            <li><strong>Design model's 4 views:</strong> data design (structures), architectural design (big structure), interface design (inside-outside connections), component design (detail of each piece) — expanded in Q9.</li>
+            <li><strong>Pattern-based design:</strong> reuse proven solutions of repeated problems (like a known pattern for login sessions) — saves design time and brings reliability, because the pattern is already tested.</li>
+          </ul>
+          <p><strong>Exam-ready plan:</strong> design = requirements-to-blueprint line, then 5 concepts with one-line meanings, then 4 model views, then the pattern = proven-solution-reuse line.</p>
+        </section>
+
+        <section aria-labelledby="q9-en">
+          <p class="section-kicker">THEORY · Q9</p>
+          <h2 id="q9-en">Architectural + component-level design</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain architectural design and component-level design with suitable examples.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Architectural design</strong> is the system's overall structure — big blocks (components) + their connections + decisions (views, patterns, application architectures like layered, client-server, MVC). Example: in an online shop, the presentation layer, business-logic layer, and database layer — each layer with fixed responsibility and defined interfaces between layers.</p>
+          <p><strong>Component-level design</strong> is the detail inside each block — class-based components: attributes (data), operations (methods), interfaces. Example: a <code>Cart</code> class with attributes items/total, operations addItem()/checkout(), and a payment-gateway interface. Conducting it = writing every component's data + behaviour + collaboration.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-levels-title-en fig-levels-desc-en">
+                <title id="fig-levels-title-en">Three levels of design</title>
+                <desc id="fig-levels-desc-en">Architecture on top, components middle, UI detail at bottom.</desc>
+                <defs>
+                  <pattern id="dots-levels-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-levels-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-levels-en)"></rect>
+                <rect x="110" y="30" width="300" height="46" class="diagram-stroke"></rect>
+                <text x="260" y="50" text-anchor="middle" class="diagram-text">ARCHITECTURE (layers)</text>
+                <text x="260" y="68" text-anchor="middle" class="diagram-muted">shop: UI · logic · DB</text>
+                <path d="M260 76v30" class="diagram-stroke" marker-end="url(#arrow-levels-en)"></path>
+                <rect x="140" y="106" width="240" height="46" class="diagram-stroke"></rect>
+                <text x="260" y="126" text-anchor="middle" class="diagram-text">COMPONENTS (classes)</text>
+                <text x="260" y="144" text-anchor="middle" class="diagram-muted">Cart: items · addItem()</text>
+                <path d="M260 152v30" class="diagram-stroke" marker-end="url(#arrow-levels-en)"></path>
+                <rect x="170" y="182" width="180" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="208" text-anchor="middle" class="diagram-text">UI DETAIL</text>
+                <text x="425" y="100" class="diagram-muted">detail ↑</text>
+                <text x="425" y="190" class="diagram-muted">scope ↓</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Structure on top, detail below — scope shrinks, detail grows.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> architecture = blocks + connections + layered example, component = class detail + Cart example, FIG.004 levels, ending with the “architecture decides shape, components fill it” line.</p>
+        </section>
+
+        <section aria-labelledby="q10-en">
+          <p class="section-kicker">THEORY · Q10</p>
+          <h2 id="q10-en">UI design, UML diagrams, testing types</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain User Interface Design, UML diagrams, and different types of software testing.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>UI design (golden rules):</strong> keep the user in control (undo, clear options), reduce memory load (show, don't make them memorize), stay consistent (same action, same look). Steps: user analysis (who will use it) → prototype → evaluation (test with real users) → refine. Design evaluation = usability testing + feedback loop.</p>
+          <p><strong>UML (Unified Modeling Language):</strong> the standard language for modeling a system in pictures. Two families:</p>
+          <ul class="plain-list">
+            <li><strong>Structural (static):</strong> class diagram (classes + relations), use-case diagram (actors + goals), deployment diagram (where software runs on hardware).</li>
+            <li><strong>Behavioral (dynamic):</strong> sequence diagram (object interactions over time — the answer to MCQ 19), activity/state diagrams (flows and states).</li>
+          </ul>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-uml-title-en fig-uml-desc-en">
+                <title id="fig-uml-title-en">UML diagram families</title>
+                <desc id="fig-uml-desc-en">Structural diagrams show static structure, behavioral show dynamic behaviour.</desc>
+                <defs>
+                  <pattern id="dots-uml-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-uml-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-uml-en)"></rect>
+                <rect x="200" y="18" width="120" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">UML</text>
+                <path d="M230 58v28m60-28v28" class="diagram-stroke"></path>
+                <path d="M70 86h380" class="diagram-stroke"></path>
+                <path d="M70 86v30m380 0v30" class="diagram-stroke" marker-end="url(#arrow-uml-en)"></path>
+                <rect x="30" y="116" width="200" height="60" class="diagram-stroke"></rect>
+                <text x="130" y="140" text-anchor="middle" class="diagram-text">STRUCTURAL</text>
+                <text x="130" y="160" text-anchor="middle" class="diagram-muted">class · use-case</text>
+                <rect x="290" y="116" width="200" height="60" class="diagram-stroke"></rect>
+                <text x="390" y="140" text-anchor="middle" class="diagram-text">BEHAVIORAL</text>
+                <text x="390" y="160" text-anchor="middle" class="diagram-muted">sequence · activity</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">STATIC vs DYNAMIC VIEW</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Structure is static, behaviour dynamic — sequence shows time.</span></figcaption>
+          </figure>
+          <p><strong>Testing types (levels + techniques):</strong> <strong>unit testing</strong> (single component in isolation — MCQ 20), <strong>integration testing</strong> (connected modules together), <strong>system testing</strong> (whole system against requirements), <strong>acceptance testing</strong> (customer approval). Techniques: black-box (input-output without seeing code) vs white-box (seeing code paths).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-test-title-en fig-test-desc-en">
+                <title id="fig-test-title-en">Testing levels bottom-up</title>
+                <desc id="fig-test-desc-en">Unit smallest scope at bottom, acceptance full system on top.</desc>
+                <defs>
+                  <pattern id="dots-test-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-test-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-test-en)"></rect>
+                <rect x="190" y="180" width="140" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="205" text-anchor="middle" class="diagram-text">UNIT</text>
+                <rect x="160" y="130" width="200" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="155" text-anchor="middle" class="diagram-text">INTEGRATION</text>
+                <rect x="130" y="80" width="260" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="105" text-anchor="middle" class="diagram-text">SYSTEM</text>
+                <rect x="100" y="30" width="320" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="55" text-anchor="middle" class="diagram-text">ACCEPTANCE</text>
+                <path d="M430 200V70" class="diagram-stroke" marker-end="url(#arrow-test-en)"></path>
+                <text x="438" y="140" class="diagram-muted">SCOPE ↑</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Unit at the bottom, acceptance on top — scope keeps growing.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> UI golden rules (3) + steps, UML 2 families with 2 examples each, testing 4 levels bottom-up + black/white-box, FIG.005 + FIG.006.</p>
+        </section>
+
+        <section aria-labelledby="mcq-heading-en">
+          <p class="section-kicker">MCQ · 20 QUESTIONS</p>
+          <h2 id="mcq-heading-en">20 MCQs — answers with short reasons</h2>
+          <p>Tick the option yourself first, then match the answer. Each answer carries a one-line reason — the same reasons work inside theory answers.</p>
+          <ol class="issue-list">
+            <li><div><h3>Q1. Software Engineering is primarily concerned with?</h3><p>A) Hardware manufacturing · B) Systematic development and maintenance of software · C) Computer networking only · D) Database administration only<br><strong>Answer: B</strong> — SE's core is systematic development + maintenance.</p></div></li>
+            <li><div><h3>Q2. Which is a characteristic of software?</h3><p>A) Manufactured like hardware · B) Does not wear out physically · C) Always fails from physical damage · D) Always inexpensive<br><strong>Answer: B</strong> — software never wears out; it goes obsolete (theory Q1).</p></div></li>
+            <li><div><h3>Q3. Which is a software engineering principle?</h3><p>A) Avoid documentation · B) Separation of concerns · C) Ignore requirements · D) Avoid testing<br><strong>Answer: B</strong> — break big problems into independent parts.</p></div></li>
+            <li><div><h3>Q4. Which process model is sequential?</h3><p>A) Agile · B) Waterfall · C) Spiral · D) Concurrent<br><strong>Answer: B</strong> — waterfall runs strictly phase by phase.</p></div></li>
+            <li><div><h3>Q5. RAD stands for?</h3><p>A) Rapid Application Development · B) Random Application Design · C) Requirement Analysis Development · D) Rapid Algorithm Design<br><strong>Answer: A</strong> — components + time-boxing for fast delivery.</p></div></li>
+            <li><div><h3>Q6. Which model develops software in increments?</h3><p>A) Incremental · B) Waterfall · C) V-Model · D) Big Bang<br><strong>Answer: A</strong> — every increment is a working subset.</p></div></li>
+            <li><div><h3>Q7. Agile mainly emphasizes?</h3><p>A) Documentation only · B) Customer collaboration and responding to change · C) Avoiding feedback · D) Fixed requirements<br><strong>Answer: B</strong> — manifesto: collaboration + change-response.</p></div></li>
+            <li><div><h3>Q8. Which is an Agile methodology?</h3><p>A) Extreme Programming · B) Waterfall · C) Big Bang · D) V-Model<br><strong>Answer: A</strong> — XP is a lightweight Agile methodology.</p></div></li>
+            <li><div><h3>Q9. In XP, pair programming involves?</h3><p>A) Two independent teams · B) Two programmers on the same task · C) Testing without coding · D) One programmer, two projects<br><strong>Answer: B</strong> — driver + navigator on one machine.</p></div></li>
+            <li><div><h3>Q10. JIRA is commonly used for?</h3><p>A) Image processing · B) Project and issue management · C) OS development · D) Hardware design<br><strong>Answer: B</strong> — backlog/sprint/issue tracking tool.</p></div></li>
+            <li><div><h3>Q11. A functional requirement specifies?</h3><p>A) What the system should do · B) Programming language only · C) Development cost only · D) Physical size<br><strong>Answer: A</strong> — functional = what the system does.</p></div></li>
+            <li><div><h3>Q12. Which is a non-functional requirement?</h3><p>A) User login · B) Report generation · C) System performance · D) Order placement<br><strong>Answer: C</strong> — non-functional = how well the system behaves (quality).</p></div></li>
+            <li><div><h3>Q13. SRS stands for?</h3><p>A) Software Requirement Specification · B) System Resource Software · C) Software Resource System · D) System Requirement Structure<br><strong>Answer: A</strong> — (the standard spelling uses plural “Requirements”; the QB option is singular, the answer is still A).</p></div></li>
+            <li><div><h3>Q14. Requirements validation ensures requirements are?</h3><p>A) Expensive · B) Correct, complete, and consistent · C) Difficult · D) Written only by programmers<br><strong>Answer: B</strong> — validation = correct + complete + consistent.</p></div></li>
+            <li><div><h3>Q15. Which activity collects requirements from stakeholders?</h3><p>A) Requirements elicitation · B) Coding · C) Deployment · D) Refactoring<br><strong>Answer: A</strong> — elicitation = collecting.</p></div></li>
+            <li><div><h3>Q16. Which is a software design concept?</h3><p>A) Modularity · B) Compilation · C) Debugging only · D) Installation<br><strong>Answer: A</strong> — modularity is a core design concept.</p></div></li>
+            <li><div><h3>Q17. Architectural design primarily describes?</h3><p>A) Detailed source code · B) Overall structure of the system · C) User passwords · D) Test data only<br><strong>Answer: B</strong> — architecture = the big structure.</p></div></li>
+            <li><div><h3>Q18. UML stands for?</h3><p>A) Unified Modeling Language · B) Universal Machine Language · C) User Management Language · D) Unified Machine Logic<br><strong>Answer: A</strong> — the standard modeling language.</p></div></li>
+            <li><div><h3>Q19. Which UML diagram shows interactions over time?</h3><p>A) Class · B) Sequence · C) Use-case · D) Deployment<br><strong>Answer: B</strong> — sequence diagrams show time-ordered object interactions.</p></div></li>
+            <li><div><h3>Q20. Which technique examines individual components?</h3><p>A) System · B) Acceptance · C) Unit · D) Integration<br><strong>Answer: C</strong> — unit = single component in isolation.</p></div></li>
+          </ol>
+          <p><strong>Exam-ready plan:</strong> to cross 15+, memorize difference-tables instead of definitions (Q11/12, Q4/6/8, Q16/17) — the same concepts rotate through the options.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading-en">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading-en">At a glance</h2>
+          <dl class="recap-list">
+            <dt>SE nature</dt><dd>Intangible, developed-not-manufactured, no physical wear, complex + changing.</dd>
+            <dt>Principles</dt><dd>Separation of concerns, abstraction, modularity + hiding, iterative development.</dd>
+            <dt>Process</dt><dd>Generic 5 activities; Waterfall for fixed scope, Incremental for early delivery, Agile for welcome change.</dd>
+            <dt>XP</dt><dd>TDD, pair programming (driver/navigator), continuous integration, on-site customer.</dd>
+            <dt>Requirements</dt><dd>User/system = audience difference; functional = what, non-functional = how-well (measurable).</dd>
+            <dt>SRS</dt><dd>Intro, overall description, specific requirements, appendix; qualities: correct/complete/consistent.</dd>
+            <dt>RE cycle</dt><dd>Elicitation → analysis → validation → management (spiral); validation is the cheapest fix.</dd>
+            <dt>Design</dt><dd>Architecture (shape) → components (detail) → UI; low coupling, high cohesion.</dd>
+            <dt>UML/testing</dt><dd>Structural vs behavioral; unit → integration → system → acceptance.</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Recall three answers without looking up:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Write your answers; then match with the Q-tables.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Give 2 differences between Waterfall and Agile.
+              <ol type="A"><li>Fixed vs welcome-change; end-delivery vs sprint-delivery</li><li>Both are the same</li><li>Agile never meets customers</li><li>Waterfall is iterative</li></ol>
+            </li>
+            <li>What is the difference between functional and non-functional?
+              <ol type="A"><li>What vs how-well</li><li>They are the same thing</li><li>Developer vs customer</li><li>Code vs test</li></ol>
+            </li>
+            <li>Which family is the sequence diagram in?
+              <ol type="A"><li>Behavioral</li><li>Structural</li><li>Deployment</li><li>None</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: Unit 4–5 topic-wise notes — after recalling the answers.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>MID-SEM QB / UNIT 01–03</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+
+  <script>
+  (() => {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    const apply = (lang) => {
+      document.querySelectorAll('[data-lang]').forEach((el) => {
+        el.hidden = el.dataset.lang !== lang;
+      });
+      document.documentElement.lang = lang === 'hi' ? 'hi-Latn' : 'en';
+      btn.textContent = lang === 'hi' ? 'English' : 'Hinglish';
+      try { localStorage.setItem('sepm-qb-lang', lang); } catch (e) {}
+    };
+    let lang = 'hi';
+    try { lang = localStorage.getItem('sepm-qb-lang') || 'hi'; } catch (e) {}
+    if (lang !== 'hi' && lang !== 'en') lang = 'hi';
+    apply(lang);
+    btn.addEventListener('click', () => {
+      lang = lang === 'hi' ? 'en' : 'hi';
+      apply(lang);
+    });
+  })();
+  </script>
+</body>
+</html>
