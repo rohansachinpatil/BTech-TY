@@ -8,6 +8,7 @@
 
 ## Received raw-note batches
 - Learner-provided mid-sem QB (PDF, Unit 1–3): 10 theory questions (SE fundamentals, process models, Agile, XP, requirements, SRS, elicitation/validation, design, architecture, UI/UML/testing) + 20 MCQs with options.
+- Learner-provided reference answers (`Question Bank Midsem/qbanswersrefernece.txt`): detailed English solutions Q1–Q10 + MCQ answer key + revision map. Adopted as reference (not copied verbatim): website answers enriched with its examples, tables, models, and flows in own words/structure.
 
 ## Generated note files
 - `qb-mid-sem.html` — 10 theory ke detailed lengthy answers (har block mein Question box + separate Answer + exam-ready plan) + 20 MCQs ke answers with short reason, Hinglish + English with header switch button (saved preference); 6 outline diagrams (FIG.001–006, document order) sirf marks-wali jagah par — process-model flow, Agile loop, requirements split, design levels, UML families, testing levels; exam recap.

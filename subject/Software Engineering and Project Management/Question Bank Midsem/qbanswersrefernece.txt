@@ -1,0 +1,1124 @@
+SEPM — Detailed Answers
+Q1. Explain the nature of software and the fundamental principles of Software Engineering.
+1. Nature of Software
+Software is a collection of programs, procedures, data, and associated documentation that instructs a computer to perform specific tasks.
+Software is fundamentally different from physical products such as hardware.
+Characteristics of Software
+1. Software is developed, not manufactured
+Hardware is manufactured in factories. Software, on the other hand, is primarily created through analysis, design, coding, testing, and maintenance.
+For example:
+- A laptop is manufactured.
+- Windows, Android, or a banking application is developed.
+The major cost of software is therefore related to development and maintenance, rather than physical manufacturing.
+2. Software does not wear out physically
+Hardware components can physically wear out because of:
+- Heat
+- Mechanical stress
+- Age
+- Electrical damage
+Software does not physically deteriorate.
+However, software can become unreliable because it is modified repeatedly and new defects can be introduced.
+For example:
+Initial Software
+      ↓
+Modification
+      ↓
+New Feature
+      ↓
+Unexpected Bug
+      ↓
+Another Modification
+
+Therefore, software can deteriorate because of changes, even though it does not physically wear out.
+3. Software is highly complex
+Modern software systems can contain:
+- Millions of lines of code
+- Thousands of components
+- Multiple databases
+- APIs
+- Networks
+- External services
+For example, an e-commerce application may contain:
+User Interface
+      ↓
+Authentication
+      ↓
+Product Service
+      ↓
+Payment Service
+      ↓
+Order Service
+      ↓
+Database
+      ↓
+Notification Service
+
+Managing this complexity is one of the primary reasons Software Engineering is necessary.
+4. Software is easy to modify but difficult to manage
+Software can theoretically be changed easily. However, a small change in one component may affect many other components.
+For example:
+Change Login Module
+       ↓
+Authentication API affected
+       ↓
+User database affected
+       ↓
+Session management affected
+       ↓
+Testing required
+
+Therefore, changes must be properly managed.
+5. Software is intangible
+Software cannot be physically touched like hardware.
+Examples:
+- Operating system
+- Mobile application
+- Web application
+- AI model
+- Database management software
+The actual product consists primarily of logic, data, and instructions.
+Fundamental Principles of Software Engineering
+Software Engineering is the systematic application of engineering principles to the development, operation, testing, and maintenance of software.
+Important principles include:
+1. Separation of Concerns
+Different problems should be handled separately.
+For example, in a web application:
+UI
+│
+├── Authentication
+├── Business Logic
+├── Database
+└── Payment
+
+Each concern can be developed independently.
+2. Modularity
+A large system should be divided into smaller modules.
+E-Commerce System
+       │
+       ├── User Module
+       ├── Product Module
+       ├── Cart Module
+       ├── Payment Module
+       └── Order Module
+
+Advantages:
+- Easier development
+- Easier testing
+- Easier maintenance
+- Reusability
+3. Abstraction
+Abstraction means hiding unnecessary implementation details and exposing only what is required.
+For example, when using:
+sort(data)
+
+
+the user does not need to know the internal sorting algorithm.
+4. Information Hiding
+A module should hide its internal implementation details from other modules.
+This reduces dependency between components.
+5. Reusability
+Existing components should be reused whenever possible.
+Examples:
+- Libraries
+- APIs
+- Frameworks
+- Authentication modules
+6. Maintainability
+Software should be designed so that it can be easily modified and maintained.
+Good software should allow:
+Bug Fix
+Feature Addition
+Performance Improvement
+Security Update
+
+without completely rewriting the system.
+Conclusion
+Software is intangible, highly complex, changeable, and developed rather than manufactured. Software Engineering provides systematic principles such as modularity, abstraction, separation of concerns, information hiding, reusability, and maintainability to manage this complexity.
+Q2. Explain the generic process model and different prescriptive process models.
+A software process model defines the activities required to develop software.
+A generic software development process can be represented as:
+Communication
+      ↓
+Planning
+      ↓
+Modeling
+      ↓
+Construction
+      ↓
+Deployment
+      ↓
+Feedback
+      ↺
+
+The major generic framework activities are:
+1. Communication
+The development team communicates with stakeholders to understand:
+- Problems
+- Requirements
+- Expectations
+- Business objectives
+2. Planning
+Planning determines:
+- What has to be developed?
+- Who will develop it?
+- How long will it take?
+- What resources are required?
+- What risks exist?
+3. Modeling
+Modeling includes:
+- Requirements analysis
+- Software architecture
+- Database design
+- UI design
+- Component design
+4. Construction
+Construction consists mainly of:
+Coding + Testing
+
+Developers implement the system and test it to identify defects.
+5. Deployment
+The completed software is delivered to users.
+Deployment also involves:
+- Installation
+- User training
+- Feedback collection
+- Maintenance
+Prescriptive Process Models
+Prescriptive models define a relatively structured approach for software development.
+1. Waterfall Model
+The Waterfall model follows a sequential approach.
+Requirements
+     ↓
+Design
+     ↓
+Implementation
+     ↓
+Testing
+     ↓
+Deployment
+     ↓
+Maintenance
+
+Each phase generally follows the previous phase.
+Advantages
+- Simple and easy to understand
+- Clear documentation
+- Well-defined stages
+- Easy project management
+Disadvantages
+- Difficult to accommodate changing requirements
+- Customer feedback comes relatively late
+- Working software is produced late
+Suitable for
+Projects where requirements are stable and well understood.
+2. Incremental Model
+Software is developed and delivered in multiple increments.
+Example:
+Increment 1 → Login
+Increment 2 → Products
+Increment 3 → Cart
+Increment 4 → Payment
+
+Each increment adds functionality.
+Advantages
+- Early delivery
+- Customer feedback
+- Lower risk
+- Easier testing
+3. Spiral Model
+The Spiral model focuses strongly on risk analysis.
+Each spiral cycle generally involves:
+Planning
+   ↓
+Risk Analysis
+   ↓
+Engineering
+   ↓
+Evaluation
+   ↺
+
+Advantages
+- Strong risk management
+- Suitable for large projects
+- Allows changing requirements
+Disadvantages
+- Expensive
+- Complex
+- Requires risk-analysis expertise
+4. V-Model
+The V-Model emphasizes verification and validation.
+Requirements       Acceptance Testing
+     ↓                    ↑
+System Design      System Testing
+     ↓                    ↑
+Architecture       Integration Testing
+     ↓                    ↑
+Module Design      Unit Testing
+     ↓                    ↑
+             Coding
+
+Testing activities are planned alongside development activities.
+5. RAD Model
+RAD stands for Rapid Application Development, as reflected in the MCQ section of the uploaded material.     SEPM
+It emphasizes:
+- Rapid development
+- Prototyping
+- User involvement
+- Reusable components
+Q3. Explain Agile Software Development and compare plan-driven development with Agile development.
+Agile Software Development
+Agile is an iterative and incremental approach to software development.
+The Agile philosophy emphasizes:
+Deliver working software frequently, collaborate with customers, and respond to changing requirements.
+
+The uploaded material specifically identifies customer collaboration and responding to change as central to Agile development.     SEPM
+Agile Development Cycle
+Requirement
+     ↓
+Iteration Planning
+     ↓
+Development
+     ↓
+Testing
+     ↓
+Working Software
+     ↓
+Customer Feedback
+     ↓
+Next Iteration
+
+Instead of developing the entire system at once, the system is developed through small iterations.
+Characteristics of Agile
+1. Iterative Development
+Software is developed in short iterations.
+For example:
+Sprint 1 → Login
+Sprint 2 → Product Search
+Sprint 3 → Shopping Cart
+Sprint 4 → Payment
+
+2. Customer Collaboration
+Customers regularly provide feedback.
+3. Responding to Change
+Requirements can change during development.
+Agile attempts to accommodate these changes rather than treating them as failures.
+4. Frequent Delivery
+Working software is delivered frequently.
+5. Continuous Testing
+Testing occurs throughout development rather than only at the end.
+Plan-Driven vs Agile
+Feature	Plan-Driven	Agile
+Planning	Extensive upfront planning	Continuous planning
+Requirements	Usually fixed early	Can change
+Development	Sequential/structured	Iterative
+Customer involvement	Lower/focused at milestones	Frequent
+Documentation	Extensive	Necessary but lightweight
+Change	Relatively expensive	Expected
+Delivery	Often later	Frequent
+Testing	Often phase-oriented	Continuous
+Feedback	Periodic	Frequent
+Best suited for	Stable requirements	Changing requirements
+
+
+Example
+Suppose a company wants to build an Instagram-like application.
+With a plan-driven approach:
+Requirements
+     ↓
+Complete Design
+     ↓
+Complete Coding
+     ↓
+Testing
+     ↓
+Release
+
+With Agile:
+Sprint 1 → Login
+Sprint 2 → Profile
+Sprint 3 → Posts
+Sprint 4 → Comments
+Sprint 5 → Notifications
+
+Users can provide feedback after every iteration.
+Q4. Explain Extreme Programming (XP) practices, testing in XP, and pair programming.
+Extreme Programming (XP) is an Agile software development methodology that emphasizes rapid feedback, continuous testing, simplicity, and close collaboration.
+The uploaded material identifies XP as an Agile methodology.     SEPM
+Important XP Practices
+1. Pair Programming
+Two developers work together on the same task.
+One is usually the:
+Driver
+who writes the code.
+The other is the:
+Navigator
+who reviews the code and thinks about the next step.
+They switch roles regularly.
+Developer A ──┐
+              ├── Same Task
+Developer B ──┘
+
+The uploaded MCQ explicitly describes pair programming as two programmers working together on the same task.     SEPM
+Advantages
+- Continuous code review
+- Fewer defects
+- Knowledge sharing
+- Better design decisions
+- Reduced dependency on one developer
+2. Test-Driven Development
+In TDD, tests are written before or alongside implementation.
+Typical cycle:
+Write Test
+    ↓
+Test Fails
+    ↓
+Write Code
+    ↓
+Test Passes
+    ↓
+Refactor
+    ↺
+
+3. Continuous Integration
+Developers frequently integrate their changes into the main codebase.
+This helps identify integration problems early.
+4. Simple Design
+XP encourages developers to implement the simplest design that satisfies current requirements.
+5. Refactoring
+Refactoring means improving the internal structure of code without changing its external behavior.
+Example:
+Bad / Complex Code
+       ↓
+Refactoring
+       ↓
+Clean / Maintainable Code
+
+6. Small Releases
+Instead of releasing everything at once, small working versions are delivered frequently.
+Testing in XP
+Testing is not a separate final activity.
+It is integrated into development.
+Important testing practices include:
+Unit Testing
+Individual components are tested.
+Acceptance Testing
+The system is tested against customer requirements.
+Automated Testing
+Automated tests are used frequently to provide rapid feedback.
+Q5. Explain Software Requirements Engineering and differentiate between user, system, functional, and non-functional requirements.
+Software Requirements Engineering
+Requirements Engineering is the systematic process of:
+Discovering
+     ↓
+Analyzing
+     ↓
+Documenting
+     ↓
+Validating
+     ↓
+Managing
+Requirements
+
+A requirement describes a capability, constraint, or condition that the software must satisfy.
+Types of Requirements
+1. User Requirements
+User requirements describe what the system should provide from the user's perspective.
+They are generally written in natural language and are easier for customers to understand.
+Example
+For an online banking system:
+The user should be able to transfer money to another bank account.
+
+2. System Requirements
+System requirements provide more detailed technical descriptions of the system's behavior.
+Example:
+The system shall allow authenticated customers to transfer an amount between ₹1 and ₹1,00,000 to a registered beneficiary.
+
+They are intended for developers, architects, and technical teams.
+3. Functional Requirements
+Functional requirements specify what the system should do. This is also explicitly reflected in the uploaded MCQ.     SEPM
+Examples:
+- User login
+- Registration
+- Search
+- Payment
+- Report generation
+- Order placement
+For example:
+The system shall allow users to reset their password using their registered email address.
+
+4. Non-Functional Requirements
+Non-functional requirements specify how well the system should operate or constraints under which it must operate.
+Examples:
+- Performance
+- Security
+- Reliability
+- Usability
+- Scalability
+- Availability
+For example:
+The system shall respond to user requests within 2 seconds.
+
+The uploaded MCQ identifies system performance as a non-functional requirement.     SEPM
+Comparison
+Requirement	Meaning	Example
+User	User-level need	User can book a ticket
+System	Detailed technical requirement	System shall generate booking ID
+Functional	What system does	Generate invoice
+Non-functional	Quality/constraint	Response within 2 seconds
+
+
+Easy way to remember
+Functional     → WHAT?
+Non-functional → HOW WELL?
+User           → WHAT does USER want?
+System         → HOW must SYSTEM provide it?
+
+Q6. Explain Software Requirements Specification (SRS), its structure, and different ways of writing an SRS.
+SRS
+SRS stands for Software Requirements Specification.     SEPM
+It is a formal document that describes what a software system should do and the constraints under which it should operate.
+It acts as an agreement/reference between:
+Customer
+   ↕
+SRS
+   ↕
+Development Team
+
+Purpose of SRS
+SRS helps:
+- Developers understand requirements
+- Customers verify requirements
+- Testers create test cases
+- Project managers estimate effort
+- Designers create architecture
+- Teams manage changes
+Typical Structure of SRS
+1. Introduction
+Contains:
+- Purpose
+- Scope
+- Definitions
+- References
+- Overview
+2. Overall Description
+Describes:
+- Product perspective
+- Product functions
+- User classes
+- Operating environment
+- Constraints
+- Assumptions
+3. Functional Requirements
+Describes the functions the system must perform.
+Example:
+The system shall allow registered users to log in using email and password.
+
+4. Non-Functional Requirements
+Examples:
+Performance
+Security
+Reliability
+Usability
+Scalability
+Availability
+
+5. External Interface Requirements
+Includes:
+- User interfaces
+- Hardware interfaces
+- Software interfaces
+- Communication interfaces
+6. Constraints
+Examples:
+- Technology constraints
+- Legal constraints
+- Hardware limitations
+- Security policies
+Ways of Writing an SRS
+1. Natural Language
+Requirements are written using normal human language.
+Example:
+The system shall allow users to register using their email address.
+
+Advantage: Easy to understand.
+Disadvantage: Can be ambiguous.
+2. Structured Natural Language
+A predefined format is used.
+For example:
+Requirement ID: FR-01
+Name: User Login
+Input: Email and Password
+Processing: Validate credentials
+Output: Login successful/failed
+
+3. Graphical Representation
+Requirements may be represented using diagrams.
+Examples:
+- Use-case diagrams
+- Activity diagrams
+- Data-flow diagrams
+4. Formal Specification
+Mathematical or formal notation is used to precisely define requirements.
+This reduces ambiguity but requires specialized knowledge.
+Q7. Explain requirements elicitation, analysis, validation, and requirements management.
+Requirements Engineering consists of several important activities.
+Elicitation
+    ↓
+Analysis
+    ↓
+Specification
+    ↓
+Validation
+    ↓
+Management
+
+1. Requirements Elicitation
+Elicitation means collecting requirements from stakeholders.
+The uploaded MCQ specifically identifies requirements elicitation as the activity involving collection of requirements from stakeholders.     SEPM
+Sources
+Requirements can come from:
+- Customers
+- Users
+- Managers
+- Domain experts
+- Government regulations
+- Existing systems
+Techniques
+Interviews
+Directly ask stakeholders questions.
+Questionnaires
+Useful when many users need to be surveyed.
+Observation
+Observe users performing their actual tasks.
+Workshops
+Multiple stakeholders discuss requirements together.
+Prototyping
+A preliminary version of the system is created to clarify requirements.
+2. Requirements Analysis
+Collected requirements are analyzed to identify:
+- Conflicts
+- Missing requirements
+- Duplicates
+- Ambiguities
+- Dependencies
+- Feasibility
+Example:
+Customer A:
+Login should require password.
+
+Customer B:
+Login should not require password.
+
+There is a conflict that must be resolved.
+3. Requirements Validation
+Validation ensures that requirements are:
+- Correct
+- Complete
+- Consistent
+- Feasible
+- Unambiguous
+- Testable
+The uploaded material specifically states correct, complete, and consistent as important validation properties.     SEPM
+Example
+Bad requirement:
+The application should be very fast.
+
+Problem: "very fast" is ambiguous.
+Better:
+The application shall respond within 2 seconds for 95% of requests.
+
+This is measurable and testable.
+4. Requirements Management
+Requirements may change throughout development.
+Requirements management involves:
+- Tracking requirements
+- Managing changes
+- Maintaining versions
+- Analyzing impact
+- Maintaining traceability
+- Communicating changes
+Example:
+Original Requirement
+        ↓
+Customer Change Request
+        ↓
+Impact Analysis
+        ↓
+Approval
+        ↓
+Requirement Update
+        ↓
+Design/Coding/Test Changes
+
+Q8. Explain the software design process, design concepts, design models, and pattern-based software design.
+Software design transforms requirements into a blueprint for implementation.
+Requirements
+     ↓
+Software Design
+     ↓
+Architecture
+     ↓
+Components
+     ↓
+Interfaces
+     ↓
+Implementation
+
+The uploaded material identifies software design concepts, design models, and pattern-based design as major areas.     SEPM
+Software Design Process
+Step 1: Analyze Requirements
+Understand what the system needs to do.
+Step 2: Architectural Design
+Determine the overall system structure.
+Step 3: Data Design
+Determine:
+- Database structure
+- Data entities
+- Relationships
+- Storage
+Step 4: Interface Design
+Define interactions between:
+- Users and system
+- Components
+- External systems
+Step 5: Component-Level Design
+Design individual modules/classes/components.
+Important Design Concepts
+1. Abstraction
+Focus on important characteristics while hiding unnecessary details.
+2. Modularity
+Divide the system into manageable modules.
+3. Cohesion
+Cohesion measures how closely related the responsibilities within a module are.
+High cohesion is desirable.
+Example:
+Payment Module
+→ Payment Processing
+→ Payment Validation
+→ Payment Confirmation
+
+These responsibilities are closely related.
+4. Coupling
+Coupling measures dependency between modules.
+Low coupling is generally desirable.
+Module A ───── Module B
+
+If A depends heavily on B, coupling is high.
+5. Information Hiding
+Internal implementation details should be hidden from other components.
+Design Models
+Design can be represented through different models.
+Examples:
+Architectural Model
+Shows major system components and relationships.
+Data Model
+Shows data structures and relationships.
+Interface Model
+Shows how components communicate.
+Component Model
+Shows individual software components.
+Class Model
+Shows classes and their relationships.
+Pattern-Based Software Design
+A design pattern is a reusable solution to a commonly occurring software design problem.
+Examples:
+Singleton
+Ensures that a class has only one instance.
+Factory
+Provides a mechanism for creating objects without exposing detailed creation logic.
+Observer
+Allows one object to notify dependent objects when its state changes.
+For example:
+Subject
+  │
+  ├── Observer 1
+  ├── Observer 2
+  └── Observer 3
+
+When the subject changes, observers receive notifications.
+Benefits
+- Reusable solutions
+- Better maintainability
+- Standard design vocabulary
+- Reduced design effort
+Q9. Explain architectural design and component-level design with suitable examples.
+Architectural Design
+Architectural design defines the overall structure of a software system, which is also the correct concept identified by the uploaded MCQ.     SEPM
+It identifies:
+- Major components
+- Relationships
+- Data flow
+- Communication mechanisms
+- System organization
+Example: E-Commerce Application
+An architecture could be:
+             User
+               ↓
+          Web / Mobile UI
+               ↓
+          API Gateway
+               ↓
+      ┌────────┼────────┐
+      ↓        ↓        ↓
+   User      Product   Order
+ Service     Service   Service
+      ↓        ↓        ↓
+      └────────┼────────┘
+               ↓
+            Database
+
+Payment can be connected to an external payment gateway.
+Common Architectural Styles
+1. Layered Architecture
+Presentation Layer
+       ↓
+Business Logic Layer
+       ↓
+Data Access Layer
+       ↓
+Database
+
+Advantages:
+- Separation of concerns
+- Easier maintenance
+- Clear organization
+2. Client-Server Architecture
+Client
+  ↓
+Server
+  ↓
+Database
+
+Example:
+A web browser communicates with a web server.
+3. MVC Architecture
+MVC stands for:
+- Model
+- View
+- Controller
+User
+ ↓
+View
+ ↓
+Controller
+ ↓
+Model
+ ↓
+Database
+
+Component-Level Design
+Component-level design focuses on the internal design of individual components.
+Suppose an e-commerce system has:
+Order Service
+
+Its component-level design might contain:
+OrderService
+│
+├── createOrder()
+├── validateOrder()
+├── calculateTotal()
+├── applyDiscount()
+└── cancelOrder()
+
+It defines:
+- Interfaces
+- Classes
+- Methods
+- Data structures
+- Algorithms
+- Component interactions
+Architectural vs Component-Level Design
+Architectural Design	Component-Level Design
+High-level	Detailed
+Defines system structure	Defines individual components
+Identifies major modules	Defines classes/functions
+Focuses on relationships	Focuses on implementation logic
+
+
+Easy way to remember
+Architecture = Building Plan
+Component Design = Room Design
+
+Q10. Explain User Interface Design, UML diagrams, and different types of software testing.
+This question combines three major areas: UI Design, UML, and Software Testing.     SEPM
+Part A — User Interface Design
+User Interface Design involves designing how users interact with software.
+A good UI should be:
+- Simple
+- Consistent
+- Understandable
+- Responsive
+- Accessible
+- Easy to learn
+- Error tolerant
+UI Design Process
+Understand Users
+       ↓
+Identify Tasks
+       ↓
+Create Interface Design
+       ↓
+Prototype
+       ↓
+Evaluate
+       ↓
+Improve
+
+Important UI Principles
+1. Consistency
+Buttons, colors, layouts, and interactions should behave consistently.
+2. Simplicity
+Avoid unnecessary complexity.
+3. Feedback
+The system should tell users what happened.
+Example:
+Click "Save"
+      ↓
+"File saved successfully"
+
+4. Error Prevention
+The UI should prevent common errors.
+5. User Control
+Users should have control over actions.
+Example:
+Undo
+Cancel
+Back
+Delete Confirmation
+
+Part B — UML
+UML stands for Unified Modeling Language, as identified in the uploaded MCQ.     SEPM
+UML is a standardized graphical language used to visualize, specify, and document software systems.
+Important UML Diagrams
+1. Use-Case Diagram
+Shows interactions between actors and the system.
+Example:
+Customer
+   │
+   ├── Login
+   ├── Search Product
+   ├── Add to Cart
+   └── Place Order
+
+2. Class Diagram
+Shows:
+- Classes
+- Attributes
+- Methods
+- Relationships
+Example:
+Customer
+----------------
+- name
+- email
+----------------
++ login()
++ logout()
+
+3. Sequence Diagram
+Shows interactions between objects over time.
+The uploaded MCQ identifies the sequence diagram as the UML diagram representing object interactions over time.     SEPM
+Example:
+User → Login UI
+Login UI → Auth Service
+Auth Service → Database
+Database → Auth Service
+Auth Service → Login UI
+Login UI → User
+
+4. Activity Diagram
+Represents workflow or activities.
+Example:
+Start
+  ↓
+Enter Login
+  ↓
+Validate
+  ↓
+Valid?
+ /    \
+Yes    No
+ ↓      ↓
+Home   Error
+
+5. State Diagram
+Shows different states of an object.
+Example:
+Order Created
+      ↓
+   Pending
+      ↓
+   Shipped
+      ↓
+  Delivered
+
+6. Deployment Diagram
+Shows how software components are deployed on physical or computational nodes.
+Example:
+Mobile
+  ↓
+Web Server
+  ↓
+Application Server
+  ↓
+Database Server
+
+Part C — Software Testing
+Software testing is the process of evaluating software to identify defects and determine whether it satisfies requirements.
+Types of Testing
+1. Unit Testing
+Tests individual software components.
+The uploaded MCQ specifically describes unit testing as the technique used to examine individual software components.     SEPM
+Example:
+calculate_total()
+
+
+can be tested independently.
+2. Integration Testing
+Tests whether multiple components work correctly together.
+Example:
+Login Module
+     +
+Database
+     ↓
+Integration Test
+
+3. System Testing
+Tests the complete integrated software system.
+Example:
+Login
+ ↓
+Product Search
+ ↓
+Cart
+ ↓
+Payment
+ ↓
+Order
+
+The entire workflow is tested.
+4. Acceptance Testing
+Determines whether the system satisfies customer/business requirements.
+Usually performed from the user's/business perspective.
+5. Regression Testing
+Tests existing functionality after changes to ensure that previously working features have not been broken.
+Example:
+New Payment Feature
+       ↓
+Run Existing Tests
+       ↓
+Check whether Login,
+Cart, Orders still work
+
+6. Performance Testing
+Evaluates:
+- Response time
+- Throughput
+- Resource utilization
+- Scalability
+7. Security Testing
+Identifies vulnerabilities such as:
+- Unauthorized access
+- Injection attacks
+- Authentication weaknesses
+- Data exposure
+Testing Levels — Easy Diagram
+Unit Testing
+     ↓
+Integration Testing
+     ↓
+System Testing
+     ↓
+Acceptance Testing
+
+Remember:
+Unit → Component
+
+Integration → Components together
+
+System → Complete system
+
+Acceptance → Customer/business requirements
+
+MCQ Answer Key
+The uploaded PDF contains 20 MCQs.     SEPM     SEPM     SEPM     SEPM
+Q	Answer	Explanation
+1	B	Software Engineering deals with systematic software development and maintenance.
+2	B	Software does not physically wear out like hardware.
+3	B	Separation of concerns is a fundamental design/software engineering principle.
+4	B	Waterfall follows a predominantly sequential approach.
+5	A	RAD = Rapid Application Development.
+6	A	Incremental development delivers software in increments.
+7	B	Agile emphasizes customer collaboration and responding to change.
+8	A	Extreme Programming is an Agile methodology.
+9	B	Pair programming involves two programmers working together.
+10	B	JIRA is commonly used for project and issue management.
+11	A	Functional requirements specify what the system should do.
+12	C	Performance is a non-functional requirement.
+13	A	SRS = Software Requirement Specification.
+14	B	Validation checks properties such as correctness, completeness, and consistency.
+15	A	Elicitation involves collecting requirements from stakeholders.
+16	A	Modularity is a software design concept.
+17	B	Architectural design describes the overall structure of a system.
+18	A	UML = Unified Modeling Language.
+19	B	Sequence diagrams represent interactions over time.
+20	C	Unit testing examines individual software components.
+
+
+One-Page Revision Map
+                    SOFTWARE ENGINEERING
+                           │
+        ┌──────────────────┼──────────────────┐
+        ↓                  ↓                  ↓
+   PROCESS MODEL       REQUIREMENTS          DESIGN
+        │                  │                  │
+   ┌────┼────┐        ┌────┼────┐       ┌────┼────┐
+   ↓    ↓    ↓        ↓    ↓    ↓       ↓    ↓    ↓
+Waterfall Agile Spiral  User System Functional Architecture
+Incremental V-Model       Non-functional   Component
+RAD                                         Pattern
+        │
+        ↓
+      AGILE
+        │
+   ┌────┼────┐
+   ↓    ↓    ↓
+  XP   Scrum Iterative
+   │
+   ├── Pair Programming
+   ├── TDD
+   ├── Continuous Integration
+   ├── Refactoring
+   └── Small Releases
+
+                    REQUIREMENTS
+                         │
+       ┌─────────────────┼─────────────────┐
+       ↓                 ↓                 ↓
+   Elicitation       Analysis         Validation
+       │                                   │
+       └──────────── Management ───────────┘
+
+                      DESIGN
+                        │
+               ┌────────┴────────┐
+               ↓                 ↓
+         Architecture       Components
+               │
+        ┌──────┼──────┐
+        ↓      ↓      ↓
+      Layered MVC Client-Server
+
+                      UML
+                       │
+       ┌──────┬───────┼────────┬─────────┐
+       ↓      ↓       ↓        ↓         ↓
+   Use Case Class  Sequence Activity Deployment
+
+                    TESTING
+                       │
+       ┌──────┬───────┼────────┬─────────┐
+       ↓      ↓       ↓        ↓         ↓
+      Unit Integration System Acceptance Regression
+
+Exam priority: If these are for a SEPM theory exam, focus especially on Waterfall vs Agile, XP, Requirements Engineering, SRS, Requirement Elicitation/Validation, Design Concepts, Architectural Design, UML diagrams, and Testing levels, because these topics directly correspond to the 10 descriptive questions in your uploaded question set.

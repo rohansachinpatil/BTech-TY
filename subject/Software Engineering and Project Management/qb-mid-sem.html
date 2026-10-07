@@ -84,12 +84,16 @@
             <li><strong>Modularity + information hiding:</strong> har module ek kaam kare, apna internal data chhupaye.</li>
             <li><strong>Incremental + iterative development:</strong> chhote pieces mein banao, feedback lo, sudharo.</li>
             <li><strong>Documentation aur measurement:</strong> decisions likho, progress measure karo — bina iske control impossible hai.</li>
+            <li><strong>Reusability:</strong> libraries, APIs, frameworks dobara use karo — time bachta hai, defects kam hote hain.</li>
+            <li><strong>Maintainability:</strong> software aisa design karo ki bug fix, feature addition, performance aur security updates bina rewrite ke hon.</li>
           </ul>
+          <p>Reference examples pakke karo: <strong>manufactured vs developed</strong> — laptop manufacture hota hai, par Windows/Android/banking app develop hoti hai (cost design + maintenance mein hai). <strong>Wear-out:</strong> hardware heat/stress/age se ghista hai; software modify hone par bigadta hai (nayi feature → unexpected bug → aur modification). <strong>Abstraction:</strong> <code>sort(data)</code> use karte waqt andar ka algorithm jaanne ki zarurat nahi. <strong>Complexity:</strong> e-commerce app mein UI, auth, product, payment, order, database, notification services — is management ke liye hi SE chahiye.</p>
           <div class="definition">
             <span class="meta-label">EXAM DEFINITION</span>
             <p>Software Engineering is the systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software.</p>
           </div>
           <p><strong>Exam-ready plan:</strong> pehle 4 characteristics (intangible, developed-not-manufactured, no physical wear, complexity/change), phir 4–5 principles with one-line meaning, end mein SE definition. Characteristics + principles dono maange gaye hain — ek bhi chhoota toh aadhe marks gaye.</p>
+          <p>Mitchell wali formal definition bhi likh sakte ho: Task T, Performance measure P, Experience E — E ke saath T par P improve ho toh program learn kar raha hai (jaise T = spam pehchanna, P = accuracy, E = labeled emails).</p>
         </section>
 
         <section aria-labelledby="q2">
@@ -109,6 +113,8 @@
             <li><strong>Unified Process (UP):</strong> use-case driven, architecture-centric, iterative — inception, elaboration, construction, transition phases.</li>
             <li><strong>Concurrent:</strong> activities parallel states mein chalti hain (jaise design ka ek part coding ke saath) — large/client-server systems ke liye.</li>
           </ul>
+          <p>Generic activities thodi detail mein: <strong>communication</strong> mein problems, requirements, expectations aur business objectives samjho; <strong>planning</strong> mein kya/kaun/kitna-time/resources/risks decide karo; <strong>modeling</strong> mein requirements analysis, architecture, database, UI aur component design aata hai; <strong>construction</strong> = coding + testing; <strong>deployment</strong> mein installation, training, feedback aur maintenance — feedback wapas communication mein jaata hai.</p>
+          <p>Do models aur pakke karo: <strong>Waterfall</strong> ke fayde (simple, clear documentation, easy management) aur nuksaan (change mushkil, late feedback, late software) — stable-requirements projects ke liye. <strong>Incremental</strong> ka e-commerce example: Increment-1 login, 2 products, 3 cart, 4 payment — fayde: early delivery, feedback, kam risk. <strong>Spiral</strong> har loop mein risk analysis karta hai (planning → risk → engineering → evaluation) — bade risky projects ke liye, par costly aur complex. <strong>V-model</strong> mein har development step ka testing pair hota hai (requirements↔acceptance, system-design↔system-testing, architecture↔integration, module↔unit) — testing planning saath-saath chalti hai.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-proc-title fig-proc-desc">
@@ -173,6 +179,7 @@
             </table>
           </div>
           <p>Agile tools ek line mein: <strong>JIRA</strong> (backlog/sprint/issue tracking) aur <strong>Kanban board</strong> (To-Do → Doing → Done columns se flow visualize). Case studies (mental health-care system, wilderness weather system) se ye seekh milti hai ki alag domains mein process tailoring chahiye — ek hi model har jagah fit nahi hota.</p>
+          <p>Agile cycle order mein yaad karo: requirement → iteration planning → development → testing → working software → customer feedback → next iteration. Characteristics: <strong>iterative</strong> (chhote sprints, jaise Sprint-1 login, Sprint-2 search), <strong>customer collaboration</strong> (regular feedback), <strong>change welcome</strong> (change failure nahi), <strong>frequent delivery</strong>, <strong>continuous testing</strong> (end ka wait nahi). Instagram example: plan-driven mein poora design→code→test→release ek baar; Agile mein Sprint-1 login, 2 profile, 3 posts, 4 comments, 5 notifications — har sprint ke baad user feedback.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-agile-title fig-agile-desc">
@@ -226,6 +233,7 @@
           </ul>
           <p><strong>Testing in XP:</strong> unit tests programmers likhte hain (TDD), acceptance tests customer define karta hai; dono automated aur har integration par chalte hain. Testing phase nahi, continuous activity hai.</p>
           <p><strong>Pair programming:</strong> do programmers ek machine par — ek <strong>driver</strong> (code likhta hai), ek <strong>navigator</strong> (review + sochta hai); roles rotate hote hain. Fayde: real-time review (defects turant pakde jaate hain), knowledge sharing (bus factor kam), better design. Cost: do log ek kaam par — par defect-fix cost se sasta padta hai.</p>
+          <p>Aur 3 practices detail mein: <strong>TDD cycle</strong> — test likho → fail hoga → code likho → pass hoga → refactor (repeat); <strong>small releases</strong> — sab kuch ek saath nahi, chhote working versions frequently; <strong>refactoring</strong> — bahar ka behaviour same, andar ka code saaf (complex code → maintainable code). Pair programming ke fayde list karo: continuous review, kam defects, knowledge sharing, better design, ek developer par dependency kam.</p>
           <p><strong>Exam-ready plan:</strong> XP definition + 5–6 practices bullets, testing para (TDD + acceptance + continuous), pair programming (driver/navigator + 2 fayde), end mein ek-line tradeoff.</p>
         </section>
 
@@ -253,6 +261,7 @@
             </table>
           </div>
           <p>Yaad rakhne ka formula: user vs system = <strong>audience aur detail</strong> ka farq (customer-language vs developer-language); functional vs non-functional = <strong>what vs how-well</strong> ka farq. Non-functional ko measurable likho (“fast” nahi, “2 sec mein response” likho) — yehi exam mein extra mark dilata hai.</p>
+          <p>Banking examples se pakka karo: user requirement — “user dusre account mein paise bhej sake” (simple language); system requirement — “authenticated customer ₹1–₹1,00,000 registered beneficiary ko bhej sake” (exact + measurable). Functional list: login, registration, search, payment, report, order placement. Non-functional list: performance, security, reliability, usability, scalability, availability. Comparison ek line mein: user = user-level need (ticket book ho), system = technical detail (booking ID generate ho), functional = kya karta hai (invoice banao), non-functional = kitna achha (2 sec response). <strong>Yaad rakhne ka formula: Functional → WHAT? Non-functional → HOW WELL? User → user kya chahta hai? System → system kaise dega?</strong></p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-req-title fig-req-desc">
@@ -303,6 +312,7 @@
             <li><strong>Appendix:</strong> models, index, open issues (TBD list).</li>
           </ul>
           <p><strong>Likhne ke tareeke:</strong> <strong>natural language</strong> (simple, par ambiguity ka risk), <strong>structured language</strong> (forms/templates + controlled vocabulary — best balance), <strong>tabular/graphical</strong> (tables, use-case diagrams — insulin pump case study mein structured + tabular SRS se har condition exact likhi gayi), <strong>formal/mathematical</strong> (precise, par sabko samajh nahi aata — critical systems mein).</p>
+          <p>SRS ka <strong>purpose</strong> 6 roles se samjho: developers (kya banana hai), customers (verify karna), testers (test cases), managers (effort estimate), designers (architecture), aur change management (impact track). <strong>Structure thoda aur detail mein:</strong> introduction (purpose, scope, definitions, references, overview), overall description (perspective, functions, user classes, environment, constraints, assumptions), specific requirements (functional + non-functional + interfaces), appendix (models, TBD list). <strong>Structured SRS ka example (FR-01 User Login):</strong> Input = email + password; Processing = credentials validate; Output = login success/failed — isi format se ambiguity khatm hoti hai.</p>
           <p><strong>Exam-ready plan:</strong> SRS definition + 5 qualities, phir 4-part structure headings, phir 4 writing ways with tradeoff, insulin-pump example line.</p>
         </section>
 
@@ -321,6 +331,7 @@
             <li><strong>Validation (verify):</strong> requirements sahi, complete aur consistent hain ya nahi — reviews, checklists, test-cases likhkar (har requirement testable honi chahiye), prototype demo. Error yahin pakadna sabse sasta hai.</li>
             <li><strong>Management (sambhalo):</strong> change control — har change request evaluate karo (cost/impact), approve ho toh documents + traceability update karo, versions maintain karo. Bina management ke scope creep project dubota hai.</li>
           </ul>
+          <p>Sources aur techniques detail mein: requirements customers, users, managers, domain experts, regulations aur existing systems se aati hain. Technique stakeholder dekhkar chuno — <strong>interviews</strong> (direct sawal), <strong>questionnaires</strong> (bahut users hon tab), <strong>observation</strong> (actual kaam dekhna), <strong>workshops</strong> (sab stakeholders saath), <strong>prototyping</strong> (pehla rough version banakar confusion clear). Analysis mein conflicts pakdo — jaise Customer A “login mein password chahiye”, Customer B “password nahi chahiye” — resolve kiye bina aage mat badho. Validation checklist: correct, complete, consistent, feasible, unambiguous, testable. Bad requirement “bahut fast hona chahiye” ko aise sudharo: “95% requests ka response 2 sec mein” — measurable = testable. Management flow: change request → impact analysis → approval → documents update → design/code/test changes.</p>
           <p><strong>Exam-ready plan:</strong> spiral-view line se start, phir 4 activities har ek: matlab + 1 technique/example, end mein “validation sabse sasta fix, management scope-creep rokta hai” wali closing line.</p>
         </section>
 
@@ -338,6 +349,7 @@
             <li><strong>Design model ke 4 views:</strong> data design (structures), architectural design (bada structure), interface design (andar-bahar connection), component design (har piece ka detail) — ye Q9 mein expand honge.</li>
             <li><strong>Pattern-based design:</strong> repeated problems ke proven solutions reuse karo (jaise login-session ke liye known pattern) — design time bachta hai aur reliability milti hai, kyunki pattern pehle test ho chuka hai.</li>
           </ul>
+          <p>Design process 5 steps mein: <strong>requirements analyse</strong> karo → <strong>architectural design</strong> (overall structure) → <strong>data design</strong> (entities, relations, storage) → <strong>interface design</strong> (user-system, component-component, external) → <strong>component design</strong> (har module/class ka detail). Cohesion-coupling payment example se samjho: Payment Module mein processing + validation + confirmation (closely related = high cohesion, good); agar Module A har chhoti baat ke liye Module B par depend kare toh coupling high = bad. Models: architectural (bade blocks), data (structures), interface (communication), component (pieces), class (classes + relations). Famous patterns: <strong>Singleton</strong> (sirf ek instance), <strong>Factory</strong> (object creation logic chhupao), <strong>Observer</strong> (subject badle toh observers ko notify) — fayde: reuse, maintainability, common vocabulary, kam effort.</p>
           <p><strong>Exam-ready plan:</strong> design = requirements-to-blueprint line, phir 5 concepts with one-line meaning, phir 4 model views, phir pattern = proven-solution-reuse line.</p>
         </section>
 
@@ -382,6 +394,7 @@
             <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Upar structure, neeche detail — scope ghatta, detail badhta.</span></figcaption>
           </figure>
           <p><strong>Exam-ready plan:</strong> architecture = blocks + connections + layered example, component = class detail + Cart example, FIG.004 levels, end mein “architecture decides shape, components fill it” line.</p>
+          <p>E-commerce architecture sketch yaad karo: User → UI → API Gateway → User/Product/Order services → Database (payment bahar gateway se). <strong>3 styles:</strong> layered (presentation → logic → data-access → DB; fayda: separation, maintenance), client-server (browser → server → DB), MVC (User → View → Controller → Model → DB). <strong>OrderService ka component detail:</strong> createOrder(), validateOrder(), calculateTotal(), applyDiscount(), cancelOrder() — interfaces, classes, methods, data structures sab define hote hain. Arch-vs-component table: high-level vs detailed, structure vs pieces, modules vs classes/functions, relationships vs logic. <strong>Yaad rakhne ke liye: Architecture = Building Plan, Component = Room Design.</strong></p>
         </section>
 
         <section aria-labelledby="q10">
@@ -429,6 +442,7 @@
             <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Structure static, behaviour dynamic — sequence time dikhata hai.</span></figcaption>
           </figure>
           <p><strong>Testing types (levels + techniques):</strong> <strong>unit testing</strong> (single component in isolation — MCQ 20), <strong>integration testing</strong> (connected modules saath mein), <strong>system testing</strong> (poora system requirements par), <strong>acceptance testing</strong> (customer approval). Techniques: black-box (bina code dekhe input-output) vs white-box (code paths dekhkar).</p>
+          <p>UI process chain order mein: users samjho → tasks pehchano → interface design → prototype → evaluate → improve. 5 principles examples ke saath: <strong>consistency</strong> (sab buttons ek jaise), <strong>simplicity</strong> (extra complexity hatao), <strong>feedback</strong> (“Save” → “File saved successfully”), <strong>error prevention</strong> (galti hone hi na do), <strong>user control</strong> (undo/cancel/back/delete-confirmation). UML 6 diagrams: use-case (Customer → login/search/cart/order), class (Customer: name/email + login()/logout()), sequence (User → Login UI → Auth → DB → wapas chain), activity (login → validate → Yes-Home/No-Error), state (Created → Pending → Shipped → Delivered), deployment (Mobile → Web → App → DB servers). Testing 7 types: unit (calculate_total() akela), integration (login + database), system (login → search → cart → payment → order poora flow), acceptance (customer approval), regression (nayi feature ke baad purane tests), performance (response/throughput/scalability), security (unauthorized access, injection). Levels yaad rakhne ka chain: Unit → Integration → System → Acceptance.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-test-title fig-test-desc">
@@ -457,6 +471,7 @@
             </div>
             <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Neeche unit, upar acceptance — scope badhta jaata hai.</span></figcaption>
           </figure>
+          <p>Reference depth for Q10: UI process chain order mein — users samjho → tasks pehchano → interface design → prototype → evaluate → improve. 5 principles examples ke saath: <strong>consistency</strong> (ek jaise buttons), <strong>simplicity</strong> (extra complexity hatao), <strong>feedback</strong> (“Save” → “File saved successfully”), <strong>error prevention</strong> (galti hone hi na do), <strong>user control</strong> (undo/cancel/back/delete-confirmation). 6 UML diagrams: use-case (Customer → login/search/cart/order), class (Customer: name/email + login()/logout()), sequence (User → Login UI → Auth → DB → wapas chain), activity (login → validate → Yes-Home/No-Error), state (Created → Pending → Shipped → Delivered), deployment (Mobile → Web → App → DB servers). 7 testing types: unit (calculate_total() akela), integration (login + database), system (poora login→order flow), acceptance (customer approval), regression (nayi feature ke baad purane tests), performance (response/throughput/scalability), security (unauthorized access, injection). Level chain: Unit → Integration → System → Acceptance.</p>
           <p><strong>Exam-ready plan:</strong> UI golden rules (3) + steps, UML 2 families with 2 examples each, testing 4 levels bottom-up + black/white-box, FIG.005 + FIG.006.</p>
         </section>
 
@@ -557,7 +572,10 @@
             <li><strong>Modularity + information hiding:</strong> each module does one job and keeps its internal data private.</li>
             <li><strong>Incremental + iterative development:</strong> build in small pieces, take feedback, improve.</li>
             <li><strong>Documentation and measurement:</strong> write decisions down, measure progress — control is impossible without this.</li>
+            <li><strong>Reusability:</strong> reuse libraries, APIs, frameworks — saves time, fewer defects.</li>
+            <li><strong>Maintainability:</strong> design software so bug fixes, features, and updates happen without rewrites.</li>
           </ul>
+          <p>Lock the reference examples too: <strong>manufactured vs developed</strong> — a laptop is manufactured, but Windows/Android/a banking app is developed (cost sits in design + maintenance). <strong>Wear-out:</strong> hardware degrades from heat/stress/age; software breaks through modification (new feature → unexpected bug → more modification). <strong>Abstraction:</strong> using <code>sort(data)</code> needs no knowledge of the inner algorithm. <strong>Complexity:</strong> an e-commerce app's UI, auth, product, payment, order, database, and notification services — managing this is exactly why SE exists. Formal touch: Mitchell's Task/Performance/Experience definition of learning.</p>
           <div class="definition">
             <span class="meta-label">EXAM DEFINITION</span>
             <p>Software Engineering is the systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software.</p>
@@ -582,6 +600,8 @@
             <li><strong>Unified Process (UP):</strong> use-case driven, architecture-centric, iterative — inception, elaboration, construction, transition phases.</li>
             <li><strong>Concurrent:</strong> activities run in parallel states (e.g. part of design with coding) — for large/client-server systems.</li>
           </ul>
+          <p>Expand the generic activities a little: in <strong>communication</strong> grasp problems, requirements, expectations, and business objectives; in <strong>planning</strong> decide what/who/how-long/resources/risks; <strong>modeling</strong> covers requirements analysis, architecture, database, UI, and component design; <strong>construction</strong> = coding + testing; <strong>deployment</strong> covers installation, training, feedback, and maintenance — feedback loops back into communication.</p>
+          <p>Fix two more models firmly: <strong>Waterfall's</strong> strengths (simple, clear documentation, easy management) and weaknesses (change is hard, late feedback, late software) — for stable-requirement projects. <strong>Incremental's</strong> e-commerce example: Increment-1 login, 2 products, 3 cart, 4 payment — benefits: early delivery, feedback, lower risk. <strong>Spiral</strong> analyses risk every loop (planning → risk → engineering → evaluation) — for big risky projects, but costly and complex. In the <strong>V-model</strong> every development step has a testing pair (requirements↔acceptance, system-design↔system-testing, architecture↔integration, module↔unit) — test planning runs side by side.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-proc-title-en fig-proc-desc-en">
@@ -646,6 +666,7 @@
             </table>
           </div>
           <p>Agile tools in one line: <strong>JIRA</strong> (backlog/sprint/issue tracking) and <strong>Kanban board</strong> (To-Do → Doing → Done columns visualizing flow). The case studies (mental health-care system, wilderness weather system) teach that different domains need process tailoring — one model never fits everywhere.</p>
+          <p>Memorize the Agile cycle in order: requirement → iteration planning → development → testing → working software → customer feedback → next iteration. Characteristics: <strong>iterative</strong> (short sprints, e.g. Sprint-1 login, Sprint-2 search), <strong>customer collaboration</strong> (regular feedback), <strong>welcomed change</strong> (change is not failure), <strong>frequent delivery</strong>, <strong>continuous testing</strong> (no end-phase wait). Instagram example: plan-driven does full design→code→test→release once; Agile does Sprint-1 login, 2 profile, 3 posts, 4 comments, 5 notifications — user feedback after every sprint.</p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-agile-title-en fig-agile-desc-en">
@@ -699,6 +720,7 @@
           </ul>
           <p><strong>Testing in XP:</strong> programmers write unit tests (TDD), customers define acceptance tests; both automated and run on every integration. Testing is a continuous activity, not a phase.</p>
           <p><strong>Pair programming:</strong> two programmers on one machine — a <strong>driver</strong> (writes code) and a <strong>navigator</strong> (reviews + thinks); roles rotate. Benefits: real-time review (defects caught instantly), knowledge sharing (lower bus factor), better design. Cost: two people on one task — but cheaper than defect-fixing cost.</p>
+          <p>Three more practices in detail: the <strong>TDD cycle</strong> — write test → it fails → write code → it passes → refactor (repeat); <strong>small releases</strong> — frequent small working versions instead of everything at once; <strong>refactoring</strong> — same outside behaviour, cleaner inside (complex code → maintainable code). List pair programming's benefits: continuous review, fewer defects, knowledge sharing, better design, less dependence on one developer.</p>
           <p><strong>Exam-ready plan:</strong> XP definition + 5–6 practice bullets, testing para (TDD + acceptance + continuous), pair programming (driver/navigator + 2 benefits), ending with a one-line tradeoff.</p>
         </section>
 
@@ -726,6 +748,7 @@
             </table>
           </div>
           <p>The memorizing formula: user vs system = difference of <strong>audience and detail</strong> (customer-language vs developer-language); functional vs non-functional = difference of <strong>what vs how-well</strong>. Write non-functionals measurably (not “fast” but “responds in 2 sec”) — that line earns the extra mark.</p>
+          <p>Fix the banking examples: user requirement — “the user should be able to transfer money to another account” (simple language); system requirement — “authenticated customers may transfer ₹1–₹1,00,000 to a registered beneficiary” (exact + measurable). Functional list: login, registration, search, payment, report, order placement. Non-functional list: performance, security, reliability, usability, scalability, availability. One-line comparison: user = user-level need (book a ticket), system = technical detail (generate booking ID), functional = what it does (generate invoice), non-functional = how well (2-sec response). <strong>Memory formula: Functional → WHAT? Non-functional → HOW WELL? User → what does the user want? System → how must the system provide it?</strong></p>
           <figure class="figure-card">
             <div class="figure-canvas">
               <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-req-title-en fig-req-desc-en">
@@ -777,6 +800,7 @@
           </ul>
           <p><strong>Ways of writing:</strong> <strong>natural language</strong> (simple, but ambiguity risk), <strong>structured language</strong> (forms/templates + controlled vocabulary — best balance), <strong>tabular/graphical</strong> (tables, use-case diagrams — the insulin-pump case study wrote every condition exactly with structured + tabular SRS), <strong>formal/mathematical</strong> (precise, but not everyone understands it — for critical systems).</p>
           <p><strong>Exam-ready plan:</strong> SRS definition + 5 qualities, then the 4-part structure headings, then 4 writing styles with tradeoffs, insulin-pump example line.</p>
+          <p>Expand with the reference detail: an SRS serves 6 roles — developers (what to build), customers (verify), testers (test cases), managers (effort estimates), designers (architecture), change control (impact tracking). <strong>Structure in a bit more detail:</strong> introduction (purpose, scope, definitions, references, overview), overall description (perspective, functions, user classes, environment, constraints, assumptions), specific requirements (functional + non-functional + interfaces), appendix (models, TBD list). <strong>Structured SRS example (FR-01 User Login):</strong> Input = email + password; Processing = validate credentials; Output = login success/failed — this format kills ambiguity.</p>
         </section>
 
         <section aria-labelledby="q7-en">
@@ -795,6 +819,7 @@
             <li><strong>Management (maintain):</strong> change control — evaluate every change request (cost/impact), and on approval update documents + traceability, maintain versions. Without management, scope creep sinks the project.</li>
           </ul>
           <p><strong>Exam-ready plan:</strong> start with the spiral-view line, then 4 activities each with meaning + 1 technique/example, ending with the closing line “validation is the cheapest fix, management stops scope creep”.</p>
+          <p>Detail from the reference: requirements come from customers, users, managers, domain experts, regulations, and existing systems. Pick techniques by stakeholder — <strong>interviews</strong> (direct questions), <strong>questionnaires</strong> (many users), <strong>observation</strong> (watch real work), <strong>workshops</strong> (all stakeholders together), <strong>prototyping</strong> (rough version to clear confusion). In analysis, catch conflicts — e.g. Customer A “login needs a password” vs Customer B “no password” — never proceed unresolved. Validation checklist: correct, complete, consistent, feasible, unambiguous, testable. Fix bad requirements like “very fast” into “responds in 2 sec for 95% requests” — measurable = testable. Management flow: change request → impact analysis → approval → documents update → design/code/test changes.</p>
         </section>
 
         <section aria-labelledby="q8-en">
@@ -812,6 +837,7 @@
             <li><strong>Pattern-based design:</strong> reuse proven solutions of repeated problems (like a known pattern for login sessions) — saves design time and brings reliability, because the pattern is already tested.</li>
           </ul>
           <p><strong>Exam-ready plan:</strong> design = requirements-to-blueprint line, then 5 concepts with one-line meanings, then 4 model views, then the pattern = proven-solution-reuse line.</p>
+          <p>Reference detail for depth: the 5-step design process — <strong>analyse requirements</strong> → <strong>architectural design</strong> (overall structure) → <strong>data design</strong> (entities, relations, storage) → <strong>interface design</strong> (user-system, component-component, external) → <strong>component design</strong> (each module/class in detail). Cohesion–coupling via the payment example: processing + validation + confirmation together (closely related = high cohesion, good); Module A depending on Module B for everything (high coupling = bad). Models: architectural (big blocks), data (structures), interface (communication), component (pieces), class (classes + relations). Famous patterns: <strong>Singleton</strong> (only one instance), <strong>Factory</strong> (hide creation logic), <strong>Observer</strong> (subject changes → notify observers) — benefits: reuse, maintainability, common vocabulary, less effort.</p>
         </section>
 
         <section aria-labelledby="q9-en">
@@ -855,6 +881,7 @@
             <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Structure on top, detail below — scope shrinks, detail grows.</span></figcaption>
           </figure>
           <p><strong>Exam-ready plan:</strong> architecture = blocks + connections + layered example, component = class detail + Cart example, FIG.004 levels, ending with the “architecture decides shape, components fill it” line.</p>
+          <p>Memorize the e-commerce architecture sketch: User → UI → API Gateway → User/Product/Order services → Database (payment via outside gateway). <strong>3 styles:</strong> layered (presentation → logic → data-access → DB; benefit: separation, maintenance), client-server (browser → server → DB), MVC (User → View → Controller → Model → DB). <strong>OrderService component detail:</strong> createOrder(), validateOrder(), calculateTotal(), applyDiscount(), cancelOrder() — interfaces, classes, methods, and data structures all get defined. Arch-vs-component table: high-level vs detailed, structure vs pieces, modules vs classes/functions, relationships vs logic. <strong>Remember: Architecture = Building Plan, Component = Room Design.</strong></p>
         </section>
 
         <section aria-labelledby="q10-en">
@@ -930,6 +957,7 @@
             </div>
             <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Unit at the bottom, acceptance on top — scope keeps growing.</span></figcaption>
           </figure>
+          <p>Reference depth for Q10: UI process chain in order — understand users → identify tasks → design interface → prototype → evaluate → improve. 5 principles with examples: <strong>consistency</strong> (uniform buttons), <strong>simplicity</strong> (no extra complexity), <strong>feedback</strong> (“Save” → “File saved successfully”), <strong>error prevention</strong> (don't let errors happen), <strong>user control</strong> (undo/cancel/back/delete-confirmation). 6 UML diagrams: use-case (Customer → login/search/cart/order), class (Customer: name/email + login()/logout()), sequence (User → Login UI → Auth → DB → back chain), activity (login → validate → Yes-Home/No-Error), state (Created → Pending → Shipped → Delivered), deployment (Mobile → Web → App → DB servers). 7 testing types: unit (calculate_total() alone), integration (login + database), system (full login→order flow), acceptance (customer approval), regression (old tests after new feature), performance (response/throughput/scalability), security (unauthorized access, injection). Level chain: Unit → Integration → System → Acceptance.</p>
           <p><strong>Exam-ready plan:</strong> UI golden rules (3) + steps, UML 2 families with 2 examples each, testing 4 levels bottom-up + black/white-box, FIG.005 + FIG.006.</p>
         </section>
 
