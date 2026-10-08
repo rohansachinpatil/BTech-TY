@@ -13,8 +13,8 @@
   --font-heading: "Space Grotesk", "Arial", sans-serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
   --font-reading: "DM Sans", "Arial", sans-serif;
-  --page-width: 1160px;
-  --reading-width: 70ch;
+  --page-width: 1400px;
+  --reading-width: 80ch;
 }
 
 *,
@@ -222,7 +222,7 @@ button {
 }
 
 .page-intro {
-  max-width: 58ch;
+  max-width: 80ch;
   margin: 0;
   color: var(--ink-soft);
   font-size: clamp(1.15rem, 1.7vw, 1.38rem);
@@ -349,7 +349,7 @@ button {
 }
 
 .progress-view {
-  max-width: 760px;
+  max-width: none;
 }
 
 .progress-view[hidden] {
@@ -357,7 +357,7 @@ button {
 }
 
 .syllabus-view {
-  max-width: 900px;
+  max-width: none;
 }
 
 .syllabus-view[hidden] {
@@ -454,7 +454,7 @@ button {
 }
 
 .progress-summary {
-  max-width: 58ch;
+  max-width: 80ch;
   margin: 1.1rem 0 2rem;
   color: var(--ink-soft);
 }
@@ -1340,7 +1340,20 @@ mark.search-hit-current {
   }
 }
 
-/* Timeline navigation rail + interactive draggable scrubber.
+/* Timeline navigation rail removed: sab pages se scroll line bar hataya gaya. */
+.timeline-rail,
+.timeline-track,
+.timeline-scrubber,
+.timeline-dot,
+.timeline-current,
+.timeline-count,
+.timeline-hint,
+.timeline-spine,
+.timeline-fill,
+.timeline-tip {
+  display: none !important;
+}
+/* Removed timeline rail styles below (kept for history, overridden by hide rule above).
    Outline-only, dot-grid track, blue sole accent. No shadows/gradients. */
 .timeline-rail {
   position: fixed;

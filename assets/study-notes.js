@@ -139,6 +139,10 @@
     { title: "ML Mid-sem QB with answers", url: "subject/Machine%20Learning/qb-mid-sem.html", subject: "MACHINE LEARNING", keywords: "supervised unsupervised regression classification precision recall confusion matrix gradient descent logistic sigmoid mid sem question bank", snippet: "27 questions: ML types, metrics, confusion matrix, MAE RMSE, regression, sigmoid." },
     { title: "Software Engineering and Project Management — Study Notes", url: "subject/Software%20Engineering%20and%20Project%20Management/index.html", subject: "SEPM", keywords: "sepm syllabus software engineering", snippet: "Syllabus, contents, QB section aur progress." },
     { title: "SEPM Mid-sem QB with answers", url: "subject/Software%20Engineering%20and%20Project%20Management/qb-mid-sem.html", subject: "SEPM", keywords: "waterfall agile xp scrum srs requirements uml testing sdlc mid sem question bank", snippet: "10 theory + 20 MCQ: process models, Agile, XP, SRS, design, UML, testing." },
+    { title: "Full Stack Development — Study Notes", url: "subject/Full%20Stack%20Development/index.html", subject: "FULL STACK DEVELOPMENT", keywords: "fsd javascript syllabus", snippet: "Syllabus, contents, QB section aur progress." },
+    { title: "FSD Mid-sem QB with answers", url: "subject/Full%20Stack%20Development/qb-mid-sem.html", subject: "FULL STACK DEVELOPMENT", keywords: "javascript var let const syntax datatypes operators events addeventlistener string methods mid sem question bank", snippet: "6 theory + 6 MCQ: JS intro, syntax, language basics, events, handling, strings." },
+    { title: "Internet of Things — Study Notes", url: "subject/Internet%20of%20Things/index.html", subject: "INTERNET OF THINGS", keywords: "iot client server ip mac tcp udp sensors syllabus", snippet: "Syllabus, contents, QB section aur progress." },
+    { title: "Wireless Communication — Study Notes", url: "subject/Wireless%20Communication/index.html", subject: "WIRELESS COMMUNICATION", keywords: "ofdm gsm gprs modulation pulse shaping spectral efficiency cellular syllabus", snippet: "Syllabus, contents, QB section aur progress." },
   ];
 
   if (!document.getElementById("search-fab")) {
@@ -342,10 +346,9 @@
     document.body.append(fab, overlay);
   }
 
-  // Timeline navigation rail + interactive draggable scrubber.
-  // Har note page par sections se auto-banta hai. Spine SVG hover/click
-  // par curve hoti hai (elastic bend), scrubber drag se page scroll hota hai.
+  // Timeline navigation rail removed: learner ne sab pages se scroll line bar hatane ko kaha.
   (() => {
+    return;
     if (!document.querySelector(".prose-column")) return;
 
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;

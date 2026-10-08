@@ -1,0 +1,1314 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="FSD mid-sem QB: JavaScript basics ke 6 theory + 6 MCQ ke detailed lengthy answers, Hinglish aur English mein.">
+  <title>Mid-sem QB with answers — Full Stack Development</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+  <style>
+    .note-layout { grid-template-columns: minmax(0, 1fr); }
+    .prose-column { max-width: none; }
+    .prose-column .figure-card { margin: 1.6rem 0 0.6rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha QB par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Full Stack Development contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">FSD / MID-SEM QB</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#qb">QB</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" id="lang-toggle" type="button">English</button>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">FULL STACK DEVELOPMENT</a> &nbsp; / &nbsp; MID-SEM QB</p>
+      <h1 class="page-title">Mid-sem QB with answers</h1>
+      <p class="page-intro" data-lang="hi">Har question ka detailed lengthy answer alag block mein — pehle original Question, phir Answer, phir exam-ready plan. 6 theory (JavaScript intro, syntax, language basics, events, event handling, strings) + 6 MCQ, code examples, tables aur diagrams ke saath. Upar button se English mein switch karo.</p>
+      <p class="page-intro" data-lang="en" hidden>Every question answered in its own detailed block — Question first, then Answer, then exam-ready plan. 6 theory (JavaScript intro, syntax, language basics, events, event handling, strings) + 6 MCQs with code examples, tables and diagrams. Use the button above to switch back to Hinglish.</p>
+      <div class="note-meta">
+        <span>QB set</span>
+        <span>JavaScript basics</span>
+        <span>Source: learner QB (PDF)</span>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column" data-lang="hi">
+        <section aria-labelledby="how-to-use">
+          <p class="section-kicker">START HERE / KAISE USE KARO</p>
+          <h2 id="how-to-use">Is QB ko 3 rounds mein karo</h2>
+          <p class="dropcap">Har question ka answer alag block mein hai: pehle original Question, phir uska detailed lengthy Answer, phir exam-ready plan. Pehle Question padhkar khud socho, phir Answer se match karo — JavaScript mein definition + code example + output teeno likhne par full marks milte hain, isliye har answer mein code yaad karo.</p>
+          <p><strong>Round 1:</strong> Q1–Q3 ke points + code zubani recall karo (features, syntax rules, var/let/const). <strong>Round 2:</strong> Q4–Q6 ke examples khud likhkar chalao (events, handling methods, string methods ka output). <strong>Round 3:</strong> 6 MCQs bina dekhe solve karo, phir theory answers apne words mein likhne ki practice karo — har answer mein definition + example + output zaroor include karo.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Q1 (JavaScript kya hai + features), Q2 (basic syntax), Q3 (language basics: variables, datatypes, operators, loops, functions), Q4 (events + examples), Q5 (event handling ke methods), Q6 (string + string methods) + 6 MCQs. Kul 12 Q&amp;A blocks.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">PREREQUISITE / PEHLE SE AANA CHAHIYE</span>
+            <p>Ye chhoti prerequisite explanation hai (QB mein nahi thi, samajhne ke liye add ki): HTML page ka structure banata hai, CSS usko sundar banata hai, JavaScript usmein <strong>behaviour</strong> daalta hai — button dabane par kya ho, form kaise check ho, data kaise badle. Neeche FIG.001 yehi role dikhata hai.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="q1">
+          <p class="section-kicker">THEORY · Q1</p>
+          <h2 id="q1">JavaScript kya hai? Features</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is JavaScript? Explain its features.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>JavaScript (JS)</strong> web pages ko interactive banane wali <strong>lightweight, interpreted, high-level programming language</strong> hai. 1995 mein Brendan Eich ne Netscape ke liye banayi thi; aaj ye browser ke andar bhi chalti hai aur Node.js se server par bhi. Simple line mein: HTML = haddi (structure), CSS = kapde (style), JavaScript = dimaag (behaviour).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>JavaScript is a lightweight, interpreted, client-side scripting language used to make web pages interactive and dynamic.</p>
+          </div>
+          <p><strong>Kahan use hoti hai (2–3 examples pakke karo):</strong> form validation (email khaali hai toh error dikhao), button click par content badalna, image slider, live search suggestions, aur Node.js se backend APIs. Java alag language hai — naam similar hai par dono ka koi direct rishta nahi (ye line examiner ko pasand aati hai).</p>
+          <p><strong>Features — exam mein ye 7–8 points likho, har ek ke saath ek-line matlab:</strong></p>
+          <ul class="plain-list">
+            <li><strong>Lightweight aur interpreted:</strong> compile karne ki zarurat nahi; browser line-by-line padhkar turant chalata hai. Isliye chhota code bhi fast test hota hai.</li>
+            <li><strong>Client-side scripting:</strong> code user ke browser mein chalta hai, har chhoti cheez ke liye server par jaane ki zarurat nahi — jaise form check browser mein hi ho jaata hai.</li>
+            <li><strong>Dynamically typed:</strong> variable banate waqt type likhna nahi padta; <code>let x = 5</code> baad mein <code>x = "Rohan"</code> bhi ho sakta hai. Type value se decide hoti hai.</li>
+            <li><strong>Event-driven:</strong> user ke kaam (click, typing, mouse move) par react karti hai — Q4–Q5 isi par based hain.</li>
+            <li><strong>Case-sensitive:</strong> <code>Name</code> aur <code>name</code> do alag variables hain — spelling ka dhyaan rakho.</li>
+            <li><strong>Platform independent (browser mein):</strong> jo code Chrome mein chalta hai wahi Firefox/Edge mein bhi chalta hai.</li>
+            <li><strong>Object-based + first-class functions:</strong> objects, arrays se kaam hota hai; function ko variable mein rakh sakte ho, argument mein bhej sakte ho.</li>
+            <li><strong>Huge ecosystem:</strong> React, Angular, Vue (frontend) aur Node.js, Express (backend) — ek language se full stack banta hai, isliye subject ka naam Full Stack Development hai.</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / HTML vs CSS vs JS</caption>
+              <thead>
+                <tr><th scope="col">Language</th><th scope="col">Kaam</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>HTML</td><td>Structure banata hai</td><td><code>&lt;button&gt;Login&lt;/button&gt;</code></td></tr>
+                <tr><td>CSS</td><td>Style/sundarta deta hai</td><td><code>button { color: blue; }</code></td></tr>
+                <tr><td>JavaScript</td><td>Behaviour/interaction deta hai</td><td><code>button.onclick = greet</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-js-title fig-js-desc">
+                <title id="fig-js-title">HTML, CSS, JavaScript ka role</title>
+                <desc id="fig-js-desc">HTML structure, CSS style, JavaScript behaviour deta hai.</desc>
+                <defs>
+                  <pattern id="dots-js" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-js" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-js)"></rect>
+                <rect x="30" y="90" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="95" y="114" text-anchor="middle" class="diagram-text">HTML</text>
+                <text x="95" y="132" text-anchor="middle" class="diagram-muted">structure</text>
+                <rect x="195" y="90" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="260" y="114" text-anchor="middle" class="diagram-text">CSS</text>
+                <text x="260" y="132" text-anchor="middle" class="diagram-muted">style</text>
+                <rect x="360" y="90" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="425" y="114" text-anchor="middle" class="diagram-text">JS</text>
+                <text x="425" y="132" text-anchor="middle" class="diagram-muted">behaviour</text>
+                <path d="M160 120h35m130 0h35" class="diagram-stroke" marker-end="url(#arrow-js)"></path>
+                <text x="260" y="50" text-anchor="middle" class="diagram-muted">BROWSER PAGE BANATA HAI</text>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">HTML + CSS STATIC · JS DYNAMIC</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>HTML haddi, CSS kapde, JS dimaag.</span></figcaption>
+          </figure>
+          <p><strong>Pehla code (output samjho):</strong></p>
+          <pre class="code-sample"><code>&lt;button onclick="alert('Namaste!')"&gt;Click karo&lt;/button&gt;
+// Button dabate hi popup mein "Namaste!" dikhega.
+// alert() browser ka built-in function hai.</code></pre>
+          <p><strong>Exam-ready plan:</strong> pehle 2-line definition, phir HTML/CSS/JS table, phir 6–7 features har ek ek-line matlab ke saath, end mein ek chhota example + FIG.001. “Java ≠ JavaScript” wali line bonus mark dilati hai.</p>
+          <p class="analogy"><strong>Analogy:</strong> HTML ghar ki deewarein hain, CSS paint aur sajawat hai, JavaScript ghar ki bijli aur doorbell hai — dabao toh kuch hota hai.</p>
+        </section>
+
+        <section aria-labelledby="q2">
+          <p class="section-kicker">THEORY · Q2</p>
+          <h2 id="q2">JavaScript ka basic syntax</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the basic syntax of JavaScript.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Syntax</strong> matlab language ke likhne ke niyam — jaise Hindi mein vyakaran. JavaScript ka syntax C-family jaisa hai: statements, semicolon, brackets aur comments. Ye answer <strong>rules</strong> par focus karta hai; Q3 mein variables-datatypes-operators ka detail aayega (dono QB questions overlap karte hain — farq neeche flag kiya hai).</p>
+          <div class="definition">
+            <span class="meta-label">OVERLAP FLAG / QB CLARITY</span>
+            <p>Q2 aur Q3 QB mein alag-alag hain par topic overlap karta hai. Exam strategy: Q2 mein <strong>likhne ke niyam</strong> (syntax rules) likho, Q3 mein <strong>building blocks</strong> (variables, datatypes, operators, loops, functions) likho. Dono mein same cheez repeat mat karo.</p>
+          </div>
+          <p><strong>1. Script kahan likhte hain — 2 tareeke:</strong></p>
+          <pre class="code-sample"><code>&lt;!-- Internal: HTML ke andar --&gt;
+&lt;script&gt;
+  console.log("Hello FSD");
+&lt;/script&gt;
+
+&lt;!-- External: alag file, best practice --&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+          <p>External file best practice hai kyunki HTML saaf rehta hai aur ek hi <code>.js</code> file kai pages par reuse hoti hai.</p>
+          <p><strong>2. Statements aur semicolon:</strong> har instruction ek statement hai; line ke end mein semicolon lagana good habit hai (browser bina semicolon ke bhi samajh leta hai — ASI rule — par exam mein semicolon likho).</p>
+          <pre class="code-sample"><code>let name = "Rohan";   // statement 1
+let marks = 85;       // statement 2
+console.log(name);    // output: Rohan</code></pre>
+          <p><strong>3. Case-sensitivity + identifiers:</strong> <code>marks</code> aur <code>Marks</code> alag hain. Naam (identifier) letter, <code>_</code> ya <code>$</code> se start ho, beech mein digits chalenge — <code>1stRank</code> galat hai, <code>rank1</code> sahi hai. Reserved words (<code>let</code>, <code>const</code>, <code>function</code>) naam mein use nahi hote.</p>
+          <p><strong>4. Comments — 2 types:</strong></p>
+          <pre class="code-sample"><code>// Single-line comment: ye line chalegi nahi
+/* Multi-line comment:
+   ye saari lines skip hongi */</code></pre>
+          <p><strong>5. Output ke 4 tareeke (exam mein table banao):</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / output methods</caption>
+              <thead>
+                <tr><th scope="col">Method</th><th scope="col">Kahan dikhta hai</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>console.log()</code></td><td>Browser console (F12)</td><td><code>console.log("debug")</code></td></tr>
+                <tr><td><code>alert()</code></td><td>Popup box</td><td><code>alert("Namaste!")</code></td></tr>
+                <tr><td><code>document.write()</code></td><td>Page par direct (purana tareeka)</td><td><code>document.write("Hello")</code></td></tr>
+                <tr><td><code>innerHTML</code></td><td>Kisi element ke andar</td><td><code>document.getElementById("p1").innerHTML = "Hi"</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-syn-title fig-syn-desc">
+                <title id="fig-syn-title">Ek statement ki anatomy</title>
+                <desc id="fig-syn-desc">Keyword, naam, operator, value aur semicolon se statement banta hai.</desc>
+                <defs>
+                  <pattern id="dots-syn" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-syn" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-syn)"></rect>
+                <text x="260" y="40" text-anchor="middle" class="diagram-muted">STATEMENT = KEYWORD + NAME + VALUE + ;</text>
+                <rect x="30" y="70" width="100" height="50" class="diagram-stroke"></rect>
+                <text x="80" y="99" text-anchor="middle" class="diagram-text">let</text>
+                <rect x="145" y="70" width="110" height="50" class="diagram-stroke"></rect>
+                <text x="200" y="99" text-anchor="middle" class="diagram-text">marks</text>
+                <rect x="270" y="70" width="60" height="50" class="diagram-stroke"></rect>
+                <text x="300" y="99" text-anchor="middle" class="diagram-text">=</text>
+                <rect x="345" y="70" width="80" height="50" class="diagram-stroke"></rect>
+                <text x="385" y="99" text-anchor="middle" class="diagram-text">85</text>
+                <rect x="440" y="70" width="50" height="50" class="diagram-stroke"></rect>
+                <text x="465" y="99" text-anchor="middle" class="diagram-text">;</text>
+                <path d="M130 95h15m110 0h15m60 0h15m80 0h15" class="diagram-stroke" marker-end="url(#arrow-syn)"></path>
+                <text x="80" y="155" text-anchor="middle" class="diagram-muted">keyword</text>
+                <text x="200" y="155" text-anchor="middle" class="diagram-muted">identifier</text>
+                <text x="300" y="155" text-anchor="middle" class="diagram-muted">operator</text>
+                <text x="385" y="155" text-anchor="middle" class="diagram-muted">value</text>
+                <text x="465" y="155" text-anchor="middle" class="diagram-muted">end</text>
+                <text x="260" y="205" text-anchor="middle" class="diagram-muted">// COMMENTS CODE NAHI CHALATE</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Har statement ke 5 tukde pehchano.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> script ke 2 tareeke (internal/external + best practice line), statements + semicolon example, case-sensitivity + identifier rules, comments ke 2 types, output ki 4-row table, FIG.002. Har rule ke saath ek-line code likho.</p>
+        </section>
+
+        <section aria-labelledby="q3">
+          <p class="section-kicker">THEORY · Q3</p>
+          <h2 id="q3">JavaScript language basics</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain JavaScript Language Basics.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Language basics</strong> matlab wo building blocks jinse har program banta hai: variables, datatypes, operators, conditions, loops, functions, arrays aur objects. Q2 mein niyam the, yahan <strong>samaan</strong> hai — longest answer yahi banta hai, isliye headings mein likho.</p>
+          <p><strong>1. Variables — <code>var</code> vs <code>let</code> vs <code>const</code> (sabse important table):</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / var vs let vs const</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col"><code>var</code> (purana)</th><th scope="col"><code>let</code> (naya)</th><th scope="col"><code>const</code> (sthir)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Reassign</td><td>Ho sakta hai</td><td>Ho sakta hai</td><td>Nahi ho sakta</td></tr>
+                <tr><td>Redeclare</td><td>Ho sakta hai</td><td>Nahi ho sakta</td><td>Nahi ho sakta</td></tr>
+                <tr><td>Scope</td><td>Function scope</td><td>Block scope <code>{ }</code></td><td>Block scope <code>{ }</code></td></tr>
+                <tr><td>Use</td><td>Avoid karo</td><td>Badalne wali value</td><td>Fixed value (PI, URL)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre class="code-sample"><code>var oldWay = 10;      // purana, avoid karo
+let marks = 85;       // badal sakta hai
+marks = 90;           // OK
+const PI = 3.14;      // fixed
+// PI = 3.15;         // ERROR: const dobara assign nahi hota
+
+// MCQ 2 aur 3 isi table se hain:
+// reassign wali variable = let, constant = const</code></pre>
+          <p><strong>2. Datatypes — 2 families:</strong> <strong>Primitive</strong> (single value): <code>string</code> (<code>"Rohan"</code>), <code>number</code> (<code>85</code>, <code>3.14</code>), <code>boolean</code> (<code>true/false</code>), <code>undefined</code> (value di hi nahi), <code>null</code> (jaanboojhkar khaali). <strong>Non-primitive</strong> (collection): <code>object</code>, <code>array</code>, <code>function</code>. <code>typeof</code> operator se type check hota hai: <code>typeof "Hi"</code> → <code>"string"</code>.</p>
+          <p><strong>3. Operators — 4 groups ek example se:</strong></p>
+          <pre class="code-sample"><code>let a = 10, b = 3;
+// Arithmetic: + - * / %
+console.log(a + b);   // 13
+console.log(a % b);   // 1 (remainder)
+// Comparison: == === != &gt; &lt;
+console.log(a == "10");   // true (sirf value check)
+console.log(a === "10");  // false (value + type dono check)
+// Logical: &amp;&amp; || !
+console.log(a &gt; 5 &amp;&amp; b &lt; 5);  // true
+// Assignment: = += -=
+a += 5;  // a ab 15</code></pre>
+          <p><strong>Yaad rakhne wali line:</strong> <code>==</code> sirf value dekhta hai, <code>===</code> value + type dono — exam mein <code>===</code> likhna safe answer hai.</p>
+          <p><strong>4. Conditions aur loops (flow control):</strong></p>
+          <pre class="code-sample"><code>// if-else: pass/fail check
+let m = 72;
+if (m &gt;= 40) {
+  console.log("Pass");
+} else {
+  console.log("Fail");
+}
+
+// for loop: 1 se 5 tak ginti
+for (let i = 1; i &lt;= 5; i++) {
+  console.log(i);   // 1 2 3 4 5
+}
+
+// while loop: jab tak condition true
+let n = 3;
+while (n &gt; 0) {
+  console.log(n);   // 3 2 1
+  n--;
+}</code></pre>
+          <p><strong>5. Functions — kaam ko naam dena:</strong></p>
+          <pre class="code-sample"><code>// Function banao + chalao
+function greet(name) {
+  return "Namaste, " + name + "!";
+}
+console.log(greet("Rohan"));  // Namaste, Rohan!
+
+// Function ke fayde: reuse, chhota code, testing easy</code></pre>
+          <p><strong>6. Arrays aur objects — data ko pack karna:</strong></p>
+          <pre class="code-sample"><code>// Array: list (index 0 se start)
+let fruits = ["apple", "mango", "banana"];
+console.log(fruits[1]);       // mango
+console.log(fruits.length);   // 3
+
+// Object: key-value jodi (jaise form ka data)
+let student = { name: "Rohan", marks: 85 };
+console.log(student.name);    // Rohan
+console.log(student.marks);   // 85</code></pre>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-base-title fig-base-desc">
+                <title id="fig-base-title">Language basics ka map</title>
+                <desc id="fig-base-desc">Variables, datatypes, logic aur data structures chaar pillars hain.</desc>
+                <defs>
+                  <pattern id="dots-base" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-base" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-base)"></rect>
+                <rect x="190" y="18" width="140" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">JS BASICS</text>
+                <path d="M225 58v26m70-28v28" class="diagram-stroke"></path>
+                <path d="M60 84h400" class="diagram-stroke"></path>
+                <path d="M60 84v30m133 0v-30m134 0v30m133 0v-30" class="diagram-stroke" marker-end="url(#arrow-base)"></path>
+                <rect x="20" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="72" y="138" text-anchor="middle" class="diagram-text">STORE</text>
+                <text x="72" y="156" text-anchor="middle" class="diagram-muted">let const</text>
+                <rect x="140" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="192" y="138" text-anchor="middle" class="diagram-text">TYPES</text>
+                <text x="192" y="156" text-anchor="middle" class="diagram-muted">+ operators</text>
+                <rect x="260" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="312" y="138" text-anchor="middle" class="diagram-text">LOGIC</text>
+                <text x="312" y="156" text-anchor="middle" class="diagram-muted">if · loops</text>
+                <rect x="380" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="432" y="138" text-anchor="middle" class="diagram-text">PACK</text>
+                <text x="432" y="156" text-anchor="middle" class="diagram-muted">array obj</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">STORE → TYPE → LOGIC → PACK</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Char pillars: store, type, logic, pack.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> var/let/const table sabse pehle (MCQ 2–3 yahin se), phir datatypes ki 2 families + <code>typeof</code>, operators ke 4 groups with code, if + for + while ka ek-ek example, function + array + object ka ek-ek example, FIG.003. Har code ke neeche output comment mein likho.</p>
+        </section>
+
+        <section aria-labelledby="q4">
+          <p class="section-kicker">THEORY · Q4</p>
+          <h2 id="q4">JavaScript events kya hain?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What are JavaScript Events? Explain with examples.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Event</strong> matlab browser mein hone wali koi <strong>ghatna</strong> — user ne click kiya, key dabayi, mouse ghumaya, page load hua ya form submit hua. JavaScript in ghatnaon ko <strong>sunti</strong> hai aur turant <strong>react</strong> karti hai (koi function chala deti hai). Isi ko event-driven programming kehte hain (Q1 ka feature yaad karo).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>An event is an action or occurrence (click, keypress, load, submit) that JavaScript can detect and respond to using an event handler function.</p>
+          </div>
+          <p><strong>Kaise kaam karta hai — 3 steps:</strong> 1) Event hota hai (user clicks button), 2) Browser uska naam pehchanta hai (<code>click</code>), 3) Handler function chalta hai (<code>greet()</code>). Formula: <strong>Event + Element + Handler = Interaction.</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / common events</caption>
+              <thead>
+                <tr><th scope="col">Category</th><th scope="col">Event</th><th scope="col">Kab hota hai</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mouse</td><td><code>click</code></td><td>Element par click (MCQ 5)</td></tr>
+                <tr><td>Mouse</td><td><code>mouseover</code></td><td>Mouse element ke upar aaye</td></tr>
+                <tr><td>Keyboard</td><td><code>keydown</code></td><td>Key dabate hi</td></tr>
+                <tr><td>Form</td><td><code>submit</code></td><td>Form submit ho</td></tr>
+                <tr><td>Form</td><td><code>change</code></td><td>Input ki value badle</td></tr>
+                <tr><td>Window</td><td><code>load</code></td><td>Page poori load ho jaye</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Examples — 3 levels, easy se real tak:</strong></p>
+          <pre class="code-sample"><code>// Example 1: click par popup (sabse easy)
+&lt;button onclick="alert('Tumne click kiya!')"&gt;Dabao&lt;/button&gt;
+
+// Example 2: click par text badalna
+&lt;p id="msg"&gt;Purana text&lt;/p&gt;
+&lt;button onclick="document.getElementById('msg').innerHTML = 'Naya text!'"&gt;
+  Badlo
+&lt;/button&gt;
+// Pehle "Purana text", click ke baad "Naya text!"
+
+// Example 3: form submit par check (real-life use)
+&lt;form onsubmit="return checkForm()"&gt;
+  &lt;input id="email" type="text" placeholder="Email likho"&gt;
+  &lt;input type="submit" value="Bhejo"&gt;
+&lt;/form&gt;
+&lt;script&gt;
+function checkForm() {
+  let e = document.getElementById("email").value;
+  if (e === "") {
+    alert("Email khaali hai!");
+    return false;   // form ruk jayega, submit nahi hoga
+  }
+  return true;      // sab sahi, form jayega
+}
+&lt;/script&gt;</code></pre>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-ev-title fig-ev-desc">
+                <title id="fig-ev-title">Event ka flow</title>
+                <desc id="fig-ev-desc">User action se handler function tak ka teen-step flow.</desc>
+                <defs>
+                  <pattern id="dots-ev" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-ev" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-ev)"></rect>
+                <rect x="20" y="100" width="130" height="55" class="diagram-stroke"></rect>
+                <text x="85" y="122" text-anchor="middle" class="diagram-text">USER</text>
+                <text x="85" y="140" text-anchor="middle" class="diagram-muted">click / type</text>
+                <rect x="195" y="100" width="130" height="55" class="diagram-stroke"></rect>
+                <text x="260" y="122" text-anchor="middle" class="diagram-text">BROWSER</text>
+                <text x="260" y="140" text-anchor="middle" class="diagram-muted">event pakdo</text>
+                <rect x="370" y="100" width="130" height="55" class="diagram-stroke"></rect>
+                <text x="435" y="122" text-anchor="middle" class="diagram-text">HANDLER</text>
+                <text x="435" y="140" text-anchor="middle" class="diagram-muted">function chalao</text>
+                <path d="M150 127h45m130 0h45" class="diagram-stroke" marker-end="url(#arrow-ev)"></path>
+                <text x="260" y="50" text-anchor="middle" class="diagram-muted">EVENT + ELEMENT + HANDLER</text>
+                <text x="260" y="205" text-anchor="middle" class="diagram-muted">click → pehchano → greet()</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>User kare, browser pakde, function chale.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition + 3-step flow formula, 6-row events table (category ke saath), 3 examples (popup → text change → form validation), FIG.004. Form validation wala example sabse zyada marks dilata hai.</p>
+          <p class="analogy"><strong>Analogy:</strong> Event doorbell hai, browser kaan hai jo ghanti sunta hai, handler function wo vyakti hai jo darwaza kholne daudta hai.</p>
+        </section>
+
+        <section aria-labelledby="q5">
+          <p class="section-kicker">THEORY · Q5</p>
+          <h2 id="q5">Events handle karne ke methods</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain different methods of handling JavaScript events.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Event handling</strong> matlab ye decide karna ki event hone par <strong>kaunsa function chalega</strong> aur usko <strong>kaise jodenge</strong>. Total <strong>3 methods</strong> hain — easy se best tak. MCQ 6 ka answer (recommended = <code>addEventListener()</code>) isi answer ki last line hai.</p>
+          <p><strong>Method 1 — Inline HTML attribute (sabse easy, purana):</strong> HTML tag ke andar hi handler likh do.</p>
+          <pre class="code-sample"><code>&lt;button onclick="sayHi()"&gt;Click&lt;/button&gt;
+&lt;script&gt;
+function sayHi() {
+  alert("Hi!");
+}
+&lt;/script&gt;
+// Fayda: likhna easy. Nuksaan: HTML + JS mix, ek event par ek hi kaam.</code></pre>
+          <p><strong>Method 2 — DOM property (beech wala):</strong> JavaScript mein element pakadkar property set karo.</p>
+          <pre class="code-sample"><code>&lt;button id="btn2"&gt;Click&lt;/button&gt;
+&lt;script&gt;
+document.getElementById("btn2").onclick = function() {
+  alert("DOM property se Hi!");
+};
+// Nuksaan: dobara assign karoge toh purana handler MIT jayega.
+document.getElementById("btn2").onclick = function() {
+  alert("Ye wala chalega, pehla gaya!");
+};
+&lt;/script&gt;</code></pre>
+          <p><strong>Method 3 — <code>addEventListener()</code> (recommended, modern, exam ka hero):</strong> ek element par <strong>kai handlers</strong> jod sakte ho, purana mit-ta nahi; <code>removeEventListener()</code> se hata bhi sakte ho.</p>
+          <pre class="code-sample"><code>&lt;button id="btn3"&gt;Click&lt;/button&gt;
+&lt;script&gt;
+let b = document.getElementById("btn3");
+
+function first() { alert("Pehla kaam"); }
+function second() { alert("Dusra kaam"); }
+
+b.addEventListener("click", first);
+b.addEventListener("click", second);
+// Ek click par DONO chalenge — yehi iski taakat hai!
+
+b.removeEventListener("click", first);
+// Ab sirf second chalega.
+&lt;/script&gt;</code></pre>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / teeno methods ka farq</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Inline</th><th scope="col">DOM property</th><th scope="col"><code>addEventListener</code></th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Kahan likhte hain</td><td>HTML tag mein</td><td>JS mein property</td><td>JS mein method</td></tr>
+                <tr><td>Ek event, kitne kaam</td><td>Sirf 1</td><td>Sirf 1 (purana mit-ta hai)</td><td>Kai (sab chalte hain)</td></tr>
+                <tr><td>HTML saaf rehta hai?</td><td>Nahi (mix)</td><td>Haan</td><td>Haan (best)</td></tr>
+                <tr><td>Remove kar sakte hain?</td><td>Mushkil</td><td>Mushkil</td><td>Haan (<code>removeEventListener</code>)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-handle-title fig-handle-desc">
+                <title id="fig-handle-title">Teen handling methods</title>
+                <desc id="fig-handle-desc">Inline ek kaam, DOM property ek kaam, listener kai kaam jodta hai.</desc>
+                <defs>
+                  <pattern id="dots-handle" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-handle" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-handle)"></rect>
+                <rect x="195" y="20" width="130" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="46" text-anchor="middle" class="diagram-text">BUTTON</text>
+                <path d="M225 62v24m35-24v24m35-24v24" class="diagram-stroke"></path>
+                <path d="M70 86h380" class="diagram-stroke"></path>
+                <path d="M70 86v30m190 0v-30m190 0v30" class="diagram-stroke" marker-end="url(#arrow-handle)"></path>
+                <rect x="20" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="90" y="140" text-anchor="middle" class="diagram-text">INLINE</text>
+                <text x="90" y="158" text-anchor="middle" class="diagram-muted">1 kaam</text>
+                <rect x="190" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="260" y="140" text-anchor="middle" class="diagram-text">ONCLICK =</text>
+                <text x="260" y="158" text-anchor="middle" class="diagram-muted">1 kaam</text>
+                <rect x="360" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="430" y="140" text-anchor="middle" class="diagram-text">LISTENER</text>
+                <text x="430" y="158" text-anchor="middle" class="diagram-muted">kai kaam ★</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">RECOMMENDED = addEventListener()</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Listener hi kai kaam jod sakta hai.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> teeno methods headings mein, har ek ke saath code + output, phir 4-row comparison table, end mein recommended line (<code>addEventListener</code> kyun best hai: multiple handlers + clean HTML + removable) + FIG.005.</p>
+        </section>
+
+        <section aria-labelledby="q6">
+          <p class="section-kicker">THEORY · Q6</p>
+          <h2 id="q6">JavaScript string aur string methods</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is a JavaScript String? Explain string methods.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>String</strong> matlab quotes ke andar likha hua <strong>text</strong> — naam, email, address sab strings hain. Single (<code>'Hi'</code>), double (<code>"Hi"</code>) ya backtick (<code>`Hi`</code>) quotes mein likho. String characters ka <strong>ordered collection</strong> hai aur <strong>immutable</strong> hai — matlab methods original string ko badalte nahi, <strong>nayi string banakar dete</strong> hain (ye line exam mein zaroor likho).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A string is a sequence of characters enclosed in quotes, used to store and manipulate text. Strings are immutable in JavaScript.</p>
+          </div>
+          <pre class="code-sample"><code>let a = 'Rohan';     // single quotes
+let b = "Patil";     // double quotes
+let c = `Hello ${a}`;  // backtick: ${} mein variable ghus jata hai
+console.log(c);      // Hello Rohan
+
+let s = "JavaScript";
+console.log(s.length);  // 10 (property, brackets nahi)
+console.log(s[0]);      // J (index 0 se start)</code></pre>
+          <p><strong>String methods — 12 sabse important, har ek example + output ke saath (exam mein 6–8 likhna kaafi hai):</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / string methods</caption>
+              <thead>
+                <tr><th scope="col">Method</th><th scope="col">Kaam</th><th scope="col">Example → Output</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>length</code></td><td>Lambai (property)</td><td><code>"Hello".length</code> → <code>5</code></td></tr>
+                <tr><td><code>toUpperCase()</code></td><td>Bade letters</td><td><code>"hi".toUpperCase()</code> → <code>"HI"</code></td></tr>
+                <tr><td><code>toLowerCase()</code></td><td>Chhote letters</td><td><code>"HI".toLowerCase()</code> → <code>"hi"</code></td></tr>
+                <tr><td><code>charAt(i)</code></td><td>i-th character</td><td><code>"Hello".charAt(1)</code> → <code>"e"</code></td></tr>
+                <tr><td><code>indexOf(x)</code></td><td>Pehli position</td><td><code>"Hello".indexOf("l")</code> → <code>2</code></td></tr>
+                <tr><td><code>slice(a,b)</code></td><td>Tukda nikaalna</td><td><code>"Hello".slice(1,4)</code> → <code>"ell"</code></td></tr>
+                <tr><td><code>replace()</code></td><td>Badalna</td><td><code>"Hi Rohan".replace("Rohan","Patil")</code> → <code>"Hi Patil"</code></td></tr>
+                <tr><td><code>trim()</code></td><td>Aage-peeche space hatana</td><td><code>"  hi  ".trim()</code> → <code>"hi"</code></td></tr>
+                <tr><td><code>split()</code></td><td>Todkar array banana</td><td><code>"a,b".split(",")</code> → <code>["a","b"]</code></td></tr>
+                <tr><td><code>concat()</code></td><td>Jodna</td><td><code>"Hi ".concat("there")</code> → <code>"Hi there"</code></td></tr>
+                <tr><td><code>includes()</code></td><td>Hai ya nahi (true/false)</td><td><code>"Hello".includes("ell")</code> → <code>true</code></td></tr>
+                <tr><td><code>substring(a,b)</code></td><td>slice jaisa tukda</td><td><code>"Hello".substring(0,2)</code> → <code>"He"</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Ek saath chalta example (output line-by-line samjho):</strong></p>
+          <pre class="code-sample"><code>let name = "  rohan patil  ";
+console.log(name.trim());                 // "rohan patil"
+console.log(name.trim().toUpperCase());   // "ROHAN PATIL"
+console.log(name.trim().split(" "));      // ["rohan", "patil"]
+console.log("Hello".replace("H", "J"));   // "Jello"
+// Original 'name' same raha — immutability ka saboot!</code></pre>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-str-title fig-str-desc">
+                <title id="fig-str-title">String methods ka map</title>
+                <desc id="fig-str-desc">Naapna, badalna, dhoondhna, todna-jodna chaar kaam.</desc>
+                <defs>
+                  <pattern id="dots-str" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-str" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-str)"></rect>
+                <rect x="195" y="20" width="130" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="46" text-anchor="middle" class="diagram-text">"Hello"</text>
+                <path d="M225 62v24m35-24v24m35-24v24" class="diagram-stroke"></path>
+                <path d="M70 86h380" class="diagram-stroke"></path>
+                <path d="M70 86v30m190 0v-30m190 0v30" class="diagram-stroke" marker-end="url(#arrow-str)"></path>
+                <rect x="20" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="90" y="140" text-anchor="middle" class="diagram-text">NAAPO</text>
+                <text x="90" y="158" text-anchor="middle" class="diagram-muted">length · charAt</text>
+                <rect x="190" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="260" y="140" text-anchor="middle" class="diagram-text">BADLO</text>
+                <text x="260" y="158" text-anchor="middle" class="diagram-muted">upper · lower · trim</text>
+                <rect x="360" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="430" y="140" text-anchor="middle" class="diagram-text">TODO-JODO</text>
+                <text x="430" y="158" text-anchor="middle" class="diagram-muted">split · concat · slice</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">ORIGINAL STRING NAHI BADALTI ★</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Naapo, badlo, todo-jodo — original safe.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition + immutability line, quotes ke 3 tareeke + backtick example, <code>length</code> + indexing line, 8–12 methods ki table (example → output), chaining wala code block, FIG.006. <code>slice</code> vs <code>substring</code> ka ek farq likh do toh extra mark pakka.</p>
+        </section>
+
+        <section aria-labelledby="mcq-heading">
+          <p class="section-kicker">MCQ · 6 QUESTIONS</p>
+          <h2 id="mcq-heading">6 MCQs — answer with short reason</h2>
+          <p>Pehle khud option tick karo, phir answer match karo. Har answer ke saath ek-line reason hai — wahi reason theory answers mein kaam aayega.</p>
+          <ol class="issue-list">
+            <li><div><h3>Q1. Which language is primarily used to make web pages interactive?</h3><p>A) HTML · B) CSS · C) JavaScript · D) SQL<br><strong>Answer: C</strong> — HTML structure, CSS style, interactive behaviour sirf JavaScript deta hai (Q1, FIG.001).</p></div></li>
+            <li><div><h3>Q2. Which symbol is commonly used to declare a variable that can be reassigned?</h3><p>A) const · B) let · C) static · D) define<br><strong>Answer: B</strong> — <code>let</code> reassign ho sakta hai, <code>const</code> nahi (Q3 table).</p></div></li>
+            <li><div><h3>Q3. Which keyword declares a constant?</h3><p>A) var · B) let · C) const · D) constant<br><strong>Answer: C</strong> — <code>const PI = 3.14</code> fixed rehta hai; “constant” naam ka keyword JS mein hai hi nahi.</p></div></li>
+            <li><div><h3>Q4. Which function is used to display output in the browser console?</h3><p>A) print() · B) display() · C) console.log() · D) writeConsole()<br><strong>Answer: C</strong> — debugging ka standard tareeka <code>console.log()</code> hai; output F12 console mein dikhta hai (Q2 table).</p></div></li>
+            <li><div><h3>Q5. Which event occurs when a user clicks an HTML element?</h3><p>A) hover · B) click · C) press · D) select<br><strong>Answer: B</strong> — click event button/element dabane par hota hai; hover sirf mouse upar laane par hota hai (Q4 table).</p></div></li>
+            <li><div><h3>Q6. Which method is recommended for attaching an event listener?</h3><p>A) addEventListener() · B) addEvent() · C) attachEventListenerOnly() · D) eventAdd()<br><strong>Answer: A</strong> — <code>addEventListener()</code> modern recommended tareeka hai: kai handlers + clean HTML + removable (Q5).</p></div></li>
+          </ol>
+          <p><strong>Exam-ready plan:</strong> 6 mein se 6 lane ke liye 3 jodi yaad karo — let/const (Q2–Q3), console.log (Q4), click + addEventListener (Q5–Q6). Galat options pehchano: “constant”, “display()”, “press” JS mein standard naam nahi hain.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading">Ek nazar mein</h2>
+          <dl class="recap-list">
+            <dt>JS kya hai</dt><dd>Lightweight, interpreted, client-side scripting — HTML structure, CSS style, JS behaviour.</dd>
+            <dt>Syntax</dt><dd>Internal/external script, statements + semicolon, case-sensitive, 2 comments, 4 output methods.</dd>
+            <dt>Basics</dt><dd>let (reassign) vs const (fixed); 5 primitive + objects/arrays; == vs ===; if/loops/functions.</dd>
+            <dt>Events</dt><dd>Event + element + handler; click/mouseover/keydown/submit/change/load; form validation example.</dd>
+            <dt>Handling</dt><dd>Inline (1 kaam) → onclick property (1 kaam) → addEventListener (kai kaam ★ recommended).</dd>
+            <dt>Strings</dt><dd>Quotes mein text, immutable; length/upper/lower/slice/replace/trim/split/concat/includes.</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Ab bina upar dekhe teen answers recall karo:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne answers likho; phir Q-tables se match karo.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Reassign hone wali variable ka keyword kaunsa hai?
+              <ol type="A"><li>let</li><li>const</li><li>static</li><li>define</li></ol>
+            </li>
+            <li>Click event handle karne ka recommended method kaunsa hai?
+              <ol type="A"><li>addEventListener()</li><li>addEvent()</li><li>onclick mix</li><li>eventAdd()</li></ol>
+            </li>
+            <li><code>"Hello".slice(1,4)</code> ka output kya hoga?
+              <ol type="A"><li>ell</li><li>Hello</li><li>Hell</li><li>llo</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: DOM, functions detail aur backend topics — QB understanding confirm hone ke baad.</p>
+        </section>
+      </article>
+
+      <article class="prose-column" data-lang="en" hidden>
+        <section aria-labelledby="how-to-use-en">
+          <p class="section-kicker">START HERE / HOW TO USE</p>
+          <h2 id="how-to-use-en">How this QB is organized</h2>
+          <p class="dropcap">Every question sits in its own block: the original Question first, then its detailed lengthy Answer, then an exam-ready plan. Read the Question and think first, then match with the Answer — in JavaScript, writing definition + code example + output together earns full marks, so memorize the code in every answer.</p>
+          <p><strong>Round 1:</strong> Orally recall Q1–Q3 points + code (features, syntax rules, var/let/const). <strong>Round 2:</strong> Write and run Q4–Q6 examples yourself (events, handling methods, string-method outputs). <strong>Round 3:</strong> Solve the 6 MCQs blind, then practise writing theory answers in your own words — always include definition + example + output.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Q1 (what JavaScript is + features), Q2 (basic syntax), Q3 (language basics: variables, datatypes, operators, loops, functions), Q4 (events + examples), Q5 (event-handling methods), Q6 (string + string methods) + 6 MCQs. Total 12 Q&amp;A blocks.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">PREREQUISITE</span>
+            <p>This small prerequisite (not in the QB, added for clarity): HTML builds structure, CSS beautifies it, JavaScript adds <strong>behaviour</strong> — what happens on a button press, how a form is checked, how data changes. FIG.001 below shows exactly this role.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="q1-en">
+          <p class="section-kicker">THEORY · Q1</p>
+          <h2 id="q1-en">What is JavaScript? Features</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is JavaScript? Explain its features.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>JavaScript (JS)</strong> is the <strong>lightweight, interpreted, high-level programming language</strong> that makes web pages interactive. Created by Brendan Eich in 1995 for Netscape, it runs inside browsers today and on servers via Node.js. In one line: HTML = bones (structure), CSS = clothes (style), JavaScript = brain (behaviour).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>JavaScript is a lightweight, interpreted, client-side scripting language used to make web pages interactive and dynamic.</p>
+          </div>
+          <p><strong>Where it is used (fix 2–3 examples):</strong> form validation (show an error if email is empty), changing content on button click, image sliders, live search suggestions, and backend APIs via Node.js. Java is a different language — the names look similar but there is no direct relation (examiners like this line).</p>
+          <p><strong>Features — write these 7–8 points in the exam, each with a one-line meaning:</strong></p>
+          <ul class="plain-list">
+            <li><strong>Lightweight and interpreted:</strong> no compilation needed; the browser reads and runs it line by line. Even small code is quick to test.</li>
+            <li><strong>Client-side scripting:</strong> code runs in the user's browser, so small things need no server round-trip — form checks happen right in the browser.</li>
+            <li><strong>Dynamically typed:</strong> no type annotation needed; <code>let x = 5</code> can later become <code>x = "Rohan"</code>. The type follows the value.</li>
+            <li><strong>Event-driven:</strong> reacts to user actions (click, typing, mouse move) — Q4–Q5 are built on this.</li>
+            <li><strong>Case-sensitive:</strong> <code>Name</code> and <code>name</code> are two different variables — watch the spelling.</li>
+            <li><strong>Platform independent (in browsers):</strong> code running in Chrome also runs in Firefox/Edge.</li>
+            <li><strong>Object-based + first-class functions:</strong> works with objects and arrays; functions can sit in variables and pass as arguments.</li>
+            <li><strong>Huge ecosystem:</strong> React, Angular, Vue (frontend) and Node.js, Express (backend) — one language builds the full stack, which is why the subject is called Full Stack Development.</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / HTML vs CSS vs JS</caption>
+              <thead>
+                <tr><th scope="col">Language</th><th scope="col">Job</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>HTML</td><td>Builds structure</td><td><code>&lt;button&gt;Login&lt;/button&gt;</code></td></tr>
+                <tr><td>CSS</td><td>Gives style</td><td><code>button { color: blue; }</code></td></tr>
+                <tr><td>JavaScript</td><td>Gives behaviour</td><td><code>button.onclick = greet</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-js-title-en fig-js-desc-en">
+                <title id="fig-js-title-en">Roles of HTML, CSS, JavaScript</title>
+                <desc id="fig-js-desc-en">HTML gives structure, CSS style, JavaScript behaviour.</desc>
+                <defs>
+                  <pattern id="dots-js-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-js-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-js-en)"></rect>
+                <rect x="30" y="90" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="95" y="114" text-anchor="middle" class="diagram-text">HTML</text>
+                <text x="95" y="132" text-anchor="middle" class="diagram-muted">structure</text>
+                <rect x="195" y="90" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="260" y="114" text-anchor="middle" class="diagram-text">CSS</text>
+                <text x="260" y="132" text-anchor="middle" class="diagram-muted">style</text>
+                <rect x="360" y="90" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="425" y="114" text-anchor="middle" class="diagram-text">JS</text>
+                <text x="425" y="132" text-anchor="middle" class="diagram-muted">behaviour</text>
+                <path d="M160 120h35m130 0h35" class="diagram-stroke" marker-end="url(#arrow-js-en)"></path>
+                <text x="260" y="50" text-anchor="middle" class="diagram-muted">BROWSER BUILDS THE PAGE</text>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">HTML + CSS STATIC · JS DYNAMIC</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>HTML bones, CSS clothes, JS brain.</span></figcaption>
+          </figure>
+          <p><strong>First code (understand the output):</strong></p>
+          <pre class="code-sample"><code>&lt;button onclick="alert('Namaste!')"&gt;Click karo&lt;/button&gt;
+// A popup shows "Namaste!" the moment the button is pressed.
+// alert() is a built-in browser function.</code></pre>
+          <p><strong>Exam-ready plan:</strong> first a 2-line definition, then the HTML/CSS/JS table, then 6–7 features each with a one-line meaning, ending with a small example + FIG.001. The “Java ≠ JavaScript” line earns bonus marks.</p>
+        </section>
+
+        <section aria-labelledby="q2-en">
+          <p class="section-kicker">THEORY · Q2</p>
+          <h2 id="q2-en">Basic syntax of JavaScript</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the basic syntax of JavaScript.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Syntax</strong> means the writing rules of a language — like grammar. JavaScript syntax resembles the C family: statements, semicolons, brackets, and comments. This answer focuses on <strong>rules</strong>; Q3 details variables, datatypes, and operators (the two QB questions overlap — the difference is flagged below).</p>
+          <div class="definition">
+            <span class="meta-label">OVERLAP FLAG</span>
+            <p>Q2 and Q3 are separate in the QB but overlap. Exam strategy: write <strong>writing rules</strong> (syntax rules) in Q2 and <strong>building blocks</strong> (variables, datatypes, operators, loops, functions) in Q3. Do not repeat the same content in both.</p>
+          </div>
+          <p><strong>1. Where scripts live — 2 ways:</strong></p>
+          <pre class="code-sample"><code>&lt;!-- Internal: inside HTML --&gt;
+&lt;script&gt;
+  console.log("Hello FSD");
+&lt;/script&gt;
+
+&lt;!-- External: separate file, best practice --&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+          <p>External files are best practice because HTML stays clean and one <code>.js</code> file is reused across pages.</p>
+          <p><strong>2. Statements and semicolons:</strong> each instruction is a statement; ending lines with semicolons is good habit (browsers cope without them via ASI, but write semicolons in the exam).</p>
+          <pre class="code-sample"><code>let name = "Rohan";   // statement 1
+let marks = 85;       // statement 2
+console.log(name);    // output: Rohan</code></pre>
+          <p><strong>3. Case-sensitivity + identifiers:</strong> <code>marks</code> and <code>Marks</code> differ. Names (identifiers) must start with a letter, <code>_</code>, or <code>$</code>, digits allowed later — <code>1stRank</code> is wrong, <code>rank1</code> is right. Reserved words (<code>let</code>, <code>const</code>, <code>function</code>) cannot be names.</p>
+          <p><strong>4. Comments — 2 types:</strong></p>
+          <pre class="code-sample"><code>// Single-line comment: this line never runs
+/* Multi-line comment:
+   all these lines are skipped */</code></pre>
+          <p><strong>5. Four output methods (make this table in the exam):</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / output methods</caption>
+              <thead>
+                <tr><th scope="col">Method</th><th scope="col">Shown where</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>console.log()</code></td><td>Browser console (F12)</td><td><code>console.log("debug")</code></td></tr>
+                <tr><td><code>alert()</code></td><td>Popup box</td><td><code>alert("Namaste!")</code></td></tr>
+                <tr><td><code>document.write()</code></td><td>Directly on page (old style)</td><td><code>document.write("Hello")</code></td></tr>
+                <tr><td><code>innerHTML</code></td><td>Inside an element</td><td><code>document.getElementById("p1").innerHTML = "Hi"</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-syn-title-en fig-syn-desc-en">
+                <title id="fig-syn-title-en">Anatomy of a statement</title>
+                <desc id="fig-syn-desc-en">Keyword, name, operator, value and semicolon form a statement.</desc>
+                <defs>
+                  <pattern id="dots-syn-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-syn-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-syn-en)"></rect>
+                <text x="260" y="40" text-anchor="middle" class="diagram-muted">STATEMENT = KEYWORD + NAME + VALUE + ;</text>
+                <rect x="30" y="70" width="100" height="50" class="diagram-stroke"></rect>
+                <text x="80" y="99" text-anchor="middle" class="diagram-text">let</text>
+                <rect x="145" y="70" width="110" height="50" class="diagram-stroke"></rect>
+                <text x="200" y="99" text-anchor="middle" class="diagram-text">marks</text>
+                <rect x="270" y="70" width="60" height="50" class="diagram-stroke"></rect>
+                <text x="300" y="99" text-anchor="middle" class="diagram-text">=</text>
+                <rect x="345" y="70" width="80" height="50" class="diagram-stroke"></rect>
+                <text x="385" y="99" text-anchor="middle" class="diagram-text">85</text>
+                <rect x="440" y="70" width="50" height="50" class="diagram-stroke"></rect>
+                <text x="465" y="99" text-anchor="middle" class="diagram-text">;</text>
+                <path d="M130 95h15m110 0h15m60 0h15m80 0h15" class="diagram-stroke" marker-end="url(#arrow-syn-en)"></path>
+                <text x="80" y="155" text-anchor="middle" class="diagram-muted">keyword</text>
+                <text x="200" y="155" text-anchor="middle" class="diagram-muted">identifier</text>
+                <text x="300" y="155" text-anchor="middle" class="diagram-muted">operator</text>
+                <text x="385" y="155" text-anchor="middle" class="diagram-muted">value</text>
+                <text x="465" y="155" text-anchor="middle" class="diagram-muted">end</text>
+                <text x="260" y="205" text-anchor="middle" class="diagram-muted">// COMMENTS NEVER RUN</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Recognize the 5 pieces of every statement.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> 2 script styles (internal/external + best-practice line), statements + semicolon example, case-sensitivity + identifier rules, 2 comment types, 4-row output table, FIG.002. Write one line of code with every rule.</p>
+        </section>
+
+        <section aria-labelledby="q3-en">
+          <p class="section-kicker">THEORY · Q3</p>
+          <h2 id="q3-en">JavaScript language basics</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain JavaScript Language Basics.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Language basics</strong> are the building blocks of every program: variables, datatypes, operators, conditions, loops, functions, arrays, and objects. Q2 covered rules; here comes the <strong>material</strong> — this is the longest answer, so write it under headings.</p>
+          <p><strong>1. Variables — <code>var</code> vs <code>let</code> vs <code>const</code> (most important table):</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / var vs let vs const</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col"><code>var</code> (old)</th><th scope="col"><code>let</code> (new)</th><th scope="col"><code>const</code> (fixed)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Reassign</td><td>Allowed</td><td>Allowed</td><td>Not allowed</td></tr>
+                <tr><td>Redeclare</td><td>Allowed</td><td>Not allowed</td><td>Not allowed</td></tr>
+                <tr><td>Scope</td><td>Function scope</td><td>Block scope <code>{ }</code></td><td>Block scope <code>{ }</code></td></tr>
+                <tr><td>Use</td><td>Avoid</td><td>Changing value</td><td>Fixed value (PI, URL)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre class="code-sample"><code>var oldWay = 10;      // old style, avoid
+let marks = 85;       // can change
+marks = 90;           // OK
+const PI = 3.14;      // fixed
+// PI = 3.15;         // ERROR: const cannot be reassigned
+
+// MCQs 2 and 3 come from this table:
+// reassignable variable = let, constant = const</code></pre>
+          <p><strong>2. Datatypes — 2 families:</strong> <strong>Primitive</strong> (single value): <code>string</code> (<code>"Rohan"</code>), <code>number</code> (<code>85</code>, <code>3.14</code>), <code>boolean</code> (<code>true/false</code>), <code>undefined</code> (no value given), <code>null</code> (deliberately empty). <strong>Non-primitive</strong> (collections): <code>object</code>, <code>array</code>, <code>function</code>. Check types with <code>typeof</code>: <code>typeof "Hi"</code> → <code>"string"</code>.</p>
+          <p><strong>3. Operators — 4 groups in one example:</strong></p>
+          <pre class="code-sample"><code>let a = 10, b = 3;
+// Arithmetic: + - * / %
+console.log(a + b);   // 13
+console.log(a % b);   // 1 (remainder)
+// Comparison: == === != &gt; &lt;
+console.log(a == "10");   // true (value only)
+console.log(a === "10");  // false (value + type)
+// Logical: &amp;&amp; || !
+console.log(a &gt; 5 &amp;&amp; b &lt; 5);  // true
+// Assignment: = += -=
+a += 5;  // a is now 15</code></pre>
+          <p><strong>Memorize this line:</strong> <code>==</code> checks value only, <code>===</code> checks value + type — writing <code>===</code> is the safe exam answer.</p>
+          <p><strong>4. Conditions and loops (flow control):</strong></p>
+          <pre class="code-sample"><code>// if-else: pass/fail check
+let m = 72;
+if (m &gt;= 40) {
+  console.log("Pass");
+} else {
+  console.log("Fail");
+}
+
+// for loop: counting 1 to 5
+for (let i = 1; i &lt;= 5; i++) {
+  console.log(i);   // 1 2 3 4 5
+}
+
+// while loop: while condition is true
+let n = 3;
+while (n &gt; 0) {
+  console.log(n);   // 3 2 1
+  n--;
+}</code></pre>
+          <p><strong>5. Functions — naming a job:</strong></p>
+          <pre class="code-sample"><code>// Define + call a function
+function greet(name) {
+  return "Namaste, " + name + "!";
+}
+console.log(greet("Rohan"));  // Namaste, Rohan!
+
+// Benefits: reuse, shorter code, easy testing</code></pre>
+          <p><strong>6. Arrays and objects — packing data:</strong></p>
+          <pre class="code-sample"><code>// Array: a list (index starts at 0)
+let fruits = ["apple", "mango", "banana"];
+console.log(fruits[1]);       // mango
+console.log(fruits.length);   // 3
+
+// Object: key-value pairs (like form data)
+let student = { name: "Rohan", marks: 85 };
+console.log(student.name);    // Rohan
+console.log(student.marks);   // 85</code></pre>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-base-title-en fig-base-desc-en">
+                <title id="fig-base-title-en">Map of language basics</title>
+                <desc id="fig-base-desc-en">Variables, datatypes, logic and data structures are four pillars.</desc>
+                <defs>
+                  <pattern id="dots-base-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-base-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-base-en)"></rect>
+                <rect x="190" y="18" width="140" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">JS BASICS</text>
+                <path d="M225 58v26m70-28v28" class="diagram-stroke"></path>
+                <path d="M60 84h400" class="diagram-stroke"></path>
+                <path d="M60 84v30m133 0v-30m134 0v30m133 0v-30" class="diagram-stroke" marker-end="url(#arrow-base-en)"></path>
+                <rect x="20" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="72" y="138" text-anchor="middle" class="diagram-text">STORE</text>
+                <text x="72" y="156" text-anchor="middle" class="diagram-muted">let const</text>
+                <rect x="140" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="192" y="138" text-anchor="middle" class="diagram-text">TYPES</text>
+                <text x="192" y="156" text-anchor="middle" class="diagram-muted">+ operators</text>
+                <rect x="260" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="312" y="138" text-anchor="middle" class="diagram-text">LOGIC</text>
+                <text x="312" y="156" text-anchor="middle" class="diagram-muted">if · loops</text>
+                <rect x="380" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="432" y="138" text-anchor="middle" class="diagram-text">PACK</text>
+                <text x="432" y="156" text-anchor="middle" class="diagram-muted">array obj</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">STORE → TYPE → LOGIC → PACK</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Four pillars: store, type, logic, pack.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> the var/let/const table first (MCQs 2–3 come from here), then 2 datatype families + <code>typeof</code>, 4 operator groups with code, one example each of if + for + while, one example each of function + array + object, FIG.003. Write the output as a comment under every code block.</p>
+        </section>
+
+        <section aria-labelledby="q4-en">
+          <p class="section-kicker">THEORY · Q4</p>
+          <h2 id="q4-en">What are JavaScript events?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What are JavaScript Events? Explain with examples.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>An <strong>event</strong> is something happening in the browser — a click, a keypress, mouse movement, page load, or form submit. JavaScript <strong>listens</strong> for these happenings and instantly <strong>reacts</strong> by running a function. This is called event-driven programming (recall the Q1 feature).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>An event is an action or occurrence (click, keypress, load, submit) that JavaScript can detect and respond to using an event handler function.</p>
+          </div>
+          <p><strong>How it works — 3 steps:</strong> 1) the event happens (user clicks a button), 2) the browser recognizes its name (<code>click</code>), 3) the handler function runs (<code>greet()</code>). Formula: <strong>Event + Element + Handler = Interaction.</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / common events</caption>
+              <thead>
+                <tr><th scope="col">Category</th><th scope="col">Event</th><th scope="col">When it fires</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mouse</td><td><code>click</code></td><td>Element clicked (MCQ 5)</td></tr>
+                <tr><td>Mouse</td><td><code>mouseover</code></td><td>Mouse comes over element</td></tr>
+                <tr><td>Keyboard</td><td><code>keydown</code></td><td>Key pressed down</td></tr>
+                <tr><td>Form</td><td><code>submit</code></td><td>Form submitted</td></tr>
+                <tr><td>Form</td><td><code>change</code></td><td>Input value changed</td></tr>
+                <tr><td>Window</td><td><code>load</code></td><td>Page fully loaded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Examples — 3 levels, easy to real:</strong></p>
+          <pre class="code-sample"><code>// Example 1: popup on click (easiest)
+&lt;button onclick="alert('You clicked!')"&gt;Press&lt;/button&gt;
+
+// Example 2: change text on click
+&lt;p id="msg"&gt;Old text&lt;/p&gt;
+&lt;button onclick="document.getElementById('msg').innerHTML = 'New text!'"&gt;
+  Change
+&lt;/button&gt;
+// "Old text" before, "New text!" after the click
+
+// Example 3: check on form submit (real-life use)
+&lt;form onsubmit="return checkForm()"&gt;
+  &lt;input id="email" type="text" placeholder="Type email"&gt;
+  &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;
+&lt;script&gt;
+function checkForm() {
+  let e = document.getElementById("email").value;
+  if (e === "") {
+    alert("Email is empty!");
+    return false;   // form stops, never submits
+  }
+  return true;      // all good, form goes
+}
+&lt;/script&gt;</code></pre>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-ev-title-en fig-ev-desc-en">
+                <title id="fig-ev-title-en">Event flow</title>
+                <desc id="fig-ev-desc-en">Three-step flow from user action to handler function.</desc>
+                <defs>
+                  <pattern id="dots-ev-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-ev-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-ev-en)"></rect>
+                <rect x="20" y="100" width="130" height="55" class="diagram-stroke"></rect>
+                <text x="85" y="122" text-anchor="middle" class="diagram-text">USER</text>
+                <text x="85" y="140" text-anchor="middle" class="diagram-muted">click / type</text>
+                <rect x="195" y="100" width="130" height="55" class="diagram-stroke"></rect>
+                <text x="260" y="122" text-anchor="middle" class="diagram-text">BROWSER</text>
+                <text x="260" y="140" text-anchor="middle" class="diagram-muted">catch event</text>
+                <rect x="370" y="100" width="130" height="55" class="diagram-stroke"></rect>
+                <text x="435" y="122" text-anchor="middle" class="diagram-text">HANDLER</text>
+                <text x="435" y="140" text-anchor="middle" class="diagram-muted">run function</text>
+                <path d="M150 127h45m130 0h45" class="diagram-stroke" marker-end="url(#arrow-ev-en)"></path>
+                <text x="260" y="50" text-anchor="middle" class="diagram-muted">EVENT + ELEMENT + HANDLER</text>
+                <text x="260" y="205" text-anchor="middle" class="diagram-muted">click → recognize → greet()</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>User acts, browser catches, function runs.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition + 3-step flow formula, 6-row events table (with categories), 3 examples (popup → text change → form validation), FIG.004. The form-validation example earns the most marks.</p>
+        </section>
+
+        <section aria-labelledby="q5-en">
+          <p class="section-kicker">THEORY · Q5</p>
+          <h2 id="q5-en">Methods of handling JavaScript events</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain different methods of handling JavaScript events.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Event handling</strong> means deciding <strong>which function runs</strong> when an event fires and <strong>how to attach it</strong>. There are <strong>3 methods</strong> — easy to best. The MCQ 6 answer (recommended = <code>addEventListener()</code>) is the last line of this answer.</p>
+          <p><strong>Method 1 — Inline HTML attribute (easiest, oldest):</strong> write the handler inside the HTML tag.</p>
+          <pre class="code-sample"><code>&lt;button onclick="sayHi()"&gt;Click&lt;/button&gt;
+&lt;script&gt;
+function sayHi() {
+  alert("Hi!");
+}
+&lt;/script&gt;
+// Plus: easy to write. Minus: HTML + JS mixed, one job per event.</code></pre>
+          <p><strong>Method 2 — DOM property (middle):</strong> grab the element in JavaScript and set its property.</p>
+          <pre class="code-sample"><code>&lt;button id="btn2"&gt;Click&lt;/button&gt;
+&lt;script&gt;
+document.getElementById("btn2").onclick = function() {
+  alert("Hi via DOM property!");
+};
+// Minus: reassigning WIPES the old handler.
+document.getElementById("btn2").onclick = function() {
+  alert("Only this one runs now!");
+};
+&lt;/script&gt;</code></pre>
+          <p><strong>Method 3 — <code>addEventListener()</code> (recommended, modern, exam hero):</strong> attach <strong>many handlers</strong> to one element without wiping old ones; remove them with <code>removeEventListener()</code>.</p>
+          <pre class="code-sample"><code>&lt;button id="btn3"&gt;Click&lt;/button&gt;
+&lt;script&gt;
+let b = document.getElementById("btn3");
+
+function first() { alert("First job"); }
+function second() { alert("Second job"); }
+
+b.addEventListener("click", first);
+b.addEventListener("click", second);
+// ONE click runs BOTH — that is its power!
+
+b.removeEventListener("click", first);
+// Now only second runs.
+&lt;/script&gt;</code></pre>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / comparing the three methods</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Inline</th><th scope="col">DOM property</th><th scope="col"><code>addEventListener</code></th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Written where</td><td>In HTML tag</td><td>As JS property</td><td>As JS method</td></tr>
+                <tr><td>Jobs per event</td><td>Only 1</td><td>Only 1 (old wiped)</td><td>Many (all run)</td></tr>
+                <tr><td>HTML stays clean?</td><td>No (mixed)</td><td>Yes</td><td>Yes (best)</td></tr>
+                <tr><td>Removable?</td><td>Hard</td><td>Hard</td><td>Yes (<code>removeEventListener</code>)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-handle-title-en fig-handle-desc-en">
+                <title id="fig-handle-title-en">Three handling methods</title>
+                <desc id="fig-handle-desc-en">Inline one job, DOM property one job, listener many jobs.</desc>
+                <defs>
+                  <pattern id="dots-handle-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-handle-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-handle-en)"></rect>
+                <rect x="195" y="20" width="130" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="46" text-anchor="middle" class="diagram-text">BUTTON</text>
+                <path d="M225 62v24m35-24v24m35-24v24" class="diagram-stroke"></path>
+                <path d="M70 86h380" class="diagram-stroke"></path>
+                <path d="M70 86v30m190 0v-30m190 0v30" class="diagram-stroke" marker-end="url(#arrow-handle-en)"></path>
+                <rect x="20" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="90" y="140" text-anchor="middle" class="diagram-text">INLINE</text>
+                <text x="90" y="158" text-anchor="middle" class="diagram-muted">1 job</text>
+                <rect x="190" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="260" y="140" text-anchor="middle" class="diagram-text">ONCLICK =</text>
+                <text x="260" y="158" text-anchor="middle" class="diagram-muted">1 job</text>
+                <rect x="360" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="430" y="140" text-anchor="middle" class="diagram-text">LISTENER</text>
+                <text x="430" y="158" text-anchor="middle" class="diagram-muted">many jobs ★</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">RECOMMENDED = addEventListener()</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Only the listener attaches many jobs.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> all three methods under headings, each with code + output, then the 4-row comparison table, ending with the recommended line (<code>addEventListener</code> is best because: multiple handlers + clean HTML + removable) + FIG.005.</p>
+        </section>
+
+        <section aria-labelledby="q6-en">
+          <p class="section-kicker">THEORY · Q6</p>
+          <h2 id="q6-en">JavaScript strings and string methods</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is a JavaScript String? Explain string methods.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>A <strong>string</strong> is <strong>text inside quotes</strong> — names, emails, addresses are all strings. Write them in single (<code>'Hi'</code>), double (<code>"Hi"</code>), or backtick (<code>`Hi`</code>) quotes. A string is an <strong>ordered collection of characters</strong> and is <strong>immutable</strong> — methods never change the original string, they return a <strong>new string</strong> (always write this line in the exam).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A string is a sequence of characters enclosed in quotes, used to store and manipulate text. Strings are immutable in JavaScript.</p>
+          </div>
+          <pre class="code-sample"><code>let a = 'Rohan';     // single quotes
+let b = "Patil";     // double quotes
+let c = `Hello ${a}`;  // backtick: ${} embeds a variable
+console.log(c);      // Hello Rohan
+
+let s = "JavaScript";
+console.log(s.length);  // 10 (a property, no brackets)
+console.log(s[0]);      // J (index starts at 0)</code></pre>
+          <p><strong>String methods — the 12 most important, each with example + output (6–8 are enough in the exam):</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / string methods</caption>
+              <thead>
+                <tr><th scope="col">Method</th><th scope="col">Job</th><th scope="col">Example → Output</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>length</code></td><td>Length (property)</td><td><code>"Hello".length</code> → <code>5</code></td></tr>
+                <tr><td><code>toUpperCase()</code></td><td>Capital letters</td><td><code>"hi".toUpperCase()</code> → <code>"HI"</code></td></tr>
+                <tr><td><code>toLowerCase()</code></td><td>Small letters</td><td><code>"HI".toLowerCase()</code> → <code>"hi"</code></td></tr>
+                <tr><td><code>charAt(i)</code></td><td>i-th character</td><td><code>"Hello".charAt(1)</code> → <code>"e"</code></td></tr>
+                <tr><td><code>indexOf(x)</code></td><td>First position</td><td><code>"Hello".indexOf("l")</code> → <code>2</code></td></tr>
+                <tr><td><code>slice(a,b)</code></td><td>Cut a piece</td><td><code>"Hello".slice(1,4)</code> → <code>"ell"</code></td></tr>
+                <tr><td><code>replace()</code></td><td>Substitute</td><td><code>"Hi Rohan".replace("Rohan","Patil")</code> → <code>"Hi Patil"</code></td></tr>
+                <tr><td><code>trim()</code></td><td>Remove outer spaces</td><td><code>"  hi  ".trim()</code> → <code>"hi"</code></td></tr>
+                <tr><td><code>split()</code></td><td>Break into array</td><td><code>"a,b".split(",")</code> → <code>["a","b"]</code></td></tr>
+                <tr><td><code>concat()</code></td><td>Join</td><td><code>"Hi ".concat("there")</code> → <code>"Hi there"</code></td></tr>
+                <tr><td><code>includes()</code></td><td>Present or not (true/false)</td><td><code>"Hello".includes("ell")</code> → <code>true</code></td></tr>
+                <tr><td><code>substring(a,b)</code></td><td>Piece like slice</td><td><code>"Hello".substring(0,2)</code> → <code>"He"</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Combined running example (follow the output line by line):</strong></p>
+          <pre class="code-sample"><code>let name = "  rohan patil  ";
+console.log(name.trim());                 // "rohan patil"
+console.log(name.trim().toUpperCase());   // "ROHAN PATIL"
+console.log(name.trim().split(" "));      // ["rohan", "patil"]
+console.log("Hello".replace("H", "J"));   // "Jello"
+// The original 'name' stayed the same — proof of immutability!</code></pre>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-str-title-en fig-str-desc-en">
+                <title id="fig-str-title-en">Map of string methods</title>
+                <desc id="fig-str-desc-en">Four jobs: measure, transform, split-join.</desc>
+                <defs>
+                  <pattern id="dots-str-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-str-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-str-en)"></rect>
+                <rect x="195" y="20" width="130" height="42" class="diagram-stroke"></rect>
+                <text x="260" y="46" text-anchor="middle" class="diagram-text">"Hello"</text>
+                <path d="M225 62v24m35-24v24m35-24v24" class="diagram-stroke"></path>
+                <path d="M70 86h380" class="diagram-stroke"></path>
+                <path d="M70 86v30m190 0v-30m190 0v30" class="diagram-stroke" marker-end="url(#arrow-str-en)"></path>
+                <rect x="20" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="90" y="140" text-anchor="middle" class="diagram-text">MEASURE</text>
+                <text x="90" y="158" text-anchor="middle" class="diagram-muted">length · charAt</text>
+                <rect x="190" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="260" y="140" text-anchor="middle" class="diagram-text">CHANGE</text>
+                <text x="260" y="158" text-anchor="middle" class="diagram-muted">upper · lower · trim</text>
+                <rect x="360" y="116" width="140" height="60" class="diagram-stroke"></rect>
+                <text x="430" y="140" text-anchor="middle" class="diagram-text">SPLIT-JOIN</text>
+                <text x="430" y="158" text-anchor="middle" class="diagram-muted">split · concat · slice</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">ORIGINAL STRING NEVER CHANGES ★</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Measure, change, split-join — original stays safe.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition + immutability line, 3 quote styles + backtick example, <code>length</code> + indexing line, 8–12 method table (example → output), chaining code block, FIG.006. One <code>slice</code> vs <code>substring</code> difference earns an extra mark.</p>
+        </section>
+
+        <section aria-labelledby="mcq-heading-en">
+          <p class="section-kicker">MCQ · 6 QUESTIONS</p>
+          <h2 id="mcq-heading-en">6 MCQs — answers with short reasons</h2>
+          <p>Tick the option yourself first, then match the answer. Each answer carries a one-line reason — the same reasons work inside theory answers.</p>
+          <ol class="issue-list">
+            <li><div><h3>Q1. Which language is primarily used to make web pages interactive?</h3><p>A) HTML · B) CSS · C) JavaScript · D) SQL<br><strong>Answer: C</strong> — HTML is structure, CSS is style, only JavaScript gives interactive behaviour (Q1, FIG.001).</p></div></li>
+            <li><div><h3>Q2. Which symbol is commonly used to declare a variable that can be reassigned?</h3><p>A) const · B) let · C) static · D) define<br><strong>Answer: B</strong> — <code>let</code> can be reassigned, <code>const</code> cannot (Q3 table).</p></div></li>
+            <li><div><h3>Q3. Which keyword declares a constant?</h3><p>A) var · B) let · C) const · D) constant<br><strong>Answer: C</strong> — <code>const PI = 3.14</code> stays fixed; there is no keyword called “constant” in JS.</p></div></li>
+            <li><div><h3>Q4. Which function is used to display output in the browser console?</h3><p>A) print() · B) display() · C) console.log() · D) writeConsole()<br><strong>Answer: C</strong> — <code>console.log()</code> is the standard debugging method; output appears in the F12 console (Q2 table).</p></div></li>
+            <li><div><h3>Q5. Which event occurs when a user clicks an HTML element?</h3><p>A) hover · B) click · C) press · D) select<br><strong>Answer: B</strong> — the click event fires on pressing a button/element; hover only fires on mouse-over (Q4 table).</p></div></li>
+            <li><div><h3>Q6. Which method is recommended for attaching an event listener?</h3><p>A) addEventListener() · B) addEvent() · C) attachEventListenerOnly() · D) eventAdd()<br><strong>Answer: A</strong> — <code>addEventListener()</code> is the modern recommended way: many handlers + clean HTML + removable (Q5).</p></div></li>
+          </ol>
+          <p><strong>Exam-ready plan:</strong> for 6/6, memorize 3 pairs — let/const (Q2–Q3), console.log (Q4), click + addEventListener (Q5–Q6). Spot the wrong options: “constant”, “display()”, “press” are not standard JS names.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading-en">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading-en">At a glance</h2>
+          <dl class="recap-list">
+            <dt>What JS is</dt><dd>Lightweight, interpreted, client-side scripting — HTML structure, CSS style, JS behaviour.</dd>
+            <dt>Syntax</dt><dd>Internal/external script, statements + semicolons, case-sensitive, 2 comments, 4 output methods.</dd>
+            <dt>Basics</dt><dd>let (reassignable) vs const (fixed); 5 primitives + objects/arrays; == vs ===; if/loops/functions.</dd>
+            <dt>Events</dt><dd>Event + element + handler; click/mouseover/keydown/submit/change/load; form-validation example.</dd>
+            <dt>Handling</dt><dd>Inline (1 job) → onclick property (1 job) → addEventListener (many jobs ★ recommended).</dd>
+            <dt>Strings</dt><dd>Quoted text, immutable; length/upper/lower/slice/replace/trim/split/concat/includes.</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Recall three answers without looking up:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Write your answers; then match with the Q-tables.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Which keyword declares a reassignable variable?
+              <ol type="A"><li>let</li><li>const</li><li>static</li><li>define</li></ol>
+            </li>
+            <li>Which is the recommended method for handling a click event?
+              <ol type="A"><li>addEventListener()</li><li>addEvent()</li><li>onclick mixing</li><li>eventAdd()</li></ol>
+            </li>
+            <li>What is the output of <code>"Hello".slice(1,4)</code>?
+              <ol type="A"><li>ell</li><li>Hello</li><li>Hell</li><li>llo</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: DOM, functions in detail and backend topics — after confirming QB understanding.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>MID-SEM QB / JAVASCRIPT BASICS</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+
+  <script>
+  (() => {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    const apply = (lang) => {
+      document.querySelectorAll('[data-lang]').forEach((el) => {
+        el.hidden = el.dataset.lang !== lang;
+      });
+      document.documentElement.lang = lang === 'hi' ? 'hi-Latn' : 'en';
+      btn.textContent = lang === 'hi' ? 'English' : 'Hinglish';
+      try { localStorage.setItem('fsd-qb-lang', lang); } catch (e) {}
+    };
+    let lang = 'hi';
+    try { lang = localStorage.getItem('fsd-qb-lang') || 'hi'; } catch (e) {}
+    if (lang !== 'hi' && lang !== 'en') lang = 'hi';
+    apply(lang);
+    btn.addEventListener('click', () => {
+      lang = lang === 'hi' ? 'en' : 'hi';
+      apply(lang);
+    });
+  })();
+  </script>
+</body>
+</html>
