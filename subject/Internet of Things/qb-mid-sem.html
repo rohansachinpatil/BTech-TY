@@ -1,0 +1,1197 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="IoT mid-sem QB: client/server, IP/MAC, TCP/UDP, networking aur smart agriculture ke 12 theory + 10 MCQ ke detailed lengthy answers, Hinglish aur English mein.">
+  <title>Mid-sem QB with answers — Internet of Things</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+  <style>
+    .note-layout { grid-template-columns: minmax(0, 1fr); }
+    .prose-column { max-width: none; }
+    .prose-column .figure-card { margin: 1.6rem 0 0.6rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha QB par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Internet of Things contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">IOT / MID-SEM QB</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#qb">QB</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" id="lang-toggle" type="button">English</button>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">INTERNET OF THINGS</a> &nbsp; / &nbsp; MID-SEM QB</p>
+      <h1 class="page-title">Mid-sem QB with answers</h1>
+      <p class="page-intro" data-lang="hi">Har question ka detailed lengthy answer alag block mein — pehle original Question, phir Answer, phir exam-ready plan. 12 theory (client/server, server, IP, IP vs MAC, TCP vs UDP, internet communication, IP addressing, MAC, networking ka role, smart agriculture, domain/information/service) + 10 MCQ, diagrams aur tables ke saath. Upar button se English mein switch karo.</p>
+      <p class="page-intro" data-lang="en" hidden>Every question answered in its own detailed block — Question first, then Answer, then exam-ready plan. 12 theory (client/server, server, IP, IP vs MAC, TCP vs UDP, internet communication, IP addressing, MAC, networking's role, smart agriculture, domain/information/service) + 10 MCQs with diagrams and tables. Use the button above to switch back to Hinglish.</p>
+      <div class="note-meta">
+        <span>QB set</span>
+        <span>Networking + IoT basics</span>
+        <span>Source: learner QB (PDF)</span>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column" data-lang="hi">
+        <section aria-labelledby="how-to-use">
+          <p class="section-kicker">START HERE / KAISE USE KARO</p>
+          <h2 id="how-to-use">Is QB ko 3 rounds mein karo</h2>
+          <p class="dropcap">Har question ka answer alag block mein hai: pehle original Question, phir uska detailed lengthy Answer, phir exam-ready plan. Pehle Question padhkar khud socho, phir Answer se match karo — IoT mein definition + farq-table + diagram teeno likhne par full marks milte hain.</p>
+          <p><strong>Round 1:</strong> Q1–Q5 ke definitions + tables zubani recall karo. <strong>Round 2:</strong> Q6 ka diagram aur Q11 ka smart-agriculture design haath se banao. <strong>Round 3:</strong> 10 MCQs bina dekhe solve karo, phir Q7–Q10, Q12 apne words mein likhne ki practice karo.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Q1 (client/server model), Q2 (server), Q3 (IP address), Q4 (IP vs MAC), Q5 (TCP vs UDP), Q6 (client/server + diagram), Q7 (internet communication), Q8 (IP addressing + types), Q9 (MAC + importance), Q10 (networking ka IoT mein role), Q11 (smart agriculture design), Q12 (domain/information/service) + 10 MCQs. Kul 22 Q&amp;A blocks.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">PREREQUISITE / PEHLE SE AANA CHAHIYE</span>
+            <p>Ye chhoti prerequisite explanation hai (QB mein nahi thi, samajhne ke liye add ki): <strong>Network</strong> matlab jude hue devices ka jaal; <strong>protocol</strong> matlab baat-cheet ke niyam (jaise IP, TCP); <strong>IoT</strong> matlab roz ke objects (sensor, fan, pump) ka internet se judkar samajhdaari se kaam karna.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="q1">
+          <p class="section-kicker">THEORY · Q1</p>
+          <h2 id="q1">Client/Server model kya hai?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is a Client/Server Model?</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Client/Server model</strong> network ka wo design hai jisme kaam <strong>maangne wala (client)</strong> aur <strong>dene wala (server)</strong> alag-alag hote hain. Client request bhejta hai, server usko process karke response deta hai. Formula: <strong>Request → Process → Response.</strong></p>
+          <div class="definition">
+            <span class="meta-label">OVERLAP FLAG / QB CLARITY</span>
+            <p>Q1 aur Q6 dono client/server par hain. Exam strategy: Q1 mein <strong>short definition + roles + example</strong> likho; poora diagram + working steps + fayde/nuksaan <strong>Q6</strong> mein likho. Dono mein same diagram repeat mat karo.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>The client/server model is a network architecture in which clients request services and servers provide them — e.g. a web browser (client) fetching pages from a web server.</p>
+          </div>
+          <p><strong>Roles ek line mein:</strong> <strong>Client</strong> — service maangta hai (browser, mobile app, ATM machine); khud data store nahi karta (MCQ 1: client requests services). <strong>Server</strong> — service deta hai (web/database/mail server), 24×7 chalta hai (MCQ 2, detail Q2 mein).</p>
+          <p><strong>Roz ke 3 examples pakke karo:</strong> browser → website kholna; ATM → bank server se balance nikaalna; email app → mail server se mail laana. Har example mein maangne wala client, dene wala server — yehi line examiner dhoondhta hai.</p>
+          <p><strong>Exam-ready plan:</strong> definition + Request→Process→Response formula, client vs server 2-line roles (MCQ 1–2 link), 2–3 examples, “detail + diagram Q6 mein” wali line. Chhota answer hai — 1 page se zyada mat kheecho.</p>
+          <p class="analogy"><strong>Analogy:</strong> Restaurant mein tum (client) order dete ho, waiter request kitchen (server) tak pahunchata hai, khana bankar wapas aata hai — tum khana banate nahi, sirf maangte ho.</p>
+        </section>
+
+        <section aria-labelledby="q2">
+          <p class="section-kicker">THEORY · Q2</p>
+          <h2 id="q2">Server kya hai?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is a server?</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Server</strong> wo powerful computer ya program hai jo network par <strong>clients ko services deta hai</strong> — files, websites, emails, ya data. Client maangta hai, server deta hai (MCQ 2 ka answer: server provides services).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A server is a computer or program that provides services, data, or resources to client devices over a network, typically running continuously (24×7).</p>
+          </div>
+          <p><strong>Server ki 5 pehchan (characteristics):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Always-on (24×7):</strong> raat ko 3 baje bhi website khulti hai — server kabhi sota nahi.</li>
+            <li><strong>Powerful hardware:</strong> tez processor, badi memory/storage — hazaaron clients ek saath sambhalta hai.</li>
+            <li><strong>Central storage + backup:</strong> data ek jagah, backup ke saath — client mein data khone ka darr nahi.</li>
+            <li><strong>Security:</strong> login/password, firewall — galat haath data tak nahi pahunchte.</li>
+            <li><strong>Fixed address:</strong> clients ko pata ho ki server kahan milega (IP address — Q3 se jodo).</li>
+          </ul>
+          <p><strong>Types + example (table yaad karo):</strong> <strong>Web server</strong> (websites — MCQ 3 mein browser client hai, ye server hai), <strong>database server</strong> (data store), <strong>mail server</strong> (emails), <strong>file server</strong> (office files), <strong>DNS server</strong> (naam se address — Q7 mein aayega).</p>
+          <p><strong>Exam-ready plan:</strong> definition, 4–5 characteristics har ek ek-line matlab, types ki list with example, MCQ 2–3 link line.</p>
+        </section>
+
+        <section aria-labelledby="q3">
+          <p class="section-kicker">THEORY · Q3</p>
+          <h2 id="q3">IP address kya hai?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is an IP address?</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>IP address (Internet Protocol address)</strong> network par har device ka <strong>unique logical pata</strong> hai — jaise har ghar ka postal address. Isi pate par packets bheje jaate hain (MCQ 4: internet communication ka protocol = IP; MCQ 5: IP = Internet Protocol).</p>
+          <div class="definition">
+            <span class="meta-label">OVERLAP FLAG / QB CLARITY</span>
+            <p>Q3 aur Q8 dono IP par hain. Exam strategy: Q3 mein <strong>short definition + format + example</strong> likho; classes, versions aur transmission types ka detail <strong>Q8</strong> mein likho.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>An IP address is a unique logical identifier assigned to each device on a network, used to route data to the correct destination — e.g. 192.168.1.1 (IPv4).</p>
+          </div>
+          <p><strong>Format (IPv4):</strong> 32-bit number, 4 hisson (octets) mein, dots se likha — <code>192.168.1.1</code>. Har hissa 0–255. <strong>IPv6</strong> naya version hai (128-bit, zyada addresses — detail Q8 mein).</p>
+          <p><strong>2 khaas baatein:</strong> <strong>Unique hota hai</strong> — ek network mein do devices ka same IP nahi (takraav hoga). <strong>Logical/changeable hota hai</strong> — MAC ki tarah chip mein fixed nahi; network badlo toh IP badal sakta hai (yehi Q4 ka farq hai).</p>
+          <p><strong>Exam-ready plan:</strong> definition + IP full form (MCQ 5), IPv4 format + example, unique + logical 2 lines, “detail Q8 mein” line.</p>
+        </section>
+
+        <section aria-labelledby="q4">
+          <p class="section-kicker">THEORY · Q4</p>
+          <h2 id="q4">IP address vs MAC address</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is the difference between IP address and MAC address?</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Dono device ke “pate” hain par level alag: <strong>IP = logical pata</strong> (badal sakta hai, poori duniya mein routing ke liye), <strong>MAC = physical pata</strong> (chip mein fixed, sirf local network mein kaam). Yaad rakhne ki line: <strong>IP ghar ka postal address hai (shift ho toh badalta hai), MAC aadhaar number hai (janam se fixed).</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / IP vs MAC</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">IP address</th><th scope="col">MAC address</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Full form</td><td>Internet Protocol</td><td>Media Access Control</td></tr>
+                <tr><td>Nature</td><td>Logical, changeable</td><td>Physical, permanent (NIC mein burned)</td></tr>
+                <tr><td>Layer</td><td>Network layer (L3)</td><td>Data-link layer (L2)</td></tr>
+                <tr><td>Size/format</td><td>IPv4: 32-bit dots (<code>192.168.1.1</code>)</td><td>48-bit hex colons (<code>3C:22:FB:11:AA:09</code>)</td></tr>
+                <tr><td>Kaam</td><td>Duniya bhar mein routing (router)</td><td>Local network delivery (switch)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-ipmac-title fig-ipmac-desc">
+                <title id="fig-ipmac-title">IP aur MAC ka split</title>
+                <desc id="fig-ipmac-desc">IP logical duniya bhar ka pata, MAC physical local pata.</desc>
+                <defs>
+                  <pattern id="dots-ipmac" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-ipmac" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-ipmac)"></rect>
+                <rect x="185" y="18" width="150" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">DEVICE KE 2 PATE</text>
+                <path d="M225 58v28m70-28v28" class="diagram-stroke"></path>
+                <path d="M80 86h360" class="diagram-stroke"></path>
+                <path d="M80 86v30m360 0v30" class="diagram-stroke" marker-end="url(#arrow-ipmac)"></path>
+                <rect x="20" y="116" width="220" height="60" class="diagram-stroke"></rect>
+                <text x="130" y="140" text-anchor="middle" class="diagram-text">IP · LOGICAL</text>
+                <text x="130" y="160" text-anchor="middle" class="diagram-muted">badalta hai · L3 · router</text>
+                <rect x="280" y="116" width="220" height="60" class="diagram-stroke"></rect>
+                <text x="390" y="140" text-anchor="middle" class="diagram-text">MAC · PHYSICAL</text>
+                <text x="390" y="160" text-anchor="middle" class="diagram-muted">fixed hai · L2 · switch</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">POSTAL ADDRESS vs AADHAAR NUMBER</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>IP badalta pata, MAC fixed pehchan.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> postal-vs-aadhaar line se start, 5-row table, har row ek example, FIG.002. Dono ke full form ratt lo — 1 mark pakka.</p>
+        </section>
+
+        <section aria-labelledby="q5">
+          <p class="section-kicker">THEORY · Q5</p>
+          <h2 id="q5">TCP vs UDP — do differences</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Give two differences between TCP and UDP.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>TCP (Transmission Control Protocol)</strong> registered-post hai — slow par guaranteed delivery; <strong>UDP (User Datagram Protocol)</strong> normal postcard hai — fast par guarantee nahi. Question mein 2 farq maange hain — exam mein 4–5 likh do, koi 2 sahi toh marks pakke:</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / TCP vs UDP</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">TCP</th><th scope="col">UDP</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Connection</td><td>Connection-oriented (pehle handshake)</td><td>Connectionless (seedha bhejo)</td></tr>
+                <tr><td>Reliability</td><td>Guaranteed — ACK + retransmission</td><td>Best-effort — khoya toh khoya</td></tr>
+                <tr><td>Order</td><td>Packets kram mein milte hain</td><td>Kram ki guarantee nahi</td></tr>
+                <tr><td>Speed / header</td><td>Slow, 20-byte header</td><td>Fast, 8-byte header</td></tr>
+                <tr><td>Use</td><td>Web, email, file transfer</td><td>Video call, gaming, DNS</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-tcp-title fig-tcp-desc">
+                <title id="fig-tcp-title">TCP aur UDP ka farq</title>
+                <desc id="fig-tcp-desc">TCP receipt ke saath slow, UDP bina receipt fast.</desc>
+                <defs>
+                  <pattern id="dots-tcp" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-tcp" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-tcp)"></rect>
+                <text x="130" y="35" text-anchor="middle" class="diagram-muted">TCP: RECEIPT WALI POST ✓✓</text>
+                <text x="390" y="35" text-anchor="middle" class="diagram-muted">UDP: POSTCARD ✉</text>
+                <rect x="30" y="60" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="70" y="86" text-anchor="middle" class="diagram-text">SENDER</text>
+                <rect x="150" y="60" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="190" y="86" text-anchor="middle" class="diagram-text">GOT IT ✓</text>
+                <path d="M110 75h40m-40 15h40" class="diagram-stroke" marker-end="url(#arrow-tcp)"></path>
+                <rect x="290" y="60" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="330" y="86" text-anchor="middle" class="diagram-text">SENDER</text>
+                <rect x="410" y="60" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="450" y="86" text-anchor="middle" class="diagram-text">???</text>
+                <path d="M370 82h40" class="diagram-stroke" marker-end="url(#arrow-tcp)"></path>
+                <text x="130" y="150" text-anchor="middle" class="diagram-muted">slow · safe · web/email</text>
+                <text x="390" y="150" text-anchor="middle" class="diagram-muted">fast · risk · video/DNS</text>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">BANK KA PAISA = TCP ★ LIVE MATCH = UDP</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Receipt chahiye toh TCP, speed chahiye toh UDP.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> post wali line se start, table mein se koi 4–5 rows, har row mein example, FIG.003. “Bank ka paisa TCP, live match UDP” — ye line yaad rahegi.</p>
+        </section>
+
+        <section aria-labelledby="q6">
+          <p class="section-kicker">THEORY · Q6</p>
+          <h2 id="q6">Client/Server model — diagram ke saath detail</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the Client/Server model with a suitable diagram.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Q1 mein short definition thi — yahan <strong>poora working + diagram + fayde/nuksaan</strong> likho. Model ke 3 hisse: client (request), network (rasta), server (service + data).</p>
+          <p><strong>Working — 4 steps (numbering mein likho):</strong> 1) Client request banata hai (jaise browser mein <code>www.example.com</code> khola). 2) Request network (internet) se server tak jaati hai. 3) Server request process karta hai — data nikaalta, check karta hai. 4) Response wapas client ko — page screen par dikhta hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-cs-title fig-cs-desc">
+                <title id="fig-cs-title">Client server working</title>
+                <desc id="fig-cs-desc">Request client se server, response server se client.</desc>
+                <defs>
+                  <pattern id="dots-cs" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-cs" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-cs)"></rect>
+                <rect x="20" y="95" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="85" y="119" text-anchor="middle" class="diagram-text">CLIENT</text>
+                <text x="85" y="137" text-anchor="middle" class="diagram-muted">browser · app</text>
+                <rect x="195" y="95" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="260" y="119" text-anchor="middle" class="diagram-text">NETWORK</text>
+                <text x="260" y="137" text-anchor="middle" class="diagram-muted">internet</text>
+                <rect x="370" y="95" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="435" y="119" text-anchor="middle" class="diagram-text">SERVER</text>
+                <text x="435" y="137" text-anchor="middle" class="diagram-muted">data + service</text>
+                <path d="M150 110h45" class="diagram-stroke" marker-end="url(#arrow-cs)"></path>
+                <path d="M370 140h-45" class="diagram-stroke" marker-end="url(#arrow-cs)"></path>
+                <text x="172" y="95" text-anchor="middle" class="diagram-muted">request →</text>
+                <text x="348" y="170" text-anchor="middle" class="diagram-muted">← response</text>
+                <text x="260" y="45" text-anchor="middle" class="diagram-muted">1 MAANGO → 2 PAHUNCHA → 3 BANAO → 4 DIKHAO</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">ATM → BANK ★ BROWSER → WEBSITE</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Request udhar, response idhar — 4 steps.</span></figcaption>
+          </figure>
+          <p><strong>Fayde (3):</strong> centralized data (backup easy), security (ek darwaza), maintenance (server update = sab updated). <strong>Nuksaan (2):</strong> server down = sab down (single point of failure), powerful server costly hai.</p>
+          <p><strong>Exam-ready plan:</strong> 3 hisse line, 4 numbered working steps, FIG.001, 3 fayde + 2 nuksaan, 2 examples. Diagram mein request/response arrows label karna mat bhoolna.</p>
+        </section>
+
+        <section aria-labelledby="q7">
+          <p class="section-kicker">THEORY · Q7</p>
+          <h2 id="q7">Internet communication — detail mein</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Internet communication in detail.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Internet communication</strong> matlab data ka sender se receiver tak <strong>chhote packets</strong> mein tootkar, sahi raste se, sahi kram mein pahunchna. Poora safar 5 steps mein:</p>
+          <ul class="plain-list">
+            <li><strong>Step 1 — Address lagao (IP + DNS):</strong> har device ka IP pata (Q3); naam (<code>www.example.com</code>) ko <strong>DNS server</strong> IP mein badalta hai — phonebook jaisa.</li>
+            <li><strong>Step 2 — Todo (packets):</strong> bada data chhote packets mein tootta hai; har packet par sender/receiver IP + number lagta hai.</li>
+            <li><strong>Step 3 — Bhejo (routing):</strong> <strong>routers</strong> har packet ka best rasta chunte hain; alag packets alag raste se bhi ja sakte hain (packet switching).</li>
+            <li><strong>Step 4 — Bharosa (TCP):</strong> receiver <strong>TCP</strong> se check karta hai — khoya packet dobara mangwata hai, kram lagata hai (Q5 se jodo).</li>
+            <li><strong>Step 5 — Jodo (reassembly):</strong> packets judkar original photo/video/page banta hai.</li>
+          </ul>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-net-title fig-net-desc">
+                <title id="fig-net-title">Internet par data ka safar</title>
+                <desc id="fig-net-desc">Sender se packets, routers se hote hue receiver par jod.</desc>
+                <defs>
+                  <pattern id="dots-net" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-net" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-net)"></rect>
+                <rect x="15" y="95" width="90" height="55" class="diagram-stroke"></rect>
+                <text x="60" y="119" text-anchor="middle" class="diagram-text">SENDER</text>
+                <text x="60" y="137" text-anchor="middle" class="diagram-muted">todo →</text>
+                <rect x="140" y="60" width="90" height="44" class="diagram-stroke"></rect>
+                <text x="185" y="86" text-anchor="middle" class="diagram-text">ROUTER</text>
+                <rect x="140" y="150" width="90" height="44" class="diagram-stroke"></rect>
+                <text x="185" y="176" text-anchor="middle" class="diagram-text">ROUTER</text>
+                <rect x="270" y="95" width="90" height="55" class="diagram-stroke"></rect>
+                <text x="315" y="119" text-anchor="middle" class="diagram-text">ROUTER</text>
+                <text x="315" y="137" text-anchor="middle" class="diagram-muted">best rasta</text>
+                <rect x="400" y="95" width="105" height="55" class="diagram-stroke"></rect>
+                <text x="452" y="119" text-anchor="middle" class="diagram-text">RECEIVER</text>
+                <text x="452" y="137" text-anchor="middle" class="diagram-muted">← jodo</text>
+                <path d="M105 115l35-30m35 45l40 10m-75 30l40-20m75-10l45 10" class="diagram-stroke" marker-end="url(#arrow-net)"></path>
+                <text x="260" y="35" text-anchor="middle" class="diagram-muted">DNS: NAAM → IP ★ PACKETS: ALAG RASTE, EK MANZIL</text>
+                <text x="260" y="220" text-anchor="middle" class="diagram-muted">TCP CHECK → KRAM LAGAO → PHOTO TAIYAAR</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Todo, bhejo, jodo — beech mein routers.</span></figcaption>
+          </figure>
+          <p><strong>Kaun kya karta hai (exam table jaisi list):</strong> <strong>IP</strong> — pata + routing (MCQ 4); <strong>TCP/UDP</strong> — bharosa ya speed; <strong>DNS</strong> — naam se number; <strong>Router</strong> — rasta; <strong>ISP</strong> — internet ka gate.</p>
+          <p><strong>Exam-ready plan:</strong> packets wali opening line, 5 numbered steps, FIG.004, 5 roles ek-line mein. DNS wali line zaroor likho — examiner ko pasand hai.</p>
+          <p class="analogy"><strong>Analogy:</strong> Courier mein sofa kholkar dabbon mein bhejo (packets), har dabbe par pata (IP), alag trucks alag raste (routers), ghar par kholo-jodo, toota samaan wapas mangwao (TCP).</p>
+        </section>
+
+        <section aria-labelledby="q8">
+          <p class="section-kicker">THEORY · Q8</p>
+          <h2 id="q8">IP addressing aur uske types</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain IP addressing and its types.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Q3 mein IP ki definition thi — yahan <strong>poora addressing system</strong>: versions, classes aur bhejne ke types.</p>
+          <p><strong>1. IPv4 structure:</strong> 32-bit, 4 octets (<code>192.168.1.1</code>), kul ~4.3 arab addresses. <strong>Classes (exam table):</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / IPv4 classes</caption>
+              <thead>
+                <tr><th scope="col">Class</th><th scope="col">Range (pehla octet)</th><th scope="col">Kiske liye</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>A</td><td>1–126</td><td>Bahut bade networks (companies)</td></tr>
+                <tr><td>B</td><td>128–191</td><td>Medium networks (colleges)</td></tr>
+                <tr><td>C</td><td>192–223</td><td>Chhote networks (ghar/office)</td></tr>
+                <tr><td>D</td><td>224–239</td><td>Multicast group (neeche dekho)</td></tr>
+                <tr><td>E</td><td>240–255</td><td>Research/reserved</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>2. Aur types (ek-line har ek):</strong> <strong>Public vs private</strong> — public internet par dikhta hai, private (<code>192.168.x.x</code>) ghar/office ke andar; <strong>static vs dynamic</strong> — static fixed (servers), dynamic <strong>DHCP</strong> se milta hai (mobiles/laptops); <strong>IPv6</strong> — 128-bit naya version, addresses khatm hone ka ilaaj.</p>
+          <p><strong>3. Bhejne ke types (transmission):</strong> <strong>Unicast</strong> — ek se ek (video call); <strong>broadcast</strong> — ek se sab (LAN announcement); <strong>multicast</strong> — ek se chuna hua group (live class, Class D). <strong>Anycast</strong> naam bhi likh do (paas wale server se lo — DNS mein use).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-addr-title fig-addr-desc">
+                <title id="fig-addr-title">IP addressing ka map</title>
+                <desc id="fig-addr-desc">Versions, classes aur bhejne ke types.</desc>
+                <defs>
+                  <pattern id="dots-addr" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-addr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-addr)"></rect>
+                <rect x="195" y="18" width="130" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">IP ADDRESS</text>
+                <path d="M225 58v26m70-28v28" class="diagram-stroke"></path>
+                <path d="M60 84h400" class="diagram-stroke"></path>
+                <path d="M60 84v30m133 0v-30m134 0v30m133 0v-30" class="diagram-stroke" marker-end="url(#arrow-addr)"></path>
+                <rect x="20" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="72" y="138" text-anchor="middle" class="diagram-text">v4/v6</text>
+                <text x="72" y="156" text-anchor="middle" class="diagram-muted">32 · 128 bit</text>
+                <rect x="140" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="192" y="138" text-anchor="middle" class="diagram-text">CLASS</text>
+                <text x="192" y="156" text-anchor="middle" class="diagram-muted">A–E</text>
+                <rect x="260" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="312" y="138" text-anchor="middle" class="diagram-text">NATURE</text>
+                <text x="312" y="156" text-anchor="middle" class="diagram-muted">pub · stat · dyn</text>
+                <rect x="380" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="432" y="138" text-anchor="middle" class="diagram-text">SEND</text>
+                <text x="432" y="156" text-anchor="middle" class="diagram-muted">uni · multi</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">192.168.1.1 = PRIVATE CLASS-C ★</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Char khaane: version, class, nature, send.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> IPv4 structure + class table (5 rows), public/private + static/dynamic + IPv6 lines, unicast/broadcast/multicast (+anycast bonus), FIG.005. <code>192.168.1.1</code> private Class-C hai — example ke saath likho.</p>
+        </section>
+
+        <section aria-labelledby="q9">
+          <p class="section-kicker">THEORY · Q9</p>
+          <h2 id="q9">MAC address aur uski importance</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain MAC addresses and their importance.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>MAC (Media Access Control) address</strong> har network card (NIC) ka factory mein fixed <strong>physical pata</strong> hai — 48-bit, hex mein colons se likha, jaise <code>3C:22:FB:11:AA:09</code>. Pehle 3 hisse company (OUI — kisne banaya), aakhri 3 device ka unique number.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A MAC address is a permanent 48-bit physical identifier burned into a network interface card, used for device delivery inside a local network.</p>
+          </div>
+          <p><strong>Importance — 4 points (exam mein yahi maanga hai):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Local delivery:</strong> switch MAC dekhkar packet sahi computer tak pahunchata hai — IP duniya ka rasta dikhata hai, MAC mohalle ka ghar (Q4 se jodo).</li>
+            <li><strong>ARP ka saathi:</strong> <strong>ARP (Address Resolution Protocol)</strong> IP se MAC nikaalta hai — bina MAC ke local delivery impossible.</li>
+            <li><strong>Security (MAC filtering):</strong> router/Wi-Fi mein allowed MACs ki list — anjaan device jud hi nahi sakta (hostel Wi-Fi jaisa).</li>
+            <li><strong>Uniqueness + tracking:</strong> duniya mein do same MAC nahi — device pehchan aur troubleshooting mein kaam aata hai.</li>
+          </ul>
+          <p><strong>Exam-ready plan:</strong> definition + format + OUI line, 4 importance points har ek ek-line matlab, ARP ek line, Q4 table se link. Format ka example haath se likhkar dikhao.</p>
+        </section>
+
+        <section aria-labelledby="q10">
+          <p class="section-kicker">THEORY · Q10</p>
+          <h2 id="q10">Networking ka IoT mein role</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the role of networking in IoT.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Bina networking ke IoT sirf <strong>akele gadgets</strong> hain — networking hi unko <strong>system</strong> banati hai. Sensor kheton mein, server cloud mein, mobile tumhari jeb mein — jodne wala dhaaga network hai.</p>
+          <p><strong>4 roles (headings mein likho):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Data transport:</strong> sensor ka data gateway/cloud tak — paas ke liye Wi-Fi/Bluetooth/Zigbee, door ke liye LoRa/cellular (har range ka option).</li>
+            <li><strong>Remote monitoring + control:</strong> ghar baithe motor on/off, hospital mein patient stats — monitoring aana, command jaana, dono network se.</li>
+            <li><strong>Scalability:</strong> 10 devices se 10,000 tak — IP addressing + routers se network badhta hai (Q8 se jodo).</li>
+            <li><strong>Interoperability:</strong> alag companies ke devices standard protocols (IP, MQTT, CoAP) se aapas mein baat karte hain.</li>
+          </ul>
+          <p><strong>2 examples pakke karo:</strong> smart home (sensor → Wi-Fi → phone app → AC on) aur health band (sensor → Bluetooth → phone → doctor). Dono mein data ka rasta likho — wahi networking ka role hai.</p>
+          <p><strong>Exam-ready plan:</strong> akeele-gadget wali opening line, 4 roles har ek example ke saath, 2 full examples data-raste ke saath, Q11 ka hint (agriculture mein bhi yahi roles).</p>
+          <p class="analogy"><strong>Analogy:</strong> Gadgets sharir ke ang hain, network nervous system hai — dimaag (cloud) tak signal pahunchana aur hukum wapas laana uska kaam hai.</p>
+        </section>
+
+        <section aria-labelledby="q11">
+          <p class="section-kicker">THEORY · Q11</p>
+          <h2 id="q11">Smart Agriculture — IoT design methodology se</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Design a Smart Agriculture system using IoT Design Methodology.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>IoT Design Methodology</strong> ke 10 steps hote hain — purpose se lekar app tak. Pehle steps ratt lo, phir khet par lagao:</p>
+          <ul class="plain-list">
+            <li><strong>1. Purpose &amp; requirements:</strong> paani bachao + paidavar badhao; cost kam, battery lambi.</li>
+            <li><strong>2. Process:</strong> mitti check → decision → sinchai → report.</li>
+            <li><strong>3. Domain:</strong> khet (physical) + uska cloud record (virtual) — Q12 se jodo.</li>
+            <li><strong>4. Information:</strong> nami, temperature, paani level ka data.</li>
+            <li><strong>5. Service:</strong> sensing service + irrigation (actuation) service.</li>
+            <li><strong>6–7. IoT level + functional:</strong> Level-2 (sensor + cloud + app), monitoring + control functions.</li>
+            <li><strong>8. Operational:</strong> solar power, LoRa/Wi-Fi link, weekly maintenance.</li>
+            <li><strong>9. Device integration:</strong> soil-moisture + DHT sensors → microcontroller → gateway → cloud.</li>
+            <li><strong>10. Application:</strong> kisan app — graph, alert (“nami kam!”), pump on/off button.</li>
+          </ul>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 270" role="img" aria-labelledby="fig-agri-title fig-agri-desc">
+                <title id="fig-agri-title">Smart agriculture system</title>
+                <desc id="fig-agri-desc">Khet ke sensors se cloud hote hue kisan app aur pump tak.</desc>
+                <defs>
+                  <pattern id="dots-agri" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-agri" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="270" fill="url(#dots-agri)"></rect>
+                <text x="100" y="30" text-anchor="middle" class="diagram-muted">KHET (sensing)</text>
+                <text x="360" y="30" text-anchor="middle" class="diagram-muted">CLOUD + APP (decision)</text>
+                <rect x="30" y="50" width="140" height="44" class="diagram-stroke"></rect>
+                <text x="100" y="76" text-anchor="middle" class="diagram-text">SENSORS</text>
+                <rect x="200" y="50" width="120" height="44" class="diagram-stroke"></rect>
+                <text x="260" y="76" text-anchor="middle" class="diagram-text">GATEWAY</text>
+                <rect x="350" y="50" width="140" height="44" class="diagram-stroke"></rect>
+                <text x="420" y="76" text-anchor="middle" class="diagram-text">CLOUD</text>
+                <rect x="350" y="130" width="140" height="44" class="diagram-stroke"></rect>
+                <text x="420" y="156" text-anchor="middle" class="diagram-text">KISAN APP</text>
+                <rect x="30" y="130" width="140" height="44" class="diagram-stroke"></rect>
+                <text x="100" y="156" text-anchor="middle" class="diagram-text">PUMP ✓/✗</text>
+                <path d="M170 72h30m120 0h30" class="diagram-stroke" marker-end="url(#arrow-agri)"></path>
+                <path d="M420 94v36m-320 62V174" class="diagram-stroke" marker-end="url(#arrow-agri)"></path>
+                <text x="100" y="120" text-anchor="middle" class="diagram-muted">nami · temp</text>
+                <text x="260" y="220" text-anchor="middle" class="diagram-muted">NAMI KAM → ALERT → PUMP ON ★ PAANI BACHAT</text>
+                <text x="260" y="246" text-anchor="middle" class="diagram-muted">10 STEPS: PURPOSE → APP (UPAR LIST)</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Khet bole, cloud soche, pump chale.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> 10 methodology steps numbered list, FIG.006 diagram, alert→pump wali working line, 2 fayde (paani bachat, paidavar). Steps + diagram dono aaye toh full marks pakke.</p>
+        </section>
+
+        <section aria-labelledby="q12">
+          <p class="section-kicker">THEORY · Q12</p>
+          <h2 id="q12">Domain, Information aur Service — IoT mein</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Domain, Information and Service in IoT.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Ye teeno IoT system ko <strong>samajhne ke 3 lens</strong> hain — kahan (domain), kya data (information), kya kaam (service):</p>
+          <ul class="plain-list">
+            <li><strong>Domain:</strong> system ki duniya — <strong>physical entity</strong> (asli cheez: khet, patient, gaadi) + <strong>virtual entity</strong> (uski cloud copy: digital record). Domain batata hai hum kis duniya ka system bana rahe hain (agriculture domain, health domain).</li>
+            <li><strong>Information:</strong> entities ke baare mein data — <strong>attributes</strong> (nami = 30%, temp = 35°C) aur unki values. Information model decide karta hai kaunsa data collect hoga, kaise store hoga.</li>
+            <li><strong>Service:</strong> entity par koi kaam karne wala function — <strong>sensing service</strong> (temperature padho) aur <strong>actuation service</strong> (pump chalao). App service ko bulati hai, service hardware se baat karti hai (MCQ 7–8: operation = component ki detailed activity; integration = components ko jodkar chalana).</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / agriculture example mapping</caption>
+              <thead>
+                <tr><th scope="col">Concept</th><th scope="col">Smart agriculture mein</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Physical entity</td><td>Asli khet + pump</td></tr>
+                <tr><td>Virtual entity</td><td>Cloud par khet ka record</td></tr>
+                <tr><td>Information</td><td>Nami 30%, temp 35°C, pump ON/OFF</td></tr>
+                <tr><td>Sensing service</td><td><code>readMoisture()</code> — sensor padho (MCQ 6)</td></tr>
+                <tr><td>Actuation service</td><td><code>pumpOn()</code> — sinchai chalao</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Rishta ek line mein:</strong> physical entity → virtual entity (copy) → information (data) → service (kaam). MCQ 9 (sensor/actuator/microcontroller sab components) aur MCQ 10 (sensor = physical ko signal mein badle) isi chain se aate hain.</p>
+          <p><strong>Exam-ready plan:</strong> 3 definitions har ek example ke saath, agriculture mapping table, rishta-line, MCQ 6–10 link.</p>
+        </section>
+
+        <section aria-labelledby="mcq-heading">
+          <p class="section-kicker">MCQ · 10 QUESTIONS</p>
+          <h2 id="mcq-heading">10 MCQs — answer with short reason</h2>
+          <p>Pehle khud option tick karo, phir answer match karo. Har answer ke saath ek-line reason hai — wahi reason theory answers mein kaam aayega.</p>
+          <ol class="issue-list">
+            <li><div><h3>Q1. In the Client/Server model, the client primarily?</h3><p>A) Provides services to the server · B) Requests services from the server · C) Controls the network router · D) Stores all network data<br><strong>Answer: B</strong> — client maangta hai, server deta hai (Q1, FIG.001).</p></div></li>
+            <li><div><h3>Q2. Which device generally provides services to clients?</h3><p>A) Client · B) Server · C) Sensor · D) Switch<br><strong>Answer: B</strong> — server 24×7 service deta hai (Q2).</p></div></li>
+            <li><div><h3>Q3. Which of the following is an example of a client application?</h3><p>A) Web browser · B) Web server · C) Database server · D) Mail server<br><strong>Answer: A</strong> — browser maangta hai; baaki teeno dete hain (server hain).</p></div></li>
+            <li><div><h3>Q4. Which protocol is primarily used for communication on the Internet?</h3><p>A) IP · B) HTML · C) USB · D) HDMI<br><strong>Answer: A</strong> — IP pata + routing karta hai; HTML page banata hai, USB/HDMI taar ke standard hain (Q7).</p></div></li>
+            <li><div><h3>Q5. IP stands for?</h3><p>A) Internet Process · B) Internet Protocol · C) Internal Protocol · D) Information Processing<br><strong>Answer: B</strong> — Internet Protocol; “Protocol” shabd se pehchano (Q3).</p></div></li>
+            <li><div><h3>Q6. Which of the following is an example of an IoT function?</h3><p>A) Reading a sensor · B) Choosing a font · C) Opening a text editor · D) Formatting a document<br><strong>Answer: A</strong> — sensor padhna sensing service hai; baaki computer ke aam kaam hain (Q12).</p></div></li>
+            <li><div><h3>Q7. An operation in IoT represents?</h3><p>A) A detailed activity performed by a component · B) A domain name · C) An IP address · D) A user password only<br><strong>Answer: A</strong> — operation = component ka concrete kaam, jaise <code>readMoisture()</code> (Q12).</p></div></li>
+            <li><div><h3>Q8. Component integration means?</h3><p>A) Connecting different IoT components to work together · B) Removing sensors · C) Deleting software · D) Changing IP addresses only<br><strong>Answer: A</strong> — sensor + board + cloud ko jodkar chalana; Q11 ka step-9 (Q11).</p></div></li>
+            <li><div><h3>Q9. Which of the following can be an IoT component?</h3><p>A) Sensor · B) Actuator · C) Microcontroller · D) All of the above<br><strong>Answer: D</strong> — sense karne wala + harkat wala + dimaag — teeno lagte hain (Q11/Q12).</p></div></li>
+            <li><div><h3>Q10. Which component converts a physical parameter into a measurable signal?</h3><p>A) Sensor · B) Actuator · C) Router · D) Server<br><strong>Answer: A</strong> — sensor input leta hai (garmi→signal); actuator ulta — signal→harkat (Q12).</p></div></li>
+          </ol>
+          <p><strong>Exam-ready plan:</strong> 10 mein se 10 ke liye 3 jodiyan yaad karo — client/server (Q1–Q3), IP (Q4–Q5), sensor/operation/component (Q6–Q10). Sensor vs actuator ulta hai — yehi sabse bada confusion point hai.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading">Ek nazar mein</h2>
+          <dl class="recap-list">
+            <dt>Client/server</dt><dd>Request → process → response; browser/ATM client, web/bank server.</dd>
+            <dt>Server</dt><dd>24×7 service; types: web, database, mail, file, DNS.</dd>
+            <dt>IP vs MAC</dt><dd>IP logical badalne wala (L3, router); MAC physical fixed (L2, switch).</dd>
+            <dt>TCP vs UDP</dt><dd>TCP receipt-wali post (web); UDP postcard (video/DNS).</dd>
+            <dt>Internet</dt><dd>DNS → todo → routing → TCP check → jodo.</dd>
+            <dt>Addressing</dt><dd>IPv4 classes A–E; public/private, static/DHCP, v6; uni/broad/multi-cast.</dd>
+            <dt>IoT roles</dt><dd>Transport, remote control, scalability, interoperability; sensor→cloud→app.</dd>
+            <dt>Agri + D/I/S</dt><dd>10 methodology steps; domain (duniya), information (data), service (kaam).</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Ab bina upar dekhe teen answers recall karo:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne answers likho; phir Q-tables se match karo.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Client aur server mein buniyadi farq kya hai?
+              <ol type="A"><li>Maangne wala vs dene wala</li><li>Dono same hain</li><li>Server maangta hai</li><li>Koi farq nahi</li></ol>
+            </li>
+            <li>Video call ke liye kaunsa protocol behtar hai?
+              <ol type="A"><li>UDP</li><li>TCP</li><li>FTP</li><li>SMTP</li></ol>
+            </li>
+            <li><code>192.168.1.1</code> kaisa address hai?
+              <ol type="A"><li>Private Class-C</li><li>Public Class-A</li><li>MAC address</li><li>Multicast</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: topic-wise notes — answers recall ke baad.</p>
+        </section>
+      </article>
+
+      <article class="prose-column" data-lang="en" hidden>
+        <section aria-labelledby="how-to-use-en">
+          <p class="section-kicker">START HERE / HOW TO USE</p>
+          <h2 id="how-to-use-en">How this QB is organized</h2>
+          <p class="dropcap">Every question sits in its own block: the original Question first, then its detailed lengthy Answer, then an exam-ready plan. Read the Question and think first, then match with the Answer — in IoT, writing definition + comparison table + diagram together earns full marks.</p>
+          <p><strong>Round 1:</strong> Orally recall Q1–Q5 definitions + tables. <strong>Round 2:</strong> Draw the Q6 diagram and Q11 smart-agriculture design by hand. <strong>Round 3:</strong> Solve the 10 MCQs blind, then practise writing Q7–Q10, Q12 in your own words.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Q1 (client/server model), Q2 (server), Q3 (IP address), Q4 (IP vs MAC), Q5 (TCP vs UDP), Q6 (client/server + diagram), Q7 (internet communication), Q8 (IP addressing + types), Q9 (MAC + importance), Q10 (networking's role in IoT), Q11 (smart agriculture design), Q12 (domain/information/service) + 10 MCQs. Total 22 Q&amp;A blocks.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">PREREQUISITE</span>
+            <p>This small prerequisite (not in the QB, added for clarity): a <strong>network</strong> is a web of connected devices; a <strong>protocol</strong> means conversation rules (like IP, TCP); <strong>IoT</strong> means everyday objects (sensors, fans, pumps) working smartly by joining the internet.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="q1-en">
+          <p class="section-kicker">THEORY · Q1</p>
+          <h2 id="q1-en">What is a Client/Server model?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is a Client/Server Model?</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>The <strong>client/server model</strong> is the network design where the <strong>asker (client)</strong> and the <strong>giver (server)</strong> are separate. The client sends a request, the server processes it and returns a response. Formula: <strong>Request → Process → Response.</strong></p>
+          <div class="definition">
+            <span class="meta-label">OVERLAP FLAG</span>
+            <p>Q1 and Q6 are both on client/server. Exam strategy: write a <strong>short definition + roles + examples</strong> in Q1; full diagram + working steps + pros/cons go in <strong>Q6</strong>. Do not repeat the same diagram in both.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>The client/server model is a network architecture in which clients request services and servers provide them — e.g. a web browser (client) fetching pages from a web server.</p>
+          </div>
+          <p><strong>Roles in one line each:</strong> <strong>Client</strong> — asks for service (browser, mobile app, ATM machine); stores no data itself (MCQ 1: client requests services). <strong>Server</strong> — gives service (web/database/mail server), runs 24×7 (MCQ 2, detailed in Q2).</p>
+          <p><strong>Fix 3 everyday examples:</strong> browser → opening a website; ATM → withdrawing balance from the bank server; email app → fetching mail from the mail server. In each, the asker is the client and the giver is the server — this is exactly the line the examiner looks for.</p>
+          <p><strong>Exam-ready plan:</strong> definition + Request→Process→Response formula, 2-line client vs server roles (MCQ 1–2 link), 2–3 examples, “details + diagram in Q6” line. It is a short answer — do not stretch beyond a page.</p>
+        </section>
+
+        <section aria-labelledby="q2-en">
+          <p class="section-kicker">THEORY · Q2</p>
+          <h2 id="q2-en">What is a server?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is a server?</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>A <strong>server</strong> is the powerful computer or program that <strong>gives services to clients</strong> on a network — files, websites, emails, or data. Clients ask, servers give (MCQ 2's answer: server provides services).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A server is a computer or program that provides services, data, or resources to client devices over a network, typically running continuously (24×7).</p>
+          </div>
+          <p><strong>5 hallmarks of a server (characteristics):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Always-on (24×7):</strong> websites open even at 3 AM — servers never sleep.</li>
+            <li><strong>Powerful hardware:</strong> fast processor, big memory/storage — handles thousands of clients together.</li>
+            <li><strong>Central storage + backup:</strong> data in one place, with backup — no fear of losing data on clients.</li>
+            <li><strong>Security:</strong> logins/passwords, firewalls — wrong hands never reach the data.</li>
+            <li><strong>Fixed address:</strong> clients know where to find it (IP address — link to Q3).</li>
+          </ul>
+          <p><strong>Types + example (memorize the table):</strong> <strong>web server</strong> (websites — in MCQ 3 the browser is the client, this is the server), <strong>database server</strong> (data storage), <strong>mail server</strong> (emails), <strong>file server</strong> (office files), <strong>DNS server</strong> (names to addresses — coming in Q7).</p>
+          <p><strong>Exam-ready plan:</strong> definition, 4–5 characteristics each with a one-line meaning, types list with examples, MCQ 2–3 link line.</p>
+        </section>
+
+        <section aria-labelledby="q3-en">
+          <p class="section-kicker">THEORY · Q3</p>
+          <h2 id="q3-en">What is an IP address?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is an IP address?</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>An <strong>IP address (Internet Protocol address)</strong> is every device's <strong>unique logical address</strong> on a network — like every home's postal address. Packets are sent to this address (MCQ 4: the protocol for internet communication = IP; MCQ 5: IP = Internet Protocol).</p>
+          <div class="definition">
+            <span class="meta-label">OVERLAP FLAG</span>
+            <p>Q3 and Q8 are both on IP. Exam strategy: write a <strong>short definition + format + example</strong> in Q3; classes, versions, and transmission types go in detail in <strong>Q8</strong>.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>An IP address is a unique logical identifier assigned to each device on a network, used to route data to the correct destination — e.g. 192.168.1.1 (IPv4).</p>
+          </div>
+          <p><strong>Format (IPv4):</strong> a 32-bit number in 4 parts (octets), written with dots — <code>192.168.1.1</code>. Each part is 0–255. <strong>IPv6</strong> is the newer version (128-bit, more addresses — detail in Q8).</p>
+          <p><strong>2 special facts:</strong> it is <strong>unique</strong> — two devices in one network never share an IP (collision). It is <strong>logical/changeable</strong> — not fixed in a chip like MAC; change networks and the IP can change (exactly Q4's difference).</p>
+          <p><strong>Exam-ready plan:</strong> definition + IP full form (MCQ 5), IPv4 format + example, unique + logical two lines, “detail in Q8” line.</p>
+        </section>
+
+        <section aria-labelledby="q4-en">
+          <p class="section-kicker">THEORY · Q4</p>
+          <h2 id="q4-en">IP address vs MAC address</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is the difference between IP address and MAC address?</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Both are a device's “addresses” but at different levels: <strong>IP = logical address</strong> (changeable, for routing across the world), <strong>MAC = physical address</strong> (fixed in the chip, works only in the local network). Memory line: <strong>IP is the home's postal address (changes on shifting), MAC is the national ID number (fixed from birth).</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / IP vs MAC</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">IP address</th><th scope="col">MAC address</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Full form</td><td>Internet Protocol</td><td>Media Access Control</td></tr>
+                <tr><td>Nature</td><td>Logical, changeable</td><td>Physical, permanent (burned in NIC)</td></tr>
+                <tr><td>Layer</td><td>Network layer (L3)</td><td>Data-link layer (L2)</td></tr>
+                <tr><td>Size/format</td><td>IPv4: 32-bit dots (<code>192.168.1.1</code>)</td><td>48-bit hex colons (<code>3C:22:FB:11:AA:09</code>)</td></tr>
+                <tr><td>Job</td><td>Worldwide routing (router)</td><td>Local delivery (switch)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-ipmac-title-en fig-ipmac-desc-en">
+                <title id="fig-ipmac-title-en">IP and MAC split</title>
+                <desc id="fig-ipmac-desc-en">IP the logical worldwide address, MAC the physical local one.</desc>
+                <defs>
+                  <pattern id="dots-ipmac-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-ipmac-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-ipmac-en)"></rect>
+                <rect x="185" y="18" width="150" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">2 ADDRESSES</text>
+                <path d="M225 58v28m70-28v28" class="diagram-stroke"></path>
+                <path d="M80 86h360" class="diagram-stroke"></path>
+                <path d="M80 86v30m360 0v30" class="diagram-stroke" marker-end="url(#arrow-ipmac-en)"></path>
+                <rect x="20" y="116" width="220" height="60" class="diagram-stroke"></rect>
+                <text x="130" y="140" text-anchor="middle" class="diagram-text">IP · LOGICAL</text>
+                <text x="130" y="160" text-anchor="middle" class="diagram-muted">changes · L3 · router</text>
+                <rect x="280" y="116" width="220" height="60" class="diagram-stroke"></rect>
+                <text x="390" y="140" text-anchor="middle" class="diagram-text">MAC · PHYSICAL</text>
+                <text x="390" y="160" text-anchor="middle" class="diagram-muted">fixed · L2 · switch</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">POSTAL ADDRESS vs NATIONAL ID</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>IP the changing address, MAC the fixed identity.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> start with the postal-vs-ID line, 5-row table, one example per row, FIG.002. Memorize both full forms — 1 mark fixed.</p>
+        </section>
+
+        <section aria-labelledby="q5-en">
+          <p class="section-kicker">THEORY · Q5</p>
+          <h2 id="q5-en">TCP vs UDP — two differences</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Give two differences between TCP and UDP.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>TCP (Transmission Control Protocol)</strong> is registered post — slow but guaranteed delivery; <strong>UDP (User Datagram Protocol)</strong> is an ordinary postcard — fast but no guarantee. The question asks 2 differences — write 4–5 in the exam; any 2 correct means full marks:</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / TCP vs UDP</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">TCP</th><th scope="col">UDP</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Connection</td><td>Connection-oriented (handshake first)</td><td>Connectionless (send directly)</td></tr>
+                <tr><td>Reliability</td><td>Guaranteed — ACK + retransmission</td><td>Best-effort — lost is lost</td></tr>
+                <tr><td>Order</td><td>Packets arrive in order</td><td>No order guarantee</td></tr>
+                <tr><td>Speed / header</td><td>Slow, 20-byte header</td><td>Fast, 8-byte header</td></tr>
+                <tr><td>Use</td><td>Web, email, file transfer</td><td>Video calls, gaming, DNS</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-tcp-title-en fig-tcp-desc-en">
+                <title id="fig-tcp-title-en">TCP and UDP difference</title>
+                <desc id="fig-tcp-desc-en">TCP slow with receipt, UDP fast without receipt.</desc>
+                <defs>
+                  <pattern id="dots-tcp-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-tcp-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-tcp-en)"></rect>
+                <text x="130" y="35" text-anchor="middle" class="diagram-muted">TCP: WITH RECEIPT ✓✓</text>
+                <text x="390" y="35" text-anchor="middle" class="diagram-muted">UDP: POSTCARD ✉</text>
+                <rect x="30" y="60" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="70" y="86" text-anchor="middle" class="diagram-text">SENDER</text>
+                <rect x="150" y="60" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="190" y="86" text-anchor="middle" class="diagram-text">GOT IT ✓</text>
+                <path d="M110 75h40m-40 15h40" class="diagram-stroke" marker-end="url(#arrow-tcp-en)"></path>
+                <rect x="290" y="60" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="330" y="86" text-anchor="middle" class="diagram-text">SENDER</text>
+                <rect x="410" y="60" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="450" y="86" text-anchor="middle" class="diagram-text">???</text>
+                <path d="M370 82h40" class="diagram-stroke" marker-end="url(#arrow-tcp-en)"></path>
+                <text x="130" y="150" text-anchor="middle" class="diagram-muted">slow · safe · web/email</text>
+                <text x="390" y="150" text-anchor="middle" class="diagram-muted">fast · risk · video/DNS</text>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">BANK MONEY = TCP ★ LIVE MATCH = UDP</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Need a receipt? TCP. Need speed? UDP.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> start with the post line, any 4–5 rows from the table, an example in every row, FIG.003. “Bank money TCP, live match UDP” — this line sticks.</p>
+        </section>
+
+        <section aria-labelledby="q6-en">
+          <p class="section-kicker">THEORY · Q6</p>
+          <h2 id="q6-en">Client/Server model — in detail with diagram</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the Client/Server model with a suitable diagram.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Q1 had the short definition — here write <strong>full working + diagram + pros/cons</strong>. The model has 3 parts: client (request), network (path), server (service + data).</p>
+          <p><strong>Working — 4 steps (write numbered):</strong> 1) The client builds a request (e.g. opening <code>www.example.com</code> in a browser). 2) The request travels over the network (internet) to the server. 3) The server processes the request — fetches data, checks it. 4) The response returns to the client — the page appears on screen.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-cs-title-en fig-cs-desc-en">
+                <title id="fig-cs-title-en">Client server working</title>
+                <desc id="fig-cs-desc-en">Request from client to server, response back to client.</desc>
+                <defs>
+                  <pattern id="dots-cs-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-cs-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-cs-en)"></rect>
+                <rect x="20" y="95" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="85" y="119" text-anchor="middle" class="diagram-text">CLIENT</text>
+                <text x="85" y="137" text-anchor="middle" class="diagram-muted">browser · app</text>
+                <rect x="195" y="95" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="260" y="119" text-anchor="middle" class="diagram-text">NETWORK</text>
+                <text x="260" y="137" text-anchor="middle" class="diagram-muted">internet</text>
+                <rect x="370" y="95" width="130" height="60" class="diagram-stroke"></rect>
+                <text x="435" y="119" text-anchor="middle" class="diagram-text">SERVER</text>
+                <text x="435" y="137" text-anchor="middle" class="diagram-muted">data + service</text>
+                <path d="M150 110h45" class="diagram-stroke" marker-end="url(#arrow-cs-en)"></path>
+                <path d="M370 140h-45" class="diagram-stroke" marker-end="url(#arrow-cs-en)"></path>
+                <text x="172" y="95" text-anchor="middle" class="diagram-muted">request →</text>
+                <text x="348" y="170" text-anchor="middle" class="diagram-muted">← response</text>
+                <text x="260" y="45" text-anchor="middle" class="diagram-muted">1 ASK → 2 TRAVEL → 3 MAKE → 4 SHOW</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">ATM → BANK ★ BROWSER → WEBSITE</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Request one way, response the other — 4 steps.</span></figcaption>
+          </figure>
+          <p><strong>Advantages (3):</strong> centralized data (easy backup), security (one door), maintenance (update the server = everyone updated). <strong>Disadvantages (2):</strong> server down = all down (single point of failure), powerful servers are costly.</p>
+          <p><strong>Exam-ready plan:</strong> 3-parts line, 4 numbered working steps, FIG.001, 3 pros + 2 cons, 2 examples. Never forget to label the request/response arrows in the diagram.</p>
+        </section>
+
+        <section aria-labelledby="q7-en">
+          <p class="section-kicker">THEORY · Q7</p>
+          <h2 id="q7-en">Internet communication — in detail</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Internet communication in detail.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Internet communication</strong> means data broken into <strong>small packets</strong>, travelling correct routes, and arriving in correct order from sender to receiver. The whole journey in 5 steps:</p>
+          <ul class="plain-list">
+            <li><strong>Step 1 — Address it (IP + DNS):</strong> every device has an IP address (Q3); names (<code>www.example.com</code>) are converted to IPs by the <strong>DNS server</strong> — like a phonebook.</li>
+            <li><strong>Step 2 — Break it (packets):</strong> big data splits into small packets; each packet gets sender/receiver IPs + a number.</li>
+            <li><strong>Step 3 — Send it (routing):</strong> <strong>routers</strong> pick each packet's best path; different packets may even take different routes (packet switching).</li>
+            <li><strong>Step 4 — Trust it (TCP):</strong> the receiver checks via <strong>TCP</strong> — re-demands lost packets, sets the order (link to Q5).</li>
+            <li><strong>Step 5 — Join it (reassembly):</strong> packets join into the original photo/video/page.</li>
+          </ul>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-net-title-en fig-net-desc-en">
+                <title id="fig-net-title-en">Data journey on the internet</title>
+                <desc id="fig-net-desc-en">Packets from sender through routers, joined at receiver.</desc>
+                <defs>
+                  <pattern id="dots-net-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-net-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-net-en)"></rect>
+                <rect x="15" y="95" width="90" height="55" class="diagram-stroke"></rect>
+                <text x="60" y="119" text-anchor="middle" class="diagram-text">SENDER</text>
+                <text x="60" y="137" text-anchor="middle" class="diagram-muted">break →</text>
+                <rect x="140" y="60" width="90" height="44" class="diagram-stroke"></rect>
+                <text x="185" y="86" text-anchor="middle" class="diagram-text">ROUTER</text>
+                <rect x="140" y="150" width="90" height="44" class="diagram-stroke"></rect>
+                <text x="185" y="176" text-anchor="middle" class="diagram-text">ROUTER</text>
+                <rect x="270" y="95" width="90" height="55" class="diagram-stroke"></rect>
+                <text x="315" y="119" text-anchor="middle" class="diagram-text">ROUTER</text>
+                <text x="315" y="137" text-anchor="middle" class="diagram-muted">best path</text>
+                <rect x="400" y="95" width="105" height="55" class="diagram-stroke"></rect>
+                <text x="452" y="119" text-anchor="middle" class="diagram-text">RECEIVER</text>
+                <text x="452" y="137" text-anchor="middle" class="diagram-muted">← join</text>
+                <path d="M105 115l35-30m35 45l40 10m-75 30l40-20m75-10l45 10" class="diagram-stroke" marker-end="url(#arrow-net-en)"></path>
+                <text x="260" y="35" text-anchor="middle" class="diagram-muted">DNS: NAME → IP ★ PACKETS: MANY PATHS, ONE GOAL</text>
+                <text x="260" y="220" text-anchor="middle" class="diagram-muted">TCP CHECK → ORDER → PHOTO READY</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Break, send, join — routers in between.</span></figcaption>
+          </figure>
+          <p><strong>Who does what (exam-style list):</strong> <strong>IP</strong> — address + routing (MCQ 4); <strong>TCP/UDP</strong> — trust or speed; <strong>DNS</strong> — numbers from names; <strong>router</strong> — path; <strong>ISP</strong> — the internet's gate.</p>
+          <p><strong>Exam-ready plan:</strong> packets opening line, 5 numbered steps, FIG.004, 5 roles one line each. Always write the DNS line — examiners love it.</p>
+        </section>
+
+        <section aria-labelledby="q8-en">
+          <p class="section-kicker">THEORY · Q8</p>
+          <h2 id="q8-en">IP addressing and its types</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain IP addressing and its types.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Q3 defined IP — here comes the <strong>full addressing system</strong>: versions, classes, and sending types.</p>
+          <p><strong>1. IPv4 structure:</strong> 32-bit, 4 octets (<code>192.168.1.1</code>), about 4.3 billion addresses total. <strong>Classes (exam table):</strong></p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / IPv4 classes</caption>
+              <thead>
+                <tr><th scope="col">Class</th><th scope="col">Range (first octet)</th><th scope="col">For whom</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>A</td><td>1–126</td><td>Huge networks (companies)</td></tr>
+                <tr><td>B</td><td>128–191</td><td>Medium networks (colleges)</td></tr>
+                <tr><td>C</td><td>192–223</td><td>Small networks (home/office)</td></tr>
+                <tr><td>D</td><td>224–239</td><td>Multicast groups (see below)</td></tr>
+                <tr><td>E</td><td>240–255</td><td>Research/reserved</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>2. More types (one line each):</strong> <strong>public vs private</strong> — public is visible on the internet, private (<code>192.168.x.x</code>) stays inside home/office; <strong>static vs dynamic</strong> — static is fixed (servers), dynamic comes from <strong>DHCP</strong> (mobiles/laptops); <strong>IPv6</strong> — the 128-bit new version, the cure for address exhaustion.</p>
+          <p><strong>3. Sending types (transmission):</strong> <strong>unicast</strong> — one to one (video call); <strong>broadcast</strong> — one to all (LAN announcement); <strong>multicast</strong> — one to a chosen group (live class, Class D). Also write <strong>anycast</strong> (take from the nearest server — used in DNS).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-addr-title-en fig-addr-desc-en">
+                <title id="fig-addr-title-en">Map of IP addressing</title>
+                <desc id="fig-addr-desc-en">Versions, classes and sending types.</desc>
+                <defs>
+                  <pattern id="dots-addr-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-addr-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-addr-en)"></rect>
+                <rect x="195" y="18" width="130" height="40" class="diagram-stroke"></rect>
+                <text x="260" y="43" text-anchor="middle" class="diagram-text">IP ADDRESS</text>
+                <path d="M225 58v26m70-28v28" class="diagram-stroke"></path>
+                <path d="M60 84h400" class="diagram-stroke"></path>
+                <path d="M60 84v30m133 0v-30m134 0v30m133 0v-30" class="diagram-stroke" marker-end="url(#arrow-addr-en)"></path>
+                <rect x="20" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="72" y="138" text-anchor="middle" class="diagram-text">v4/v6</text>
+                <text x="72" y="156" text-anchor="middle" class="diagram-muted">32 · 128 bit</text>
+                <rect x="140" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="192" y="138" text-anchor="middle" class="diagram-text">CLASS</text>
+                <text x="192" y="156" text-anchor="middle" class="diagram-muted">A–E</text>
+                <rect x="260" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="312" y="138" text-anchor="middle" class="diagram-text">NATURE</text>
+                <text x="312" y="156" text-anchor="middle" class="diagram-muted">pub · stat · dyn</text>
+                <rect x="380" y="114" width="105" height="60" class="diagram-stroke"></rect>
+                <text x="432" y="138" text-anchor="middle" class="diagram-text">SEND</text>
+                <text x="432" y="156" text-anchor="middle" class="diagram-muted">uni · multi</text>
+                <text x="260" y="210" text-anchor="middle" class="diagram-muted">192.168.1.1 = PRIVATE CLASS-C ★</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Four boxes: version, class, nature, send.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> IPv4 structure + class table (5 rows), public/private + static/dynamic + IPv6 lines, unicast/broadcast/multicast (+anycast bonus), FIG.005. Write <code>192.168.1.1</code> as a private Class-C with the example.</p>
+        </section>
+
+        <section aria-labelledby="q9-en">
+          <p class="section-kicker">THEORY · Q9</p>
+          <h2 id="q9-en">MAC addresses and their importance</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain MAC addresses and their importance.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>A <strong>MAC (Media Access Control) address</strong> is every network card's (NIC) factory-fixed <strong>physical address</strong> — 48-bit, written in hex with colons, e.g. <code>3C:22:FB:11:AA:09</code>. The first 3 parts name the maker (OUI — who built it), the last 3 the device's unique number.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>A MAC address is a permanent 48-bit physical identifier burned into a network interface card, used for device delivery inside a local network.</p>
+          </div>
+          <p><strong>Importance — 4 points (exactly what the exam asks):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Local delivery:</strong> the switch reads the MAC to reach the right computer — IP shows the world's route, MAC the neighbourhood home (link to Q4).</li>
+            <li><strong>ARP's partner:</strong> <strong>ARP (Address Resolution Protocol)</strong> derives MAC from IP — local delivery is impossible without MAC.</li>
+            <li><strong>Security (MAC filtering):</strong> routers/Wi-Fi keep a list of allowed MACs — unknown devices simply cannot join (like hostel Wi-Fi).</li>
+            <li><strong>Uniqueness + tracking:</strong> no two MACs in the world match — useful for device identity and troubleshooting.</li>
+          </ul>
+          <p><strong>Exam-ready plan:</strong> definition + format + OUI line, 4 importance points each with a one-line meaning, ARP one line, link to the Q4 table. Write the format example out by hand.</p>
+        </section>
+
+        <section aria-labelledby="q10-en">
+          <p class="section-kicker">THEORY · Q10</p>
+          <h2 id="q10-en">Role of networking in IoT</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the role of networking in IoT.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Without networking, IoT devices are just <strong>lonely gadgets</strong> — networking turns them into a <strong>system</strong>. Sensors in fields, servers in the cloud, mobiles in your pocket — the network is the thread joining them.</p>
+          <p><strong>4 roles (write under headings):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Data transport:</strong> sensor data to gateway/cloud — Wi-Fi/Bluetooth/Zigbee nearby, LoRa/cellular far away (an option for every range).</li>
+            <li><strong>Remote monitoring + control:</strong> switch motors on/off from home, patient stats in hospitals — monitoring comes in, commands go out, both via network.</li>
+            <li><strong>Scalability:</strong> from 10 devices to 10,000 — IP addressing + routers grow the network (link to Q8).</li>
+            <li><strong>Interoperability:</strong> devices from different companies talk via standard protocols (IP, MQTT, CoAP).</li>
+          </ul>
+          <p><strong>Fix 2 examples:</strong> smart home (sensor → Wi-Fi → phone app → AC on) and health band (sensor → Bluetooth → phone → doctor). Write the data path in both — that path is networking's role.</p>
+          <p><strong>Exam-ready plan:</strong> lonely-gadgets opening line, 4 roles each with an example, 2 full examples with data paths, hint of Q11 (the same roles in agriculture).</p>
+        </section>
+
+        <section aria-labelledby="q11-en">
+          <p class="section-kicker">THEORY · Q11</p>
+          <h2 id="q11-en">Smart Agriculture — via IoT design methodology</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Design a Smart Agriculture system using IoT Design Methodology.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>IoT Design Methodology</strong> has 10 steps — from purpose to app. Memorize the steps first, then apply them to the farm:</p>
+          <ul class="plain-list">
+            <li><strong>1. Purpose &amp; requirements:</strong> save water + raise yield; low cost, long battery.</li>
+            <li><strong>2. Process:</strong> check soil → decide → irrigate → report.</li>
+            <li><strong>3. Domain:</strong> the field (physical) + its cloud record (virtual) — link to Q12.</li>
+            <li><strong>4. Information:</strong> moisture, temperature, water-level data.</li>
+            <li><strong>5. Service:</strong> sensing service + irrigation (actuation) service.</li>
+            <li><strong>6–7. IoT level + functional:</strong> Level-2 (sensors + cloud + app), monitoring + control functions.</li>
+            <li><strong>8. Operational:</strong> solar power, LoRa/Wi-Fi link, weekly maintenance.</li>
+            <li><strong>9. Device integration:</strong> soil-moisture + DHT sensors → microcontroller → gateway → cloud.</li>
+            <li><strong>10. Application:</strong> farmer app — graphs, alerts (“low moisture!”), pump on/off button.</li>
+          </ul>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 270" role="img" aria-labelledby="fig-agri-title-en fig-agri-desc-en">
+                <title id="fig-agri-title-en">Smart agriculture system</title>
+                <desc id="fig-agri-desc-en">Field sensors through cloud to farmer app and pump.</desc>
+                <defs>
+                  <pattern id="dots-agri-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-agri-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="270" fill="url(#dots-agri-en)"></rect>
+                <text x="100" y="30" text-anchor="middle" class="diagram-muted">FIELD (sensing)</text>
+                <text x="360" y="30" text-anchor="middle" class="diagram-muted">CLOUD + APP (decision)</text>
+                <rect x="30" y="50" width="140" height="44" class="diagram-stroke"></rect>
+                <text x="100" y="76" text-anchor="middle" class="diagram-text">SENSORS</text>
+                <rect x="200" y="50" width="120" height="44" class="diagram-stroke"></rect>
+                <text x="260" y="76" text-anchor="middle" class="diagram-text">GATEWAY</text>
+                <rect x="350" y="50" width="140" height="44" class="diagram-stroke"></rect>
+                <text x="420" y="76" text-anchor="middle" class="diagram-text">CLOUD</text>
+                <rect x="350" y="130" width="140" height="44" class="diagram-stroke"></rect>
+                <text x="420" y="156" text-anchor="middle" class="diagram-text">FARMER APP</text>
+                <rect x="30" y="130" width="140" height="44" class="diagram-stroke"></rect>
+                <text x="100" y="156" text-anchor="middle" class="diagram-text">PUMP ✓/✗</text>
+                <path d="M170 72h30m120 0h30" class="diagram-stroke" marker-end="url(#arrow-agri-en)"></path>
+                <path d="M420 94v36m-320 62V174" class="diagram-stroke" marker-end="url(#arrow-agri-en)"></path>
+                <text x="100" y="120" text-anchor="middle" class="diagram-muted">moisture · temp</text>
+                <text x="260" y="220" text-anchor="middle" class="diagram-muted">LOW MOISTURE → ALERT → PUMP ON ★ SAVES WATER</text>
+                <text x="260" y="246" text-anchor="middle" class="diagram-muted">10 STEPS: PURPOSE → APP (LIST ABOVE)</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Field speaks, cloud thinks, pump runs.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> 10 methodology steps as a numbered list, FIG.006 diagram, alert→pump working line, 2 benefits (water saving, yield). Steps + diagram together mean full marks fixed.</p>
+        </section>
+
+        <section aria-labelledby="q12-en">
+          <p class="section-kicker">THEORY · Q12</p>
+          <h2 id="q12-en">Domain, Information and Service in IoT</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain Domain, Information and Service in IoT.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>These three are <strong>3 lenses</strong> for understanding an IoT system — where (domain), what data (information), what job (service):</p>
+          <ul class="plain-list">
+            <li><strong>Domain:</strong> the system's world — <strong>physical entity</strong> (the real thing: field, patient, car) + <strong>virtual entity</strong> (its cloud copy: digital record). The domain tells which world's system we are building (agriculture domain, health domain).</li>
+            <li><strong>Information:</strong> data about entities — <strong>attributes</strong> (moisture = 30%, temp = 35°C) and their values. The information model decides which data is collected and how it is stored.</li>
+            <li><strong>Service:</strong> a function doing some job on an entity — <strong>sensing service</strong> (read temperature) and <strong>actuation service</strong> (run the pump). The app calls the service, the service talks to hardware (MCQ 7–8: operation = a component's detailed activity; integration = making components work together).</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / agriculture example mapping</caption>
+              <thead>
+                <tr><th scope="col">Concept</th><th scope="col">In smart agriculture</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Physical entity</td><td>Real field + pump</td></tr>
+                <tr><td>Virtual entity</td><td>Field's cloud record</td></tr>
+                <tr><td>Information</td><td>Moisture 30%, temp 35°C, pump ON/OFF</td></tr>
+                <tr><td>Sensing service</td><td><code>readMoisture()</code> — read the sensor (MCQ 6)</td></tr>
+                <tr><td>Actuation service</td><td><code>pumpOn()</code> — run irrigation</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>The relation in one line:</strong> physical entity → virtual entity (copy) → information (data) → service (job). MCQ 9 (sensor/actuator/microcontroller are all components) and MCQ 10 (sensor converts physical input to signal) both come from this chain.</p>
+          <p><strong>Exam-ready plan:</strong> 3 definitions each with an example, agriculture mapping table, relation line, MCQ 6–10 link.</p>
+        </section>
+
+        <section aria-labelledby="mcq-heading-en">
+          <p class="section-kicker">MCQ · 10 QUESTIONS</p>
+          <h2 id="mcq-heading-en">10 MCQs — answers with short reasons</h2>
+          <p>Tick the option yourself first, then match the answer. Each answer carries a one-line reason — the same reasons work inside theory answers.</p>
+          <ol class="issue-list">
+            <li><div><h3>Q1. In the Client/Server model, the client primarily?</h3><p>A) Provides services to the server · B) Requests services from the server · C) Controls the network router · D) Stores all network data<br><strong>Answer: B</strong> — the client asks, the server gives (Q1, FIG.001).</p></div></li>
+            <li><div><h3>Q2. Which device generally provides services to clients?</h3><p>A) Client · B) Server · C) Sensor · D) Switch<br><strong>Answer: B</strong> — the server gives 24×7 service (Q2).</p></div></li>
+            <li><div><h3>Q3. Which of the following is an example of a client application?</h3><p>A) Web browser · B) Web server · C) Database server · D) Mail server<br><strong>Answer: A</strong> — the browser asks; the other three give (they are servers).</p></div></li>
+            <li><div><h3>Q4. Which protocol is primarily used for communication on the Internet?</h3><p>A) IP · B) HTML · C) USB · D) HDMI<br><strong>Answer: A</strong> — IP addresses + routes; HTML builds pages, USB/HDMI are cable standards (Q7).</p></div></li>
+            <li><div><h3>Q5. IP stands for?</h3><p>A) Internet Process · B) Internet Protocol · C) Internal Protocol · D) Information Processing<br><strong>Answer: B</strong> — Internet Protocol; recognize it by the word “Protocol” (Q3).</p></div></li>
+            <li><div><h3>Q6. Which of the following is an example of an IoT function?</h3><p>A) Reading a sensor · B) Choosing a font · C) Opening a text editor · D) Formatting a document<br><strong>Answer: A</strong> — reading a sensor is a sensing service; the rest are ordinary computer jobs (Q12).</p></div></li>
+            <li><div><h3>Q7. An operation in IoT represents?</h3><p>A) A detailed activity performed by a component · B) A domain name · C) An IP address · D) A user password only<br><strong>Answer: A</strong> — an operation = a component's concrete job, e.g. <code>readMoisture()</code> (Q12).</p></div></li>
+            <li><div><h3>Q8. Component integration means?</h3><p>A) Connecting different IoT components to work together · B) Removing sensors · C) Deleting software · D) Changing IP addresses only<br><strong>Answer: A</strong> — joining sensor + board + cloud to run; Q11's step-9 (Q11).</p></div></li>
+            <li><div><h3>Q9. Which of the following can be an IoT component?</h3><p>A) Sensor · B) Actuator · C) Microcontroller · D) All of the above<br><strong>Answer: D</strong> — senser + mover + brain — all three are needed (Q11/Q12).</p></div></li>
+            <li><div><h3>Q10. Which component converts a physical parameter into a measurable signal?</h3><p>A) Sensor · B) Actuator · C) Router · D) Server<br><strong>Answer: A</strong> — the sensor takes input (heat→signal); the actuator is the reverse — signal→motion (Q12).</p></div></li>
+          </ol>
+          <p><strong>Exam-ready plan:</strong> for 10/10, memorize 3 pairs — client/server (Q1–Q3), IP (Q4–Q5), sensor/operation/component (Q6–Q10). Sensor vs actuator is reversed — the biggest confusion point.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading-en">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading-en">At a glance</h2>
+          <dl class="recap-list">
+            <dt>Client/server</dt><dd>Request → process → response; browser/ATM clients, web/bank servers.</dd>
+            <dt>Server</dt><dd>24×7 service; types: web, database, mail, file, DNS.</dd>
+            <dt>IP vs MAC</dt><dd>IP logical changeable (L3, router); MAC physical fixed (L2, switch).</dd>
+            <dt>TCP vs UDP</dt><dd>TCP receipt-post (web); UDP postcard (video/DNS).</dd>
+            <dt>Internet</dt><dd>DNS → break → routing → TCP check → join.</dd>
+            <dt>Addressing</dt><dd>IPv4 classes A–E; public/private, static/DHCP, v6; uni/broad/multi-cast.</dd>
+            <dt>IoT roles</dt><dd>Transport, remote control, scalability, interoperability; sensor→cloud→app.</dd>
+            <dt>Agri + D/I/S</dt><dd>10 methodology steps; domain (world), information (data), service (job).</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Recall three answers without looking up:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Write your answers; then match with the Q-tables.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>What is the basic difference between client and server?
+              <ol type="A"><li>Asker vs giver</li><li>Both are the same</li><li>Server asks</li><li>No difference</li></ol>
+            </li>
+            <li>Which protocol suits video calls better?
+              <ol type="A"><li>UDP</li><li>TCP</li><li>FTP</li><li>SMTP</li></ol>
+            </li>
+            <li>What kind of address is <code>192.168.1.1</code>?
+              <ol type="A"><li>Private Class-C</li><li>Public Class-A</li><li>MAC address</li><li>Multicast</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: topic-wise notes — after recalling the answers.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>MID-SEM QB / NETWORKING + IOT</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+
+  <script>
+  (() => {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    const apply = (lang) => {
+      document.querySelectorAll('[data-lang]').forEach((el) => {
+        el.hidden = el.dataset.lang !== lang;
+      });
+      document.documentElement.lang = lang === 'hi' ? 'hi-Latn' : 'en';
+      btn.textContent = lang === 'hi' ? 'English' : 'Hinglish';
+      try { localStorage.setItem('iot-qb-lang', lang); } catch (e) {}
+    };
+    let lang = 'hi';
+    try { lang = localStorage.getItem('iot-qb-lang') || 'hi'; } catch (e) {}
+    if (lang !== 'hi' && lang !== 'en') lang = 'hi';
+    apply(lang);
+    btn.addEventListener('click', () => {
+      lang = lang === 'hi' ? 'en' : 'hi';
+      apply(lang);
+    });
+  })();
+  </script>
+</body>
+</html>
