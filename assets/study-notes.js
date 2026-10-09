@@ -143,6 +143,7 @@
     { title: "FSD Mid-sem QB with answers", url: "subject/Full%20Stack%20Development/qb-mid-sem.html", subject: "FULL STACK DEVELOPMENT", keywords: "javascript var let const syntax datatypes operators events addeventlistener string methods mid sem question bank", snippet: "6 theory + 6 MCQ: JS intro, syntax, language basics, events, handling, strings." },
     { title: "Internet of Things — Study Notes", url: "subject/Internet%20of%20Things/index.html", subject: "INTERNET OF THINGS", keywords: "iot client server ip mac tcp udp sensors syllabus", snippet: "Syllabus, contents, QB section aur progress." },
     { title: "Wireless Communication — Study Notes", url: "subject/Wireless%20Communication/index.html", subject: "WIRELESS COMMUNICATION", keywords: "ofdm gsm gprs modulation pulse shaping spectral efficiency cellular syllabus", snippet: "Syllabus, contents, QB section aur progress." },
+    { title: "WC Assignment QB with answers", url: "subject/Wireless%20Communication/qb-mid-sem.html", subject: "WIRELESS COMMUNICATION", keywords: "ofdm ifft cyclic prefix qpsk raised cosine spectral efficiency cfo synchronization gsm gprs bcch handoff gsm assignment question bank", snippet: "11 theory + 17 MCQ: OFDM, modulation, pulse shaping, efficiency, sync, GSM, GPRS." },
   ];
 
   if (!document.getElementById("search-fab")) {

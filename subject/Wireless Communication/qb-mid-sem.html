@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="WC assignment QB: OFDM, modulation, pulse shaping, GSM/GPRS aur cellular ke 11 theory + 17 MCQ ke detailed lengthy answers, Hinglish aur English mein.">
+  <title>Assignment QB with answers — Wireless Communication</title>
+  <link rel="stylesheet" href="../../assets/study-notes.css">
+  <script src="../../assets/study-notes.js" defer></script>
+  <style>
+    .note-layout { grid-template-columns: minmax(0, 1fr); }
+    .prose-column { max-width: none; }
+    .prose-column .figure-card { margin: 1.6rem 0 0.6rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Seedha QB par jao</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Wireless Communication contents">
+      <span class="brand-mark" aria-hidden="true">SN</span>
+      <span>STUDY NOTES</span>
+    </a>
+    <div class="header-tools">
+      <span class="header-context">WC / ASSIGNMENT QB</span>
+      <nav class="tab-list" aria-label="Note navigation">
+        <a class="tab" href="index.html#contents">Contents</a>
+        <a class="tab" href="index.html#qb">QB</a>
+        <a class="tab" href="index.html#progress">Progress</a>
+      </nav>
+      <button class="print-action" id="lang-toggle" type="button">English</button>
+      <button class="print-action" type="button" data-print>Print</button>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main">
+    <header class="note-heading">
+      <p class="eyebrow"><a href="index.html">WIRELESS COMMUNICATION</a> &nbsp; / &nbsp; ASSIGNMENT QB</p>
+      <h1 class="page-title">Assignment QB with answers</h1>
+      <p class="page-intro" data-lang="hi">Har question ka detailed lengthy answer alag block mein — pehle original Question, phir Answer, phir exam-ready plan. 11 theory (OFDM, modulation, pulse shaping, spectral efficiency, synchronization, channel assignment, reuse-interference-capacity, GPRS, GSM, technologies, trends) + 17 MCQ, diagrams, tables aur derivations ke saath. Upar button se English mein switch karo.</p>
+      <p class="page-intro" data-lang="en" hidden>Every question answered in its own detailed block — Question first, then Answer, then exam-ready plan. 11 theory (OFDM, modulation, pulse shaping, spectral efficiency, synchronization, channel assignment, reuse-interference-capacity, GPRS, GSM, technologies, trends) + 17 MCQs with diagrams, tables and derivations. Use the button above to switch back to Hinglish.</p>
+      <div class="note-meta">
+        <span>QB set</span>
+        <span>Assignment 02</span>
+        <span>Source: learner assignment (PDF)</span>
+      </div>
+    </header>
+
+    <div class="glyph-rule" aria-hidden="true"></div>
+
+    <div class="note-layout">
+      <article class="prose-column" data-lang="hi">
+        <section aria-labelledby="how-to-use">
+          <p class="section-kicker">START HERE / KAISE USE KARO</p>
+          <h2 id="how-to-use">Is QB ko 3 rounds mein karo</h2>
+          <p class="dropcap">Har question ka answer alag block mein hai: pehle original Question, phir uska detailed lengthy Answer, phir exam-ready plan. Pehle Question padhkar khud socho, phir Answer se match karo — Wireless mein block diagram + har block ka function + ek formula/derivation likhne par full marks milte hain.</p>
+          <p><strong>Round 1:</strong> Q1–Q5 ke diagrams haath se banao (OFDM chain, pulse shaping, sync). <strong>Round 2:</strong> Q4 ki derivation aur Q6–Q9 ke comparisons khud likho. <strong>Round 3:</strong> 17 MCQs bina dekhe solve karo, phir Q10–Q11 ki tables recall karo.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Q1 (OFDM Tx/Rx diagram), Q2 (modulation parameters), Q3 (pulse shaping), Q4 (spectral efficiency + derivation), Q5 (timing/frequency sync), Q6 (channel assignment), Q7 (reuse–interference–capacity), Q8 (GPRS), Q9 (GSM), Q10 (wireless technologies), Q11 (cellular trends) + 17 MCQs. Kul 28 Q&amp;A blocks.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">PREREQUISITE / PEHLE SE AANA CHAHIYE</span>
+            <p>Ye chhoti prerequisite explanation hai (QB mein nahi thi, samajhne ke liye add ki): <strong>Modulation</strong> matlab data ko carrier wave par sawari karana; <strong>multipath</strong> matlab signal tower se seedha bhi aata hai aur buildings se takrakar bhi — late aane wale copies <strong>ISI (inter-symbol interference)</strong> banate hain. OFDM isi ISI se ladne ke liye bana hai.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="q1">
+          <p class="section-kicker">THEORY · Q1</p>
+          <h2 id="q1">OFDM transmitter aur receiver — block diagram</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Draw and explain the complete block diagram of an OFDM transmitter and receiver. Explain the function of each block.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>OFDM (Orthogonal Frequency Division Multiplexing)</strong> mein tez data stream ko <strong>N slow parallel subcarriers</strong> par baant diya jaata hai. Subcarriers <strong>orthogonal</strong> hote hain — spacing <code>Δf = 1/Tu</code> (Tu = useful symbol time) — isliye overlap hone ke baad bhi aapas mein interfere nahi karte. Slow symbols + cyclic prefix milkar multipath ISI ko khatm karte hain. Yehi OFDM 4G/5G aur Wi-Fi ki jaan hai.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>OFDM is a multicarrier modulation technique in which high-rate data is split across many orthogonal low-rate subcarriers, making the system robust against multipath fading and ISI.</p>
+          </div>
+          <p><strong>Transmitter chain (left se right, har block ka function):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Serial-to-Parallel (S/P):</strong> tez serial bits ko N slow streams mein baantta hai — symbol time N guna badh jaata hai, ISI se ladna easy hota hai.</li>
+            <li><strong>Modulation mapper:</strong> bits ko constellation points par map karta hai (QPSK/16-QAM/64-QAM — Q2 dekho). Har subcarrier par ek complex symbol baithta hai.</li>
+            <li><strong>IFFT block:</strong> saare subcarrier symbols ko ek saath time-domain signal mein badalta hai — yahi OFDM modulation ka dil hai (MCQ 1: FFT/IFFT).</li>
+            <li><strong>Cyclic prefix (CP) insertion:</strong> har symbol ke end ka tukda shuru mein chipkata hai — multipath ke late echoes ISI nahi banate (MCQ 2). Keemat: thodi efficiency ghatti hai (Q4).</li>
+            <li><strong>Parallel-to-Serial + DAC + RF up-conversion:</strong> digital samples ko analog banakar carrier frequency par chadhata hai aur antenna se bhejta hai.</li>
+          </ul>
+          <p><strong>Receiver chain (exact ulta):</strong> antenna → RF down-conversion → ADC → S/P → <strong>CP remove</strong> → <strong>FFT</strong> (subcarriers wapas alag) → demapper (symbols se bits) → P/S (original data). FFT window sahi jagah lagna chahiye — isliye synchronization chahiye (Q5).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 270" role="img" aria-labelledby="fig-ofdm-title fig-ofdm-desc">
+                <title id="fig-ofdm-title">OFDM transmitter aur receiver chain</title>
+                <desc id="fig-ofdm-desc">Transmitter mein IFFT aur CP, receiver mein CP remove aur FFT.</desc>
+                <defs>
+                  <pattern id="dots-ofdm" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-ofdm" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="270" fill="url(#dots-ofdm)"></rect>
+                <text x="130" y="30" text-anchor="middle" class="diagram-muted">TRANSMITTER</text>
+                <text x="390" y="30" text-anchor="middle" class="diagram-muted">RECEIVER</text>
+                <rect x="20" y="50" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="55" y="74" text-anchor="middle" class="diagram-text">S/P</text>
+                <rect x="105" y="50" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="140" y="74" text-anchor="middle" class="diagram-text">MAP</text>
+                <rect x="190" y="50" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="225" y="74" text-anchor="middle" class="diagram-text">IFFT</text>
+                <rect x="105" y="115" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="140" y="139" text-anchor="middle" class="diagram-text">+CP</text>
+                <rect x="190" y="115" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="225" y="139" text-anchor="middle" class="diagram-text">RF↑</text>
+                <rect x="275" y="80" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="310" y="104" text-anchor="middle" class="diagram-text">AIR</text>
+                <rect x="360" y="50" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="395" y="74" text-anchor="middle" class="diagram-text">RF↓</text>
+                <rect x="445" y="50" width="60" height="40" class="diagram-stroke"></rect>
+                <text x="475" y="74" text-anchor="middle" class="diagram-text">FFT</text>
+                <rect x="360" y="115" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="395" y="139" text-anchor="middle" class="diagram-text">−CP</text>
+                <rect x="445" y="115" width="60" height="40" class="diagram-stroke"></rect>
+                <text x="475" y="139" text-anchor="middle" class="diagram-text">P/S</text>
+                <path d="M90 70h15m70 0h15m70 0h-70v45m85-45v45m15 0h-15m60-35h15m15 0h15m60 0h15m-120 50h-15m-85 0h15m85 0h60" class="diagram-stroke" marker-end="url(#arrow-ofdm)"></path>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">DATA → S/P → MAP → IFFT → +CP → RF↑</text>
+                <text x="260" y="222" text-anchor="middle" class="diagram-muted">RF↓ → −CP → FFT → DEMAP → P/S → DATA</text>
+                <text x="260" y="250" text-anchor="middle" class="diagram-muted">CP = ISI KAVACH ★ IFFT/FFT = OFDM KA DIL</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>Tx mein IFFT + CP, Rx mein CP hatao + FFT.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition + orthogonality line (<code>Δf = 1/Tu</code>), Tx ke 5 blocks har ek ek-line function ke saath, Rx ulta chain, FIG.001, end mein CP = ISI kavach aur IFFT/FFT = dil wali line. Diagram ke bina aadhe marks gaye.</p>
+          <p class="analogy"><strong>Analogy:</strong> OFDM highway par ek truck ki jagah kai chhoti gaadiyan bhejna hai — har gaadi slow par safe, aur gaadiyon ke beech itna gap (orthogonality) ki takrayein nahi.</p>
+        </section>
+
+        <section aria-labelledby="q2">
+          <p class="section-kicker">THEORY · Q2</p>
+          <h2 id="q2">OFDM ke liye modulation scheme chunne ke parameters</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the important parameters involved in selecting a modulation scheme for an OFDM system.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Modulation scheme chunna <strong>speed vs majbooti</strong> ka samjhota hai: high-order modulation (64-QAM) zyada bits bhejti hai par shor mein jaldi toot-ti hai; low-order (QPSK) slow par pathhar jaisi majboot hai. Exam mein 6–7 parameters headings mein likho:</p>
+          <ul class="plain-list">
+            <li><strong>Data rate / throughput:</strong> kitne bits/symbol — BPSK = 1, QPSK = 2, 16-QAM = 4, 64-QAM = 6. Zyada bits = zyada speed.</li>
+            <li><strong>BER robustness (noise se ladna):</strong> constellation points jitne paas, shor mein utni galti. Kharab channel mein QPSK (MCQ 3), achhe channel mein 64-QAM.</li>
+            <li><strong>Required SNR:</strong> har scheme ko target BER ke liye minimum SNR chahiye — high-order ko zyada SNR maangta hai.</li>
+            <li><strong>Bandwidth / spectral efficiency:</strong> zyada bits/symbol = kam bandwidth mein zyada data (Q4 se jodo).</li>
+            <li><strong>PAPR sensitivity:</strong> OFDM mein high peaks hote hain; high-order QAM amplifier non-linearity se zyada bigadta hai.</li>
+            <li><strong>Complexity aur power:</strong> mobile battery + sasta hardware chaahe toh simple scheme (QPSK) behtar.</li>
+            <li><strong>Mobility / Doppler:</strong> tez chalti gaadi/train mein channel jaldi badalta hai — robust low-order scheme safe rehta hai.</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / modulation comparison</caption>
+              <thead>
+                <tr><th scope="col">Scheme</th><th scope="col">Bits/symbol</th><th scope="col">Majbooti</th><th scope="col">Kab chunna hai</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>BPSK</td><td>1</td><td>Sabse zyada</td><td>Bahut kharab channel, control signals</td></tr>
+                <tr><td>QPSK</td><td>2</td><td>Zyada</td><td>Cell edge, high mobility (MCQ 3)</td></tr>
+                <tr><td>16-QAM</td><td>4</td><td>Medium</td><td>Normal city coverage</td></tr>
+                <tr><td>64-QAM</td><td>6</td><td>Kam</td><td>Tower ke paas, achha SNR</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Golden line (adaptive modulation):</strong> modern systems (LTE/5G) channel dekhkar scheme badalte rehte hain — paas ho toh 64-QAM, door ho toh QPSK. Is ek line se answer topper jaisa lagta hai.</p>
+          <p><strong>Exam-ready plan:</strong> speed-vs-majbooti tradeoff se start, 6–7 parameters har ek ek-line matlab, 4-row table, adaptive modulation closing line.</p>
+        </section>
+
+        <section aria-labelledby="q3">
+          <p class="section-kicker">THEORY · Q3</p>
+          <h2 id="q3">Pulse shaping kya hai? Zaroorat kyun?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is pulse shaping? Explain the need for pulse shaping in digital communication systems.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Pulse shaping</strong> matlab digital 0/1 ke tez-dhaar (rectangular) pulses ko <strong>gol-mol (smooth) shape</strong> dena taaki wo kam bandwidth lein aur padosi symbols mein na ghusein. Bina shaping ke do museebatein aati hain:</p>
+          <ul class="plain-list">
+            <li><strong>Infinite bandwidth:</strong> rectangular pulse ke tez kinare frequency mein door tak failte hain — spectrum kharab, padosi channel mein ghuspaith. Shaped pulse ka spectrum simta rehta hai.</li>
+            <li><strong>ISI (inter-symbol interference):</strong> channel aur multipath pulse ko faila dete hain; ek symbol ki poonchh agle symbol par chadh jaati hai. Shaping + Nyquist condition se har sampling instant par padosi pulses <strong>zero</strong> hote hain — ISI khatm.</li>
+          </ul>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Pulse shaping is the process of modifying transmitted pulses to limit their bandwidth and achieve zero ISI at sampling instants (Nyquist criterion).</p>
+          </div>
+          <p><strong>Raised-cosine filter (MCQ 4 ka answer):</strong> sabse standard pulse-shaping filter. Iska <strong>roll-off factor α (0 se 1)</strong> samjhota control karta hai — α = 0 matlab minimum bandwidth par sensitive timing, α badhao toh bandwidth thoda badhta hai par timing errors se ladna easy hota hai. Practical value α ≈ 0.22–0.35 (GSM mein use hota hai).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-pulse-title fig-pulse-desc">
+                <title id="fig-pulse-title">Pulse shaping ka asar</title>
+                <desc id="fig-pulse-desc">Bina shaping ke faila spectrum aur ISI, shaping ke baad simta spectrum aur zero crossing.</desc>
+                <defs>
+                  <pattern id="dots-pulse" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-pulse" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-pulse)"></rect>
+                <text x="130" y="35" text-anchor="middle" class="diagram-muted">BINA SHAPING ✗</text>
+                <text x="390" y="35" text-anchor="middle" class="diagram-muted">SHAPING KE SAATH ✓</text>
+                <rect x="50" y="60" width="60" height="60" class="diagram-stroke"></rect>
+                <rect x="120" y="60" width="60" height="60" class="diagram-stroke"></rect>
+                <text x="115" y="150" text-anchor="middle" class="diagram-muted">tez kinare · faila spectrum · ISI</text>
+                <path d="M300 120 Q330 120 340 80 Q350 120 380 120 Q410 120 420 80 Q430 120 460 120" class="diagram-stroke"></path>
+                <path d="M300 120h180" class="diagram-stroke"></path>
+                <text x="390" y="150" text-anchor="middle" class="diagram-muted">gol shape · simta spectrum · zero ISI</text>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">RAISED-COSINE FILTER ★ α = 0–1</text>
+                <text x="260" y="225" text-anchor="middle" class="diagram-muted">WINDOVING SE SPECTRUM AUR SUDHARTA HAI (MCQ)</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Tez kinare failte hain, gol shape simti rehti hai.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition, 2 zarooratein (bandwidth + ISI with Nyquist line), raised-cosine + α tradeoff, windowing ek line (MCQ 5: transmitted signal ke spectral characteristics sudharta hai), FIG.002.</p>
+        </section>
+
+        <section aria-labelledby="q4">
+          <p class="section-kicker">THEORY · Q4</p>
+          <h2 id="q4">Spectral efficiency — definition, derivation, factors</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Define spectral efficiency. Derive the expression for spectral efficiency of an OFDM system and explain the factors affecting it.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Spectral efficiency (η)</strong> batati hai ki 1 Hz bandwidth se kitne bits/sec nikaale — unit <strong>bits/s/Hz</strong>. Formula: <code>η = Rb / B</code> (Rb = bit rate, B = bandwidth). Spectrum sarkari khazana hai (limited + costly), isliye η jitni zyada, operator utna khush (MCQ 6).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Spectral efficiency indicates how efficiently the available bandwidth is used to transmit information: η = data rate / bandwidth (bits/s/Hz).</p>
+          </div>
+          <p><strong>Derivation (5 steps, exam mein yahi likho):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Step 1:</strong> N subcarriers, har symbol par M-ary modulation → har subcarrier <code>log2(M)</code> bits. Ek OFDM symbol mein kul bits = <code>N · log2(M)</code>.</li>
+            <li><strong>Step 2:</strong> Symbol time = useful time + CP: <code>Ts = Tu + Tcp</code>. Bit rate <code>Rb = N · log2(M) / (Tu + Tcp)</code>.</li>
+            <li><strong>Step 3:</strong> Orthogonality se subcarrier spacing <code>Δf = 1/Tu</code>, kul bandwidth <code>B ≈ N · Δf = N / Tu</code>.</li>
+            <li><strong>Step 4:</strong> <code>η = Rb / B = [N·log2(M)/(Tu+Tcp)] / [N/Tu] = log2(M) · Tu/(Tu+Tcp)</code>.</li>
+            <li><strong>Step 5 (final):</strong> CP fraction <code>G = Tcp/Tu</code> rakho → <strong><code>η = log2(M) / (1 + G)</code></strong>. Bina CP (G = 0) → <code>η = log2(M)</code>.</li>
+          </ul>
+          <p><strong>Numeric example (pakka yaad karo):</strong> 64-QAM → log2(64) = 6 bits; CP = 1/4 (G = 0.25) → η = 6/1.25 = <strong>4.8 bits/s/Hz</strong>. Wahi system QPSK mein hota toh η = 2/1.25 = 1.6 — isi se Q2 ka speed-vs-majbooti tradeoff judta hai.</p>
+          <p><strong>Factors affecting (5 points):</strong> modulation order M (bada M = zyada η, kam majbooti), CP length (lamba CP = ISI se suraksha par η ghategi), guard bands/pilots ka overhead, channel coding rate (error correction ke bits η ghataate hain), windowing/filtering (side-lobes kam → effective η better).</p>
+          <p><strong>Exam-ready plan:</strong> definition + formula + unit, 5-step derivation box mein, numeric example (4.8 wali), 5 factors. Derivation steps numbering ke saath likho — step-marks milte hain.</p>
+        </section>
+
+        <section aria-labelledby="q5">
+          <p class="section-kicker">THEORY · Q5</p>
+          <h2 id="q5">OFDM mein timing aur frequency synchronization</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain timing synchronization and frequency synchronization in OFDM.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>OFDM <strong>sync-sensitive</strong> hai: FFT window galat jagah lagi toh ISI, aur carrier frequency thodi bhi hili toh orthogonality tootkar <strong>ICI (inter-carrier interference)</strong> — padosi subcarriers aapas mein ladne lagte hain. Isliye receiver ko do cheezein lock karni padti hain:</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / timing vs frequency sync</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Timing sync</th><th scope="col">Frequency sync</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Kya lock hota hai</td><td>Symbol start (FFT window position)</td><td>Carrier frequency (CFO = 0)</td></tr>
+                <tr><td>Galti par kya</td><td>ISI — CP ke bahar window gayi toh</td><td>ICI — orthogonality toot-ti hai (MCQ 7)</td></tr>
+                <tr><td>Wajah</td><td>Propagation delay, clock offset</td><td>Oscillator mismatch + Doppler (mobility)</td></tr>
+                <tr><td>Kaise (technique)</td><td>Preamble/autocorrelation (Schmidl–Cox), CP correlation</td><td>Pilot subcarriers + AFC loop se CFO estimate-correct</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Timing sync detail:</strong> receiver ko har symbol ka start sample-level par chahiye; CP ke andar window rahe toh ISI nahi (CP isi ko bardasht karta hai). Packet start mein <strong>preamble</strong> (known pattern) bheja jaata hai — Schmidl–Cox method usse correlate karke symbol boundary pakadta hai.</p>
+          <p><strong>Frequency sync detail:</strong> <strong>CFO (carrier frequency offset)</strong> transmitter-receiver oscillator farq aur Doppler se aata hai; chhota CFO bhi subcarriers ko shift karke ICI banata hai (MCQ 7 ka answer: inter-carrier interference). Pilot tones se CFO estimate karke <strong>AFC (automatic frequency control)</strong> sudharta hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-sync-title fig-sync-desc">
+                <title id="fig-sync-title">Do sync, do dushman</title>
+                <desc id="fig-sync-desc">Galat window ISI deti hai, frequency offset ICI deta hai.</desc>
+                <defs>
+                  <pattern id="dots-sync" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-sync" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-sync)"></rect>
+                <text x="130" y="35" text-anchor="middle" class="diagram-muted">TIMING GALAT → ISI</text>
+                <rect x="40" y="55" width="100" height="40" class="diagram-stroke"></rect>
+                <text x="90" y="79" text-anchor="middle" class="diagram-text">CP</text>
+                <rect x="140" y="55" width="100" height="40" class="diagram-stroke"></rect>
+                <text x="190" y="79" text-anchor="middle" class="diagram-text">DATA</text>
+                <rect x="90" y="115" width="100" height="34" class="diagram-stroke"></rect>
+                <text x="140" y="137" text-anchor="middle" class="diagram-text">WINDOW ✗</text>
+                <text x="390" y="35" text-anchor="middle" class="diagram-muted">FREQ OFFSET → ICI</text>
+                <path d="M310 70h35m15 0h35m15 0h35" class="diagram-stroke"></path>
+                <path d="M310 95l35-12m50 12l35-12m50 12l-15-12" class="diagram-stroke"></path>
+                <text x="390" y="130" text-anchor="middle" class="diagram-muted">subcarriers shift → takrao</text>
+                <text x="260" y="185" text-anchor="middle" class="diagram-muted">ILAJ: PREAMBLE + PILOTS + AFC</text>
+                <text x="260" y="212" text-anchor="middle" class="diagram-muted">WINDOW CP KE ANDAR ★ CFO ≈ 0</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Window idhar-udhar ISI, frequency hili ICI.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> sync-sensitive line se start, 4-row table, timing para (preamble/Schmidl–Cox), frequency para (CFO causes + ICI + AFC), FIG.003.</p>
+        </section>
+
+        <section aria-labelledby="q6">
+          <p class="section-kicker">THEORY · Q6</p>
+          <h2 id="q6">Cellular mein channel assignment strategies</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain channel assignment strategies in cellular systems.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Limited channels ko cells mein baantne ke <strong>3 tareeke</strong> hain. Socho shaadi mein khana: fixed thaali (FCA), buffet line (DCA), mix (HCA).</p>
+          <ul class="plain-list">
+            <li><strong>FCA (Fixed Channel Assignment):</strong> har cell ko fixed channels — simple, par rush hour mein ek cell full aur padosi khaali (trunking loss). <strong>Channel borrowing:</strong> busy cell padosi se udhaar le sakta hai (interference check ke saath).</li>
+            <li><strong>DCA (Dynamic Channel Assignment):</strong> koi fixed kota nahi — har call par MSC interference dekhkar channel deta hai. Centralized (MSC decide) ya distributed (BTS decide). Flexible + capacity zyada, par signalling/complexity zyada.</li>
+            <li><strong>HCA (Hybrid):</strong> kuch fixed + kuch dynamic pool — dono ke fayde; zyada load par dynamic pool sambhalta hai.</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / FCA vs DCA vs HCA</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">FCA</th><th scope="col">DCA</th><th scope="col">HCA</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Channels</td><td>Fixed per cell</td><td>Central pool, demand par</td><td>Fixed + pool</td></tr>
+                <tr><td>Blocking (rush)</td><td>Zyada</td><td>Kam</td><td>Medium-kam</td></tr>
+                <tr><td>Complexity</td><td>Kam</td><td>Zyada (real-time check)</td><td>Medium</td></tr>
+                <tr><td>Best for</td><td>Uniform traffic</td><td>Uneven/bursty traffic</td><td>Mixed cities</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Exam-ready plan:</strong> 3 strategies headings mein (har ek: matlab + ek example/line), borrowing line FCA mein, 4-row table, closing: traffic uneven ho toh DCA/HCA.</p>
+        </section>
+
+        <section aria-labelledby="q7">
+          <p class="section-kicker">THEORY · Q7</p>
+          <h2 id="q7">Frequency reuse, interference aur capacity ka rishta</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the relationship between frequency reuse, interference and capacity.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Ye cellular ka <strong>golden triangle</strong> hai — ek badlo, baaki do hilte hain:</p>
+          <ul class="plain-list">
+            <li><strong>Frequency reuse:</strong> limited spectrum ko door-door ke cells mein dobara use karna. <strong>Cluster size N</strong> (jaise N = 7) — N cells milkar poora spectrum ek baar use karte hain; reuse factor = 1/N. N chhota → frequency paas-paas reuse → capacity zyada.</li>
+            <li><strong>Interference (co-channel):</strong> same frequency wale door ke cells ek-dusre mein shor daalte hain — <strong>S/I ratio</strong> (signal-to-interference, MCQ 15) quality batata hai. Cells paas → S/I kharab → call drop.</li>
+            <li><strong>Capacity:</strong> area mein kul calls/channels. N chhota → har cell ko zyada channels → capacity zyada, par interference bhi zyada. N bada → S/I achha, par capacity kam.</li>
+          </ul>
+          <div class="definition">
+            <span class="meta-label">GOLDEN TRADEOFF</span>
+            <p>Small N → high capacity + high interference (S/I low). Large N → low interference (S/I high) + low capacity. Cell splitting (MCQ 13) capacity badhane ka tareeka hai: bade cell ko chhote cells mein todo, transmit power घटाओ, reuse badhao.</p>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-tri-title fig-tri-desc">
+                <title id="fig-tri-title">Reuse interference capacity triangle</title>
+                <desc id="fig-tri-desc">Teeno kone ek-dusre ko kheenchate hain, beech mein S/I.</desc>
+                <defs>
+                  <pattern id="dots-tri" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-tri)"></rect>
+                <path d="M260 50 L110 190 L410 190 Z" class="diagram-stroke"></path>
+                <circle cx="260" cy="50" r="34" class="diagram-stroke"></circle>
+                <text x="260" y="45" text-anchor="middle" class="diagram-text">REUSE</text>
+                <text x="260" y="62" text-anchor="middle" class="diagram-muted">N ↓</text>
+                <circle cx="110" cy="190" r="34" class="diagram-stroke"></circle>
+                <text x="110" y="186" text-anchor="middle" class="diagram-text">INTERF.</text>
+                <text x="110" y="203" text-anchor="middle" class="diagram-muted">S/I ↓</text>
+                <circle cx="410" cy="190" r="34" class="diagram-stroke"></circle>
+                <text x="410" y="186" text-anchor="middle" class="diagram-text">CAPACITY</text>
+                <text x="410" y="203" text-anchor="middle" class="diagram-muted">↑</text>
+                <text x="260" y="160" text-anchor="middle" class="diagram-muted">S/I = QUALITY METER</text>
+                <text x="260" y="225" text-anchor="middle" class="diagram-muted">CELL SPLITTING → CAPACITY ↑ (MCQ)</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Ek kona kheecho, baaki do hilte hain.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> teeno definitions, tradeoff dono direction mein (small N vs large N), S/I line, cell splitting + handoff (MCQ 14: continuity) + GoS (MCQ 17) ek line, FIG.004.</p>
+          <p class="analogy"><strong>Analogy:</strong> Mohalle mein ek hi park (spectrum) — paas-paas colony mein baanto toh sabko milta hai (capacity) par bheed-shor badhta hai (interference); door-door baanto toh shaanti par kam logon ko milta hai.</p>
+        </section>
+
+        <section aria-labelledby="q8">
+          <p class="section-kicker">THEORY · Q8</p>
+          <h2 id="q8">GPRS — architecture, features, working</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is GPRS? Explain its architecture, features, and working in detail.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>GPRS (General Packet Radio Service)</strong> GSM par packet-data ki suvidha hai — <strong>2.5G</strong>. Circuit-switched call (poori line book) ki jagah data <strong>packets</strong> mein jaata hai, isliye <strong>always-on + pay-per-data</strong> (kitna data, utna paisa — time ka nahi).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>GPRS is a packet-switched data service over GSM networks that enables always-on mobile internet charged by data volume rather than connection time.</p>
+          </div>
+          <p><strong>Architecture — GSM + 3 naye dost (FIG.005):</strong></p>
+          <ul class="plain-list">
+            <li><strong>PCU (Packet Control Unit, BSC mein):</strong> radio packets ko circuit voice se alag karta hai.</li>
+            <li><strong>SGSN (Serving GPRS Support Node):</strong> apne area ke users ka mobility + routing sambhalta hai (packet wala MSC samjho).</li>
+            <li><strong>GGSN (Gateway GSN):</strong> internet/duniya ka darwaza — packets bahar bhejta/laata hai.</li>
+            <li>Baaqi GSM same: MS → BTS → BSC → (voice MSC taraf, data SGSN taraf) → HLR/VLR record.</li>
+          </ul>
+          <p><strong>Features:</strong> always-on connection, volume-based billing, ~171.2 kbps peak (8 time-slots × CS-4), 4 coding schemes <strong>CS-1 se CS-4</strong> (signal achha → CS-4 fast, kharab → CS-1 safe — Q2 wala tradeoff!), SMS + internet ek saath, existing GSM par upgrade (naya tower nahi).</p>
+          <p><strong>Working (4 steps):</strong> 1) <strong>GPRS attach</strong> — mobile SGSN se judta hai. 2) <strong>PDP context activate</strong> — IP address milta hai. 3) Data packets BTS→PCU→SGSN→GGSN→internet. 4) Idle par radio free, logical connection bana rehta hai (isliye always-on sasta hai).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-gprs-title fig-gprs-desc">
+                <title id="fig-gprs-title">GPRS architecture</title>
+                <desc id="fig-gprs-desc">GSM ke upar PCU, SGSN aur GGSN judte hain.</desc>
+                <defs>
+                  <pattern id="dots-gprs" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-gprs" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-gprs)"></rect>
+                <rect x="15" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="50" y="126" text-anchor="middle" class="diagram-text">MS</text>
+                <rect x="105" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="140" y="126" text-anchor="middle" class="diagram-text">BTS</text>
+                <rect x="195" y="100" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="235" y="126" text-anchor="middle" class="diagram-text">BSC+PCU</text>
+                <path d="M275 112v-40m0 80v-40" class="diagram-stroke"></path>
+                <path d="M275 72h40m-40 80h40" class="diagram-stroke" marker-end="url(#arrow-gprs)"></path>
+                <rect x="315" y="50" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="355" y="76" text-anchor="middle" class="diagram-text">MSC</text>
+                <rect x="315" y="152" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="355" y="178" text-anchor="middle" class="diagram-text">SGSN</text>
+                <rect x="415" y="152" width="90" height="44" class="diagram-stroke"></rect>
+                <text x="460" y="178" text-anchor="middle" class="diagram-text">GGSN</text>
+                <path d="M395 174h20" class="diagram-stroke" marker-end="url(#arrow-gprs)"></path>
+                <text x="355" y="30" text-anchor="middle" class="diagram-muted">VOICE (circuit)</text>
+                <text x="410" y="225" text-anchor="middle" class="diagram-muted">DATA (packets) → INTERNET</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Voice upar MSC, data neeche SGSN–GGSN.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition + 2.5G line, 3 naye nodes har ek ek-line function, 4–5 features (always-on, billing, speed, CS-1–4), 4-step working, FIG.005.</p>
+        </section>
+
+        <section aria-labelledby="q9">
+          <p class="section-kicker">THEORY · Q9</p>
+          <h2 id="q9">GSM architecture — complete diagram</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Draw and explain the complete GSM architecture.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>GSM (Global System for Mobile communications)</strong> 2G digital cellular standard hai — voice + SMS + (GPRS se) data. Poora network 3 hisson mein: mobile, radio access, core.</p>
+          <p><strong>Blocks aur functions (FIG.006):</strong></p>
+          <ul class="plain-list">
+            <li><strong>MS (Mobile Station = phone + SIM):</strong> user ka device; SIM identity (IMSI) deta hai.</li>
+            <li><strong>BTS (Base Transceiver Station = tower):</strong> radio se phone se baat karta hai; <strong>BCCH</strong> par system info broadcast karta hai (MCQ 10), <strong>TCH</strong> par voice (full-rate = 1 slot/frame, MCQ 11), urgent signalling par <strong>FACCH</strong> (MCQ 12). Mobile↔network ka pul (MCQ 9).</li>
+            <li><strong>BSC (Base Station Controller):</strong> kai BTS sambhalta hai — handoff decisions, frequency hopping.</li>
+            <li><strong>MSC (Mobile Switching Centre):</strong> call switching ka head-office; PSTN se jodta hai.</li>
+            <li><strong>HLR/VLR (registers):</strong> HLR permanent record (tum kaun + plan), VLR visiting-area copy. <strong>EIR</strong> chori ke phone (IMEI) rokta hai, <strong>AuC</strong> authentication karta hai.</li>
+            <li><strong>Interfaces:</strong> MS↔BTS = <strong>Um</strong> (air), BTS↔BSC = <strong>Abis</strong>, BSC↔MSC = <strong>A</strong> — ye teeno naam exam mein number dilate hain.</li>
+          </ul>
+          <p><strong>Speech coding (MCQ 8):</strong> traditional GSM ≈ <strong>13 kbps</strong> (RPE-LTP coder) — voice ko itna compress karke bheja jaata hai.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-gsm-title fig-gsm-desc">
+                <title id="fig-gsm-title">GSM architecture</title>
+                <desc id="fig-gsm-desc">MS se BTS, BSC, MSC hote hue registers aur PSTN tak.</desc>
+                <defs>
+                  <pattern id="dots-gsm" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-gsm" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-gsm)"></rect>
+                <rect x="15" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="50" y="126" text-anchor="middle" class="diagram-text">MS</text>
+                <rect x="105" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="140" y="126" text-anchor="middle" class="diagram-text">BTS</text>
+                <rect x="195" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="230" y="126" text-anchor="middle" class="diagram-text">BSC</text>
+                <rect x="285" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="320" y="126" text-anchor="middle" class="diagram-text">MSC</text>
+                <rect x="375" y="55" width="130" height="44" class="diagram-stroke"></rect>
+                <text x="440" y="81" text-anchor="middle" class="diagram-text">HLR · VLR</text>
+                <rect x="375" y="150" width="130" height="44" class="diagram-stroke"></rect>
+                <text x="440" y="176" text-anchor="middle" class="diagram-text">PSTN</text>
+                <path d="M85 122h20m70 0h20m70 0h20m70 0h20" class="diagram-stroke" marker-end="url(#arrow-gsm)"></path>
+                <path d="M355 122v-23m0 70v-25" class="diagram-stroke"></path>
+                <text x="125" y="70" text-anchor="middle" class="diagram-muted">Um</text>
+                <text x="215" y="70" text-anchor="middle" class="diagram-muted">Abis</text>
+                <text x="305" y="70" text-anchor="middle" class="diagram-muted">A</text>
+                <text x="260" y="225" text-anchor="middle" class="diagram-muted">MS → BTS → BSC → MSC → DUNIYA ★ 13 kbps VOICE</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Um, Abis, A — teen interface naam yaad karo.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> 3 hisson wali line, 6 blocks har ek function + MCQ link (BCCH/TCH/FACCH/BTS/13 kbps), 3 interface naam, FIG.006. Diagram mein HLR/VLR box zaroor banao.</p>
+        </section>
+
+        <section aria-labelledby="q10">
+          <p class="section-kicker">THEORY · Q10</p>
+          <h2 id="q10">Existing wireless technologies aur applications</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Discuss the existing wireless communication technologies and their applications.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Har technology <strong>range vs speed vs power</strong> ka alag samjhota hai — exam mein table banao, har row mein application:</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / wireless technologies</caption>
+              <thead>
+                <tr><th scope="col">Technology</th><th scope="col">Range / speed</th><th scope="col">Application</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Bluetooth</td><td>~10 m, ~Mbps</td><td>Earphones, smartwatch, file share</td></tr>
+                <tr><td>Zigbee</td><td>~100 m, kbps, low power</td><td>Home automation, sensors (IoT)</td></tr>
+                <tr><td>Wi-Fi (802.11)</td><td>~100 m, Gbps</td><td>Ghar/office internet, hotspot</td></tr>
+                <tr><td>GSM/GPRS/EDGE</td><td>km, voice + slow data</td><td>Calls, SMS, basic internet (2G/2.5G)</td></tr>
+                <tr><td>UMTS/3G</td><td>km, Mbps</td><td>Video call, mobile broadband start</td></tr>
+                <tr><td>LTE/4G (OFDM)</td><td>km, 100+ Mbps</td><td>HD video, gaming, hotspot (Q1 se jodo)</td></tr>
+                <tr><td>5G NR</td><td>km + mmWave small cells, Gbps, 1 ms</td><td>AR/VR, autonomous cars, massive IoT</td></tr>
+                <tr><td>Satellite (VSAT/GPS)</td><td>Global</td><td>Remote areas, navigation, TV broadcast</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Yaad rakhne ka order (generation chain):</strong> 1G analog voice → 2G GSM digital → 2.5G GPRS data → 3G broadband → 4G LTE all-IP → 5G ultra-fast + massive IoT. Har generation mein data rate ~10× — ye ek line revision mein kaam aayegi.</p>
+          <p><strong>Exam-ready plan:</strong> 8-row table (range + application har row), generation chain ek line, LTE row mein OFDM link, 5G row mein Q11 ka hint.</p>
+        </section>
+
+        <section aria-labelledby="q11">
+          <p class="section-kicker">THEORY · Q11</p>
+          <h2 id="q11">Cellular communication mein current trends</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the current trends in cellular communication systems.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Cellular ab sirf “call” nahi — <strong>speed + capacity + smart services</strong> ki race hai. 8 trends, har ek ek-line matlab ke saath:</p>
+          <ul class="plain-list">
+            <li><strong>5G → 6G:</strong> 5G (Gbps, 1 ms latency) roll-out, 6G research (Tbps soch, AI-native network, 2030 target).</li>
+            <li><strong>Massive MIMO:</strong> tower par 64+ antennas — ek saath kai users ko beamform karke capacity multifold.</li>
+            <li><strong>mmWave + small cells:</strong> 24+ GHz par bahut bandwidth; range kam toh gali-gali chhote cells (het-nets) — Q7 ke cell splitting ka modern roop.</li>
+            <li><strong>Network slicing:</strong> ek physical network ke kai virtual tukde — car ke liye ultra-reliable slice, video ke liye high-speed slice.</li>
+            <li><strong>Edge computing (MEC):</strong> data center tower ke paas — gaming/AR ka response instant.</li>
+            <li><strong>Massive IoT (mMTC):</strong> ek cell mein laakhon sensors (smart city, agriculture) — kam data, lambi battery.</li>
+            <li><strong>Open RAN:</strong> khula multi-vendor radio standard — operator saste mein mix-match hardware lagaye.</li>
+            <li><strong>AI-driven networks:</strong> traffic prediction, self-healing, energy saving — network khud optimize kare.</li>
+          </ul>
+          <p><strong>Exam-ready plan:</strong> race wali opening line, 8 trends bullets, har bullet mein ek example, end mein Q10 se link (5G row) — poora assignment ek kahani lagega.</p>
+        </section>
+
+        <section aria-labelledby="mcq-heading">
+          <p class="section-kicker">MCQ · 17 QUESTIONS</p>
+          <h2 id="mcq-heading">17 MCQs — answer with short reason</h2>
+          <p>Pehle khud option tick karo, phir answer match karo. Answers source PDF se verified hain — har answer ke saath theory link hai.</p>
+          <div class="definition">
+            <span class="meta-label">QB CLARITY FLAG</span>
+            <p>Source PDF mein 2 chhoti typo hain (matlab nahi badalta): “he cyclic prefix” (The hona chahiye) aur “rade of Service” (Grade hona chahiye). Answers phir bhi wahi hain — neeche reasons dekho.</p>
+          </div>
+          <ol class="issue-list">
+            <li><div><h3>Q1. The commonly used mathematical transform for OFDM generation is?</h3><p>A) FFT/IFFT · B) ADC only · C) DAC only · D) AM<br><strong>Answer: A</strong> — IFFT Tx mein, FFT Rx mein; OFDM ka dil (Q1, FIG.001).</p></div></li>
+            <li><div><h3>Q2. The cyclic prefix is inserted mainly to?</h3><p>A) Increase noise · B) Reduce inter-symbol interference caused by multipath · C) Reduce carrier frequency · D) Increase modulation order<br><strong>Answer: B</strong> — CP multipath ISI ka kavach hai (Q1).</p></div></li>
+            <li><div><h3>Q3. Which modulation is generally more robust against noise?</h3><p>A) 64-QAM · B) 256-QAM · C) QPSK · D) 1024-QAM<br><strong>Answer: C</strong> — points door-door = shor se suraksha; order badhe toh najakat badhe (Q2 table).</p></div></li>
+            <li><div><h3>Q4. Commonly used pulse-shaping filter is?</h3><p>A) Raised-cosine filter · B) Low-pass DC filter · C) Battery filter · D) Optical filter<br><strong>Answer: A</strong> — standard Nyquist filter, α = 0–1 (Q3).</p></div></li>
+            <li><div><h3>Q5. Windowing can improve the?</h3><p>A) Spectral characteristics of the transmitted signal · B) Battery capacity · C) Antenna height · D) Number of bits in a symbol<br><strong>Answer: A</strong> — side-lobes dabte hain, spectrum saaf hota hai (Q3).</p></div></li>
+            <li><div><h3>Q6. Spectral efficiency indicates?</h3><p>A) How efficiently bandwidth is used to transmit information · B) Transmitter physical size · C) Antenna height · D) Battery life<br><strong>Answer: A</strong> — η = Rb/B bits/s/Hz (Q4).</p></div></li>
+            <li><div><h3>Q7. Carrier Frequency Offset (CFO) can cause?</h3><p>A) Inter-carrier interference · B) Increased battery capacity · C) Reduced sampling · D) Elimination of noise<br><strong>Answer: A</strong> — frequency hili → orthogonality tooti → ICI (Q5).</p></div></li>
+            <li><div><h3>Q8. The standard speech coding rate commonly associated with traditional GSM is approximately?</h3><p>A) 64 kbps · B) 13 kbps · C) 128 kbps · D) 2 Mbps<br><strong>Answer: B</strong> — GSM full-rate voice ≈ 13 kbps (Q9).</p></div></li>
+            <li><div><h3>Q9. BTS provides communication between?</h3><p>A) Mobile station and network · B) HLR and VLR · C) MSC and HLR only · D) Two HLRs<br><strong>Answer: A</strong> — tower hi phone ko network se jodta hai (Q9, FIG.006).</p></div></li>
+            <li><div><h3>Q10. Which channel broadcasts system information to mobile stations?</h3><p>A) BCCH · B) TCH · C) SDCCH · D) FACCH<br><strong>Answer: A</strong> — BCCH = broadcast; TCH voice, FACCH urgent signalling (Q9).</p></div></li>
+            <li><div><h3>Q11. A full-rate GSM traffic channel occupies?</h3><p>A) One time slot per frame · B) Two time slots per frame · C) Four time slots per frame · D) Eight time slots per frame<br><strong>Answer: A</strong> — full-rate = 1 slot, half-rate = aadha slot (Q9).</p></div></li>
+            <li><div><h3>Q12. FACCH is used when?</h3><p>A) Urgent signalling is required · B) No signalling is required · C) Only SMS is transmitted · D) Only frequency correction is required<br><strong>Answer: A</strong> — FACCH voice slot chheenkar emergency signalling bhejta hai (Q9).</p></div></li>
+            <li><div><h3>Q13. Which technique helps increase cellular network capacity by serving users with smaller coverage areas?</h3><p>A) Cell splitting · B) Frequency elimination · C) Modulation removal · D) Trunking reduction<br><strong>Answer: A</strong> — chhote cells = zyada reuse = zyada capacity (Q7).</p></div></li>
+            <li><div><h3>Q14. The main objective of handoff is to?</h3><p>A) Maintain call/service continuity · B) Reduce the number of cells · C) Increase mobile size · D) Stop communication<br><strong>Answer: A</strong> — chalte call ko tower-to-tower saunpna (Q6/Q7).</p></div></li>
+            <li><div><h3>Q15. The signal-to-interference ratio is commonly represented by?</h3><p>A) S/I · B) I/S · C) P/T · D) R/N<br><strong>Answer: A</strong> — signal upar, interference neeche; S/I bada = quality achhi (Q7).</p></div></li>
+            <li><div><h3>Q16. Which technique can improve coverage in areas with weak signal strength?</h3><p>A) Repeaters · B) Frequency elimination · C) Reducing antenna height to zero · D) Removing base stations<br><strong>Answer: A</strong> — repeater signal pakadkar aage badhata hai; C/D options ulta kaam karte hain.</p></div></li>
+            <li><div><h3>Q17. Grade of Service (GoS) indicates?</h3><p>A) Probability that a call is blocked or delayed · B) Battery quality · C) Antenna height · D) Data encryption level<br><strong>Answer: A</strong> — GoS = blocking probability (Erlang), network dimensioning ka meter (Q7).</p></div></li>
+          </ol>
+          <p><strong>Exam-ready plan:</strong> 17 mein se 15+ ke liye 4 jodiyan pakki karo — IFFT/CP (Q1–Q2), QPSK/raised-cosine (Q3–Q4), η/CFO (Q6–Q7), BCCH/TCH/FACCH + slots (Q10–Q12). Baaki S/I, handoff, splitting, repeater, GoS ek-line definitions hain.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading">Ek nazar mein</h2>
+          <dl class="recap-list">
+            <dt>OFDM</dt><dd>N orthogonal subcarriers (Δf = 1/Tu); Tx: IFFT + CP; Rx: −CP + FFT; CP = ISI kavach.</dd>
+            <dt>Modulation</dt><dd>Speed vs majbooti; kharab channel QPSK, achha 64-QAM; adaptive modulation.</dd>
+            <dt>Pulse shaping</dt><dd>Raised-cosine (α = 0–1); bandwidth simtao + Nyquist zero-ISI; windowing spectrum sudhare.</dd>
+            <dt>η derivation</dt><dd>η = log2(M)/(1+G); 64-QAM + G = 1/4 → 4.8 bits/s/Hz.</dd>
+            <dt>Sync</dt><dd>Timing galat → ISI; CFO → ICI; ilaaj: preamble, pilots, AFC.</dd>
+            <dt>Cellular</dt><dd>FCA/DCA/HCA; small N = capacity↑ interference↑; S/I quality meter; splitting/handoff/GoS.</dd>
+            <dt>GPRS/GSM</dt><dd>GPRS = packet data (SGSN/GGSN, always-on); GSM = MS→BTS→BSC→MSC (Um/Abis/A, 13 kbps).</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Ab bina upar dekhe teen answers recall karo:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Apne answers likho; phir Q-tables se match karo.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>OFDM mein CP kyun lagta hai?
+              <ol type="A"><li>Multipath ISI rokne ke liye</li><li>Speed badhane ke liye</li><li>Power bachane ke liye</li><li>Antenna ghumane ke liye</li></ol>
+            </li>
+            <li>η = 4.8 bits/s/Hz kaunse combo se aata hai?
+              <ol type="A"><li>64-QAM + CP 1/4</li><li>QPSK + CP 1/4</li><li>BPSK bina CP</li><li>256-QAM + CP 1/2</li></ol>
+            </li>
+            <li>BCCH ka kaam kya hai?
+              <ol type="A"><li>System info broadcast</li><li>Voice bhejna</li><li>SMS bhejna</li><li>Internet chalana</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: topic-wise notes — answers recall ke baad.</p>
+        </section>
+      </article>
+
+      <article class="prose-column" data-lang="en" hidden>
+        <section aria-labelledby="how-to-use-en">
+          <p class="section-kicker">START HERE / HOW TO USE</p>
+          <h2 id="how-to-use-en">How this QB is organized</h2>
+          <p class="dropcap">Every question sits in its own block: the original Question first, then its detailed lengthy Answer, then an exam-ready plan. Read the Question and think first, then match with the Answer — in Wireless, a block diagram + each block's function + one formula/derivation earns full marks.</p>
+          <p><strong>Round 1:</strong> Draw Q1–Q5 diagrams by hand (OFDM chain, pulse shaping, sync). <strong>Round 2:</strong> Write the Q4 derivation and Q6–Q9 comparisons yourself. <strong>Round 3:</strong> Solve the 17 MCQs blind, then recall the Q10–Q11 tables.</p>
+          <div class="definition">
+            <span class="meta-label">QB SCOPE</span>
+            <p>Coverage: Q1 (OFDM Tx/Rx diagram), Q2 (modulation parameters), Q3 (pulse shaping), Q4 (spectral efficiency + derivation), Q5 (timing/frequency sync), Q6 (channel assignment), Q7 (reuse–interference–capacity), Q8 (GPRS), Q9 (GSM), Q10 (wireless technologies), Q11 (cellular trends) + 17 MCQs. Total 28 Q&amp;A blocks.</p>
+          </div>
+          <div class="definition">
+            <span class="meta-label">PREREQUISITE</span>
+            <p>This small prerequisite (not in the QB, added for clarity): <strong>modulation</strong> rides data on a carrier wave; <strong>multipath</strong> means the signal arrives directly and via building reflections — late copies create <strong>ISI (inter-symbol interference)</strong>. OFDM was built to fight exactly this ISI.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="q1-en">
+          <p class="section-kicker">THEORY · Q1</p>
+          <h2 id="q1-en">OFDM transmitter and receiver — block diagram</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Draw and explain the complete block diagram of an OFDM transmitter and receiver. Explain the function of each block.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>In <strong>OFDM (Orthogonal Frequency Division Multiplexing)</strong>, a fast data stream is split across <strong>N slow parallel subcarriers</strong>. Subcarriers are <strong>orthogonal</strong> — spaced <code>Δf = 1/Tu</code> (Tu = useful symbol time) — so they overlap yet never interfere. Slow symbols plus the cyclic prefix kill multipath ISI. This is the heart of 4G/5G and Wi-Fi.</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>OFDM is a multicarrier modulation technique in which high-rate data is split across many orthogonal low-rate subcarriers, making the system robust against multipath fading and ISI.</p>
+          </div>
+          <p><strong>Transmitter chain (left to right, each block's function):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Serial-to-Parallel (S/P):</strong> splits fast serial bits into N slow streams — symbol time grows N times, fighting ISI becomes easy.</li>
+            <li><strong>Modulation mapper:</strong> maps bits onto constellation points (QPSK/16-QAM/64-QAM — see Q2). One complex symbol sits on each subcarrier.</li>
+            <li><strong>IFFT block:</strong> converts all subcarrier symbols into one time-domain signal — the heart of OFDM modulation (MCQ 1: FFT/IFFT).</li>
+            <li><strong>Cyclic prefix (CP) insertion:</strong> pastes each symbol's tail at its start — late multipath echoes cause no ISI (MCQ 2). Price: slightly lower efficiency (Q4).</li>
+            <li><strong>Parallel-to-Serial + DAC + RF up-conversion:</strong> converts digital samples to analog, mounts them on the carrier, and transmits via antenna.</li>
+          </ul>
+          <p><strong>Receiver chain (exact reverse):</strong> antenna → RF down-conversion → ADC → S/P → <strong>CP removal</strong> → <strong>FFT</strong> (subcarriers separated again) → demapper (symbols to bits) → P/S (original data). The FFT window must sit correctly — hence synchronization (Q5).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 270" role="img" aria-labelledby="fig-ofdm-title-en fig-ofdm-desc-en">
+                <title id="fig-ofdm-title-en">OFDM transmitter and receiver chain</title>
+                <desc id="fig-ofdm-desc-en">IFFT and CP in transmitter, CP removal and FFT in receiver.</desc>
+                <defs>
+                  <pattern id="dots-ofdm-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-ofdm-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="270" fill="url(#dots-ofdm-en)"></rect>
+                <text x="130" y="30" text-anchor="middle" class="diagram-muted">TRANSMITTER</text>
+                <text x="390" y="30" text-anchor="middle" class="diagram-muted">RECEIVER</text>
+                <rect x="20" y="50" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="55" y="74" text-anchor="middle" class="diagram-text">S/P</text>
+                <rect x="105" y="50" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="140" y="74" text-anchor="middle" class="diagram-text">MAP</text>
+                <rect x="190" y="50" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="225" y="74" text-anchor="middle" class="diagram-text">IFFT</text>
+                <rect x="105" y="115" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="140" y="139" text-anchor="middle" class="diagram-text">+CP</text>
+                <rect x="190" y="115" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="225" y="139" text-anchor="middle" class="diagram-text">RF↑</text>
+                <rect x="275" y="80" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="310" y="104" text-anchor="middle" class="diagram-text">AIR</text>
+                <rect x="360" y="50" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="395" y="74" text-anchor="middle" class="diagram-text">RF↓</text>
+                <rect x="445" y="50" width="60" height="40" class="diagram-stroke"></rect>
+                <text x="475" y="74" text-anchor="middle" class="diagram-text">FFT</text>
+                <rect x="360" y="115" width="70" height="40" class="diagram-stroke"></rect>
+                <text x="395" y="139" text-anchor="middle" class="diagram-text">−CP</text>
+                <rect x="445" y="115" width="60" height="40" class="diagram-stroke"></rect>
+                <text x="475" y="139" text-anchor="middle" class="diagram-text">P/S</text>
+                <path d="M90 70h15m70 0h15m70 0h-70v45m85-45v45m15 0h-15m60-35h15m15 0h15m60 0h15m-120 50h-15m-85 0h15m85 0h60" class="diagram-stroke" marker-end="url(#arrow-ofdm-en)"></path>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">DATA → S/P → MAP → IFFT → +CP → RF↑</text>
+                <text x="260" y="222" text-anchor="middle" class="diagram-muted">RF↓ → −CP → FFT → DEMAP → P/S → DATA</text>
+                <text x="260" y="250" text-anchor="middle" class="diagram-muted">CP = ISI SHIELD ★ IFFT/FFT = HEART OF OFDM</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.001</span><span>IFFT + CP in Tx, remove CP + FFT in Rx.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition + orthogonality line (<code>Δf = 1/Tu</code>), 5 Tx blocks each with a one-line function, reverse Rx chain, FIG.001, ending with the CP = ISI shield and IFFT/FFT = heart lines. Without the diagram, half the marks are gone.</p>
+        </section>
+
+        <section aria-labelledby="q2-en">
+          <p class="section-kicker">THEORY · Q2</p>
+          <h2 id="q2-en">Parameters for selecting an OFDM modulation scheme</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the important parameters involved in selecting a modulation scheme for an OFDM system.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Choosing modulation is a <strong>speed vs toughness</strong> deal: high-order modulation (64-QAM) sends more bits but breaks easily in noise; low-order (QPSK) is slow but rock-solid. Write 6–7 parameters under headings in the exam:</p>
+          <ul class="plain-list">
+            <li><strong>Data rate / throughput:</strong> bits per symbol — BPSK = 1, QPSK = 2, 16-QAM = 4, 64-QAM = 6. More bits = more speed.</li>
+            <li><strong>BER robustness:</strong> closer constellation points mean more errors in noise. QPSK for bad channels (MCQ 3), 64-QAM for good ones.</li>
+            <li><strong>Required SNR:</strong> each scheme needs a minimum SNR for the target BER — high-order demands more SNR.</li>
+            <li><strong>Bandwidth / spectral efficiency:</strong> more bits per symbol = more data in less bandwidth (link to Q4).</li>
+            <li><strong>PAPR sensitivity:</strong> OFDM has high peaks; high-order QAM suffers more from amplifier non-linearity.</li>
+            <li><strong>Complexity and power:</strong> mobile batteries and cheap hardware prefer simple schemes (QPSK).</li>
+            <li><strong>Mobility / Doppler:</strong> in fast cars/trains the channel changes quickly — robust low-order schemes stay safe.</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / modulation comparison</caption>
+              <thead>
+                <tr><th scope="col">Scheme</th><th scope="col">Bits/symbol</th><th scope="col">Toughness</th><th scope="col">Choose when</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>BPSK</td><td>1</td><td>Highest</td><td>Very bad channels, control signals</td></tr>
+                <tr><td>QPSK</td><td>2</td><td>High</td><td>Cell edge, high mobility (MCQ 3)</td></tr>
+                <tr><td>16-QAM</td><td>4</td><td>Medium</td><td>Normal city coverage</td></tr>
+                <tr><td>64-QAM</td><td>6</td><td>Low</td><td>Near tower, good SNR</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Golden line (adaptive modulation):</strong> modern systems (LTE/5G) keep switching schemes by channel — 64-QAM near, QPSK far. This one line makes the answer look topper-class.</p>
+          <p><strong>Exam-ready plan:</strong> start with the speed-vs-toughness tradeoff, 6–7 parameters each with one-line meaning, 4-row table, adaptive-modulation closing line.</p>
+        </section>
+
+        <section aria-labelledby="q3-en">
+          <p class="section-kicker">THEORY · Q3</p>
+          <h2 id="q3-en">What is pulse shaping? Why is it needed?</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is pulse shaping? Explain the need for pulse shaping in digital communication systems.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Pulse shaping</strong> means rounding the sharp rectangular pulses of digital 0/1 into <strong>smooth shapes</strong> so they occupy less bandwidth and never leak into neighbouring symbols. Without shaping, two troubles come:</p>
+          <ul class="plain-list">
+            <li><strong>Infinite bandwidth:</strong> sharp pulse edges spread far in frequency — bad spectrum, intrusion into neighbour channels. Shaped pulses stay compact.</li>
+            <li><strong>ISI (inter-symbol interference):</strong> channel and multipath smear pulses; one symbol's tail climbs onto the next. With shaping + Nyquist condition, neighbouring pulses are <strong>zero</strong> at every sampling instant — ISI gone.</li>
+          </ul>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Pulse shaping is the process of modifying transmitted pulses to limit their bandwidth and achieve zero ISI at sampling instants (Nyquist criterion).</p>
+          </div>
+          <p><strong>Raised-cosine filter (answer to MCQ 4):</strong> the standard pulse-shaping filter. Its <strong>roll-off factor α (0 to 1)</strong> controls the deal — α = 0 means minimum bandwidth but sensitive timing; larger α costs a little bandwidth but fights timing errors easily. Practical α ≈ 0.22–0.35 (used in GSM).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-pulse-title-en fig-pulse-desc-en">
+                <title id="fig-pulse-title-en">Effect of pulse shaping</title>
+                <desc id="fig-pulse-desc-en">Unshaped spread spectrum and ISI, shaped compact spectrum and zero crossing.</desc>
+                <defs>
+                  <pattern id="dots-pulse-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-pulse-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-pulse-en)"></rect>
+                <text x="130" y="35" text-anchor="middle" class="diagram-muted">UNSHAPED ✗</text>
+                <text x="390" y="35" text-anchor="middle" class="diagram-muted">SHAPED ✓</text>
+                <rect x="50" y="60" width="60" height="60" class="diagram-stroke"></rect>
+                <rect x="120" y="60" width="60" height="60" class="diagram-stroke"></rect>
+                <text x="115" y="150" text-anchor="middle" class="diagram-muted">sharp edges · spread spectrum · ISI</text>
+                <path d="M300 120 Q330 120 340 80 Q350 120 380 120 Q410 120 420 80 Q430 120 460 120" class="diagram-stroke"></path>
+                <path d="M300 120h180" class="diagram-stroke"></path>
+                <text x="390" y="150" text-anchor="middle" class="diagram-muted">round shape · compact spectrum · zero ISI</text>
+                <text x="260" y="200" text-anchor="middle" class="diagram-muted">RAISED-COSINE FILTER ★ α = 0–1</text>
+                <text x="260" y="225" text-anchor="middle" class="diagram-muted">WINDOVING IMPROVES SPECTRUM FURTHER (MCQ)</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.002</span><span>Sharp edges spread, round shapes stay compact.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition, 2 needs (bandwidth + ISI with Nyquist line), raised-cosine + α tradeoff, windowing one-liner (MCQ 5: improves spectral characteristics of the transmitted signal), FIG.002.</p>
+        </section>
+
+        <section aria-labelledby="q4-en">
+          <p class="section-kicker">THEORY · Q4</p>
+          <h2 id="q4-en">Spectral efficiency — definition, derivation, factors</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Define spectral efficiency. Derive the expression for spectral efficiency of an OFDM system and explain the factors affecting it.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>Spectral efficiency (η)</strong> tells how many bits/sec are squeezed from 1 Hz of bandwidth — unit <strong>bits/s/Hz</strong>. Formula: <code>η = Rb / B</code> (Rb = bit rate, B = bandwidth). Spectrum is government treasure (limited + costly), so higher η means a happier operator (MCQ 6).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>Spectral efficiency indicates how efficiently the available bandwidth is used to transmit information: η = data rate / bandwidth (bits/s/Hz).</p>
+          </div>
+          <p><strong>Derivation (write exactly these 5 steps in the exam):</strong></p>
+          <ul class="plain-list">
+            <li><strong>Step 1:</strong> N subcarriers with M-ary modulation → <code>log2(M)</code> bits each. Total bits per OFDM symbol = <code>N · log2(M)</code>.</li>
+            <li><strong>Step 2:</strong> Symbol time = useful time + CP: <code>Ts = Tu + Tcp</code>. Bit rate <code>Rb = N · log2(M) / (Tu + Tcp)</code>.</li>
+            <li><strong>Step 3:</strong> Orthogonality gives subcarrier spacing <code>Δf = 1/Tu</code>, total bandwidth <code>B ≈ N · Δf = N / Tu</code>.</li>
+            <li><strong>Step 4:</strong> <code>η = Rb / B = [N·log2(M)/(Tu+Tcp)] / [N/Tu] = log2(M) · Tu/(Tu+Tcp)</code>.</li>
+            <li><strong>Step 5 (final):</strong> with CP fraction <code>G = Tcp/Tu</code> → <strong><code>η = log2(M) / (1 + G)</code></strong>. Without CP (G = 0) → <code>η = log2(M)</code>.</li>
+          </ul>
+          <p><strong>Numeric example (memorize firmly):</strong> 64-QAM → log2(64) = 6 bits; CP = 1/4 (G = 0.25) → η = 6/1.25 = <strong>4.8 bits/s/Hz</strong>. The same system in QPSK would give η = 2/1.25 = 1.6 — this links to the Q2 speed-vs-toughness tradeoff.</p>
+          <p><strong>Factors affecting (5 points):</strong> modulation order M (bigger M = higher η, lower toughness), CP length (long CP = ISI protection but lower η), guard-band/pilot overhead, channel coding rate (error-correction bits lower η), windowing/filtering (fewer side-lobes → better effective η).</p>
+          <p><strong>Exam-ready plan:</strong> definition + formula + unit, 5-step derivation in a numbered box, numeric example (the 4.8 one), 5 factors. Numbered derivation steps earn step-marks.</p>
+        </section>
+
+        <section aria-labelledby="q5-en">
+          <p class="section-kicker">THEORY · Q5</p>
+          <h2 id="q5-en">Timing and frequency synchronization in OFDM</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain timing synchronization and frequency synchronization in OFDM.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>OFDM is <strong>sync-sensitive</strong>: a misplaced FFT window causes ISI, and even a small carrier-frequency shift breaks orthogonality into <strong>ICI (inter-carrier interference)</strong> — neighbouring subcarriers start fighting. So the receiver must lock two things:</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / timing vs frequency sync</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">Timing sync</th><th scope="col">Frequency sync</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>What locks</td><td>Symbol start (FFT window position)</td><td>Carrier frequency (CFO = 0)</td></tr>
+                <tr><td>Error causes</td><td>ISI — if window leaves the CP</td><td>ICI — orthogonality breaks (MCQ 7)</td></tr>
+                <tr><td>Causes</td><td>Propagation delay, clock offset</td><td>Oscillator mismatch + Doppler (mobility)</td></tr>
+                <tr><td>How (technique)</td><td>Preamble/autocorrelation (Schmidl–Cox), CP correlation</td><td>Pilot subcarriers + AFC loop estimate and correct CFO</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Timing sync detail:</strong> the receiver needs every symbol's start at sample level; while the window stays inside the CP there is no ISI (the CP absorbs exactly this). Packets carry a <strong>preamble</strong> (known pattern) at the start — the Schmidl–Cox method correlates it to catch the symbol boundary.</p>
+          <p><strong>Frequency sync detail:</strong> <strong>CFO (carrier frequency offset)</strong> comes from transmitter-receiver oscillator difference and Doppler; even a small CFO shifts subcarriers into ICI (MCQ 7's answer: inter-carrier interference). CFO is estimated from pilot tones and fixed by <strong>AFC (automatic frequency control)</strong>.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-sync-title-en fig-sync-desc-en">
+                <title id="fig-sync-title-en">Two syncs, two enemies</title>
+                <desc id="fig-sync-desc-en">Wrong window gives ISI, frequency offset gives ICI.</desc>
+                <defs>
+                  <pattern id="dots-sync-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-sync-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-sync-en)"></rect>
+                <text x="130" y="35" text-anchor="middle" class="diagram-muted">WRONG TIMING → ISI</text>
+                <rect x="40" y="55" width="100" height="40" class="diagram-stroke"></rect>
+                <text x="90" y="79" text-anchor="middle" class="diagram-text">CP</text>
+                <rect x="140" y="55" width="100" height="40" class="diagram-stroke"></rect>
+                <text x="190" y="79" text-anchor="middle" class="diagram-text">DATA</text>
+                <rect x="90" y="115" width="100" height="34" class="diagram-stroke"></rect>
+                <text x="140" y="137" text-anchor="middle" class="diagram-text">WINDOW ✗</text>
+                <text x="390" y="35" text-anchor="middle" class="diagram-muted">FREQ OFFSET → ICI</text>
+                <path d="M310 70h35m15 0h35m15 0h35" class="diagram-stroke"></path>
+                <path d="M310 95l35-12m50 12l35-12m50 12l-15-12" class="diagram-stroke"></path>
+                <text x="390" y="130" text-anchor="middle" class="diagram-muted">subcarriers shift → collide</text>
+                <text x="260" y="185" text-anchor="middle" class="diagram-muted">CURE: PREAMBLE + PILOTS + AFC</text>
+                <text x="260" y="212" text-anchor="middle" class="diagram-muted">WINDOW INSIDE CP ★ CFO ≈ 0</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.003</span><span>Wandering window means ISI, shifted frequency means ICI.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> start with the sync-sensitive line, 4-row table, timing para (preamble/Schmidl–Cox), frequency para (CFO causes + ICI + AFC), FIG.003.</p>
+        </section>
+
+        <section aria-labelledby="q6-en">
+          <p class="section-kicker">THEORY · Q6</p>
+          <h2 id="q6-en">Channel assignment strategies in cellular systems</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain channel assignment strategies in cellular systems.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Three ways to share limited channels among cells. Think of a wedding dinner: fixed plates (FCA), buffet line (DCA), mix (HCA).</p>
+          <ul class="plain-list">
+            <li><strong>FCA (Fixed Channel Assignment):</strong> fixed channels per cell — simple, but at rush hour one cell is full while the neighbour sits empty (trunking loss). <strong>Channel borrowing:</strong> a busy cell may borrow from a neighbour (with interference checks).</li>
+            <li><strong>DCA (Dynamic Channel Assignment):</strong> no fixed quota — the MSC assigns a channel per call after checking interference. Centralized (MSC decides) or distributed (BTS decides). More flexible + more capacity, but more signalling/complexity.</li>
+            <li><strong>HCA (Hybrid):</strong> some fixed + some dynamic pool — benefits of both; the dynamic pool absorbs heavy load.</li>
+          </ul>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / FCA vs DCA vs HCA</caption>
+              <thead>
+                <tr><th scope="col">Point</th><th scope="col">FCA</th><th scope="col">DCA</th><th scope="col">HCA</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Channels</td><td>Fixed per cell</td><td>Central pool, on demand</td><td>Fixed + pool</td></tr>
+                <tr><td>Blocking (rush)</td><td>Higher</td><td>Lower</td><td>Medium-low</td></tr>
+                <tr><td>Complexity</td><td>Low</td><td>High (real-time checks)</td><td>Medium</td></tr>
+                <tr><td>Best for</td><td>Uniform traffic</td><td>Uneven/bursty traffic</td><td>Mixed cities</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Exam-ready plan:</strong> 3 strategies under headings (each: meaning + one example/line), borrowing line inside FCA, 4-row table, closing: DCA/HCA when traffic is uneven.</p>
+        </section>
+
+        <section aria-labelledby="q7-en">
+          <p class="section-kicker">THEORY · Q7</p>
+          <h2 id="q7-en">Relationship between frequency reuse, interference and capacity</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the relationship between frequency reuse, interference and capacity.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>This is cellular's <strong>golden triangle</strong> — move one corner and the other two shift:</p>
+          <ul class="plain-list">
+            <li><strong>Frequency reuse:</strong> reusing limited spectrum in far-apart cells. <strong>Cluster size N</strong> (e.g. N = 7) — N cells together use the full spectrum once; reuse factor = 1/N. Small N → close reuse → higher capacity.</li>
+            <li><strong>Interference (co-channel):</strong> distant same-frequency cells inject noise into each other — the <strong>S/I ratio</strong> (signal-to-interference, MCQ 15) reports quality. Close cells → bad S/I → dropped calls.</li>
+            <li><strong>Capacity:</strong> total calls/channels in an area. Small N → more channels per cell → higher capacity, but also higher interference. Large N → good S/I, but lower capacity.</li>
+          </ul>
+          <div class="definition">
+            <span class="meta-label">GOLDEN TRADEOFF</span>
+            <p>Small N → high capacity + high interference (low S/I). Large N → low interference (high S/I) + low capacity. Cell splitting (MCQ 13) raises capacity: split big cells into small ones, lower transmit power, raise reuse.</p>
+          </div>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-tri-title-en fig-tri-desc-en">
+                <title id="fig-tri-title-en">Reuse interference capacity triangle</title>
+                <desc id="fig-tri-desc-en">Three corners pull each other, S/I in the middle.</desc>
+                <defs>
+                  <pattern id="dots-tri-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-tri-en)"></rect>
+                <path d="M260 50 L110 190 L410 190 Z" class="diagram-stroke"></path>
+                <circle cx="260" cy="50" r="34" class="diagram-stroke"></circle>
+                <text x="260" y="45" text-anchor="middle" class="diagram-text">REUSE</text>
+                <text x="260" y="62" text-anchor="middle" class="diagram-muted">N ↓</text>
+                <circle cx="110" cy="190" r="34" class="diagram-stroke"></circle>
+                <text x="110" y="186" text-anchor="middle" class="diagram-text">INTERF.</text>
+                <text x="110" y="203" text-anchor="middle" class="diagram-muted">S/I ↓</text>
+                <circle cx="410" cy="190" r="34" class="diagram-stroke"></circle>
+                <text x="410" y="186" text-anchor="middle" class="diagram-text">CAPACITY</text>
+                <text x="410" y="203" text-anchor="middle" class="diagram-muted">↑</text>
+                <text x="260" y="160" text-anchor="middle" class="diagram-muted">S/I = QUALITY METER</text>
+                <text x="260" y="225" text-anchor="middle" class="diagram-muted">CELL SPLITTING → CAPACITY ↑ (MCQ)</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.004</span><span>Pull one corner and the other two move.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> all three definitions, tradeoff in both directions (small N vs large N), S/I line, one line each on cell splitting + handoff (MCQ 14: continuity) + GoS (MCQ 17), FIG.004.</p>
+        </section>
+
+        <section aria-labelledby="q8-en">
+          <p class="section-kicker">THEORY · Q8</p>
+          <h2 id="q8-en">GPRS — architecture, features, working</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>What is GPRS? Explain its architecture, features, and working in detail.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>GPRS (General Packet Radio Service)</strong> is packet data over GSM — <strong>2.5G</strong>. Instead of booking a full circuit-switched line per call, data travels in <strong>packets</strong>, giving <strong>always-on + pay-per-data</strong> (pay for volume, not time).</p>
+          <div class="definition">
+            <span class="meta-label">EXAM DEFINITION</span>
+            <p>GPRS is a packet-switched data service over GSM networks that enables always-on mobile internet charged by data volume rather than connection time.</p>
+          </div>
+          <p><strong>Architecture — GSM + 3 new friends (FIG.005):</strong></p>
+          <ul class="plain-list">
+            <li><strong>PCU (Packet Control Unit, in BSC):</strong> separates radio packets from circuit voice.</li>
+            <li><strong>SGSN (Serving GPRS Support Node):</strong> handles mobility + routing for users in its area (think packet-side MSC).</li>
+            <li><strong>GGSN (Gateway GSN):</strong> the door to the internet — sends/fetches packets outside.</li>
+            <li>Rest same as GSM: MS → BTS → BSC → (voice toward MSC, data toward SGSN) → HLR/VLR records.</li>
+          </ul>
+          <p><strong>Features:</strong> always-on connection, volume-based billing, ~171.2 kbps peak (8 time-slots × CS-4), 4 coding schemes <strong>CS-1 to CS-4</strong> (good signal → fast CS-4, bad → safe CS-1 — the Q2 tradeoff again!), SMS + internet together, upgrade over existing GSM (no new towers).</p>
+          <p><strong>Working (4 steps):</strong> 1) <strong>GPRS attach</strong> — mobile joins the SGSN. 2) <strong>PDP context activation</strong> — IP address granted. 3) Data packets flow BTS→PCU→SGSN→GGSN→internet. 4) When idle the radio frees up while the logical connection persists (why always-on stays cheap).</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-gprs-title-en fig-gprs-desc-en">
+                <title id="fig-gprs-title-en">GPRS architecture</title>
+                <desc id="fig-gprs-desc-en">PCU, SGSN and GGSN added over GSM.</desc>
+                <defs>
+                  <pattern id="dots-gprs-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-gprs-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-gprs-en)"></rect>
+                <rect x="15" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="50" y="126" text-anchor="middle" class="diagram-text">MS</text>
+                <rect x="105" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="140" y="126" text-anchor="middle" class="diagram-text">BTS</text>
+                <rect x="195" y="100" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="235" y="126" text-anchor="middle" class="diagram-text">BSC+PCU</text>
+                <path d="M275 112v-40m0 80v-40" class="diagram-stroke"></path>
+                <path d="M275 72h40m-40 80h40" class="diagram-stroke" marker-end="url(#arrow-gprs-en)"></path>
+                <rect x="315" y="50" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="355" y="76" text-anchor="middle" class="diagram-text">MSC</text>
+                <rect x="315" y="152" width="80" height="44" class="diagram-stroke"></rect>
+                <text x="355" y="178" text-anchor="middle" class="diagram-text">SGSN</text>
+                <rect x="415" y="152" width="90" height="44" class="diagram-stroke"></rect>
+                <text x="460" y="178" text-anchor="middle" class="diagram-text">GGSN</text>
+                <path d="M395 174h20" class="diagram-stroke" marker-end="url(#arrow-gprs-en)"></path>
+                <text x="355" y="30" text-anchor="middle" class="diagram-muted">VOICE (circuit)</text>
+                <text x="410" y="225" text-anchor="middle" class="diagram-muted">DATA (packets) → INTERNET</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.005</span><span>Voice up to MSC, data down through SGSN–GGSN.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> definition + 2.5G line, 3 new nodes each with a one-line function, 4–5 features (always-on, billing, speed, CS-1–4), 4-step working, FIG.005.</p>
+        </section>
+
+        <section aria-labelledby="q9-en">
+          <p class="section-kicker">THEORY · Q9</p>
+          <h2 id="q9-en">GSM architecture — complete diagram</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Draw and explain the complete GSM architecture.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p><strong>GSM (Global System for Mobile communications)</strong> is the 2G digital cellular standard — voice + SMS + (via GPRS) data. The whole network has 3 parts: mobile, radio access, core.</p>
+          <p><strong>Blocks and functions (FIG.006):</strong></p>
+          <ul class="plain-list">
+            <li><strong>MS (Mobile Station = phone + SIM):</strong> the user's device; the SIM gives identity (IMSI).</li>
+            <li><strong>BTS (Base Transceiver Station = tower):</strong> talks radio to phones; broadcasts system info on <strong>BCCH</strong> (MCQ 10), carries voice on <strong>TCH</strong> (full-rate = 1 slot/frame, MCQ 11), urgent signalling on <strong>FACCH</strong> (MCQ 12). The bridge between mobile and network (MCQ 9).</li>
+            <li><strong>BSC (Base Station Controller):</strong> manages several BTS units — handoff decisions, frequency hopping.</li>
+            <li><strong>MSC (Mobile Switching Centre):</strong> the call-switching head office; connects to PSTN.</li>
+            <li><strong>HLR/VLR (registers):</strong> HLR is the permanent record (who you are + plan), VLR a visiting-area copy. <strong>EIR</strong> blocks stolen phones (IMEI), <strong>AuC</strong> authenticates.</li>
+            <li><strong>Interfaces:</strong> MS↔BTS = <strong>Um</strong> (air), BTS↔BSC = <strong>Abis</strong>, BSC↔MSC = <strong>A</strong> — these three names earn marks in the exam.</li>
+          </ul>
+          <p><strong>Speech coding (MCQ 8):</strong> traditional GSM ≈ <strong>13 kbps</strong> (RPE-LTP coder) — voice is compressed this far before sending.</p>
+          <figure class="figure-card">
+            <div class="figure-canvas">
+              <svg viewBox="0 0 520 250" role="img" aria-labelledby="fig-gsm-title-en fig-gsm-desc-en">
+                <title id="fig-gsm-title-en">GSM architecture</title>
+                <desc id="fig-gsm-desc-en">From MS through BTS, BSC, MSC to registers and PSTN.</desc>
+                <defs>
+                  <pattern id="dots-gsm-en" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#c8c1af"></circle>
+                  </pattern>
+                  <marker id="arrow-gsm-en" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0 0 8 4 0 8" class="diagram-stroke"></path>
+                  </marker>
+                </defs>
+                <rect width="520" height="250" fill="url(#dots-gsm-en)"></rect>
+                <rect x="15" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="50" y="126" text-anchor="middle" class="diagram-text">MS</text>
+                <rect x="105" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="140" y="126" text-anchor="middle" class="diagram-text">BTS</text>
+                <rect x="195" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="230" y="126" text-anchor="middle" class="diagram-text">BSC</text>
+                <rect x="285" y="100" width="70" height="44" class="diagram-stroke"></rect>
+                <text x="320" y="126" text-anchor="middle" class="diagram-text">MSC</text>
+                <rect x="375" y="55" width="130" height="44" class="diagram-stroke"></rect>
+                <text x="440" y="81" text-anchor="middle" class="diagram-text">HLR · VLR</text>
+                <rect x="375" y="150" width="130" height="44" class="diagram-stroke"></rect>
+                <text x="440" y="176" text-anchor="middle" class="diagram-text">PSTN</text>
+                <path d="M85 122h20m70 0h20m70 0h20m70 0h20" class="diagram-stroke" marker-end="url(#arrow-gsm-en)"></path>
+                <path d="M355 122v-23m0 70v-25" class="diagram-stroke"></path>
+                <text x="125" y="70" text-anchor="middle" class="diagram-muted">Um</text>
+                <text x="215" y="70" text-anchor="middle" class="diagram-muted">Abis</text>
+                <text x="305" y="70" text-anchor="middle" class="diagram-muted">A</text>
+                <text x="260" y="225" text-anchor="middle" class="diagram-muted">MS → BTS → BSC → MSC → WORLD ★ 13 kbps VOICE</text>
+              </svg>
+            </div>
+            <figcaption class="figure-caption"><span class="figure-number">FIG.006</span><span>Um, Abis, A — memorize three interface names.</span></figcaption>
+          </figure>
+          <p><strong>Exam-ready plan:</strong> 3-parts line, 6 blocks each with function + MCQ link (BCCH/TCH/FACCH/BTS/13 kbps), 3 interface names, FIG.006. Always draw the HLR/VLR box in the diagram.</p>
+        </section>
+
+        <section aria-labelledby="q10-en">
+          <p class="section-kicker">THEORY · Q10</p>
+          <h2 id="q10-en">Existing wireless technologies and applications</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Discuss the existing wireless communication technologies and their applications.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Every technology is a different <strong>range vs speed vs power</strong> deal — make a table in the exam, with an application in every row:</p>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <caption class="table-caption">Exam table / wireless technologies</caption>
+              <thead>
+                <tr><th scope="col">Technology</th><th scope="col">Range / speed</th><th scope="col">Application</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Bluetooth</td><td>~10 m, ~Mbps</td><td>Earphones, smartwatch, file sharing</td></tr>
+                <tr><td>Zigbee</td><td>~100 m, kbps, low power</td><td>Home automation, sensors (IoT)</td></tr>
+                <tr><td>Wi-Fi (802.11)</td><td>~100 m, Gbps</td><td>Home/office internet, hotspots</td></tr>
+                <tr><td>GSM/GPRS/EDGE</td><td>km, voice + slow data</td><td>Calls, SMS, basic internet (2G/2.5G)</td></tr>
+                <tr><td>UMTS/3G</td><td>km, Mbps</td><td>Video calls, start of mobile broadband</td></tr>
+                <tr><td>LTE/4G (OFDM)</td><td>km, 100+ Mbps</td><td>HD video, gaming, hotspots (link to Q1)</td></tr>
+                <tr><td>5G NR</td><td>km + mmWave small cells, Gbps, 1 ms</td><td>AR/VR, autonomous cars, massive IoT</td></tr>
+                <tr><td>Satellite (VSAT/GPS)</td><td>Global</td><td>Remote areas, navigation, TV broadcast</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Memorize the generation chain:</strong> 1G analog voice → 2G GSM digital → 2.5G GPRS data → 3G broadband → 4G LTE all-IP → 5G ultra-fast + massive IoT. Data rate roughly 10× per generation — this one line helps in revision.</p>
+          <p><strong>Exam-ready plan:</strong> 8-row table (range + application every row), generation chain in one line, OFDM link in the LTE row, hint of Q11 in the 5G row.</p>
+        </section>
+
+        <section aria-labelledby="q11-en">
+          <p class="section-kicker">THEORY · Q11</p>
+          <h2 id="q11-en">Current trends in cellular communication</h2>
+          <div class="definition">
+            <span class="meta-label">QUESTION</span>
+            <p>Explain the current trends in cellular communication systems.</p>
+          </div>
+          <p class="section-kicker">ANSWER</p>
+          <p>Cellular is no longer just “calls” — it is a race of <strong>speed + capacity + smart services</strong>. 8 trends, each with a one-line meaning:</p>
+          <ul class="plain-list">
+            <li><strong>5G → 6G:</strong> 5G rolling out (Gbps, 1 ms latency), 6G research (Tbps dreams, AI-native networks, 2030 target).</li>
+            <li><strong>Massive MIMO:</strong> 64+ antennas on towers — beamforming to many users at once, multifold capacity.</li>
+            <li><strong>mmWave + small cells:</strong> huge bandwidth above 24 GHz; short range means street-by-street small cells (het-nets) — the modern form of Q7's cell splitting.</li>
+            <li><strong>Network slicing:</strong> many virtual slices of one physical network — an ultra-reliable slice for cars, a high-speed slice for video.</li>
+            <li><strong>Edge computing (MEC):</strong> data centres next to towers — instant response for gaming/AR.</li>
+            <li><strong>Massive IoT (mMTC):</strong> lakhs of sensors per cell (smart cities, agriculture) — tiny data, long battery.</li>
+            <li><strong>Open RAN:</strong> open multi-vendor radio standards — operators deploy cheaper mix-and-match hardware.</li>
+            <li><strong>AI-driven networks:</strong> traffic prediction, self-healing, energy saving — networks optimizing themselves.</li>
+          </ul>
+          <p><strong>Exam-ready plan:</strong> race opening line, 8 trend bullets, one example per bullet, link back to Q10 (5G row) at the end — the whole assignment reads as one story.</p>
+        </section>
+
+        <section aria-labelledby="mcq-heading-en">
+          <p class="section-kicker">MCQ · 17 QUESTIONS</p>
+          <h2 id="mcq-heading-en">17 MCQs — answers with short reasons</h2>
+          <p>Tick the option yourself first, then match the answer. Answers verified from the source PDF — every answer carries its theory link.</p>
+          <div class="definition">
+            <span class="meta-label">QB CLARITY FLAG</span>
+            <p>Two tiny typos in the source PDF (meaning unchanged): “he cyclic prefix” (should be The) and “rade of Service” (should be Grade). Answers remain the same — see reasons below.</p>
+          </div>
+          <ol class="issue-list">
+            <li><div><h3>Q1. The commonly used mathematical transform for OFDM generation is?</h3><p>A) FFT/IFFT · B) ADC only · C) DAC only · D) AM<br><strong>Answer: A</strong> — IFFT in Tx, FFT in Rx; the heart of OFDM (Q1, FIG.001).</p></div></li>
+            <li><div><h3>Q2. The cyclic prefix is inserted mainly to?</h3><p>A) Increase noise · B) Reduce inter-symbol interference caused by multipath · C) Reduce carrier frequency · D) Increase modulation order<br><strong>Answer: B</strong> — CP is the shield against multipath ISI (Q1).</p></div></li>
+            <li><div><h3>Q3. Which modulation is generally more robust against noise?</h3><p>A) 64-QAM · B) 256-QAM · C) QPSK · D) 1024-QAM<br><strong>Answer: C</strong> — widely spaced points = noise protection; higher order means more fragility (Q2 table).</p></div></li>
+            <li><div><h3>Q4. Commonly used pulse-shaping filter is?</h3><p>A) Raised-cosine filter · B) Low-pass DC filter · C) Battery filter · D) Optical filter<br><strong>Answer: A</strong> — the standard Nyquist filter, α = 0–1 (Q3).</p></div></li>
+            <li><div><h3>Q5. Windowing can improve the?</h3><p>A) Spectral characteristics of the transmitted signal · B) Battery capacity · C) Antenna height · D) Number of bits in a symbol<br><strong>Answer: A</strong> — side-lobes get suppressed, spectrum cleans up (Q3).</p></div></li>
+            <li><div><h3>Q6. Spectral efficiency indicates?</h3><p>A) How efficiently bandwidth is used to transmit information · B) Transmitter physical size · C) Antenna height · D) Battery life<br><strong>Answer: A</strong> — η = Rb/B bits/s/Hz (Q4).</p></div></li>
+            <li><div><h3>Q7. Carrier Frequency Offset (CFO) can cause?</h3><p>A) Inter-carrier interference · B) Increased battery capacity · C) Reduced sampling · D) Elimination of noise<br><strong>Answer: A</strong> — shifted frequency breaks orthogonality into ICI (Q5).</p></div></li>
+            <li><div><h3>Q8. The standard speech coding rate commonly associated with traditional GSM is approximately?</h3><p>A) 64 kbps · B) 13 kbps · C) 128 kbps · D) 2 Mbps<br><strong>Answer: B</strong> — GSM full-rate voice ≈ 13 kbps (Q9).</p></div></li>
+            <li><div><h3>Q9. BTS provides communication between?</h3><p>A) Mobile station and network · B) HLR and VLR · C) MSC and HLR only · D) Two HLRs<br><strong>Answer: A</strong> — the tower connects phones to the network (Q9, FIG.006).</p></div></li>
+            <li><div><h3>Q10. Which channel broadcasts system information to mobile stations?</h3><p>A) BCCH · B) TCH · C) SDCCH · D) FACCH<br><strong>Answer: A</strong> — BCCH = broadcast; TCH is voice, FACCH urgent signalling (Q9).</p></div></li>
+            <li><div><h3>Q11. A full-rate GSM traffic channel occupies?</h3><p>A) One time slot per frame · B) Two time slots per frame · C) Four time slots per frame · D) Eight time slots per frame<br><strong>Answer: A</strong> — full-rate = 1 slot, half-rate = half a slot (Q9).</p></div></li>
+            <li><div><h3>Q12. FACCH is used when?</h3><p>A) Urgent signalling is required · B) No signalling is required · C) Only SMS is transmitted · D) Only frequency correction is required<br><strong>Answer: A</strong> — FACCH steals a voice slot to send emergency signalling (Q9).</p></div></li>
+            <li><div><h3>Q13. Which technique helps increase cellular network capacity by serving users with smaller coverage areas?</h3><p>A) Cell splitting · B) Frequency elimination · C) Modulation removal · D) Trunking reduction<br><strong>Answer: A</strong> — smaller cells = more reuse = more capacity (Q7).</p></div></li>
+            <li><div><h3>Q14. The main objective of handoff is to?</h3><p>A) Maintain call/service continuity · B) Reduce the number of cells · C) Increase mobile size · D) Stop communication<br><strong>Answer: A</strong> — handing running calls tower-to-tower (Q6/Q7).</p></div></li>
+            <li><div><h3>Q15. The signal-to-interference ratio is commonly represented by?</h3><p>A) S/I · B) I/S · C) P/T · D) R/N<br><strong>Answer: A</strong> — signal above, interference below; bigger S/I = better quality (Q7).</p></div></li>
+            <li><div><h3>Q16. Which technique can improve coverage in areas with weak signal strength?</h3><p>A) Repeaters · B) Frequency elimination · C) Reducing antenna height to zero · D) Removing base stations<br><strong>Answer: A</strong> — a repeater catches and forwards the signal; options C/D do the opposite.</p></div></li>
+            <li><div><h3>Q17. Grade of Service (GoS) indicates?</h3><p>A) Probability that a call is blocked or delayed · B) Battery quality · C) Antenna height · D) Data encryption level<br><strong>Answer: A</strong> — GoS = blocking probability (Erlang), the meter for network dimensioning (Q7).</p></div></li>
+          </ol>
+          <p><strong>Exam-ready plan:</strong> for 15+, fix 4 pairs firmly — IFFT/CP (Q1–Q2), QPSK/raised-cosine (Q3–Q4), η/CFO (Q6–Q7), BCCH/TCH/FACCH + slots (Q10–Q12). The rest (S/I, handoff, splitting, repeater, GoS) are one-line definitions.</p>
+        </section>
+
+        <section aria-labelledby="recap-heading-en">
+          <p class="section-kicker">EXAM RECAP / QUICK REVISION</p>
+          <h2 id="recap-heading-en">At a glance</h2>
+          <dl class="recap-list">
+            <dt>OFDM</dt><dd>N orthogonal subcarriers (Δf = 1/Tu); Tx: IFFT + CP; Rx: −CP + FFT; CP = ISI shield.</dd>
+            <dt>Modulation</dt><dd>Speed vs toughness; QPSK for bad channels, 64-QAM for good; adaptive modulation.</dd>
+            <dt>Pulse shaping</dt><dd>Raised-cosine (α = 0–1); compact bandwidth + Nyquist zero-ISI; windowing improves spectrum.</dd>
+            <dt>η derivation</dt><dd>η = log2(M)/(1+G); 64-QAM + G = 1/4 → 4.8 bits/s/Hz.</dd>
+            <dt>Sync</dt><dd>Wrong timing → ISI; CFO → ICI; cure: preamble, pilots, AFC.</dd>
+            <dt>Cellular</dt><dd>FCA/DCA/HCA; small N = capacity↑ interference↑; S/I quality meter; splitting/handoff/GoS.</dd>
+            <dt>GPRS/GSM</dt><dd>GPRS = packet data (SGSN/GGSN, always-on); GSM = MS→BTS→BSC→MSC (Um/Abis/A, 13 kbps).</dd>
+          </dl>
+
+          <div class="terminal-log" aria-label="Understanding check">
+            <div class="terminal-row"><span class="terminal-label">IN:</span><span>Recall three answers without looking up:</span></div>
+            <div class="terminal-row"><span class="terminal-label">OUT:</span><span>Write your answers; then match with the Q-tables.</span></div>
+          </div>
+          <ol class="question-list">
+            <li>Why is CP added in OFDM?
+              <ol type="A"><li>To stop multipath ISI</li><li>To raise speed</li><li>To save power</li><li>To rotate antennas</li></ol>
+            </li>
+            <li>Which combo gives η = 4.8 bits/s/Hz?
+              <ol type="A"><li>64-QAM + CP 1/4</li><li>QPSK + CP 1/4</li><li>BPSK without CP</li><li>256-QAM + CP 1/2</li></ol>
+            </li>
+            <li>What does BCCH do?
+              <ol type="A"><li>Broadcasts system info</li><li>Carries voice</li><li>Carries SMS</li><li>Runs internet</li></ol>
+            </li>
+          </ol>
+          <p class="section-kicker">Next: topic-wise notes — after recalling the answers.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">← Contents</a>
+    <span>ASSIGNMENT QB / OFDM + CELLULAR</span>
+    <a href="index.html#progress">Learning progress</a>
+  </footer>
+
+  <script>
+  (() => {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    const apply = (lang) => {
+      document.querySelectorAll('[data-lang]').forEach((el) => {
+        el.hidden = el.dataset.lang !== lang;
+      });
+      document.documentElement.lang = lang === 'hi' ? 'hi-Latn' : 'en';
+      btn.textContent = lang === 'hi' ? 'English' : 'Hinglish';
+      try { localStorage.setItem('wc-qb-lang', lang); } catch (e) {}
+    };
+    let lang = 'hi';
+    try { lang = localStorage.getItem('wc-qb-lang') || 'hi'; } catch (e) {}
+    if (lang !== 'hi' && lang !== 'en') lang = 'hi';
+    apply(lang);
+    btn.addEventListener('click', () => {
+      lang = lang === 'hi' ? 'en' : 'hi';
+      apply(lang);
+    });
+  })();
+  </script>
+</body>
+</html>
